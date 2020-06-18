@@ -1,3 +1,7 @@
 #include "include/Resources.h"
 
-RES_CUSTOM_FONT
+RES_LOGO IMAGE ".\\resources\\Icon.png"
+
+//RES_TEST_ID             TEXT           "test.txt"
+//RES_SPLASHSCREEN_ID     IMAGE           "..\\resources\\Splashscreen.png"
+//RES_THEME_MUSIC_ID      MP3             "..\\resources\\Theme.mp3"

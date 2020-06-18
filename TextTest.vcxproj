@@ -48,6 +48,7 @@
     <PlatformToolset>v110_xp</PlatformToolset>
     <PlatformToolset>v110</PlatformToolset>
     <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -55,6 +56,7 @@
     <PlatformToolset>v110_xp</PlatformToolset>
     <PlatformToolset>v110</PlatformToolset>
     <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -86,7 +88,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\link\source\mapmake\vc2019\include;C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -98,7 +100,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -115,7 +117,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\link\source\mapmake\vc2019\include;C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;C:\boost\include\boost-1_73;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -126,11 +128,11 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\cinder\Cinder\lib\msw\$(PlatformTarget);C:\cinder\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\boost\lib;C:\cinder\Cinder\lib\msw\$(PlatformTarget);C:\cinder\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -141,7 +143,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\link\source\mapmake\vc2019\include;C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
@@ -151,7 +153,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -168,7 +170,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\link\source\mapmake\vc2019\include;C:\cinder\Cinder\include;C:\cinder\Cinder\blocks\Box2D\src;C:\cinder\Cinder\blocks\Clipper\include;C:\boost\include\boost-1_73;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
@@ -178,11 +180,11 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\cinder\Cinder\include;./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>cinder.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\cinder\Cinder\lib\msw\$(PlatformTarget);C:\cinder\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\boost\lib;C:\cinder\Cinder\lib\msw\$(PlatformTarget);C:\cinder\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -240,7 +242,10 @@
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Rope\b2Rope.cpp" />
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp" />
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\clipper.cpp" />
+    <ClCompile Include="src\imgui_mywidgets.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\main_gui.cpp" />
+    <ClCompile Include="src\SubWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />
@@ -294,6 +299,19 @@
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Rope\b2Rope.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\CinderClipper.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp" />
+    <ClInclude Include="include\imgui_mywidgets.h" />
+    <ClInclude Include="include\main.h" />
+    <ClInclude Include="include\Resources.h" />
+    <ClInclude Include="include\SubWindow.h" />
+    <ClInclude Include="include\Tree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shader.frag">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="assets\shader.vert">
+      <FileType>CppCode</FileType>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
