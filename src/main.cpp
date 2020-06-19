@@ -6,10 +6,28 @@
 #include "cinder/gl/Context.h"
 #include "imgui/imgui_impl_opengl3.h"
 
+// == レイヤーツリーを投げると、子供を持っているノードは、フォルダとしてのフラグが立ち上がる。
 
+void layerFolderCorrection_s(Node<LayerBoxData>& tree) {
+	if (tree.pNext.size() == 0) {
+		tree.data.layerfolder_flag = false;
+	}else tree.data.layerfolder_flag = true;
+
+	for (auto& leaf : tree.pNext){
+		layerFolderCorrection_s(leaf);
+	}
+}
+
+void layerFolderCorrection(Tree<LayerBoxData>& tree) {
+	layerFolderCorrection_s(tree.pRoot);
+}
+
+// ===
 
 void BasicApp::setup()
 {	
+	setFrameRate(10000.0f);
+
 	mCam.lookAt(vec3(3, 3, 3), vec3(0));
 	mCamUi = CameraUi(&mCam, getWindow() );
 	
@@ -37,7 +55,7 @@ void BasicApp::setup()
 	//texture1 = gl::Texture2d::create(img);
 	texture1= gl::Texture::create(loadImage(loadAsset("Icon.png")));
 
-	// tree
+	// treeを作成
 	/*
 	auto s1 = NodeNumber();
 	auto data = LayerBoxData(u8"山1", texture1, texture1, false, false, false);
@@ -85,8 +103,8 @@ void BasicApp::setup()
 	layerTreeData.newID(s7, u8"LayerImage");
 	layerTreeData.add(s5, Node<LayerBoxData>(s7, data));
 	
-	test1 = s1;
-
+	// 補正を掛ける
+	layerFolderCorrection(layerTreeData);
 }
 
 void BasicApp::createNewWindow()

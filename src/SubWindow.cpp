@@ -6,6 +6,10 @@
 #include "main.h"
 #include "cinder/Area.h"
 
+
+#include "imgui/imgui.h"
+#include "imgui/imgui_internal.h"
+
 void BasicApp::ShowSubWindow() {
 
 	auto window = getWindowSize();
@@ -32,42 +36,12 @@ void BasicApp::ShowSubWindow() {
 	}
 }
 
-void LayerBoxDraw(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& node, char* id, editData& remdata, moveData& modata) {
-
-	ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
-
-	char nameid[100] = {};
-	sprintf(nameid, "layerbox%s", id);
-
-	char treeid[100] = {};
-	sprintf(treeid, "Configuration%d", id);
-
-	bool treeflag = false;
-	if (treeflag == true) {
-
-	}
-
-	ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 5.0f);
-
-	auto size = 80 + ImGui::GetFontSize() + 20;
-
-
+void LayerBoxFolderDraw(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& node, char* id, editData& removedata, editData& adddata, moveData& modata) {
+	
 	ImGui::PushID(id);
 
-	ImGui::BeginGroup();
-	{
-		ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags);
-
-		ImGui::Text(u8"%s", node.data.name.c_str());
-		//ImGui::Text(u8"%s%d", node.ID.nodeName.c_str() , node.ID.nodeID);
-
-		ImGui::Image(node.data.image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
-		ImGui::SameLine();
-		ImGui::Image(node.data.image3d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
-
-		ImGui::EndSelectBox();
-	}
-	ImGui::EndGroup();
+	char nameid[100] = {};
+	sprintf(nameid, u8"layerbox%s", id);
 
 	if (ImGui::BeginDragDropSource(ImGuiDragDropFlags_None))
 	{
@@ -97,28 +71,99 @@ void LayerBoxDraw(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& node, char* 
 	ImGui::PopID();
 
 	// メニュー
+	// 安全に行うために、後で、処理するように変更するようにする！！！
 	if (ImGui::BeginPopupContextItem(nameid))
 	{
-		if (ImGui::MenuItem(u8"追加")) {
-			// ここに追加する処理を書いたり…
-
-			// 安全に行うために、後で、処理するように変更するようにする！！！
+		char texttest[100] = {};
+		sprintf(texttest, u8"追加 %s", nameid );
+		if (ImGui::MenuItem(texttest)) {
+		//if (ImGui::MenuItem(u8"追加")) {
 			ImGui::CloseCurrentPopup();
+
+			adddata.flag = true;
+			adddata.id = node.ID;
 		}
 		if (ImGui::MenuItem(u8"削除")) {
 			ImGui::CloseCurrentPopup();
 
-			remdata.flag = true;
-			remdata.id = node.ID;
+			removedata.flag = true;
+			removedata.id = node.ID;
+		}
+		if (ImGui::MenuItem(u8"グループ化")) {
+			ImGui::CloseCurrentPopup();
 
+			adddata.flag = true;
+			adddata.id = node.ID;
 		}
 
 		ImGui::EndPopup();
 	}
 }
 
-template <class DataType>
-void draw_LayerBox(Tree<DataType>& rootTree, Node<DataType>& tree, int n, editData& remdata, moveData& modata) {
+void LayerBoxDraw(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& node, char* id, editData& removedata, editData& adddata, moveData& modata) {
+
+	ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
+
+	char nameid[100] = {};
+	sprintf(nameid, "layerbox%s", id);
+
+	char treeid[100] = {};
+	sprintf(treeid, "Configuration%d", id);
+
+	bool treeflag = false;
+	if (treeflag == true) {
+
+	}
+
+	ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 5.0f);
+
+	auto size = 80 + ImGui::GetFontSize() + 20;
+
+	ImGui::BeginGroup();
+	{
+		if (!node.data.layerfolder_flag) {
+
+			if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {
+				
+				//ImGui::TextColored(ImVec4(0.5f, 0.5f, 0.5f, 1), u8"%s%s", title_parent, node.data.name.c_str());
+				ImGui::Text(u8"%s",node.data.name.c_str());
+				//ImGui::Text(u8"%s%d", node.ID.nodeName.c_str() , node.ID.nodeID);
+
+				ImGui::Image(node.data.image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
+				ImGui::SameLine();
+				ImGui::Image(node.data.image3d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
+
+			}
+			ImGui::EndSelectBox();
+
+		}else{
+
+			float font = ImGui::GetFontSize();
+
+			char title_parent[100] = {};
+			sprintf(title_parent, u8"フォルダ");
+			ImGui::Text(u8"%s", title_parent);
+			
+			//ImGui::TextColored(ImVec4(0.5f, 0.5f, 0.5f, 1), u8"%s", title_parent);
+
+			ImGui::SameLine();
+			ImGui::Image(node.data.image2d, vec2(font, font), vec2(0, 1), vec2(1, 0));
+			ImGui::SameLine();
+
+			ImGui::Text(u8" : %s", node.data.name.c_str());
+
+			//ImGui::TextColored(ImVec4(0.5f, 0.5f, 0.5f, 1), u8" : %s", node.data.name.c_str());
+			
+
+		}
+	}
+	ImGui::EndGroup();
+
+	LayerBoxFolderDraw(rootTree, node, nameid, removedata, adddata, modata);
+
+}
+
+void draw_LayerBox(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& tree, int n, editData& removedata, editData& adddata, moveData& modata) {
 
 	string space = "";
 	for (int i = 0; i < n; i++) {
@@ -131,34 +176,47 @@ void draw_LayerBox(Tree<DataType>& rootTree, Node<DataType>& tree, int n, editDa
 	//ImGui::Text(treeid);
 	// 中身
 
-	if (n != 0) {
-		LayerBoxDraw(rootTree, tree, treeid, remdata, modata);
+	//if (n != 0 && tree.pNext.size() == 0) {
+	if (n != 0 ) {
+		LayerBoxDraw(rootTree, tree, treeid, removedata, adddata, modata);
 	}
 	
 	if (n == 0) {
 		for (auto& leaf : tree.pNext) {
-			draw_LayerBox(rootTree, leaf, n + 1, remdata, modata);
+			draw_LayerBox(rootTree, leaf, n + 1, removedata, adddata, modata);
 		}
 	}
 	else  {
+		//if (!tree.data.layerfolder_flag) {
 		if (tree.pNext.size() == 0) {
 			return;
 		}
 		else {
+			auto color = ImGui::GetStyleColorVec4(ImGuiCol_Text);
+			ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 0.5f, 0.5f, 1));
+
 			if (ImGui::TreeNode(treeid, u8"%s", tree.ID.nodeName.c_str())) {
+				ImGui::PushStyleColor(ImGuiCol_Text, color);
+
 				for (auto& leaf : tree.pNext) {
-					draw_LayerBox(rootTree, leaf, n + 1, remdata, modata);
+					draw_LayerBox(rootTree, leaf, n + 1, removedata, adddata, modata);
 				}
 				ImGui::TreePop();
+
 			}
+
+			ImGui::PushStyleColor(ImGuiCol_Text, color);
+
+			
+			//char folderid[100] = {};
+			//sprintf(folderid, u8"folder%s%d", tree.ID.nodeName.c_str(), tree.ID.nodeID);
+			//LayerBoxFolderDraw(rootTree, tree, folderid, removedata, adddata, modata);
 		}
 	}
-	
 
 };
 
-
-void LayerBox(Tree<LayerBoxData>& data) {
+void LayerBox(Tree<LayerBoxData>& data, gl::Texture2dRef NullImage) {
 	ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
 
 	/*
@@ -251,55 +309,71 @@ void LayerBox(Tree<LayerBoxData>& data) {
 	ImGui::EndGroup();
 	*/
 
-	editData remdata;
+	editData adddata;
+	editData removedata;
 	moveData modata;
 
-	draw_LayerBox<LayerBoxData>(data, data.pRoot, 0, remdata, modata);
+	draw_LayerBox(data, data.pRoot, 0, removedata, adddata, modata);
 	
-	auto old_num = data.topNumber(modata.payload_n);
-	auto new_num = data.topNumber(modata.next);
-
 	// 全て終わった後に安全にデータを消去する 
 	// ※ LayerBoxDrawの途中で切ると、endを上手く行えずプロセス死ぬ。
-	if (remdata.flag == true) {
-		data.remove(remdata.id);
+	if (removedata.flag == true) {
+		data.remove(removedata.id);
 	}
-	if (modata.flag == true) {
+	
+	if (adddata.flag == true) {
+		auto s1 = NodeNumber();
+		auto d1 = LayerBoxData(u8"グランドキャニオン", NullImage, NullImage, false, false, false);
+		data.newID(s1, "LayerImage");
+		//data.add(adddata.id, Node<LayerBoxData>(s1, d1));
+		data.insert(adddata.id, Node<LayerBoxData>(s1, d1),1);
+	}
+	
+	if (modata.flag == true && !data.at(modata.next).data.layerfolder_flag) {
 		auto move_tmp = data.at(modata.payload_n);
 		auto& searchData = data.p_search(modata.next);
-		
+
 		bool hit = false;
 		for (auto i : searchData) {
-			if(i->ID.nodeID == modata.payload_n.nodeID &&
+			if (i->ID.nodeID == modata.payload_n.nodeID &&
 				i->ID.nodeName == modata.payload_n.nodeName) hit = true;
 		}
 
-		if(!hit){
+		if (!hit) {
+			auto old_num = data.topNumber(modata.payload_n);
+			auto new_num = data.topNumber(modata.next);
+
 			data.remove(modata.payload_n);
 
-			auto a = *(std::next(searchData.begin() , 1));// 2番目のデータ(親)にアクセスして、そこにツッコむ。
-			
+			auto a = *(std::next(searchData.begin(), 1));// 2番目のデータ(親)にアクセスして、そこにツッコむ。
+
 			console() << u8"old: " << modata.payload_n.nodeName.c_str() << u8" " << modata.payload_n.nodeID << endl;
 			console() << u8"next: " << modata.next.nodeName.c_str() << u8" " << modata.next.nodeID << endl;
 
-			
+
 			console() << a->ID.nodeName << a->ID.nodeID << endl;
 			//data.add(a->ID,move_tmp);
 
 			console() << old_num << u8" " << new_num << endl;
-			if ( old_num < new_num ) {
-				data.insert(modata.next, move_tmp,1);
+			if (old_num < new_num) {
+				data.insert(modata.next, move_tmp, 1);
 			}
 			else {
 				data.insert(modata.next, move_tmp);
 			}
-		
+
 		}
 		else {
 			console() << u8"親が自身の子供へ移動することはできないよ！" << endl;
 		}
 	}
+	else if (modata.flag == true && data.at(modata.next).data.layerfolder_flag) {
+		
+		auto move_tmp = data.at(modata.payload_n);
 
+		data.remove(modata.payload_n);
+		data.add(modata.next, move_tmp);
+	}
 
 }
 
@@ -364,24 +438,12 @@ void BasicApp::ShowLayerWindow() {
 		}
 		
 		
-		LayerBox(layerTreeData);
+		LayerBox(layerTreeData,texture1);
 		ImGui::End();
 	}
 
-	/*
-	if (ImGui::Begin(u8"tree"));
-	{
-		if(ImGui::TreeNode("Configuration##2")) {
-			ImGui::Text("test");
 
+	// FPS確認
+	ImGui::Text("FPS %f",getAverageFps());
 
-			ImGui::TreePop();
-		}
-
-		ImGui::End();
-	}
-	*/
-
-
-	ImGui::ShowDemoWindow();
 }

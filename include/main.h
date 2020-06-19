@@ -18,6 +18,7 @@
 
 #include "imgui_mywidgets.h"
 
+
 #include "Tree.h"
 
 using namespace ci;
@@ -61,18 +62,18 @@ public:
 		this->selectflag = false;
 		this->shift_selectflag = false;
 
-		this->layerfloder_flag = false;
+		this->layerfolder_flag = false;
 	}
 
 	LayerBoxData(std::string name, gl::Texture2dRef image2d, gl::Texture2dRef image3d,
-		bool selectflag, bool shift_selectflag, bool layerfloder_flag) {
+		bool selectflag, bool shift_selectflag, bool layerfolder_flag) {
 		this->name = name;
 		this->image2d = image2d;
 		this->image3d = image3d;
 		this->selectflag = selectflag;
 		this->shift_selectflag = shift_selectflag;
 
-		this->layerfloder_flag = layerfloder_flag;
+		this->layerfolder_flag = layerfolder_flag;
 	}
 
 	std::string name;
@@ -81,7 +82,7 @@ public:
 	bool selectflag;
 	bool shift_selectflag;
 
-	bool layerfloder_flag;
+	bool layerfolder_flag;
 };
 
 

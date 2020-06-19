@@ -3,23 +3,19 @@
 
 ImVec2& operator+(ImVec2& os, ImVec2& obj)
 {
-	// ここでストリームに obj を書き込みます。
 	return ImVec2(os.x + obj.x, os.y + obj.y);
 }
 ImVec2& operator-(ImVec2& os, ImVec2& obj)
 {
-	// ここでストリームに obj を書き込みます。
 	return ImVec2(os.x - obj.x, os.y - obj.y);
 }
 
 const ImVec2& operator+(const ImVec2& os, const ImVec2& obj)
 {
-	// ここでストリームに obj を書き込みます。
 	return ImVec2(os.x + obj.x, os.y + obj.y);
 }
 const ImVec2& operator-(const ImVec2& os, const ImVec2& obj)
 {
-	// ここでストリームに obj を書き込みます。
 	return ImVec2(os.x - obj.x, os.y - obj.y);
 }
 
@@ -110,58 +106,74 @@ namespace ImGui {
 
 	bool BeginSelectBox(const char* name, bool& selected, bool& shift_selected, const ImVec2& size, bool border, ImGuiWindowFlags flags) {
 
-		ImGui::BeginChild(name, size, border, flags);
-		auto child_window = ImGui::GetCurrentWindow();
+		flags = ImGuiWindowFlags_AlwaysAutoResize;
 
-		ImGuiButtonFlags bflag = ImGuiButtonFlags_MouseButtonDefault_;
-
-		if (child_window->DC.ItemFlags & ImGuiItemFlags_ButtonRepeat)
-			bflag |= ImGuiButtonFlags_Repeat;
-		bool hovered, held;
+		//flags = ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoMove;
 		
-		//ImRect bb = ImRect(child_window->Pos, child_window->Pos + child_window->Size);
-		ImRect bb = child_window->WorkRect;
+		bool b = ImGui::BeginChild(name, size, border, flags);
 		
-		auto id = ImGui::GetID(name);
-
-		bool pressed = ButtonBehavior(bb, id, &hovered, &held, bflag);
-
-		ImGuiCol color;
-
 		
-		if (hovered || selected || shift_selected)
+		//bool b = ImGui::Begin(name,NULL,flags);
 		{
-			if (held && hovered && ImGui::GetIO().KeyShift) {
-				color = ImGuiCol_HeaderActive;
-			}
-			else if (held && hovered) {
-				color = ImGuiCol_HeaderActive;
-			}
-			else if (hovered) {
-				color = ImGuiCol_HeaderHovered;
-			}
-			else if (shift_selected) {
-				color = ImGuiCol_HeaderActive;
-			}
-			else if (selected) {
-				color = ImGuiCol_Header;
-			}
+			auto child_window = ImGui::GetCurrentWindow();
 
-			const ImU32 col = GetColorU32(color);
-			RenderNavHighlight(bb, id);
+			//ImGuiButtonFlags bflag = ImGuiButtonFlags_MouseButtonDefault_;
+			ImGuiButtonFlags bflag = ImGuiButtonFlags_NoHoldingActiveId;
+
+
+			if (child_window->DC.ItemFlags & ImGuiItemFlags_ButtonRepeat)
+				bflag |= ImGuiButtonFlags_Repeat;
+			bool hovered, held;
+
+			//ImRect bb = ImRect(child_window->Pos, child_window->Pos + child_window->Size);
+			ImRect bb = child_window->WorkRect;
 			
-			RenderFrame(bb.Min, bb.Max, col, true, ImGui::GetStyle().FrameRounding);
+			auto id = ImGui::GetID(name);
+
+			bool pressed = ButtonBehavior(bb, id, &hovered, &held, bflag);
+			//bool pressed = false;
 			
-			if (pressed && ImGui::GetIO().KeyShift && !selected && !shift_selected) shift_selected = true;
-			else if (pressed && !selected && !shift_selected) selected = true;
-			else if (pressed && ImGui::GetIO().KeyShift && !selected && shift_selected) shift_selected = false;
-			else if (pressed && selected) selected = false;
-			
+			ImGuiCol color;
+
+
+			if (hovered || selected || shift_selected)
+			{
+				if (held && hovered && ImGui::GetIO().KeyShift) {
+					color = ImGuiCol_HeaderActive;
+				}
+				else if (held && hovered) {
+					color = ImGuiCol_HeaderActive;
+				}
+				else if (hovered) {
+					color = ImGuiCol_HeaderHovered;
+				}
+				else if (shift_selected) {
+					color = ImGuiCol_HeaderActive;
+				}
+				else if (selected) {
+					color = ImGuiCol_Header;
+				}
+
+				const ImU32 col = GetColorU32(color);
+				RenderNavHighlight(bb, id);
+
+				RenderFrame(bb.Min, bb.Max, col, true, ImGui::GetStyle().FrameRounding);
+
+				if (pressed && ImGui::GetIO().KeyShift && !selected && !shift_selected) shift_selected = true;
+				else if (pressed && !selected && !shift_selected) selected = true;
+				else if (pressed && ImGui::GetIO().KeyShift && !selected && shift_selected) shift_selected = false;
+				else if (pressed && selected) selected = false;
+
+			}
 		}
-		return pressed;
+		
+		
+
+		return b;
 	}
 
 	void EndSelectBox() {
+		//ImGui::End();
 		ImGui::EndChild();
 	 }
 }
