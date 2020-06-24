@@ -243,8 +243,9 @@
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp" />
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\clipper.cpp" />
     <ClCompile Include="src\imgui_mywidgets.cpp" />
+    <ClCompile Include="src\LayerData.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\main_gui.cpp" />
+    <ClCompile Include="src\MainMenu.cpp" />
     <ClCompile Include="src\SubWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -299,11 +300,19 @@
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Rope\b2Rope.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\CinderClipper.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp" />
+    <ClInclude Include="include\AllData.h" />
+    <ClInclude Include="include\FileSave.h" />
+    <ClInclude Include="include\GUI.h" />
     <ClInclude Include="include\imgui_mywidgets.h" />
+    <ClInclude Include="include\LayerBox.h" />
+    <ClInclude Include="include\LayerData.h" />
     <ClInclude Include="include\main.h" />
     <ClInclude Include="include\Resources.h" />
     <ClInclude Include="include\SubWindow.h" />
+    <ClInclude Include="include\TerrainTool.h" />
     <ClInclude Include="include\Tree.h" />
+    <ClInclude Include="include\WindowData.h" />
+    <ClInclude Include="src\GUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.frag">

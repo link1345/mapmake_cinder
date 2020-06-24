@@ -1,8 +1,8 @@
 #include "main.h"
 
 #include "cinder/DataTarget.h"
-
-void BasicApp::ShowMainMenuBar()
+/*
+void ShowMainMenuBar()
 {
 	menu_size = 0;
 	if (ImGui::BeginMainMenuBar())
@@ -66,7 +66,7 @@ void BasicApp::ShowMainMenuBar()
 	}
 }
 
-void BasicApp::NewFileMake() {
+void NewFileMake() {
 	const fs::path path = getSaveFilePath(std::filesystem::path(),ImageIo::getLoadExtensions());
 	if (!path.empty()) {
 		auto data_p = DataTargetPath::createRef(path)->getStream();
@@ -75,3 +75,5 @@ void BasicApp::NewFileMake() {
 
 
 }
+
+*/

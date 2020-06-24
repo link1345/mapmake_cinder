@@ -55,6 +55,33 @@
     <Filter Include="blocks\Box2D\src\Box2D\Rope">
       <UniqueIdentifier>{32694ac8-b1f1-40cc-b49a-3cf55de13c90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GUI">
+      <UniqueIdentifier>{68f76305-9fb4-47bb-af9d-c35dd55edd1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Widgets">
+      <UniqueIdentifier>{07a0b1ce-4d3f-4ed4-b0a2-30e65ac45263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI">
+      <UniqueIdentifier>{93fad331-4bec-4622-bc44-21ca40f5d5ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI\Widgets">
+      <UniqueIdentifier>{fa23b06e-aef2-45df-9cce-00376cd476fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data">
+      <UniqueIdentifier>{04fab2d8-83ab-4168-9553-d2089933aeeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data">
+      <UniqueIdentifier>{eec79b9d-baa0-4f53-b4e3-e4e6e8b1e404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\File">
+      <UniqueIdentifier>{7c040ae8-9f4d-4bf2-8e7e-baafb0132f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Sub">
+      <UniqueIdentifier>{5a5ad3fc-b3dd-4d50-9c80-58664c3c0065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Sub\Individual">
+      <UniqueIdentifier>{adc8b1ba-590e-4a5c-a85a-de2ed39d3b1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -206,14 +233,17 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\main_gui.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\imgui_mywidgets.cpp">
+      <Filter>Source Files\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainMenu.cpp">
+      <Filter>Source Files\GUI</Filter>
     </ClCompile>
     <ClCompile Include="src\SubWindow.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="src\imgui_mywidgets.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\LayerData.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -361,20 +391,44 @@
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Box2D.h">
       <Filter>blocks\Box2D\src\Box2D</Filter>
     </ClInclude>
-    <ClInclude Include="include\Resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SubWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\GUI.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
     <ClInclude Include="include\imgui_mywidgets.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AllData.h">
+      <Filter>Header Files\Data</Filter>
     </ClInclude>
     <ClInclude Include="include\Tree.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileSave.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Resources.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SubWindow.h">
+      <Filter>Header Files\GUI\Sub</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LayerBox.h">
+      <Filter>Header Files\GUI\Sub\Individual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TerrainTool.h">
+      <Filter>Header Files\GUI\Sub\Individual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LayerData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WindowData.h">
+      <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

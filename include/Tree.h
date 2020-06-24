@@ -9,6 +9,18 @@ struct NodeNumber {
 	string nodeName;
 	size_t nodeID;
 
+	bool operator==(const NodeNumber rhs) {
+		if (this->nodeID == rhs.nodeID &&
+			this->nodeName == rhs.nodeName
+			) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	};
+
+
 	NodeNumber() {
 		this->nodeName = "";
 		this->nodeID = 0;
@@ -19,7 +31,8 @@ struct NodeNumber {
 	}
 };
 
-template <class DataType> struct Node
+template <class DataType>
+struct Node
 {
 	NodeNumber ID;
 	list<Node> pNext;  // 子ノード
@@ -29,6 +42,7 @@ template <class DataType> struct Node
 	Node() {
 		this->ID = NodeNumber();
 		this->pNext.clear();
+		this->data = DataType();
 	}
 	Node(NodeNumber node) {
 		this->ID = node;
@@ -52,7 +66,8 @@ template <class DataType> struct Node
 	}
 };
 
-template <class DataType> struct Tree
+template <class DataType>
+struct Tree
 {
 	Node<DataType> pRoot;  // ルート
 
@@ -114,6 +129,14 @@ template <class DataType> struct Tree
 		return remove_s(this->pRoot, parentNumber);
 	};
 
+	// クリア処理
+	void clear() {
+		// ルートを消した上で、再度、ルートを付けておく。
+		this->remove(this->rootID);
+		this->pRoot = Node<DataType>(rootID);
+		//this = Node<DataType>(rootID);
+	}
+
 	// 中身確認
 	void show() {
 		show_s(this->pRoot, 0);
@@ -168,7 +191,7 @@ private:
 
 	bool search_s(Node<DataType> tree, NodeNumber number, list<Node<DataType>>& return_tree) {
 		// 自身が目標なら
-		if (tree.ID.nodeName == number.nodeName && tree.ID.nodeID == number.nodeID) {
+		if (tree.ID == number) {
 			return_tree.push_back(tree);
 			return true;
 		}
@@ -188,7 +211,7 @@ private:
 
 	bool p_search_s(Node<DataType>& tree, NodeNumber number, list<Node<DataType>*>& return_tree) {
 		// 自身が目標なら
-		if (tree.ID.nodeName == number.nodeName && tree.ID.nodeID == number.nodeID) {
+		if (tree.ID == number) {
 			return_tree.push_back(&tree);
 			//Print << tree.rect;
 			return true;
@@ -209,7 +232,7 @@ private:
 
 	Node<DataType>& at_s(Node<DataType>& tree, NodeNumber number, bool& hit) {
 		// 自身が目標なら
-		if (tree.ID.nodeName == number.nodeName && tree.ID.nodeID == number.nodeID) {
+		if (tree.ID == number) {
 			hit = true;
 			return tree;
 		}
@@ -229,7 +252,7 @@ private:
 
 	bool add_s(Node<DataType>& tree, NodeNumber parentNumber, Node<DataType> add_node) {
 		// 自身が親目標なら
-		if (tree.ID.nodeName == parentNumber.nodeName && tree.ID.nodeID == parentNumber.nodeID) {
+		if (tree.ID == parentNumber) {
 			tree.pNext.push_back(add_node);
 			//Print << U"add:" << add_node.ID.nodeName << U"," << add_node.ID.nodeID <<  U" : " << add_node.rect.size;
 
@@ -248,7 +271,7 @@ private:
 
 	bool insert_s(Node<DataType>& tree, NodeNumber frontNumber, Node<DataType> add_node, int s = 0) {
 		// 自身が親目標なら
-		if (tree.ID.nodeName == frontNumber.nodeName && tree.ID.nodeID == frontNumber.nodeID) {
+		if (tree.ID == number) {
 			//Print << U"add:" << add_node.ID.nodeName << U"," << add_node.ID.nodeID <<  U" : " << add_node.rect.size;
 
 			return true;
@@ -269,7 +292,7 @@ private:
 
 	bool topNumber_s(Node<DataType>& tree, NodeNumber number, int& num) {
 		// 自身が目標なら
-		if (tree.ID.nodeName == number.nodeName && tree.ID.nodeID == number.nodeID) {
+		if (tree.ID == number) {
 			//Print << tree.rect;
 			return true;
 		}
@@ -290,7 +313,7 @@ private:
 
 	bool remove_s(Node<DataType>& tree, NodeNumber parentNumber) {
 		// 自身が目標なら
-		if (tree.ID.nodeName == parentNumber.nodeName && tree.ID.nodeID == parentNumber.nodeID) {
+		if (tree.ID == parentNumber) {
 			return true;
 		}
 

@@ -10,12 +10,13 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_internal.h"
 
+/*
 void BasicApp::ShowSubWindow() {
 
 	auto window = getWindowSize();
 
 	
-	if(ImGui::Begin(u8"地形編集"));
+	if(ImGui::Begin(u8"地形編集"))
 	{
 		ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_None;
 		if (ImGui::BeginTabBar("mapmain_window", tab_bar_flags))
@@ -108,7 +109,7 @@ void LayerBoxDraw(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& node, char* 
 	sprintf(nameid, "layerbox%s", id);
 
 	char treeid[100] = {};
-	sprintf(treeid, "Configuration%d", id);
+	sprintf(treeid, "Configuration%s", id);
 
 	bool treeflag = false;
 	if (treeflag == true) {
@@ -219,96 +220,6 @@ void draw_LayerBox(Tree<LayerBoxData>& rootTree, Node<LayerBoxData>& tree, int n
 void LayerBox(Tree<LayerBoxData>& data, gl::Texture2dRef NullImage) {
 	ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
 
-	/*
-	ImGui::BeginGroup();// 外枠
-
-	int i = 0;
-	for (auto itr = data.begin(); itr != data.end(); ++itr) {
-		char nameid[100] = {};
-		sprintf(nameid, "layerbox%d", i);
-
-		char treeid[100] = {};
-		sprintf(treeid, "Configuration%d", i);
-
-		bool treeflag = false;
-		if (treeflag == true) {
-
-		}
-
-
-		ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 5.0f);
-
-		auto size = 80 + ImGui::GetFontSize() + 20;
-
-		//if (ImGui::TreeNode(treeid)) {
-
-		ImGui::PushID(i);
-
-		ImGui::BeginGroup();
-		{
-			ImGui::BeginSelectBox(nameid, itr->selectflag, itr->shift_selectflag, ImVec2(0, size), true, window_flags);
-
-			ImGui::Text(u8"ID:%d %s", i + 1, itr->name.c_str());
-			ImGui::Image(itr->image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
-			ImGui::SameLine();
-			ImGui::Image(itr->image3d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
-
-			ImGui::EndSelectBox();
-		}
-		ImGui::EndGroup();
-
-		if (ImGui::BeginDragDropSource(ImGuiDragDropFlags_None))
-		{
-			ImGui::SetDragDropPayload("DND_DEMO_CELL", &i, sizeof(int));
-
-			ImGui::Text("move %s", itr->name.c_str());
-			ImGui::EndDragDropSource();
-		}
-		if (ImGui::BeginDragDropTarget())
-		{
-			if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("DND_DEMO_CELL"))
-			{
-				console() << "test" << endl;
-
-				IM_ASSERT(payload->DataSize == sizeof(int));
-				int payload_n = *(const int*)payload->Data;
-
-				if (std::distance(data.begin(), std::next(data.begin(), payload_n)) > std::distance(data.begin(), itr)) {
-					data.splice(itr, data, std::next(data.begin(), payload_n));
-				}
-				else {
-					data.splice(std::next(itr,1), data, std::next(data.begin(), payload_n));
-				}
-			}
-			ImGui::EndDragDropTarget();
-		}
-		ImGui::PopID();
-		
-		//	ImGui::TreePop();
-		//}
-
-			// メニュー
-		if (ImGui::BeginPopupContextItem(nameid))
-		{
-			if (ImGui::MenuItem(u8"追加")) {
-				// ここに追加する処理を書いたり…
-				ImGui::CloseCurrentPopup();
-			}
-			if (ImGui::MenuItem(u8"削除")) {
-				data.erase(itr);
-				ImGui::CloseCurrentPopup();
-			}
-
-			ImGui::EndPopup();
-		}
-
-
-		i++;
-	}
-
-	ImGui::EndGroup();
-	*/
-
 	editData adddata;
 	editData removedata;
 	moveData modata;
@@ -380,7 +291,7 @@ void LayerBox(Tree<LayerBoxData>& data, gl::Texture2dRef NullImage) {
 
 void BasicApp::ShowLayerWindow() {
 
-	if (ImGui::Begin(u8"レイヤー",NULL,ImGuiWindowFlags_MenuBar));
+	if (ImGui::Begin(u8"レイヤー",NULL,ImGuiWindowFlags_MenuBar))
 	{
 		
 		if (ImGui::BeginMenuBar()) {
@@ -442,8 +353,10 @@ void BasicApp::ShowLayerWindow() {
 		ImGui::End();
 	}
 
-
+	
 	// FPS確認
 	ImGui::Text("FPS %f",getAverageFps());
 
 }
+
+*/
