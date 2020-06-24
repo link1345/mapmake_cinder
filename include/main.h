@@ -41,9 +41,19 @@ public:
 	void mouseUp(MouseEvent event) override;
 	void mouseWheel(MouseEvent event) override;
 
+	/**
+	 * @fn
+	 * ImGuiをソフト上で動作させるための初期化処理
+	 * @brief ImGui初期化
+	 * @param 引数なし
+	 * @return 戻り値なし
+	 * @detail Initialize()や日本語の文字コード登録をしています。
+	 また、meiryo.ttcフォントを使用しているので、ライセンス周り要確認。
+	 */
 	void InitImGui();
 
 private:
+	//! GUI周りの統括変数
 	GUI::MainGUI gui;
 
 	//void createNewWindow();
