@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['clear',['clear',['../struct_tree.html#abc95d72c6ab7b9c4ff561956cb6fab77',1,'Tree']]]
+  ['clear',['clear',['../struct_next_std_1_1_tree.html#acdf0ed8f447d2535fca08700174fb96a',1,'NextStd::Tree']]]
 ];

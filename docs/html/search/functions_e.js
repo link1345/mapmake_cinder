@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['topnumber',['topNumber',['../struct_tree.html#a8ce061dbfc08742a921b69b1ae896f13',1,'Tree']]],
-  ['topnumber_5fs',['topNumber_s',['../struct_tree.html#a8f6c3a051d19367861394cd7a689cea6',1,'Tree']]],
-  ['tree',['Tree',['../struct_tree.html#a9ad3b452bb9966ca7bf24d832b5baf89',1,'Tree']]]
+  ['topnumber',['topNumber',['../struct_next_std_1_1_tree.html#a9d5ed155cc59782687c54d28509df624',1,'NextStd::Tree']]],
+  ['topnumber_5fs',['topNumber_s',['../struct_next_std_1_1_tree.html#a3767a7675733be6e01f4607dde400f48',1,'NextStd::Tree']]],
+  ['tree',['Tree',['../struct_next_std_1_1_tree.html#a0d7a3ba5d3c85078fdf2afe6ae98f4f4',1,'NextStd::Tree']]]
 ];

@@ -10,6 +10,7 @@
 using namespace ci;
 using namespace ci::app;
 using namespace ci::log;
+using namespace NextStd;
 
 
 namespace MapMakeData {

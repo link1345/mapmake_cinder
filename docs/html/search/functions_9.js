@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['newid',['newID',['../struct_tree.html#af1d2f5ab195ab1c920bff8ac56c36f3b',1,'Tree']]],
-  ['node',['Node',['../struct_node.html#a34762fcbeecb107661e67b412c7fd0c3',1,'Node::Node()'],['../struct_node.html#ac4c885d161efbc2e1c4dac51b9f4cb90',1,'Node::Node(NodeNumber node)'],['../struct_node.html#ac1808e04219250c781877ecacc859868',1,'Node::Node(NodeNumber nodeID, list&lt; Node &gt; pNext)'],['../struct_node.html#a63a502ec73e0cfda3f16f47eb0311e0e',1,'Node::Node(NodeNumber nodeID, DataType data)'],['../struct_node.html#ad9833d2d91c09e4b65579899856b9ed3',1,'Node::Node(NodeNumber nodeID, list&lt; Node &gt; pNext, DataType data)']]],
-  ['nodenumber',['NodeNumber',['../struct_node_number.html#a95ca63809836cc8735735bf052abf16a',1,'NodeNumber::NodeNumber()'],['../struct_node_number.html#a0b50f3217962926c4c3c8b1359a38aba',1,'NodeNumber::NodeNumber(string nodeName, size_t nodeID)']]]
+  ['newid',['newID',['../struct_next_std_1_1_tree.html#a7a7a3cf9824493b9b2a82641a69851ff',1,'NextStd::Tree']]],
+  ['node',['Node',['../struct_next_std_1_1_node.html#a89b7c179bb1626f6979c14f86831c0b2',1,'NextStd::Node::Node()'],['../struct_next_std_1_1_node.html#a847a1f6609991e5c4af777894c25298c',1,'NextStd::Node::Node(NodeNumber node)'],['../struct_next_std_1_1_node.html#a36079ae21c03750dc65fc41ced0438cb',1,'NextStd::Node::Node(NodeNumber nodeID, list&lt; Node &gt; pNext)'],['../struct_next_std_1_1_node.html#a0a3cd89c6621f1394ff83c289f93f149',1,'NextStd::Node::Node(NodeNumber nodeID, DataType data)'],['../struct_next_std_1_1_node.html#a7e6873a9fb2862ea1fb4661020a66522',1,'NextStd::Node::Node(NodeNumber nodeID, list&lt; Node &gt; pNext, DataType data)']]],
+  ['nodenumber',['NodeNumber',['../struct_next_std_1_1_node_number.html#a861aa90586bf1c5c260c29ce743e93b8',1,'NextStd::NodeNumber::NodeNumber()'],['../struct_next_std_1_1_node_number.html#abc22e453925e336bf17d7b6000eb66b9',1,'NextStd::NodeNumber::NodeNumber(string nodeName, size_t nodeID)']]]
 ];
