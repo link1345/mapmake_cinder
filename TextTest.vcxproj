@@ -242,6 +242,7 @@
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Rope\b2Rope.cpp" />
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp" />
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\clipper.cpp" />
+    <ClCompile Include="src\Data\AllData.cpp" />
     <ClCompile Include="src\Data\LayerData.cpp" />
     <ClCompile Include="src\GUI\GUI.cpp" />
     <ClCompile Include="src\GUI\MainMenu.cpp" />
@@ -302,6 +303,7 @@
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\CinderClipper.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp" />
     <ClInclude Include="include\Data\AllData.h" />
+    <ClInclude Include="include\Data\FileData.h" />
     <ClInclude Include="include\Data\LayerData.h" />
     <ClInclude Include="include\Data\Tree.h" />
     <ClInclude Include="include\Data\WindowData.h" />

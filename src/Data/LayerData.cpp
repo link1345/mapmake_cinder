@@ -1,8 +1,8 @@
 #include "Data/LayerData.h"
 
-typedef class MapMakeData::Sub::LayerBoxData LData;
+typedef class MapMakeData::Layer::Sub::LayerBoxData LData;
 
-namespace MapMakeData {
+namespace MapMakeData::Layer {
 
 	void LayerData::setSampleData(int mode) {
 

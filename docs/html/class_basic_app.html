@@ -65,6 +65,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_basic_app-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
@@ -72,15 +73,27 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>一番上位のクラス  
+ <a href="class_basic_app.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="main_8h_source.html">main.h</a>&gt;</code></p>
 <div class="dynheader">
 BasicApp の継承関係図</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_basic_app.png" usemap="#BasicApp_map" alt=""/>
-  <map id="BasicApp_map" name="BasicApp_map">
+<div class="center"><img src="class_basic_app__inherit__graph.png" border="0" usemap="#_basic_app_inherit__map" alt="Inheritance graph"/></div>
+<map name="_basic_app_inherit__map" id="_basic_app_inherit__map">
 </map>
- </div></div>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+BasicApp 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_basic_app__coll__graph.png" border="0" usemap="#_basic_app_coll__map" alt="Collaboration graph"/></div>
+<map name="_basic_app_coll__map" id="_basic_app_coll__map">
+<area shape="rect" id="node3" href="class_g_u_i_1_1_main_g_u_i.html" title="GUI::MainGUI" alt="" coords="179,109,281,136"/>
+<area shape="rect" id="node4" href="class_g_u_i_1_1_main_window_1_1_main_menu_bar.html" title="GUI::MainWindow::MainMenuBar" alt="" coords="5,13,220,39"/>
+<area shape="rect" id="node5" href="class_g_u_i_1_1_main_window_1_1_back_ground_window.html" title="GUI::MainWindow::BackGround\lWindow" alt="" coords="244,5,451,47"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -102,8 +115,13 @@ BasicApp の継承関係図</div>
 <tr class="separator:aebc1cfff82cd7ba426c8b9a196f6fe6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a196faf3a16434b801696b6441246c045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_app.html#a196faf3a16434b801696b6441246c045">mouseWheel</a> (MouseEvent event) override</td></tr>
 <tr class="separator:a196faf3a16434b801696b6441246c045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
 <tr class="memitem:a4525f88e196abf93c2520dce3357a3cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_app.html#a4525f88e196abf93c2520dce3357a3cb">InitImGui</a> ()</td></tr>
 <tr class="separator:a4525f88e196abf93c2520dce3357a3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01075f86326edf3034d2c4690e02869d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_app.html#a01075f86326edf3034d2c4690e02869d">updateQuit</a> ()</td></tr>
+<tr class="separator:a01075f86326edf3034d2c4690e02869d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af131b32996b82cbfb58d1f07aa4318b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_app.html#af131b32996b82cbfb58d1f07aa4318b0">doctest</a> ()</td></tr>
 <tr class="separator:af131b32996b82cbfb58d1f07aa4318b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -112,7 +130,11 @@ BasicApp の継承関係図</div>
 <tr class="memitem:ada21e2dec231a95439186207e3c37a29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_u_i_1_1_main_g_u_i.html">GUI::MainGUI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_app.html#ada21e2dec231a95439186207e3c37a29">gui</a></td></tr>
 <tr class="separator:ada21e2dec231a95439186207e3c37a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>一番上位のクラス </p>
+<dl class="section attention"><dt>注意</dt><dd>一番最初に呼ばれます。これには、Appクラスが継承されており、quitなどのコマンドを使用することができます。 </dd></dl>
+<dl class="section see"><dt>参照</dt><dd>グローバルMapMakeData::MainDataと関係している </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
 <a id="af131b32996b82cbfb58d1f07aa4318b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af131b32996b82cbfb58d1f07aa4318b0">&#9670;&nbsp;</a></span>doctest()</h2>
 
@@ -131,7 +153,7 @@ BasicApp の継承関係図</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -193,6 +215,9 @@ BasicApp の継承関係図</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void BasicApp::InitImGui </td>
@@ -201,16 +226,13 @@ BasicApp の継承関係図</div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>ImGuiの初期化処理 </p><dl class="section user"><dt>参照グローバル変数</dt><dd><ul>
-<li>なし </li>
-</ul>
-</dd></dl>
-<dl class="section user"><dt>変更グローバル変数</dt><dd><ul>
-<li>なし </li>
-</ul>
-</dd></dl>
-<dl class="section return"><dt>戻り値</dt><dd>戻り値なし </dd></dl>
+<p>ImGuiの初期化処理 </p><dl class="section return"><dt>戻り値</dt><dd>戻り値なし </dd></dl>
 <dl class="exception"><dt>例外</dt><dd>
   <table class="exception">
     <tr><td class="paramname">none</td><td></td></tr>
@@ -422,6 +444,42 @@ BasicApp の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01075f86326edf3034d2c4690e02869d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01075f86326edf3034d2c4690e02869d">&#9670;&nbsp;</a></span>updateQuit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BasicApp::updateQuit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ソフト終了処理 </p><dl class="section user"><dt>参照グローバル変数</dt><dd><ul>
+<li>MapMakeData::MainDataのgetQuit </li>
+</ul>
+</dd></dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値なし </dd></dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">none</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

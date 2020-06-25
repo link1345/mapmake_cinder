@@ -4,8 +4,16 @@
 
 #include "cinder/CinderImGui.h"
 
+// ---------------------
+// グローバル変数を宣言しておく
+MapMakeData::AllData MapMakeData::MainData = MapMakeData::AllData();
+// ---------------------
+
 void BasicApp::setup()
 {
+	this->gui = GUI::MainGUI();
+	this->InitImGui();
+
 	setFrameRate(10000.0f);
 	gl::enableDepthRead();
 	gl::enableDepthWrite();
@@ -13,7 +21,7 @@ void BasicApp::setup()
 
 	getWindow()->getSignalDraw().connect(
 		[this] {
-			//ShowMainMenuBar();
+			gui.draw();
 			//ShowSubWindow();
 			//ShowLayerWindow();
 		}
@@ -31,8 +39,16 @@ void BasicApp::InitImGui() {
 	io.Fonts->AddFontFromFileTTF(u8"C:\\Windows\\Fonts\\meiryo.ttc", 30.0f, NULL, font_japanese);
 }
 
-void BasicApp::update(){
+void BasicApp::update() {
+	this->updateQuit();
 }
+
+void BasicApp::draw()
+{
+	gl::clear(Color(0.2f, 0.2f, 0.2f));
+	gl::enableAlphaBlending();
+}
+
 
 void BasicApp::mouseDown(MouseEvent event) {
 }
@@ -49,15 +65,15 @@ void BasicApp::mouseMove(MouseEvent event) {
 void BasicApp::mouseDrag(MouseEvent event) {
 }
 
-void BasicApp::draw()
-{
-	gl::clear(Color(0.2f, 0.2f, 0.2f));
-	gl::enableAlphaBlending();
-}
-
 void BasicApp::resize() {
 }
 
+
+// ---------------------
+
+void BasicApp::updateQuit() {
+	if (MapMakeData::MainData.getQuit()) this->quit();
+}
 
 
 // This line tells Cinder to actually create the application

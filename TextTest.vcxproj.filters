@@ -248,6 +248,9 @@
     <ClCompile Include="src\GUI\Widgets\BoxWidgets.cpp">
       <Filter>Source Files\GUI\Widgets</Filter>
     </ClCompile>
+    <ClCompile Include="src\Data\AllData.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp">
@@ -429,6 +432,9 @@
     </ClInclude>
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h">
       <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\FileData.h">
+      <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

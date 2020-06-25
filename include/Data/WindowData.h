@@ -5,9 +5,22 @@
 
 
 namespace MapMakeData {
+	namespace Window {
+		class WindowData {
+		public :
+			WindowData() {
+				this->MenuSize = 0;
+				this->SaveDataFlag = false;
+			}
 
-	class WindowData {
 
-	};
+			//
+			int MenuSize;
+
+			//
+			bool SaveDataFlag;
+
+		};
+	}
 
 }

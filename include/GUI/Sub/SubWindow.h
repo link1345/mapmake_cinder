@@ -1,12 +1,13 @@
 #pragma once
-#include "cinder/app/App.h"
-#include "cinder/app/RendererGl.h"
-#include "cinder/gl/gl.h"
+#include <cinder/app/App.h>
+#include <cinder/app/RendererGl.h>
+#include <cinder/gl/gl.h>
 
 #include <variant>
 #include <vector>
 #include <map>
 
+#define GLOBAL_HERE
 #include "Data/AllData.h"
 
 #include "GUI/Sub/Individual/TerrainTool.h"
@@ -16,16 +17,24 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+
 namespace GUI {
 	namespace General_SubWindow {
 
 		namespace Sub {
 
+			/*!
+			@brief ウィンドウの種別の列挙型
+			@attention 新しいウィンドウ種別が出来たら、必ずここに追加してください。
+			*/
 			enum class SubWindowType {
 				LayerWindow,
 				TerrainToolWindow
 			};
 
+			/*!
+			@brief ウィンドウIDの保存
+			*/
 			struct WindowNumber {
 				string nodeName;
 				size_t nodeID;
@@ -66,6 +75,13 @@ namespace GUI {
 
 		}
 
+
+		/*!
+		@brief ウィンドウの一覧を管理するクラス
+		@attention このクラスは、ウィンドウの枠を作成するクラスの管理であって、openglの描画管理ではありません。\n
+		また、中の処理の変数に関する点については、外部と連携が必要な場合のみ、グローバルMapMakeData::MainDataに記述するようにしてください。
+		@sa グローバルMapMakeData::MainDataと関係している
+		*/
 		class General {
 		public:
 			General() {
@@ -75,9 +91,11 @@ namespace GUI {
 				this->LimitPop[Sub::SubWindowType::TerrainToolWindow] = 1;
 			}
 
-			// ウィンドウ一覧
-			// (※ 今のところ下のバージョンを使おうと考えていますが、難解なプログラムになるようなら、上のを使います。　2020/06/24)
-			//std::vector<Sub::Window> Windows;
+			/*!
+			@brief ウィンドウ一覧
+			@note  (※ 今のところ記述済みのバージョンを使おうと考えていますが、難解なプログラムになるようなら、下記のを使います。　2020/06/24)\n
+			@code std::vector<Sub::Window> Windows;
+			*/
 			std::map<Sub::WindowNumber, 
 				std::variant <
 				GUI::SubWindow::TerrainToolWindow,
@@ -85,9 +103,9 @@ namespace GUI {
 				>
 			> Windows;
 			
-			// ウィンドウ種別ごとに起動していい、数を決める (0 = 無限)
+			/*! ウィンドウ種別ごとに起動していい数を決める (0 = 無限) */
 			std::map<Sub::SubWindowType, int> LimitPop;
-			// 現在起動しているウィンドウ種別の数
+			/*! 現在起動しているウィンドウ種別の数 */
 			std::map<Sub::SubWindowType, int> NowPop;
 
 		};

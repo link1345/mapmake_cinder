@@ -28,9 +28,14 @@ using namespace ci::app;
 using namespace ci::log;
 using namespace std;
 
-
+/*!
+ @brief 一番上位のクラス
+ @attention 一番最初に呼ばれます。これには、Appクラスが継承されており、quitなどのコマンドを使用することができます。
+ @sa グローバルMapMakeData::MainDataと関係している
+ */
 class BasicApp : public App {
 public:
+
 	void setup() override;
 	void update() override;
 	void draw() override;
@@ -43,15 +48,24 @@ public:
 	void mouseUp(MouseEvent event) override;
 	void mouseWheel(MouseEvent event) override;
 
+private:
+
 	/*! ImGuiの初期化処理
-		@par            参照グローバル変数
-		- なし
-		@par            変更グローバル変数
-		- なし
 		@return         戻り値なし
 		@exception      none
 	*/
 	void InitImGui();
+
+	/*! ソフト終了処理
+		@par            参照グローバル変数
+		- MapMakeData::MainDataのgetQuit
+		@return         戻り値なし
+		@exception      none
+	*/
+	void updateQuit();
+
+	/*! GUI周りの統括変数 */
+	GUI::MainGUI gui;
 
 	/*! ドキュメントテスト用
 		@param[out]     var1    var1の説明
@@ -68,25 +82,4 @@ public:
 	*/
 	void doctest() {};
 
-private:
-	/*! GUI周りの統括変数 */
-	GUI::MainGUI gui;
-
-	//void createNewWindow();
-	//void ShowMainMenuBar();
-	//void ShowSubWindow();
-
-	//void NewFileMake();
-
-
-	//gl::Texture2dRef texture1;
-
-	// 0番目は、全体画面。
-
-	//float menu_size;
-
-	// データの仮の型です。
-	// 後で
-	//bool SaveDataFlag = false;
-	//int data = 500;
 };

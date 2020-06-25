@@ -14,6 +14,8 @@ using namespace NextStd;
 
 
 namespace MapMakeData {
+	namespace Layer {
+
 	namespace Sub {
 
 		// 各レイヤー情報
@@ -61,30 +63,36 @@ namespace MapMakeData {
 
 	}
 
-	// レイヤー周りのデータ保存場所。
-	class LayerData {
-	public:
-		LayerData() {
-			this->layerTreeData.clear();
-		}
-
-		// サンプルデータ用
-		void setSampleData(int mode);
-
-
-		// 木構造のレイヤー情報
-		Tree<Sub::LayerBoxData> layerTreeData;
+		// レイヤー周りのデータ保存場所。
+		class LayerData {
+		public:
+			LayerData() {
+				this->layerTreeData.clear();
+			}
+			// あやしぃ…
+			LayerData operator =(const LayerData obj){
+				return *this;
+			}
 
 
-		// 補正用関数。
-		// == レイヤーツリーを投げると、子供を持っているノードは、フォルダとしてのフラグが立ち上がる。
-		void layerFolderCorrection() {
-			layerFolderCorrection_s(this->layerTreeData.pRoot);
-		}
+			// サンプルデータ用
+			void setSampleData(int mode);
 
-	private:
-		void layerFolderCorrection_s(Node<Sub::LayerBoxData>& tree);
 
-	};
+			// 木構造のレイヤー情報
+			Tree<Sub::LayerBoxData> layerTreeData;
 
+
+			// 補正用関数。
+			// == レイヤーツリーを投げると、子供を持っているノードは、フォルダとしてのフラグが立ち上がる。
+			void layerFolderCorrection() {
+				layerFolderCorrection_s(this->layerTreeData.pRoot);
+			}
+
+		private:
+			void layerFolderCorrection_s(Node<Sub::LayerBoxData>& tree);
+
+		};
+
+	}
 }
