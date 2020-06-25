@@ -233,17 +233,20 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\imgui_mywidgets.cpp">
-      <Filter>Source Files\GUI\Widgets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MainMenu.cpp">
+    <ClCompile Include="src\GUI\GUI.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="src\SubWindow.cpp">
+    <ClCompile Include="src\GUI\MainMenu.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="src\LayerData.cpp">
+    <ClCompile Include="src\GUI\SubWindow.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Data\LayerData.cpp">
       <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Widgets\BoxWidgets.cpp">
+      <Filter>Source Files\GUI\Widgets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -394,41 +397,38 @@
     <ClInclude Include="include\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\GUI.h">
+    <ClInclude Include="include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\LayerData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\Tree.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\WindowData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\AllData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\File\FileSave.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\GUI.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="include\imgui_mywidgets.h">
-      <Filter>Header Files\GUI\Widgets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GUI.cpp">
-      <Filter>Source Files\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="include\AllData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Tree.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="include\FileSave.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Resources.h">
-      <Filter>Header Files\File</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SubWindow.h">
+    <ClInclude Include="include\GUI\Sub\SubWindow.h">
       <Filter>Header Files\GUI\Sub</Filter>
     </ClInclude>
-    <ClInclude Include="include\LayerBox.h">
+    <ClInclude Include="include\GUI\Sub\Individual\LayerBox.h">
       <Filter>Header Files\GUI\Sub\Individual</Filter>
     </ClInclude>
-    <ClInclude Include="include\TerrainTool.h">
+    <ClInclude Include="include\GUI\Sub\Individual\TerrainTool.h">
       <Filter>Header Files\GUI\Sub\Individual</Filter>
     </ClInclude>
-    <ClInclude Include="include\LayerData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="include\WindowData.h">
-      <Filter>Header Files\Data</Filter>
+    <ClInclude Include="include\GUI\Widgets\BoxWidgets.h">
+      <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

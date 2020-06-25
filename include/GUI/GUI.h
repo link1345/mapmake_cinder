@@ -1,7 +1,6 @@
 #pragma once
-#include "AllData.h"
-
-#include "SubWindow.h"
+#include "Data/AllData.h"
+#include "GUI/Sub/SubWindow.h"
 
 namespace GUI {
 

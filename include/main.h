@@ -6,6 +6,7 @@
 
 #pragma once
 
+// cinder
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
@@ -18,8 +19,9 @@
 //#include "cinder/ImageIo.h"
 //#include "cinder/gl/Texture.h"
 
-#include "GUI.h"
-#include "AllData.h"
+// my
+#include "GUI/GUI.h"
+#include "Data/AllData.h"
 
 using namespace ci;
 using namespace ci::app;

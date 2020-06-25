@@ -7,10 +7,10 @@
 #include <vector>
 #include <map>
 
-#include "AllData.h"
+#include "Data/AllData.h"
 
-#include "TerrainTool.h"
-#include "LayerBox.h"
+#include "GUI/Sub/Individual/TerrainTool.h"
+#include "GUI/Sub/Individual/LayerBox.h"
 
 using namespace ci;
 using namespace ci::app;

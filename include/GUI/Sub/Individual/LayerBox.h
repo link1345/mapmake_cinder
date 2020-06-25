@@ -5,9 +5,9 @@
 #include "cinder/gl/gl.h"
 #include "cinder/Log.h"
 
-#include "imgui_mywidgets.h"
-
-#include "AllData.h"
+// my
+#include "Data/AllData.h"
+#include "GUI/Widgets/BoxWidgets.h"
 
 using namespace std;
 using namespace ci;
