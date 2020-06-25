@@ -1,8 +1,8 @@
-/**
- * @file main.h
- * @brief 一番最初に走る処理を書いています。
- * @date 2020/06/24
- */
+/*! @addtogroup メイン周り
+    @file       main.h
+    @brief      一番上位に位置するヘッダー
+	@date       2020/06/25
+*/
 
 #pragma once
 
@@ -41,19 +41,33 @@ public:
 	void mouseUp(MouseEvent event) override;
 	void mouseWheel(MouseEvent event) override;
 
-	/**
-	 * @fn
-	 * ImGuiをソフト上で動作させるための初期化処理
-	 * @brief ImGui初期化
-	 * @param 引数なし
-	 * @return 戻り値なし
-	 * @detail Initialize()や日本語の文字コード登録をしています。
-	 また、meiryo.ttcフォントを使用しているので、ライセンス周り要確認。
-	 */
+	/*! ImGuiの初期化処理
+		@par            参照グローバル変数
+		- なし
+		@par            変更グローバル変数
+		- なし
+		@return         戻り値なし
+		@exception      none
+	*/
 	void InitImGui();
 
+	/*! ドキュメントテスト用
+		@param[out]     var1    var1の説明
+		@param[in]      var2    var2の説明
+		@param[in,out]  var3    var3の説明
+		@par            Refer
+		- 参照するグローバル変数 global_var1
+		- 参照するグローバル変数 global_var2
+		@par            Modify
+		- 変更するグローバル変数 global_var3
+		- 変更するグローバル変数 global_var4
+		@return         成功 0, 失敗 0 以外 など
+		@exception      例外。不要であればnoneを記述
+	*/
+	void doctest() {};
+
 private:
-	//! GUI周りの統括変数
+	/*! GUI周りの統括変数 */
 	GUI::MainGUI gui;
 
 	//void createNewWindow();
