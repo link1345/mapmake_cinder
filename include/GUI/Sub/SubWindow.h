@@ -1,4 +1,4 @@
-/*! @addtogroup [GUI管理]サブウィンドウ系処理
+/*! @addtogroup GUI管理
 	@file       SubWindow.h
 	@brief      サブウィンドウ処理周りについて
 	@note		メインメニューバーと背景以外のGUI処理に関するもの

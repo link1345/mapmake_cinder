@@ -1,4 +1,4 @@
-/*! @addtogroup [GUI管理]GUI処理の最上位管理
+/*! @addtogroup GUI管理
 	@file       GUI.h
 	@brief      ImGuiを使ったGUI処理の最上位に当たる処理。
 	@note		main.cppで使用するものである。

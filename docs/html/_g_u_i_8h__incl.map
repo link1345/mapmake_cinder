@@ -1,6 +1,6 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/GUI.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/GUI.h">
 <area shape="rect" id="node5" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="539,273,645,300"/>
-<area shape="rect" id="node16" href="$_sub_window_8h.html" title="GUI/Sub/SubWindow.h" alt="" coords="969,109,1124,136"/>
+<area shape="rect" id="node16" href="$_sub_window_8h.html" title="サブウィンドウ処理周りについて " alt="" coords="969,109,1124,136"/>
 <area shape="rect" id="node8" href="$_tree_8h.html" title="Tree.h" alt="" coords="643,437,701,464"/>
 <area shape="rect" id="node12" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="726,355,818,382"/>
 <area shape="rect" id="node14" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="144,355,251,382"/>

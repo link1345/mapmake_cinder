@@ -1,4 +1,4 @@
-/*! @addtogroup [GUIサブウィンドウ]地形操作ツール処理
+/*! @addtogroup GUIサブウィンドウ
 	@file       TerrainTool.h
 	@brief      地形操作ツール(ImGUI)に関する処理群
 	@note		上位にSubWindow.hがある。

@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "i",
   8: "t",
   9: "deg",
-  10: "ã",
+  10: "gã",
   11: "ã"
 };
 

@@ -1,4 +1,4 @@
-/*! @addtogroup [GUIサブウィンドウ]レイヤーウィンドウの処理
+/*! @addtogroup GUIサブウィンドウ
 	@file       LayerBox.h
 	@brief      ImGuiを使ったレイヤーウィンドウ処理について書いている
 	@note		上位にSubWindow.hがある。
