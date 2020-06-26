@@ -14,8 +14,7 @@ namespace NextStd {
 
 		bool operator==(const NodeNumber rhs) {
 			if (this->nodeID == rhs.nodeID &&
-				this->nodeName == rhs.nodeName
-				) {
+				this->nodeName == rhs.nodeName ) {
 				return true;
 			}
 			else {
@@ -274,7 +273,7 @@ namespace NextStd {
 
 		bool insert_s(Node<DataType>& tree, NodeNumber frontNumber, Node<DataType> add_node, int s = 0) {
 			// 自身が親目標なら
-			if (tree.ID == number) {
+			if (tree.ID == frontNumber) {
 				//Print << U"add:" << add_node.ID.nodeName << U"," << add_node.ID.nodeID <<  U" : " << add_node.rect.size;
 
 				return true;
@@ -316,7 +315,9 @@ namespace NextStd {
 
 		bool remove_s(Node<DataType>& tree, NodeNumber parentNumber) {
 			// 自身が目標なら
-			if (tree.ID == parentNumber) {
+			if (tree.ID.nodeID == parentNumber.nodeID &&
+				tree.ID.nodeName == parentNumber.nodeName				
+				) {
 				return true;
 			}
 
@@ -324,7 +325,13 @@ namespace NextStd {
 			for (auto& leaf : tree.pNext) {
 				// 検索先から検索目標を見つけたら、true(追加できたよー)を返して終わり
 				if (remove_s(leaf, parentNumber)) {
-					tree.pNext.remove(leaf);
+
+					tree.pNext.remove_if( [leaf](const Node<DataType>& _other ) {
+						if (_other.ID.nodeID == leaf.ID.nodeID &&
+							_other.ID.nodeName == leaf.ID.nodeName ) return true;
+						else return false;
+					});
+
 					break;
 				}
 			}

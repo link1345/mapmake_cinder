@@ -4,7 +4,7 @@
 
 namespace GUI::MainWindow {
 
-	void MainMenuBar::Show()
+	void MainMenuBar::draw()
 	{
 		MapMakeData::MainData.windowData.MenuSize = 0;
 		if (ImGui::BeginMainMenuBar())

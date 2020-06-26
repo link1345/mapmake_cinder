@@ -18,19 +18,21 @@ namespace GUI {
 		// ƒƒCƒ“ƒƒjƒ…[‚É‚Â‚¢‚Ä
 		class MainMenuBar {
 		public:
-			void Show();
+			void draw();
 		};
 
 		// Å”w–Ê‚Ì•`‰æ‚É‚Â‚¢‚Ä
 		class BackGroundWindow {
 		public:
-			void Show();
+			void draw();
 		};
 
 	}
 
 	class MainGUI {
 	public:
+		MainGUI();
+
 		void draw();
 
 		void mouseDown(MouseEvent event);

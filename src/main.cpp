@@ -6,12 +6,16 @@
 
 // ---------------------
 // グローバル変数を宣言しておく
-MapMakeData::AllData MapMakeData::MainData = MapMakeData::AllData();
+MapMakeData::AllData MapMakeData::MainData;
 // ---------------------
 
 void BasicApp::setup()
 {
+	MapMakeData::MainData.setSampleData(0);
+
+
 	this->gui = GUI::MainGUI();
+
 	this->InitImGui();
 
 	setFrameRate(10000.0f);

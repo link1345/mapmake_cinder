@@ -82,6 +82,9 @@
     <Filter Include="Header Files\GUI\Sub\Individual">
       <UniqueIdentifier>{adc8b1ba-590e-4a5c-a85a-de2ed39d3b1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GUI\Sub">
+      <UniqueIdentifier>{f5c3b14f-e844-4e64-8cf3-830314ef4cbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -250,6 +253,12 @@
     </ClCompile>
     <ClCompile Include="src\Data\AllData.cpp">
       <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\TerrainTool.cpp">
+      <Filter>Source Files\GUI\Sub</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\LayerBox.cpp">
+      <Filter>Source Files\GUI\Sub</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['maingui',['MainGUI',['../class_g_u_i_1_1_main_g_u_i.html#a7eca4da83cea15588317b9cc80e2ff79',1,'GUI::MainGUI']]],
   ['mousedown',['mouseDown',['../class_g_u_i_1_1_main_g_u_i.html#a1adbbc7c471d8658077d009bc6ae4293',1,'GUI::MainGUI::mouseDown()'],['../class_basic_app.html#af4b7a855f8ff02abbd8609e084ed4ef3',1,'BasicApp::mouseDown()']]],
   ['mousedrag',['mouseDrag',['../class_g_u_i_1_1_main_g_u_i.html#ac405a8a0324aa2fbc29fd7d98a84adcb',1,'GUI::MainGUI::mouseDrag()'],['../class_basic_app.html#a1cc00232f1809ed37dc43734e39e6e0e',1,'BasicApp::mouseDrag()']]],
   ['mousemove',['mouseMove',['../class_g_u_i_1_1_main_g_u_i.html#ae1aa42ba52ea5518a5e10b24056b59ca',1,'GUI::MainGUI::mouseMove()'],['../class_basic_app.html#a56e1809cc643fea06d9d1f332228771e',1,'BasicApp::mouseMove()']]],

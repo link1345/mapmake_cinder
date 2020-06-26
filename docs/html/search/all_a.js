@@ -8,5 +8,6 @@ var searchData=
   ['node_3c_20mapmakedata_3a_3alayer_3a_3asub_3a_3alayerboxdata_20_3e',['Node&lt; MapMakeData::Layer::Sub::LayerBoxData &gt;',['../struct_next_std_1_1_node.html',1,'NextStd']]],
   ['nodeid',['nodeID',['../struct_next_std_1_1_node_number.html#a92c351c1bd21b693bebd5824538b291a',1,'NextStd::NodeNumber']]],
   ['nodename',['nodeName',['../struct_next_std_1_1_node_number.html#a3b23c47b6fe1c3635c560f15d4ad8774',1,'NextStd::NodeNumber']]],
-  ['nodenumber',['NodeNumber',['../struct_next_std_1_1_node_number.html',1,'NextStd::NodeNumber'],['../struct_next_std_1_1_node_number.html#a861aa90586bf1c5c260c29ce743e93b8',1,'NextStd::NodeNumber::NodeNumber()'],['../struct_next_std_1_1_node_number.html#abc22e453925e336bf17d7b6000eb66b9',1,'NextStd::NodeNumber::NodeNumber(string nodeName, size_t nodeID)']]]
+  ['nodenumber',['NodeNumber',['../struct_next_std_1_1_node_number.html',1,'NextStd::NodeNumber'],['../struct_next_std_1_1_node_number.html#a861aa90586bf1c5c260c29ce743e93b8',1,'NextStd::NodeNumber::NodeNumber()'],['../struct_next_std_1_1_node_number.html#abc22e453925e336bf17d7b6000eb66b9',1,'NextStd::NodeNumber::NodeNumber(string nodeName, size_t nodeID)']]],
+  ['nullimage',['NullImage',['../class_map_make_data_1_1_all_data.html#a488b5b97ed170cdad5029d2953633f95',1,'MapMakeData::AllData::NullImage()'],['../class_map_make_data_1_1_all_data.html#a88c705a783146e67f12c321f1d3fa95c',1,'MapMakeData::AllData::nullImage()']]]
 ];

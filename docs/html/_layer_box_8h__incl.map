@@ -1,8 +1,8 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h">
-<area shape="rect" id="node6" href="$_all_data_8h.html" title="Data/AllData.h" alt="" coords="523,109,629,136"/>
-<area shape="rect" id="node14" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="862,109,1045,136"/>
-<area shape="rect" id="node7" href="$_tree_8h.html" title="Tree.h" alt="" coords="573,259,632,285"/>
-<area shape="rect" id="node11" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="355,184,447,211"/>
-<area shape="rect" id="node12" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="573,184,680,211"/>
-<area shape="rect" id="node13" href="$_file_data_8h.html" title="FileData.h" alt="" coords="705,184,786,211"/>
+<area shape="rect" id="node6" href="$_all_data_8h.html" title="Data/AllData.h" alt="" coords="483,109,589,136"/>
+<area shape="rect" id="node16" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="923,109,1106,136"/>
+<area shape="rect" id="node9" href="$_tree_8h.html" title="Tree.h" alt="" coords="584,259,643,285"/>
+<area shape="rect" id="node13" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="653,184,745,211"/>
+<area shape="rect" id="node14" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="364,184,471,211"/>
+<area shape="rect" id="node15" href="$_file_data_8h.html" title="FileData.h" alt="" coords="495,184,577,211"/>
 </map>

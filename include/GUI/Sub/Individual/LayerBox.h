@@ -1,13 +1,14 @@
 #pragma once
 
-#include "cinder/app/App.h"
-#include "cinder/app/RendererGl.h"
-#include "cinder/gl/gl.h"
-#include "cinder/Log.h"
+#include <cinder/app/App.h>
+#include <cinder/app/RendererGl.h>
+#include <cinder/gl/gl.h>
+#include <cinder/Log.h>
 
 // my
 #include "Data/AllData.h"
 #include "GUI/Widgets/BoxWidgets.h"
+
 
 using namespace std;
 using namespace ci;
@@ -46,7 +47,7 @@ namespace GUI {
 
 		class LayerWindow {
 		public:
-			void ShowLayerWindow();
+			void draw();
 
 			float menu_size;
 		};

@@ -1,14 +1,14 @@
 <map id="C:/Users/link/source/mapmake/vc2019/src/main.cpp" name="C:/Users/link/source/mapmake/vc2019/src/main.cpp">
-<area shape="rect" id="node2" href="$main_8h.html" title="一番上位に位置するヘッダー " alt="" coords="765,95,827,121"/>
-<area shape="rect" id="node26" href="$_resources_8h.html" title="Resources.h" alt="" coords="1589,95,1683,121"/>
-<area shape="rect" id="node7" href="$_g_u_i_8h.html" title="GUI/GUI.h" alt="" coords="755,169,837,196"/>
-<area shape="rect" id="node8" href="$_all_data_8h.html" title="Data/AllData.h" alt="" coords="385,408,492,435"/>
-<area shape="rect" id="node16" href="$_sub_window_8h.html" title="GUI/Sub/SubWindow.h" alt="" coords="719,244,873,271"/>
-<area shape="rect" id="node9" href="$_tree_8h.html" title="Tree.h" alt="" coords="321,557,380,584"/>
-<area shape="rect" id="node13" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="534,483,626,509"/>
-<area shape="rect" id="node14" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="403,483,509,509"/>
-<area shape="rect" id="node15" href="$_file_data_8h.html" title="FileData.h" alt="" coords="297,483,378,509"/>
-<area shape="rect" id="node20" href="$_terrain_tool_8h.html" title="GUI/Sub/Individual\l/TerrainTool.h" alt="" coords="733,319,859,360"/>
-<area shape="rect" id="node21" href="$_layer_box_8h.html" title="GUI/Sub/Individual\l/LayerBox.h" alt="" coords="511,319,638,360"/>
-<area shape="rect" id="node22" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="686,408,869,435"/>
+<area shape="rect" id="node2" href="$main_8h.html" title="一番上位に位置するヘッダー " alt="" coords="1472,95,1533,121"/>
+<area shape="rect" id="node28" href="$_resources_8h.html" title="Resources.h" alt="" coords="1930,95,2025,121"/>
+<area shape="rect" id="node7" href="$_g_u_i_8h.html" title="GUI/GUI.h" alt="" coords="1275,169,1357,196"/>
+<area shape="rect" id="node8" href="$_all_data_8h.html" title="Data/AllData.h" alt="" coords="1364,415,1471,442"/>
+<area shape="rect" id="node18" href="$_sub_window_8h.html" title="GUI/Sub/SubWindow.h" alt="" coords="460,244,615,271"/>
+<area shape="rect" id="node11" href="$_tree_8h.html" title="Tree.h" alt="" coords="1132,572,1191,599"/>
+<area shape="rect" id="node15" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="1115,497,1207,524"/>
+<area shape="rect" id="node16" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="1283,497,1389,524"/>
+<area shape="rect" id="node17" href="$_file_data_8h.html" title="FileData.h" alt="" coords="1414,497,1495,524"/>
+<area shape="rect" id="node22" href="$_terrain_tool_8h.html" title="GUI/Sub/Individual\l/TerrainTool.h" alt="" coords="281,408,407,449"/>
+<area shape="rect" id="node24" href="$_layer_box_8h.html" title="GUI/Sub/Individual\l/LayerBox.h" alt="" coords="913,319,1039,360"/>
+<area shape="rect" id="node25" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="737,415,919,442"/>
 </map>

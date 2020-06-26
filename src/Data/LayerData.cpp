@@ -25,7 +25,7 @@ namespace MapMakeData::Layer {
 		//s = texture1->createSource();
 
 		// tree‚ğì¬
-		if (mode == 0) {
+		if (mode == 1) {
 			auto s1 = NodeNumber();
 			auto data = LData(u8"R1", texture1, texture1, false, false, false);
 			layerTreeData.newID(s1, u8"LayerImage");
@@ -41,7 +41,7 @@ namespace MapMakeData::Layer {
 			layerTreeData.add(layerTreeData.rootID, Node<LData>(s3, data));
 
 		}
-		else if (mode == 2) {
+		else if (mode == 0) {
 			auto s1 = NodeNumber();
 			auto data = LData(u8"R1", texture1, texture1, false, false, false);
 			layerTreeData.newID(s1, u8"LayerImage");

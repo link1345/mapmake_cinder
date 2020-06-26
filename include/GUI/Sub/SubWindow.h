@@ -59,6 +59,23 @@ namespace GUI {
 					}
 					else return false;
 				}
+				bool operator<(const WindowNumber& right) const {
+					if (this->nodeID < right.nodeID) {
+						return true;
+					}
+					else if (this->nodeID == right.nodeID) {
+						if (this->nodeName < right.nodeName) {
+							return true;
+						}
+						else if (this->nodeName == right.nodeName) {
+							if (this->type < right.type) {
+								return true;
+							}
+						}
+					}
+					return false;
+					
+				}
 			};
 
 			/*
@@ -93,16 +110,25 @@ namespace GUI {
 
 			/*!
 			@brief ウィンドウ一覧
-			@note  (※ 今のところ記述済みのバージョンを使おうと考えていますが、難解なプログラムになるようなら、下記のを使います。　2020/06/24)\n
+			@note  (※ 今のところ記述済みのバージョンを使おうと考えていますが、難解なプログラムになるようなら、下記のを使います。　2020/06/24)
+			@note Key=IDデータ , 値 = variantに登録してある変数の型なら何でも
 			@code std::vector<Sub::Window> Windows;
 			*/
 			std::map<Sub::WindowNumber, 
 				std::variant <
 				GUI::SubWindow::TerrainToolWindow,
-				GUI::SubWindow::LayerWindow
+				GUI::SubWindow::LayerWindow,
+				int
 				>
 			> Windows;
 			
+			/*!
+			@brief 
+			ここにwindows変数のdrawを行う処理についてを書く。
+			*/
+			void draw();
+
+		private:
 			/*! ウィンドウ種別ごとに起動していい数を決める (0 = 無限) */
 			std::map<Sub::SubWindowType, int> LimitPop;
 			/*! 現在起動しているウィンドウ種別の数 */

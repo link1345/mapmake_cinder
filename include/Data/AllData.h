@@ -8,6 +8,9 @@
 #define DEF(x)
 #endif
 
+#include <cinder/gl/Texture.h>
+#include <cinder/Surface.h>
+
 #include "Tree.h"
 
 #include "LayerData.h"
@@ -19,6 +22,8 @@ namespace MapMakeData {
 	class AllData {
 	public:
 		AllData();
+
+		void init();
 
 		/*! @brief テスト用のデータセット関数
 			@param[in]	mode	データモードの設定
@@ -47,14 +52,27 @@ namespace MapMakeData {
 			@exception      none
 		*/
 		bool getQuit() { return quitFlag ; };
+
+
+		/*! @brief ヌルイメージgeter
+			@return         this->NullImage
+			@exception      none
+		*/
+		gl::Texture2dRef nullImage() { return this->NullImage; };
 	private:
 		/*! @brief 終了フラグ
 			@note このフラグのセッター
-			@relates this->quit()
+			@relates this->quit();
 			@note このフラグのゲッター
-			@relates this->getQuit()
+			@relates this->getQuit();
 		*/
 		bool quitFlag;
+
+		/*! @brief ヌルイメージ
+			@note このデータのゲッター
+			@relates this->nullImage();
+		*/
+		gl::Texture2dRef NullImage;
 	};
 
 

@@ -247,6 +247,8 @@
     <ClCompile Include="src\GUI\GUI.cpp" />
     <ClCompile Include="src\GUI\MainMenu.cpp" />
     <ClCompile Include="src\GUI\SubWindow.cpp" />
+    <ClCompile Include="src\GUI\Sub\LayerBox.cpp" />
+    <ClCompile Include="src\GUI\Sub\TerrainTool.cpp" />
     <ClCompile Include="src\GUI\Widgets\BoxWidgets.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
