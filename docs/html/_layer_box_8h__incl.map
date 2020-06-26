@@ -1,5 +1,5 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h">
-<area shape="rect" id="node6" href="$_all_data_8h.html" title="Data/AllData.h" alt="" coords="483,109,589,136"/>
+<area shape="rect" id="node6" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="483,109,589,136"/>
 <area shape="rect" id="node16" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="923,109,1106,136"/>
 <area shape="rect" id="node9" href="$_tree_8h.html" title="Tree.h" alt="" coords="584,259,643,285"/>
 <area shape="rect" id="node13" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="653,184,745,211"/>

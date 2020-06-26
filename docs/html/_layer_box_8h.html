@@ -74,6 +74,9 @@ $(function() {
 <div class="title">LayerBox.h ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>ImGuiを使ったレイヤーウィンドウ処理について書いている  
+<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &lt;cinder/app/App.h&gt;</code><br />
 <code>#include &lt;cinder/app/RendererGl.h&gt;</code><br />
 <code>#include &lt;cinder/gl/gl.h&gt;</code><br />
@@ -85,7 +88,7 @@ LayerBox.h の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="_layer_box_8h__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_layer_box_8h" alt=""/></div>
 <map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_layer_box_8h" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_layer_box_8h">
-<area shape="rect" id="node6" href="_all_data_8h.html" title="Data/AllData.h" alt="" coords="483,109,589,136"/>
+<area shape="rect" id="node6" href="_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="483,109,589,136"/>
 <area shape="rect" id="node16" href="_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="923,109,1106,136"/>
 <area shape="rect" id="node9" href="_tree_8h.html" title="Tree.h" alt="" coords="584,259,643,285"/>
 <area shape="rect" id="node13" href="_layer_data_8h.html" title="LayerData.h" alt="" coords="653,184,745,211"/>
@@ -100,12 +103,12 @@ LayerBox.h の依存先関係図:</div>
 <map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_layer_box_8hdep" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_layer_box_8hdep">
 <area shape="rect" id="node2" href="_sub_window_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/Sub/SubWindow.h" alt="" coords="311,109,483,165"/>
 <area shape="rect" id="node9" href="_layer_box_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/LayerBox.cpp" alt="" coords="507,109,681,165"/>
-<area shape="rect" id="node3" href="_g_u_i_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/GUI.h" alt="" coords="311,213,483,269"/>
+<area shape="rect" id="node3" href="_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="311,213,483,269"/>
 <area shape="rect" id="node4" href="main_8h.html" title="一番上位に位置するヘッダー " alt="" coords="113,317,285,373"/>
 <area shape="rect" id="node7" href="_g_u_i_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/GUI.cpp" alt="" coords="309,317,484,373"/>
 <area shape="rect" id="node8" href="_main_menu_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/MainMenu.cpp" alt="" coords="508,317,683,373"/>
 <area shape="rect" id="node5" href="_sub_window_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/SubWindow.cpp" alt="" coords="5,421,180,477"/>
-<area shape="rect" id="node6" href="main_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/main.cpp" alt="" coords="204,429,411,470"/>
+<area shape="rect" id="node6" href="main_8cpp.html" title="全ての処理の根源のファイル " alt="" coords="204,429,411,470"/>
 </map>
 </div>
 </div>
@@ -129,7 +132,11 @@ LayerBox.h の依存先関係図:</div>
 <tr class="memitem:namespace_g_u_i_1_1_sub_window_1_1_sub"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window_1_1_sub.html">GUI::SubWindow::Sub</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ImGuiを使ったレイヤーウィンドウ処理について書いている </p>
+<dl class="section note"><dt>覚え書き</dt><dd>上位にSubWindow.hがある。 </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/06/25 </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

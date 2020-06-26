@@ -1,11 +1,11 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/GUI.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/GUI.h">
-<area shape="rect" id="node5" href="$_all_data_8h.html" title="Data/AllData.h" alt="" coords="539,273,645,300"/>
+<area shape="rect" id="node5" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="539,273,645,300"/>
 <area shape="rect" id="node16" href="$_sub_window_8h.html" title="GUI/Sub/SubWindow.h" alt="" coords="969,109,1124,136"/>
 <area shape="rect" id="node8" href="$_tree_8h.html" title="Tree.h" alt="" coords="643,437,701,464"/>
 <area shape="rect" id="node12" href="$_layer_data_8h.html" title="LayerData.h" alt="" coords="726,355,818,382"/>
 <area shape="rect" id="node14" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="144,355,251,382"/>
 <area shape="rect" id="node15" href="$_file_data_8h.html" title="FileData.h" alt="" coords="275,355,357,382"/>
-<area shape="rect" id="node20" href="$_terrain_tool_8h.html" title="GUI/Sub/Individual\l/TerrainTool.h" alt="" coords="995,348,1122,389"/>
-<area shape="rect" id="node22" href="$_layer_box_8h.html" title="GUI/Sub/Individual\l/LayerBox.h" alt="" coords="866,184,993,225"/>
+<area shape="rect" id="node20" href="$_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="995,348,1122,389"/>
+<area shape="rect" id="node22" href="$_layer_box_8h.html" title="ImGuiを使ったレイヤーウィンドウ処理について書いている " alt="" coords="866,184,993,225"/>
 <area shape="rect" id="node23" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1198,355,1381,382"/>
 </map>

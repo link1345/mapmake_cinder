@@ -1,3 +1,12 @@
+/*! @addtogroup [GUI管理]サブウィンドウ系処理
+	@file       SubWindow.h
+	@brief      サブウィンドウ処理周りについて
+	@note		メインメニューバーと背景以外のGUI処理に関するもの
+				\n上位にGUI.hがある。
+	@date       2020/06/25
+*/
+
+
 #pragma once
 #include <cinder/app/App.h>
 #include <cinder/app/RendererGl.h>

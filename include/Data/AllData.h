@@ -1,3 +1,9 @@
+/*! @addtogroup [データ]最上位データ管理ヘッダー
+	@file       AllData.h
+	@brief      最上位に存在するデータ管理用の処理
+	@date       2020/06/25
+*/
+
 #pragma once
 
 #if defined(GLOBAL_HERE)

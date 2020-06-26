@@ -1,7 +1,11 @@
-﻿#include "main.h"
+﻿/*! @addtogroup メイン
+	@file       main.cpp
+	@brief      全ての処理の根源のファイル
+	@date       2020/06/25
+*/
 
+#include "main.h"
 #include "Resources.h"
-
 #include "cinder/CinderImGui.h"
 
 // ---------------------
@@ -11,12 +15,14 @@ MapMakeData::AllData MapMakeData::MainData;
 
 void BasicApp::setup()
 {
+	// 中核データの初期化&サンプルデータ挿入。
 	MapMakeData::MainData.setSampleData(0);
 
-
-	this->gui = GUI::MainGUI();
-
+	// ImGui初期化
 	this->InitImGui();
+
+	// GUI周りの必要変数の初期化
+	this->gui = GUI::MainGUI();
 
 	setFrameRate(10000.0f);
 	gl::enableDepthRead();

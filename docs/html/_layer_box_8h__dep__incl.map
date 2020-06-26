@@ -1,10 +1,10 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h">
 <area shape="rect" id="node2" href="$_sub_window_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/Sub/SubWindow.h" alt="" coords="311,109,483,165"/>
 <area shape="rect" id="node9" href="$_layer_box_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/LayerBox.cpp" alt="" coords="507,109,681,165"/>
-<area shape="rect" id="node3" href="$_g_u_i_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/GUI.h" alt="" coords="311,213,483,269"/>
+<area shape="rect" id="node3" href="$_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="311,213,483,269"/>
 <area shape="rect" id="node4" href="$main_8h.html" title="一番上位に位置するヘッダー " alt="" coords="113,317,285,373"/>
 <area shape="rect" id="node7" href="$_g_u_i_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/GUI.cpp" alt="" coords="309,317,484,373"/>
 <area shape="rect" id="node8" href="$_main_menu_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/MainMenu.cpp" alt="" coords="508,317,683,373"/>
 <area shape="rect" id="node5" href="$_sub_window_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/SubWindow.cpp" alt="" coords="5,421,180,477"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/main.cpp" alt="" coords="204,429,411,470"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="全ての処理の根源のファイル " alt="" coords="204,429,411,470"/>
 </map>

@@ -1,3 +1,10 @@
+/*! @addtogroup [GUI管理]GUI処理の最上位管理
+	@file       GUI.h
+	@brief      ImGuiを使ったGUI処理の最上位に当たる処理。
+	@note		main.cppで使用するものである。
+	@date       2020/06/25
+*/
+
 #pragma once
 #include <cinder/app/App.h>
 #include <cinder/app/RendererGl.h>
