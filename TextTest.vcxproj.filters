@@ -445,6 +445,9 @@
     <ClInclude Include="include\Data\FileData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
+    <ClInclude Include="include\Data\opengl_Screen.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.vert">

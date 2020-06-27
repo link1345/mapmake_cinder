@@ -1,6 +1,6 @@
 /*! @addtogroup GUIサブウィンドウ
 	@file       LayerBox.h
-	@brief      ImGuiを使ったレイヤーウィンドウ処理について書いている
+	@brief      レイヤーウィンドウ(ImGui)に関する処理軍
 	@note		上位にSubWindow.hがある。
 	@date       2020/06/25
 */

@@ -307,6 +307,7 @@
     <ClInclude Include="include\Data\AllData.h" />
     <ClInclude Include="include\Data\FileData.h" />
     <ClInclude Include="include\Data\LayerData.h" />
+    <ClInclude Include="include\Data\opengl_Screen.h" />
     <ClInclude Include="include\Data\Tree.h" />
     <ClInclude Include="include\Data\WindowData.h" />
     <ClInclude Include="include\File\FileSave.h" />

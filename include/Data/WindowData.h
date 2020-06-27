@@ -1,3 +1,9 @@
+/*! @addtogroup サブデータ
+	@file       WindowData.h
+	@brief		ウィンドウ処理で用いられる全般的なデータ保管
+	@date       2020/06/27
+*/
+
 #pragma once
 
 // ウィンドウ情報

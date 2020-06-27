@@ -7,6 +7,6 @@
 <area shape="rect" id="node15" href="$_window_data_8h.html" title="WindowData.h" alt="" coords="1217,430,1323,457"/>
 <area shape="rect" id="node16" href="$_file_data_8h.html" title="FileData.h" alt="" coords="1348,430,1429,457"/>
 <area shape="rect" id="node21" href="$_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="492,423,619,464"/>
-<area shape="rect" id="node23" href="$_layer_box_8h.html" title="ImGuiを使ったレイヤーウィンドウ処理について書いている " alt="" coords="897,259,1024,300"/>
+<area shape="rect" id="node23" href="$_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="897,259,1024,300"/>
 <area shape="rect" id="node24" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="132,430,315,457"/>
 </map>

@@ -1,3 +1,9 @@
+/*! @addtogroup サブデータ
+	@file       LayerData.h
+	@brief		レイヤー画面で使用されるデータ保管
+	@date       2020/06/27
+*/
+
 #pragma once
 
 #include "cinder/app/App.h"

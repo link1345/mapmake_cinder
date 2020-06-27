@@ -1,3 +1,9 @@
+/*! @addtogroup 基礎データ
+	@file       Tree.h
+	@brief      木構造のデータ作る際に使用するもの
+	@date       2020/06/25
+*/
+
 #pragma once
 #include <string>
 #include <list>
