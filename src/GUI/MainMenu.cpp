@@ -12,7 +12,8 @@ namespace GUI::MainWindow {
 			//menu_size = ImGui::GetWindowSize();
 
 			MapMakeData::MainData.windowData.MenuSize = ImGui::GetCurrentWindow()->MenuBarRect().GetSize().y * 0.85;
-			//ImGui::ImageButton((void*)(intptr_t)texture1->getId(), vec2(menu_size, menu_size), vec2(0, 1), vec2(1, 0));
+			auto size = MapMakeData::MainData.windowData.MenuSize;
+			ImGui::ImageButton((void*)(intptr_t)this->image->getId(), vec2(size, size), vec2(0, 1), vec2(1, 0));
 
 			// メインメニューを表示している時の処理をここに書きます。
 			if (ImGui::BeginMenu("File"))
@@ -56,8 +57,8 @@ namespace GUI::MainWindow {
 					ImGui::EndMenu();
 				}
 				if (ImGui::MenuItem("Checked", NULL, true)) {} // selectedをtrueにすることでチェックマークをつけることができます
-				if (ImGui::MenuItem("Quit", "Alt+F4")) {
-					MapMakeData::MainData.quit();
+				if (ImGui::MenuItem("終了", "Alt+F4")) {
+					AppSystem::sys.quit();
 				}
 				ImGui::EndMenu();
 			}

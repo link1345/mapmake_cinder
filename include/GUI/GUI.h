@@ -10,7 +10,12 @@
 #include <cinder/app/RendererGl.h>
 #include <cinder/gl/gl.h>
 
+#include <cinder/gl/Texture.h>
+
+#include "Data/SystemData.h"
 #include "Data/AllData.h"
+
+#include "GUI/System/SystemWindow.h"
 #include "GUI/Sub/SubWindow.h"
 
 using namespace ci;
@@ -26,6 +31,10 @@ namespace GUI {
 		class MainMenuBar {
 		public:
 			void draw();
+
+			/*! @brief 使用用途予定未定の画像。とりあえず、使う予定だけはあるので…、許してちょ！
+			*/
+			gl::Texture2dRef image;
 		};
 
 		// 最背面の描画について
@@ -58,12 +67,11 @@ namespace GUI {
 		/*! 背景表示について */
 		MainWindow::BackGroundWindow backWindow;
 
+		/*! System周りのウィンドウについて */
+		General_SystemWindow::sysGeneral sysWindows;
+
 		/*! メインメニューバー・背景以外の表示について */
 		General_SubWindow::General subWindows;
 
-
-		// 移行予定。
-		//void createNewWindow();
-		//void ShowSubWindow();
 	};
 }

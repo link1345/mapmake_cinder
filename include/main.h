@@ -21,7 +21,6 @@
 
 // my
 #include "GUI/GUI.h"
-#include "Data/AllData.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -79,6 +78,7 @@ private:
 		- 変更するグローバル変数 global_var4
 		@return         成功 0, 失敗 0 以外 など
 		@exception      例外。不要であればnoneを記述
+		@sa aaクラスと関係している。
 	*/
 	void doctest() {};
 

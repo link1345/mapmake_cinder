@@ -35,6 +35,12 @@ namespace Texture {
 			gl::setMatrices(mCam);
 			gl::draw(screen);
 		};
+		virtual void mouseDown(MouseEvent event) {};
+		virtual void mouseUp(MouseEvent event) {};
+		virtual void mouseWheel(MouseEvent event) {};
+		virtual void mouseMove(MouseEvent event) {};
+		virtual void mouseDrag(MouseEvent event) {};
+		virtual void resize(MouseEvent event) {};
 
 		/*! @brief 基本カメラ
 		*/
@@ -43,6 +49,27 @@ namespace Texture {
 		/*! @brief 基本スクリーン
 		*/
 		gl::Texture2dRef screen;
+
+
+		/*!	@brief	カメラを自在に動かすための変数
+		*/
+		CameraUi mCamUi;
+
+		/*!	@brief	カメラは動かせるようにするか？
+		*/
+		bool moveFlag = false;
+
+		/*!	@brief	****変数の画像描画位置と、このクラスの描画位置を同期させるか？
+		*/
+		bool syncFlag = false;
+
+		/*!	@brief	syncFlagがtrueの時に、sync先の中心座標とリンクする。
+			@attention	ポインターやで！
+		*/
+		vec3* syncParentImage_centerPoint;
+
+		/*!	@brief	画面
+		*/
 	};
 
 

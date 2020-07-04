@@ -85,6 +85,24 @@
     <Filter Include="Source Files\GUI\Sub">
       <UniqueIdentifier>{f5c3b14f-e844-4e64-8cf3-830314ef4cbb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Data\Basis">
+      <UniqueIdentifier>{64742ffd-d615-456d-b040-b7ac64e4d3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\System">
+      <UniqueIdentifier>{90cb1c45-978d-4763-8990-2794b39cda5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\System\Individual">
+      <UniqueIdentifier>{6f2d92f9-6f1f-4dc8-89e7-62e0f7801ef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI\System">
+      <UniqueIdentifier>{d9d7961a-1608-4ea7-ad30-577f845566fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI\Sub\Individual">
+      <UniqueIdentifier>{f3875165-b777-43a1-b3eb-a78823f717c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI\System\Individual">
+      <UniqueIdentifier>{9772c828-faff-45bd-b173-722712f5f555}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -239,12 +257,6 @@
     <ClCompile Include="src\GUI\GUI.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="src\GUI\MainMenu.cpp">
-      <Filter>Source Files\GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GUI\SubWindow.cpp">
-      <Filter>Source Files\GUI</Filter>
-    </ClCompile>
     <ClCompile Include="src\Data\LayerData.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
@@ -254,11 +266,29 @@
     <ClCompile Include="src\Data\AllData.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
-    <ClCompile Include="src\GUI\Sub\TerrainTool.cpp">
-      <Filter>Source Files\GUI\Sub</Filter>
+    <ClCompile Include="src\Data\MapImageData.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
     <ClCompile Include="src\GUI\Sub\LayerBox.cpp">
+      <Filter>Source Files\GUI\Sub\Individual</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\TerrainTool.cpp">
+      <Filter>Source Files\GUI\Sub\Individual</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\SubWindow.cpp">
       <Filter>Source Files\GUI\Sub</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\System\SystemWindow.cpp">
+      <Filter>Source Files\GUI\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\MainMenu.cpp">
+      <Filter>Source Files\GUI\Sub\Individual</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\System\StartWindow.cpp">
+      <Filter>Source Files\GUI\System\Individual</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Data\SystemData.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -415,9 +445,6 @@
     <ClInclude Include="include\Data\LayerData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Data\Tree.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="include\Data\WindowData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
@@ -445,8 +472,23 @@
     <ClInclude Include="include\Data\FileData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Data\opengl_Screen.h">
+    <ClInclude Include="include\Data\MapImageData.h">
       <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\Basis\opengl_Screen.h">
+      <Filter>Header Files\Data\Basis</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\Basis\Tree.h">
+      <Filter>Header Files\Data\Basis</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\SystemData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\System\SystemWindow.h">
+      <Filter>Header Files\GUI\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\System\Individual\StartWindow.h">
+      <Filter>Header Files\GUI\System\Individual</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

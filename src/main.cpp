@@ -4,6 +4,10 @@
 	@date       2020/06/25
 */
 
+
+#include "Data/SystemData.h"
+#include "Data/AllData.h"
+
 #include "main.h"
 #include "Resources.h"
 #include "cinder/CinderImGui.h"
@@ -11,12 +15,14 @@
 // ---------------------
 // グローバル変数を宣言しておく
 MapMakeData::AllData MapMakeData::MainData;
+AppSystem::SystemData AppSystem::sys;
 // ---------------------
 
 void BasicApp::setup()
 {
 	// 中核データの初期化&サンプルデータ挿入。
 	MapMakeData::MainData.setSampleData(0);
+	AppSystem::sys.setSampleData(0);
 
 	// ImGui初期化
 	this->InitImGui();
@@ -46,7 +52,7 @@ void BasicApp::InitImGui() {
 		font_japanese[i - 1] = i;
 	}
 
-	io.Fonts->AddFontFromFileTTF(u8"C:\\Windows\\Fonts\\meiryo.ttc", 30.0f, NULL, font_japanese);
+	io.Fonts->AddFontFromFileTTF(u8"C:\\Windows\\Fonts\\meiryo.ttc", 25.0f, NULL, font_japanese);
 }
 
 void BasicApp::update() {
@@ -82,7 +88,7 @@ void BasicApp::resize() {
 // ---------------------
 
 void BasicApp::updateQuit() {
-	if (MapMakeData::MainData.getQuit()) this->quit();
+	if (AppSystem::sys.getQuit()) this->quit();
 }
 
 

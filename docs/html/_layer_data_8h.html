@@ -75,17 +75,20 @@ $(function() {
 <div class="title">LayerData.h ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>レイヤー画面で使用されるデータ保管  
+<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;cinder/app/App.h&quot;</code><br />
 <code>#include &quot;cinder/app/RendererGl.h&quot;</code><br />
 <code>#include &quot;cinder/gl/gl.h&quot;</code><br />
 <code>#include &quot;cinder/Log.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="_tree_8h_source.html">Tree.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tree_8h_source.html">Data/Basis/Tree.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 LayerData.h の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="_layer_data_8h__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_data_2_layer_data_8h" alt=""/></div>
 <map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_data_2_layer_data_8h" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_data_2_layer_data_8h">
-<area shape="rect" id="node6" href="_tree_8h.html" title="Tree.h" alt="" coords="573,109,632,136"/>
+<area shape="rect" id="node6" href="_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="574,109,701,136"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -113,8 +116,10 @@ LayerData.h の依存先関係図:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 クラス</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html">MapMakeData::Layer::Sub::LayerBoxData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤー情報の詳細情報を保持するためのクラス  <a href="class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map_make_data_1_1_layer_1_1_layer_data.html">MapMakeData::Layer::LayerData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤー情報を保持するためのクラス  <a href="class_map_make_data_1_1_layer_1_1_layer_data.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -131,7 +136,10 @@ LayerData.h の依存先関係図:</div>
 <tr class="memitem:a41200f48d8b965e6684964869cd71236"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_map_make_data_1_1_layer_1_1_sub.html#a41200f48d8b965e6684964869cd71236">MapMakeData::Layer::Sub::operator==</a> (const <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; LayerBoxData &gt; &amp;lhs, const <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; LayerBoxData &gt; &amp;rhs)</td></tr>
 <tr class="separator:a41200f48d8b965e6684964869cd71236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>レイヤー画面で使用されるデータ保管 </p>
+<dl class="section date"><dt>日付</dt><dd>2020/06/27 </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

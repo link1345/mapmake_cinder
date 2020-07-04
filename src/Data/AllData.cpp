@@ -9,7 +9,6 @@ namespace MapMakeData {
 	void AllData::init() {
 		this->layerData = MapMakeData::Layer::LayerData();
 		this->windowData = MapMakeData::Window::WindowData();
-		this->quitFlag = false;		
 	}
 
 	void AllData::setSampleData(int mode) {

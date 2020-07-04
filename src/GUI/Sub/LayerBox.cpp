@@ -264,8 +264,7 @@ namespace GUI::SubWindow {
 
 		if (ImGui::Begin(u8"レイヤー", NULL, ImGuiWindowFlags_MenuBar))
 		{
-			auto testTexture = MapMakeData::MainData.nullImage();
-
+			auto menuSize = MapMakeData::MainData.windowData.MenuSize;
 
 			if (ImGui::BeginMenuBar()) {
 				if (ImGui::BeginMenu(u8"編集")) {
@@ -273,7 +272,7 @@ namespace GUI::SubWindow {
 
 						auto s1 = NodeNumber();
 						auto data = MLData(u8"グランドキャニオン",
-							testTexture, testTexture,
+							this->image, this->image,
 							false, false, false);
 						MapMakeData::MainData.layerData.layerTreeData.newID(s1, "LayerImage");
 						MapMakeData::MainData.layerData.layerTreeData.add(
@@ -302,7 +301,9 @@ namespace GUI::SubWindow {
 
 				// ボタン形式 切り替え簡易版。
 				// 表示切替え
-				ImGui::ImageButton((void*)(intptr_t)testTexture->getId(), vec2(menu_size, menu_size), vec2(0, 1), vec2(1, 0));
+				ImGui::ImageButton((void*)(intptr_t)this->image->getId(),
+					vec2(menuSize, menuSize)
+					, vec2(0, 1), vec2(1, 0));
 				
 				if (ImGui::IsItemHovered())
 				{

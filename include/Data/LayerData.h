@@ -11,7 +11,7 @@
 #include "cinder/gl/gl.h"
 #include "cinder/Log.h"
 
-#include "Tree.h"
+#include "Data/Basis/Tree.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -24,7 +24,9 @@ namespace MapMakeData {
 
 	namespace Sub {
 
-		// 各レイヤー情報
+		/*! @brief	レイヤー情報の詳細情報を保持するためのクラス
+			@sa classLayerData(同ファイル)が、直に関係している。
+		*/
 		class LayerBoxData {
 		public:
 			LayerBoxData() {
@@ -48,12 +50,28 @@ namespace MapMakeData {
 				this->layerfolder_flag = layerfolder_flag;
 			}
 
+			/*! @brief	レイヤー名
+			*/
 			std::string name;
+
+			/*! @brief	レイヤーイメージ図 2D
+			*/
 			gl::Texture2dRef image2d;
+			
+			/*! @brief	レイヤーイメージ図 3D
+			*/
 			gl::Texture2dRef image3d;
+
+			/*! @brief	選択中であるか true=選択中
+			*/
 			bool selectflag;
+
+			/*! @brief	shiftキーを用いた選択中であるか true=選択中
+			*/
 			bool shift_selectflag;
 
+			/*! @brief	フォルダであるか true=yes
+			*/
 			bool layerfolder_flag;
 		};
 
@@ -69,33 +87,44 @@ namespace MapMakeData {
 
 	}
 
-		// レイヤー周りのデータ保存場所。
+		/*! @brief	レイヤー情報を保持するためのクラス
+			@sa class LayerWindow(ImGui)は、この情報を直に関係している。
+			他にもマップイメージ図の構築にも使用されている。
+		*/
 		class LayerData {
 		public:
 			LayerData() {
 				this->layerTreeData.clear();
 			}
-			// あやしぃ…
+
+			/*! @brief	=オペレータ
+				@note	動作があやしぃ…かも
+			*/
 			LayerData operator =(const LayerData obj){
 				return *this;
 			}
 
 
-			// サンプルデータ用
+			/*! @brief	サンプルデータ作成用関数
+			*/
 			void setSampleData(int mode);
 
 
-			// 木構造のレイヤー情報
+			/*! @brief	木構造データ
+			*/
 			Tree<Sub::LayerBoxData> layerTreeData;
 
 
-			// 補正用関数。
-			// == レイヤーツリーを投げると、子供を持っているノードは、フォルダとしてのフラグが立ち上がる。
+			/*! @brief	レイヤー情報の補正用関数
+				@note	レイヤーツリーを投げると、子供を持っているノードは、フォルダとしてのフラグが立ち上がる。
+			*/
 			void layerFolderCorrection() {
 				layerFolderCorrection_s(this->layerTreeData.pRoot);
 			}
 
 		private:
+			/*! @brief	this->layerFolderCorrection()の木構造参照関数
+			*/
 			void layerFolderCorrection_s(Node<Sub::LayerBoxData>& tree);
 
 		};

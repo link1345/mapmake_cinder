@@ -8,15 +8,14 @@
 
 
 #pragma once
-#include <cinder/app/App.h>
-#include <cinder/app/RendererGl.h>
-#include <cinder/gl/gl.h>
-
 #include <variant>
 #include <vector>
 #include <map>
 
-#define GLOBAL_HERE
+#include <cinder/app/App.h>
+#include <cinder/app/RendererGl.h>
+#include <cinder/gl/gl.h>
+
 #include "Data/AllData.h"
 
 #include "GUI/Sub/Individual/TerrainTool.h"
@@ -138,9 +137,10 @@ namespace GUI {
 			void draw();
 
 		private:
-			/*! ウィンドウ種別ごとに起動していい数を決める (0 = 無限) */
+			/*! @brief ウィンドウ種別ごとに起動していい数を決める (0 = 無限) */
 			std::map<Sub::SubWindowType, int> LimitPop;
-			/*! 現在起動しているウィンドウ種別の数 */
+
+			/*! @brief 現在起動しているウィンドウ種別の数 */
 			std::map<Sub::SubWindowType, int> NowPop;
 
 		};

@@ -1,9 +1,9 @@
 <map id="MapMakeData::AllData" name="MapMakeData::AllData">
 <area shape="rect" id="node2" href="$class_map_make_data_1_1_window_1_1_window_data.html" title="MapMakeData::Window\l::WindowData" alt="" coords="856,5,1016,47"/>
-<area shape="rect" id="node3" href="$class_map_make_data_1_1_layer_1_1_layer_data.html" title="MapMakeData::Layer\l::LayerData" alt="" coords="863,71,1009,112"/>
+<area shape="rect" id="node3" href="$class_map_make_data_1_1_layer_1_1_layer_data.html" title="レイヤー情報を保持するためのクラス " alt="" coords="863,71,1009,112"/>
 <area shape="rect" id="node4" href="$struct_next_std_1_1_tree.html" title="NextStd::Tree\&lt; MapMakeData\l::Layer::Sub::LayerBoxData \&gt;" alt="" coords="524,71,723,112"/>
 <area shape="rect" id="node5" href="$struct_next_std_1_1_node.html" title="NextStd::Node\&lt; MapMakeData\l::Layer::Sub::LayerBoxData \&gt;" alt="" coords="235,105,437,147"/>
 <area shape="rect" id="node6" href="$struct_next_std_1_1_node_number.html" title="NextStd::NodeNumber" alt="" coords="5,54,157,81"/>
-<area shape="rect" id="node7" href="$class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html" title="MapMakeData::Layer\l::Sub::LayerBoxData" alt="" coords="8,116,155,157"/>
+<area shape="rect" id="node7" href="$class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html" title="レイヤー情報の詳細情報を保持するためのクラス " alt="" coords="8,116,155,157"/>
 <area shape="rect" id="node8" href="$class_map_make_data_1_1_file_1_1_file_data.html" title="MapMakeData::File::\lFileData" alt="" coords="865,136,1007,177"/>
 </map>

@@ -17,7 +17,7 @@
 #include <cinder/gl/Texture.h>
 #include <cinder/Surface.h>
 
-#include "Tree.h"
+#include "Data/Basis/Tree.h"
 
 #include "LayerData.h"
 #include "WindowData.h"
@@ -48,16 +48,6 @@ namespace MapMakeData {
 		/*! @brief ファイル操作周り */
 		MapMakeData::File::FileData fileData;
 		
-		/*! @brief 終了フラグseter
-			@exception      none
-		*/
-		void quit() { quitFlag = true; };
-
-		/*! @brief 終了フラグgeter
-			@return         true = 終了
-			@exception      none
-		*/
-		bool getQuit() { return quitFlag ; };
 
 
 		/*! @brief ヌルイメージgeter
@@ -66,14 +56,6 @@ namespace MapMakeData {
 		*/
 		gl::Texture2dRef nullImage() { return this->NullImage; };
 	private:
-		/*! @brief 終了フラグ
-			@note このフラグのセッター
-			@relates this->quit();
-			@note このフラグのゲッター
-			@relates this->getQuit();
-		*/
-		bool quitFlag;
-
 		/*! @brief ヌルイメージ
 			@note このデータのゲッター
 			@relates this->nullImage();
