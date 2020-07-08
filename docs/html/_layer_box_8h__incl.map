@@ -1,8 +1,11 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h">
-<area shape="rect" id="node6" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="483,109,589,136"/>
-<area shape="rect" id="node16" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="923,109,1106,136"/>
-<area shape="rect" id="node9" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="533,259,659,285"/>
-<area shape="rect" id="node13" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="653,184,745,211"/>
-<area shape="rect" id="node14" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="364,184,471,211"/>
-<area shape="rect" id="node15" href="$_file_data_8h.html" title="FileData.h" alt="" coords="495,184,577,211"/>
+<area shape="rect" id="node6" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="749,109,856,136"/>
+<area shape="rect" id="node21" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1169,109,1351,136"/>
+<area shape="rect" id="node9" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1242,259,1369,285"/>
+<area shape="rect" id="node13" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="558,184,650,211"/>
+<area shape="rect" id="node18" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="795,184,901,211"/>
+<area shape="rect" id="node19" href="$_file_data_8h.html" title="FileData.h" alt="" coords="926,184,1007,211"/>
+<area shape="rect" id="node20" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="1031,184,1115,211"/>
+<area shape="rect" id="node14" href="$_resources_8h.html" title="Resources.h" alt="" coords="574,259,669,285"/>
+<area shape="rect" id="node16" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="745,259,919,285"/>
 </map>

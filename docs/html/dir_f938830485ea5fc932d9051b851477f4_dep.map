@@ -1,11 +1,15 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI" name="C:/Users/link/source/mapmake/vc2019/include/GUI">
 <area shape="rect" id="node2" href="dir_6d07254aefd5f9454c8c937cda5a0fad.html" title="Sub" alt="" coords="37,159,109,207"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000004_000005.html" title="3" alt="" coords="78,133,86,148"/>
-<area shape="rect" id="node4" href="dir_1895167bc503e40e9210705dcc6fcc41.html" title="Data" alt="" coords="141,255,213,303"/>
-<area shape="rect" id="edge4-headlabel" href="dir_000004_000001.html" title="3" alt="" coords="164,227,172,242"/>
-<area shape="rect" id="node3" href="dir_c16dadd5e743184f2df71c86ae5707a2.html" title="Widgets" alt="" coords="37,255,109,303"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000005_000007.html" title="1" alt="" coords="78,229,86,244"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000005_000001.html" title="2" alt="" coords="140,229,148,243"/>
-<area shape="rect" id="clust2" href="dir_f938830485ea5fc932d9051b851477f4.html" alt="" coords="27,52,120,313"/>
-<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,131,324"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000005_000006.html" title="3" alt="" coords="112,145,120,159"/>
+<area shape="rect" id="node3" href="dir_dc70b4e0101e52eddfcd309d4fa3a62d.html" title="System" alt="" coords="133,159,205,207"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000005_000008.html" title="2" alt="" coords="174,133,182,148"/>
+<area shape="rect" id="node5" href="dir_1895167bc503e40e9210705dcc6fcc41.html" title="Data" alt="" coords="237,255,309,303"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000005_000001.html" title="6" alt="" coords="260,227,268,242"/>
+<area shape="rect" id="node4" href="dir_c16dadd5e743184f2df71c86ae5707a2.html" title="Widgets" alt="" coords="85,255,157,303"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000006_000010.html" title="1" alt="" coords="105,227,113,242"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000006_000001.html" title="2" alt="" coords="220,238,228,253"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000008_000010.html" title="1" alt="" coords="145,235,153,250"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000008_000001.html" title="2" alt="" coords="236,229,244,243"/>
+<area shape="rect" id="clust2" href="dir_f938830485ea5fc932d9051b851477f4.html" alt="" coords="27,52,216,313"/>
+<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,227,324"/>
 </map>

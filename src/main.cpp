@@ -16,19 +16,21 @@
 // グローバル変数を宣言しておく
 MapMakeData::AllData MapMakeData::MainData;
 AppSystem::SystemData AppSystem::sys;
+GUI::MainGUI GUI::gui ;
 // ---------------------
 
 void BasicApp::setup()
 {
-	// 中核データの初期化&サンプルデータ挿入。
-	MapMakeData::MainData.setSampleData(0);
-	AppSystem::sys.setSampleData(0);
 
 	// ImGui初期化
 	this->InitImGui();
 
+	// 中核データの初期化&サンプルデータ挿入。
+	AppSystem::sys.setSampleData(0);
+	MapMakeData::MainData.reset();
+
 	// GUI周りの必要変数の初期化
-	this->gui = GUI::MainGUI();
+	GUI::gui.reset();
 
 	setFrameRate(10000.0f);
 	gl::enableDepthRead();
@@ -37,9 +39,8 @@ void BasicApp::setup()
 
 	getWindow()->getSignalDraw().connect(
 		[this] {
-			gui.draw();
-			//ShowSubWindow();
-			//ShowLayerWindow();
+			// 描画
+			GUI::gui.draw();
 		}
 	);
 }
@@ -53,6 +54,7 @@ void BasicApp::InitImGui() {
 	}
 
 	io.Fonts->AddFontFromFileTTF(u8"C:\\Windows\\Fonts\\meiryo.ttc", 25.0f, NULL, font_japanese);
+
 }
 
 void BasicApp::update() {

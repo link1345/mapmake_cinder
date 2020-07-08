@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['readme_2emd',['readme.md',['../readme_8md.html',1,'']]],
-  ['remove',['remove',['../struct_next_std_1_1_tree.html#a8356e7ed7a9aa5fe2182e8a34633a1fa',1,'NextStd::Tree']]],
-  ['remove_5fs',['remove_s',['../struct_next_std_1_1_tree.html#a71fe5274e59811472664ec41f4dc6fc6',1,'NextStd::Tree']]],
-  ['resize',['resize',['../class_g_u_i_1_1_main_g_u_i.html#a91e78b305e3a96c366f072cc251fae50',1,'GUI::MainGUI::resize()'],['../class_basic_app.html#a479c10052546bec2f6a6b08042f228a8',1,'BasicApp::resize()']]],
-  ['resources_2eh',['Resources.h',['../_resources_8h.html',1,'']]],
-  ['rootid',['rootID',['../struct_next_std_1_1_tree.html#aadb01a7bc35b95687189ff39158cb1b4',1,'NextStd::Tree']]]
+  ['quit',['quit',['../class_app_system_1_1_system_data.html#a190cbd5f893ef054103cea6da2b474e4',1,'AppSystem::SystemData']]],
+  ['quitflag',['quitFlag',['../class_app_system_1_1_system_data.html#ab44006f73b3dff877b35d1c854faf47f',1,'AppSystem::SystemData']]]
 ];

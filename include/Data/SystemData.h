@@ -33,6 +33,10 @@ namespace AppSystem {
 		*/
 		bool getStart() { return startGUIFlag; };
 
+		/*! @brief 開始GUIフラグseter
+			@exception      none
+		*/
+		void resetStart() { startGUIFlag = false; };
 
 		/*! @brief 終了フラグseter
 			@exception      none
@@ -50,6 +54,12 @@ namespace AppSystem {
 			@exception      none
 		*/
 		bool startGUIFlag;
+
+		/*! @brief 終了フラグseter
+			@exception      none
+		*/
+		bool setupFlag;
+
 
 		/*! @brief 終了フラグ
 			@note このフラグのセッター

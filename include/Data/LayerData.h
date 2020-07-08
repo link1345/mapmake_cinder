@@ -11,6 +11,13 @@
 #include "cinder/gl/gl.h"
 #include "cinder/Log.h"
 
+// ----------------------------------------
+// * 以下のヘッダーは将来使わなくなります * 
+#include "Resources.h"
+#include "Data/ToolBox/ImageTool.h"
+// ----------------------------------------
+
+
 #include "Data/Basis/Tree.h"
 
 using namespace ci;

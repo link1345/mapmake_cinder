@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rootid',['rootID',['../struct_next_std_1_1_tree.html#aadb01a7bc35b95687189ff39158cb1b4',1,'NextStd::Tree']]]
+  ['quitflag',['quitFlag',['../class_app_system_1_1_system_data.html#ab44006f73b3dff877b35d1c854faf47f',1,'AppSystem::SystemData']]]
 ];

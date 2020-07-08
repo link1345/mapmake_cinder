@@ -69,7 +69,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">クラス</a> &#124;
-<a href="#namespaces">名前空間</a>  </div>
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#var-members">変数</a>  </div>
   <div class="headertitle">
 <div class="title">GUI.h ファイル</div>  </div>
 </div><!--header-->
@@ -80,22 +83,32 @@ $(function() {
 <div class="textblock"><code>#include &lt;cinder/app/App.h&gt;</code><br />
 <code>#include &lt;cinder/app/RendererGl.h&gt;</code><br />
 <code>#include &lt;cinder/gl/gl.h&gt;</code><br />
+<code>#include &lt;cinder/gl/Texture.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_system_data_8h_source.html">Data/SystemData.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_all_data_8h_source.html">Data/AllData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_system_window_8h_source.html">GUI/System/SystemWindow.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_sub_window_8h_source.html">GUI/Sub/SubWindow.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 GUI.h の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="_g_u_i_8h__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_g_u_i_8h" alt=""/></div>
 <map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_g_u_i_8h" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_g_u_i_8h">
-<area shape="rect" id="node5" href="_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="539,273,645,300"/>
-<area shape="rect" id="node16" href="_sub_window_8h.html" title="サブウィンドウ処理周りについて " alt="" coords="969,109,1124,136"/>
-<area shape="rect" id="node8" href="_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="574,437,701,464"/>
-<area shape="rect" id="node12" href="_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="726,355,818,382"/>
-<area shape="rect" id="node14" href="_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="144,355,251,382"/>
-<area shape="rect" id="node15" href="_file_data_8h.html" title="FileData.h" alt="" coords="275,355,357,382"/>
-<area shape="rect" id="node20" href="_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="995,348,1122,389"/>
-<area shape="rect" id="node22" href="_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="866,184,993,225"/>
-<area shape="rect" id="node23" href="_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1198,355,1381,382"/>
+<area shape="rect" id="node6" href="_system_data_8h.html" title="Data/SystemData.h" alt="" coords="91,273,227,300"/>
+<area shape="rect" id="node7" href="_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="814,273,921,300"/>
+<area shape="rect" id="node22" href="_system_window_8h.html" title="GUI/System/SystemWindow.h" alt="" coords="1027,109,1225,136"/>
+<area shape="rect" id="node28" href="_sub_window_8h.html" title="サブウィンドウ処理周りについて " alt="" coords="1250,109,1405,136"/>
+<area shape="rect" id="node9" href="_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="193,437,320,464"/>
+<area shape="rect" id="node13" href="_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="697,355,789,382"/>
+<area shape="rect" id="node19" href="_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="814,355,921,382"/>
+<area shape="rect" id="node20" href="_file_data_8h.html" title="FileData.h" alt="" coords="945,355,1027,382"/>
+<area shape="rect" id="node21" href="_icon_data_8h.html" title="IconData.h" alt="" coords="1051,355,1135,382"/>
+<area shape="rect" id="node15" href="_resources_8h.html" title="Resources.h" alt="" coords="815,437,909,464"/>
+<area shape="rect" id="node17" href="_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="396,437,571,464"/>
+<area shape="rect" id="node26" href="_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="802,184,951,225"/>
+<area shape="rect" id="node27" href="_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="343,273,520,300"/>
+<area shape="rect" id="node29" href="_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="1912,348,2039,389"/>
+<area shape="rect" id="node30" href="_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="1363,184,1489,225"/>
+<area shape="rect" id="node31" href="_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1468,273,1651,300"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -128,12 +141,63 @@ GUI.h の依存先関係図:</div>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace_g_u_i_1_1_main_window"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_main_window.html">GUI::MainWindow</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a0aac6c68a5a4eb4d5dbf7f94919de21c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_8h.html#a0aac6c68a5a4eb4d5dbf7f94919de21c">EXT</a>&#160;&#160;&#160;extern</td></tr>
+<tr class="separator:a0aac6c68a5a4eb4d5dbf7f94919de21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14992bf8bee7c290dd716d865c47ae42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_8h.html#a14992bf8bee7c290dd716d865c47ae42">DEF</a>(x)</td></tr>
+<tr class="separator:a14992bf8bee7c290dd716d865c47ae42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a2606f32bb8e2e35a6c01fd6dbaa7fa0c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_main_window.html#a2606f32bb8e2e35a6c01fd6dbaa7fa0c">GUI::MainWindow::windowName</a> { <a class="el" href="namespace_g_u_i_1_1_main_window.html#a2606f32bb8e2e35a6c01fd6dbaa7fa0cab965796439517013172ae587eba2cced">GUI::MainWindow::windowName::LayerWindow</a>
+ }</td></tr>
+<tr class="separator:a2606f32bb8e2e35a6c01fd6dbaa7fa0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a8db15ed96934ec8fb4376e81612db67d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_8h.html#a0aac6c68a5a4eb4d5dbf7f94919de21c">EXT</a> MainGUI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i.html#a8db15ed96934ec8fb4376e81612db67d">GUI::gui</a></td></tr>
+<tr class="separator:a8db15ed96934ec8fb4376e81612db67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>ImGuiを使ったGUI処理の最上位に当たる処理。 </p>
 <dl class="section note"><dt>覚え書き</dt><dd>main.cppで使用するものである。 </dd></dl>
 <dl class="section date"><dt>日付</dt><dd>2020/06/25 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a14992bf8bee7c290dd716d865c47ae42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14992bf8bee7c290dd716d865c47ae42">&#9670;&nbsp;</a></span>DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0aac6c68a5a4eb4d5dbf7f94919de21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aac6c68a5a4eb4d5dbf7f94919de21c">&#9670;&nbsp;</a></span>EXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXT&#160;&#160;&#160;extern</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

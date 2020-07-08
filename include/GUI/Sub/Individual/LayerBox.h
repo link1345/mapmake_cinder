@@ -57,13 +57,18 @@ namespace GUI {
 			LayerWindow(){
 				// とりあえず、初期化だけはしておく。
 				this->image = MapMakeData::MainData.nullImage();
+
+				this->closeFlag = true;
 			}
 
 			void draw();
-		
+
 			/*! @brief 使用用途予定未定の画像。とりあえず、使う予定だけはあるので…、許してちょ！
 			*/
 			gl::Texture2dRef image;
+
+			bool closeFlag;
+
 		};
 
 	}

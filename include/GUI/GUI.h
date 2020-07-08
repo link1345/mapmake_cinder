@@ -4,8 +4,17 @@
 	@note		main.cppで使用するものである。
 	@date       2020/06/25
 */
-
 #pragma once
+
+
+#if defined(GLOBAL_HERE)
+#define EXT
+#define DEF(x) = (x)
+#else
+#define EXT extern
+#define DEF(x)
+#endif
+
 #include <cinder/app/App.h>
 #include <cinder/app/RendererGl.h>
 #include <cinder/gl/gl.h>
@@ -43,11 +52,18 @@ namespace GUI {
 			void draw();
 		};
 
+
+		enum class windowName {
+			LayerWindow
+		};
+
 	}
 
 	class MainGUI {
 	public:
 		MainGUI();
+
+		void reset();
 
 		void draw();
 
@@ -60,6 +76,8 @@ namespace GUI {
 		void resize();
 		void update();
 
+		void createWindow(MainWindow::windowName mode);
+		void closeWindow(MainWindow::windowName mode);
 
 		/*! メインメニューバーについて */
 		MainWindow::MainMenuBar mainMenuBar;
@@ -74,4 +92,10 @@ namespace GUI {
 		General_SubWindow::General subWindows;
 
 	};
+
+
+	// グローバル変数。
+	/*! GUI全体を統括するグローバル変数 */
+	EXT MainGUI gui;
+
 }

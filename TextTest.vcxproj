@@ -257,9 +257,6 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Resources.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Box2D.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Collision\b2BroadPhase.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Collision\b2Collision.h" />
@@ -315,6 +312,7 @@
     <ClInclude Include="include\Data\LayerData.h" />
     <ClInclude Include="include\Data\MapImageData.h" />
     <ClInclude Include="include\Data\SystemData.h" />
+    <ClInclude Include="include\Data\ToolBox\ImageTool.h" />
     <ClInclude Include="include\Data\WindowData.h" />
     <ClInclude Include="include\File\FileSave.h" />
     <ClInclude Include="include\GUI\GUI.h" />
@@ -324,8 +322,11 @@
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h" />
     <ClInclude Include="include\GUI\System\SystemWindow.h" />
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h" />
+    <ClInclude Include="include\GUI\Widgets\HelpMarker.h" />
+    <ClInclude Include="include\IconData.h" />
     <ClInclude Include="include\main.h" />
     <ClInclude Include="include\Resources.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.frag">
@@ -334,6 +335,22 @@
     <None Include="assets\shader.vert">
       <FileType>CppCode</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\Brush.png" />
+    <Image Include="resources\file.png" />
+    <Image Include="resources\file_nodata.png" />
+    <Image Include="resources\file_search.png" />
+    <Image Include="resources\folder_close.png" />
+    <Image Include="resources\folder_open.png" />
+    <Image Include="resources\Mountain.png" />
+    <Image Include="resources\null.png" />
+    <Image Include="resources\town.png" />
+    <Image Include="resources\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mapmake.rc" />
+    <ResourceCompile Include="resources\Resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,20 +6,12 @@ namespace MapMakeData::Layer {
 
 	void LayerData::setSampleData(int mode) {
 
+		// 
 		// テスト用画像
-		Surface s = Surface(loadImage(loadAsset("Icon.png")));
-		console() << s.getSize().x << u8" " << s.getSize().y << std::endl;
-		Area area(0, 0, s.getSize().x, s.getSize().y);
-		Surface::Iter iter = s.getIter(area);
-		//for (int i = 0; i < s.getSize().x; i++) {
-		//	for (int j = 0; j < s.getSize().y; j++) {
-		//		iter.r(i, j) = 200;
-		//		iter.g(i, j) = 200;
-		//		iter.b(i, j) = 200;
-		//	}
-		//}
+		Surface s = Surface(loadImage(app::loadResource(RES_ICON_NULL)));
+		ToolBox::Image::Icon_ColorInverse(s, ImGuiCol_::ImGuiCol_WindowBg);
 
-		auto texture1 = gl::Texture::create(s);
+		auto texture1 = gl::Texture::create( s );
 
 		// TextureクラスからSurfaceに戻せるよ！
 		//s = texture1->createSource();

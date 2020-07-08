@@ -6,5 +6,6 @@ var searchData=
   ['layerboxfolderdraw',['LayerBoxFolderDraw',['../namespace_g_u_i_1_1_sub_window.html#a503c183457874c6a04b4953f24bf4816',1,'GUI::SubWindow']]],
   ['layerdata',['LayerData',['../class_map_make_data_1_1_layer_1_1_layer_data.html#a6b17f771e991dc4f9528e466d9958a4a',1,'MapMakeData::Layer::LayerData']]],
   ['layerfoldercorrection',['layerFolderCorrection',['../class_map_make_data_1_1_layer_1_1_layer_data.html#a84d8e6dbcabd7190ec7992b244b82e60',1,'MapMakeData::Layer::LayerData']]],
-  ['layerfoldercorrection_5fs',['layerFolderCorrection_s',['../class_map_make_data_1_1_layer_1_1_layer_data.html#ad690a29f6a2513d74409a9397f766647',1,'MapMakeData::Layer::LayerData']]]
+  ['layerfoldercorrection_5fs',['layerFolderCorrection_s',['../class_map_make_data_1_1_layer_1_1_layer_data.html#ad690a29f6a2513d74409a9397f766647',1,'MapMakeData::Layer::LayerData']]],
+  ['layerwindow',['LayerWindow',['../class_g_u_i_1_1_sub_window_1_1_layer_window.html#a6e440c031c534a14e4c15a93071fae7b',1,'GUI::SubWindow::LayerWindow']]]
 ];

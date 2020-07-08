@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit',['quit',['../class_map_make_data_1_1_all_data.html#aa5f0f73ce4f8c0f0511a3ea78e7da4ed',1,'MapMakeData::AllData']]]
+  ['quit',['quit',['../class_app_system_1_1_system_data.html#a190cbd5f893ef054103cea6da2b474e4',1,'AppSystem::SystemData']]]
 ];

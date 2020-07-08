@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data',['data',['../struct_next_std_1_1_node.html#ac434554732cd8291a5591d73cf64783d',1,'NextStd::Node::data()'],['../class_file_1_1_file_save.html#a2ea773d70739732a7cbccdc0e6af5463',1,'File::FileSave::data()']]]
+  ['closeflag',['closeFlag',['../class_g_u_i_1_1_sub_window_1_1_layer_window.html#a93520fbb0726fd53fd905a7c9f1dfd57',1,'GUI::SubWindow::LayerWindow']]]
 ];

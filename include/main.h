@@ -63,9 +63,6 @@ private:
 	*/
 	void updateQuit();
 
-	/*! GUI周りの統括変数 */
-	GUI::MainGUI gui;
-
 	/*! ドキュメントテスト用
 		@param[out]     var1    var1の説明
 		@param[in]      var2    var2の説明

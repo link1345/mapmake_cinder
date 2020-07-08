@@ -23,6 +23,8 @@
 #include "WindowData.h"
 #include "FileData.h"
 
+#include "IconData.h"
+
 namespace MapMakeData {
 
 	class AllData {
@@ -30,6 +32,16 @@ namespace MapMakeData {
 		AllData();
 
 		void init();
+
+		/*! @brief まっさらな初期状態にする関数
+			@note 特になし
+		*/
+		void reset();
+
+		/*! @brief Cinder周りの初期化関数
+			@note ImGui初期化関数などの後に実行してください。
+		*/
+		//void CinderLoad();
 
 		/*! @brief テスト用のデータセット関数
 			@param[in]	mode	データモードの設定
@@ -55,12 +67,17 @@ namespace MapMakeData {
 			@exception      none
 		*/
 		gl::Texture2dRef nullImage() { return this->NullImage; };
+
+		map<Icon, gl::Texture2dRef> icon;
+
 	private:
 		/*! @brief ヌルイメージ
 			@note このデータのゲッター
 			@relates this->nullImage();
 		*/
 		gl::Texture2dRef NullImage;
+
+
 	};
 
 

@@ -1,0 +1,14 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "..\include\Resources.h"
+
+
+ RES_ICON_NULL
+ RES_ICON_FileNodata
+ RES_ICON_File
+ RES_ICON_FileSearch	
+ RES_ICON_FolderClose	
+ RES_ICON_FolderOpen	
+ RES_ICON_Mountain	
+ RES_ICON_Brush	
+

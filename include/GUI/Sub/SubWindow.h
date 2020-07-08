@@ -1,8 +1,8 @@
-/*! @addtogroup GUIŠÇ—
+ï»¿/*! @addtogroup GUIç®¡ç†
 	@file       SubWindow.h
-	@brief      ƒTƒuƒEƒBƒ“ƒhƒEˆ—ü‚è‚É‚Â‚¢‚Ä
-	@note		ƒƒCƒ“ƒƒjƒ…[ƒo[‚Æ”wŒiˆÈŠO‚ÌGUIˆ—‚ÉŠÖ‚·‚é‚à‚Ì
-				\nãˆÊ‚ÉGUI.h‚ª‚ ‚éB
+	@brief      ã‚µãƒ–ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å‡¦ç†å‘¨ã‚Šã«ã¤ã„ã¦
+	@note		ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒãƒ¼ã¨èƒŒæ™¯ä»¥å¤–ã®GUIå‡¦ç†ã«é–¢ã™ã‚‹ã‚‚ã®
+				\nä¸Šä½ã«GUI.hãŒã‚ã‚‹ã€‚
 	@date       2020/06/25
 */
 
@@ -25,6 +25,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+typedef std::variant<GUI::SubWindow::TerrainToolWindow,GUI::SubWindow::LayerWindow> VData;
 
 namespace GUI {
 	namespace General_SubWindow {
@@ -32,8 +33,8 @@ namespace GUI {
 		namespace Sub {
 
 			/*!
-			@brief ƒEƒBƒ“ƒhƒE‚Ìí•Ê‚Ì—ñ‹“Œ^
-			@attention V‚µ‚¢ƒEƒBƒ“ƒhƒEí•Ê‚ªo—ˆ‚½‚çA•K‚¸‚±‚±‚É’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
+			@brief ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ç¨®åˆ¥ã®åˆ—æŒ™å‹
+			@attention æ–°ã—ã„ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ç¨®åˆ¥ãŒå‡ºæ¥ãŸã‚‰ã€å¿…ãšã“ã“ã«è¿½åŠ ã—ã¦ãã ã•ã„ã€‚
 			*/
 			enum class SubWindowType {
 				LayerWindow,
@@ -41,7 +42,7 @@ namespace GUI {
 			};
 
 			/*!
-			@brief ƒEƒBƒ“ƒhƒEID‚Ì•Û‘¶
+			@brief ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦IDã®ä¿å­˜
 			*/
 			struct WindowNumber {
 				string nodeName;
@@ -58,7 +59,7 @@ namespace GUI {
 					this->nodeID = nodeID;
 					this->type = type;
 				}
-				bool operator==(const WindowNumber& other) // ƒRƒs[‘ã“ü
+				bool operator==(const WindowNumber& other) // ã‚³ãƒ”ãƒ¼ä»£å…¥
 				{
 					if (this->nodeID == other.nodeID &&
 						this->nodeName == other.nodeName &&
@@ -85,27 +86,17 @@ namespace GUI {
 					
 				}
 			};
-
-			/*
-			struct Window
-			{
-				WindowNumber ID;
-
-				std::variant <
-					GUI::SubWindow::TerrainToolWindow,
-					GUI::SubWindow::LayerWindow
-				> subWindow;
-			};
-			*/
-
 		}
 
 
+
+
+
 		/*!
-		@brief ƒEƒBƒ“ƒhƒE‚Ìˆê——‚ğŠÇ—‚·‚éƒNƒ‰ƒX
-		@attention ‚±‚ÌƒNƒ‰ƒX‚ÍAƒEƒBƒ“ƒhƒE‚Ì˜g‚ğì¬‚·‚éƒNƒ‰ƒX‚ÌŠÇ—‚Å‚ ‚Á‚ÄAopengl‚Ì•`‰æŠÇ—‚Å‚Í‚ ‚è‚Ü‚¹‚ñB\n
-		‚Ü‚½A’†‚Ìˆ—‚Ì•Ï”‚ÉŠÖ‚·‚é“_‚É‚Â‚¢‚Ä‚ÍAŠO•”‚Æ˜AŒg‚ª•K—v‚Èê‡‚Ì‚İAƒOƒ[ƒoƒ‹MapMakeData::MainData‚É‹Lq‚·‚é‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B
-		@sa ƒOƒ[ƒoƒ‹MapMakeData::MainData‚ÆŠÖŒW‚µ‚Ä‚¢‚é
+		@brief ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä¸€è¦§ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹
+		@attention ã“ã®ã‚¯ãƒ©ã‚¹ã¯ã€ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®æ ã‚’ä½œæˆã™ã‚‹ã‚¯ãƒ©ã‚¹ã®ç®¡ç†ã§ã‚ã£ã¦ã€openglã®æç”»ç®¡ç†ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚\n
+		ã¾ãŸã€ä¸­ã®å‡¦ç†ã®å¤‰æ•°ã«é–¢ã™ã‚‹ç‚¹ã«ã¤ã„ã¦ã¯ã€å¤–éƒ¨ã¨é€£æºãŒå¿…è¦ãªå ´åˆã®ã¿ã€ã‚°ãƒ­ãƒ¼ãƒãƒ«MapMakeData::MainDataã«è¨˜è¿°ã™ã‚‹ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚
+		@sa ã‚°ãƒ­ãƒ¼ãƒãƒ«MapMakeData::MainDataã¨é–¢ä¿‚ã—ã¦ã„ã‚‹
 		*/
 		class General {
 		public:
@@ -117,30 +108,29 @@ namespace GUI {
 			}
 
 			/*!
-			@brief ƒEƒBƒ“ƒhƒEˆê——
-			@note  (¦ ¡‚Ì‚Æ‚±‚ë‹LqÏ‚İ‚Ìƒo[ƒWƒ‡ƒ“‚ğg‚¨‚¤‚Æl‚¦‚Ä‚¢‚Ü‚·‚ªA“ï‰ğ‚ÈƒvƒƒOƒ‰ƒ€‚É‚È‚é‚æ‚¤‚È‚çA‰º‹L‚Ì‚ğg‚¢‚Ü‚·B@2020/06/24)
-			@note Key=IDƒf[ƒ^ , ’l = variant‚É“o˜^‚µ‚Ä‚ ‚é•Ï”‚ÌŒ^‚È‚ç‰½‚Å‚à
-			@code std::vector<Sub::Window> Windows;
-			*/
-			std::map<Sub::WindowNumber, 
-				std::variant <
-				GUI::SubWindow::TerrainToolWindow,
-				GUI::SubWindow::LayerWindow,
-				int
-				>
-			> Windows;
-			
-			/*!
-			@brief 
-			‚±‚±‚Éwindows•Ï”‚Ìdraw‚ğs‚¤ˆ—‚É‚Â‚¢‚Ä‚ğ‘‚­B
+			@brief
+			ã“ã“ã«windowså¤‰æ•°ã®drawã‚’è¡Œã†å‡¦ç†ã«ã¤ã„ã¦ã‚’æ›¸ãã€‚
 			*/
 			void draw();
 
-		private:
-			/*! @brief ƒEƒBƒ“ƒhƒEí•Ê‚²‚Æ‚É‹N“®‚µ‚Ä‚¢‚¢”‚ğŒˆ‚ß‚é (0 = –³ŒÀ) */
+			void add(Sub::WindowNumber key, VData data);
+
+			void remove(Sub::WindowNumber key);
+
+
+
+			/*!
+			@brief ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä¸€è¦§
+			@note  (â€» ä»Šã®ã¨ã“ã‚è¨˜è¿°æ¸ˆã¿ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ä½¿ãŠã†ã¨è€ƒãˆã¦ã„ã¾ã™ãŒã€é›£è§£ãªãƒ—ãƒ­ã‚°ãƒ©ãƒ ã«ãªã‚‹ã‚ˆã†ãªã‚‰ã€ä¸‹è¨˜ã®ã‚’ä½¿ã„ã¾ã™ã€‚ã€€2020/06/24)
+			@note Key=IDãƒ‡ãƒ¼ã‚¿ , å€¤ = variantã«ç™»éŒ²ã—ã¦ã‚ã‚‹å¤‰æ•°ã®å‹ãªã‚‰ä½•ã§ã‚‚
+			@code std::vector<Sub::Window> Windows;
+			*/
+			std::map<Sub::WindowNumber, VData > Windows;
+
+			/*! @brief ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ç¨®åˆ¥ã”ã¨ã«èµ·å‹•ã—ã¦ã„ã„æ•°ã‚’æ±ºã‚ã‚‹ (0 = ç„¡é™) */
 			std::map<Sub::SubWindowType, int> LimitPop;
 
-			/*! @brief Œ»İ‹N“®‚µ‚Ä‚¢‚éƒEƒBƒ“ƒhƒEí•Ê‚Ì” */
+			/*! @brief ç¾åœ¨èµ·å‹•ã—ã¦ã„ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ç¨®åˆ¥ã®æ•° */
 			std::map<Sub::SubWindowType, int> NowPop;
 
 		};

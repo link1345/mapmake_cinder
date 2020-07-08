@@ -103,11 +103,9 @@
     <Filter Include="Source Files\GUI\System\Individual">
       <UniqueIdentifier>{9772c828-faff-45bd-b173-722712f5f555}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Resources.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <Filter Include="Header Files\Data\ToolBox">
+      <UniqueIdentifier>{7dd4852e-a7ed-49d1-803d-499de61a7f15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp">
@@ -439,9 +437,6 @@
     <ClInclude Include="include\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Data\LayerData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
@@ -490,6 +485,21 @@
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h">
       <Filter>Header Files\GUI\System\Individual</Filter>
     </ClInclude>
+    <ClInclude Include="include\Data\ToolBox\ImageTool.h">
+      <Filter>Header Files\Data\ToolBox</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IconData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Widgets\HelpMarker.h">
+      <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.vert">
@@ -498,5 +508,45 @@
     <None Include="assets\shader.frag">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\null.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\town.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\tree.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Brush.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\file.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\file_nodata.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\file_search.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\folder_close.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\folder_open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\Mountain.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mapmake.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="resources\Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

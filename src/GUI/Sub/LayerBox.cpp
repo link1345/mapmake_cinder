@@ -262,7 +262,7 @@ namespace GUI::SubWindow {
 
 	void LayerWindow::draw() {
 
-		if (ImGui::Begin(u8"レイヤー", NULL, ImGuiWindowFlags_MenuBar))
+		if (ImGui::Begin(u8"レイヤー", &this->closeFlag, ImGuiWindowFlags_MenuBar))
 		{
 			auto menuSize = MapMakeData::MainData.windowData.MenuSize;
 
@@ -304,7 +304,7 @@ namespace GUI::SubWindow {
 				ImGui::ImageButton((void*)(intptr_t)this->image->getId(),
 					vec2(menuSize, menuSize)
 					, vec2(0, 1), vec2(1, 0));
-				
+
 				if (ImGui::IsItemHovered())
 				{
 					ImGui::BeginTooltip();
@@ -337,7 +337,7 @@ namespace GUI::SubWindow {
 		// FPS確認
 		//ImGui::Text("FPS %f", getAverageFps());
 
+		
 	}
-
 
 }
