@@ -54,6 +54,7 @@ namespace GUI {
 
 
 		enum class windowName {
+			StartWindow,
 			LayerWindow
 		};
 

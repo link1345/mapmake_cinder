@@ -11,7 +11,8 @@ namespace MapMakeData {
 	}
 
 	void AllData::init() {
-		this->layerData = MapMakeData::Layer::LayerData();
+		this->layerData.layerTreeData.clear();
+		//this->layerData = MapMakeData::Layer::LayerData();
 		this->windowData = MapMakeData::Window::WindowData();
 	}
 
@@ -59,7 +60,7 @@ namespace MapMakeData {
 
 	void AllData::reset() {
 		this->init();
-
+		
 		iconReset(this->icon, this->NullImage);
 	}
 

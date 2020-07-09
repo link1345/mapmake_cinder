@@ -22,22 +22,6 @@ namespace AppSystem {
 		*/
 		void setSampleData(int mode);
 
-		/*! @brief 開始GUIフラグseter
-			@exception      none
-		*/
-		void start() { startGUIFlag = true; };
-
-		/*! @brief 開始GUIフラグgeter
-			@return         true = 終了
-			@exception      none
-		*/
-		bool getStart() { return startGUIFlag; };
-
-		/*! @brief 開始GUIフラグseter
-			@exception      none
-		*/
-		void resetStart() { startGUIFlag = false; };
-
 		/*! @brief 終了フラグseter
 			@exception      none
 		*/
@@ -50,17 +34,6 @@ namespace AppSystem {
 		bool getQuit() { return quitFlag; };
 
 	public:
-		/*! @brief 終了フラグseter
-			@exception      none
-		*/
-		bool startGUIFlag;
-
-		/*! @brief 終了フラグseter
-			@exception      none
-		*/
-		bool setupFlag;
-
-
 		/*! @brief 終了フラグ
 			@note このフラグのセッター
 			@relates this->quit();

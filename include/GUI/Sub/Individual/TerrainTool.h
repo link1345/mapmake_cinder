@@ -13,13 +13,15 @@
 
 #include <cinder/CinderImGui.h>
 
+#include "GUI/Widgets/WindowBase.h"
+
 namespace GUI {
 namespace SubWindow {
 
 	// 地形ツール画面について
-	class TerrainToolWindow {
+	class TerrainToolWindow : public GUI::WindowBase{
 	public:
-		void draw();
+		void draw() override;
 
 	};
 

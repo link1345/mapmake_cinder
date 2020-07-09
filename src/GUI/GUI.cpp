@@ -14,11 +14,12 @@ namespace GUI {
 	}
 
 	void MainGUI::reset() {
+		/*
 		auto sysid = GUI::General_SystemWindow::Sub::WindowNumber("sysWin", 0,
 			GUI::General_SystemWindow::Sub::SysWindowType::StartWindow);
 		this->sysWindows.Windows[sysid] = GUI::System::StartWindow();
-
-
+		*/
+		this->createWindow(MainWindow::windowName::StartWindow);
 		this->createWindow(MainWindow::windowName::LayerWindow);
 
 		this->mainMenuBar.image = MapMakeData::MainData.nullImage();
@@ -35,6 +36,13 @@ namespace GUI {
 				this->subWindows.add(id, GUI::SubWindow::LayerWindow());
 			}
 			break;
+		case MainWindow::windowName::StartWindow:
+			{
+				auto id = GUI::General_SystemWindow::Sub::WindowNumber("sysWin", 0,
+					GUI::General_SystemWindow::Sub::SysWindowType::StartWindow);
+				this->sysWindows.add(id, GUI::System::StartWindow());
+			}
+			break;
 		}
 	}
 
@@ -47,6 +55,13 @@ namespace GUI {
 					GUI::General_SubWindow::Sub::SubWindowType::LayerWindow);
 				//this->subWindows.Windows.erase(id);
 				this->subWindows.remove(id);
+			}
+			break;
+		case MainWindow::windowName::StartWindow:
+			{
+				auto id = GUI::General_SystemWindow::Sub::WindowNumber("sysWin", 0,
+					GUI::General_SystemWindow::Sub::SysWindowType::StartWindow);
+				this->sysWindows.remove(id);
 			}
 			break;
 		}

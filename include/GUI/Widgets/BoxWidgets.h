@@ -17,4 +17,6 @@ namespace ImGui {
 
 	bool BeginSelectBox(const char* name, bool& selected, bool& shift_selected, const ImVec2& size, bool border, ImGuiWindowFlags flags);
 	void EndSelectBox();
+
+	void SelectAddItem(const char* name);
 }

@@ -15,21 +15,21 @@
 namespace GUI::General_SubWindow {
 
 	void  General::draw() {
-		for (const auto& [key, value] : this->Windows) {
+		for (auto& [key, value] : this->Windows) {
 			if (key.type == Sub::SubWindowType::LayerWindow) {
-				auto s = std::get<GUI::SubWindow::LayerWindow>(value);
+				auto& s = std::get<GUI::SubWindow::LayerWindow>(value);
 
 				// 描画
 				s.draw();
 
 				// openFlag がoffになっていれば、ウィンドウを消しておく。
-				if (!s.closeFlag) {
+				if (!s.openFlag) {
 					this->remove(key);
+					break;// window変数の中身を消しているので、これを入れないとぶっ壊れます。
 				}
 			}
 		}
 	}
-
 
 	void NowPopSearch(std::map<Sub::WindowNumber, VData > Windows, std::map<Sub::SubWindowType, int>& NowPop) {
 		NowPop.clear();

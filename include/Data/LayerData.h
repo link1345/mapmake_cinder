@@ -57,6 +57,8 @@ namespace MapMakeData {
 				this->layerfolder_flag = layerfolder_flag;
 			}
 
+			~LayerBoxData() {};
+
 			/*! @brief	レイヤー名
 			*/
 			std::string name;
@@ -80,6 +82,7 @@ namespace MapMakeData {
 			/*! @brief	フォルダであるか true=yes
 			*/
 			bool layerfolder_flag;
+
 		};
 
 		// ツリーで処理するときに必要なオペレータ
@@ -100,9 +103,8 @@ namespace MapMakeData {
 		*/
 		class LayerData {
 		public:
-			LayerData() {
-				this->layerTreeData.clear();
-			}
+			LayerData();
+			~LayerData() {};
 
 			/*! @brief	=オペレータ
 				@note	動作があやしぃ…かも
@@ -120,6 +122,10 @@ namespace MapMakeData {
 			/*! @brief	木構造データ
 			*/
 			Tree<Sub::LayerBoxData> layerTreeData;
+
+			/*! @brief	キャンバスサイズ
+			*/
+			int canvasSize;
 
 
 			/*! @brief	レイヤー情報の補正用関数

@@ -103,6 +103,9 @@ namespace GUI {
 			General() {
 				this->Windows.clear();
 
+				this->NowPop.clear();
+				this->LimitPop.clear();
+
 				this->LimitPop[Sub::SubWindowType::LayerWindow] = 1;
 				this->LimitPop[Sub::SubWindowType::TerrainToolWindow] = 1;
 			}

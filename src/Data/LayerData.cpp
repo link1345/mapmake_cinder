@@ -4,6 +4,11 @@ typedef class MapMakeData::Layer::Sub::LayerBoxData LData;
 
 namespace MapMakeData::Layer {
 
+	LayerData::LayerData() {
+		this->layerTreeData.clear();
+		this->canvasSize = 50;
+	}
+
 	void LayerData::setSampleData(int mode) {
 
 		// 
@@ -34,11 +39,12 @@ namespace MapMakeData::Layer {
 
 		}
 		else if (mode == 0) {
+			
 			auto s1 = NodeNumber();
 			auto data = LData(u8"山1", texture1, texture1, false, false, false);
 			layerTreeData.newID(s1, u8"LayerImage");
 			layerTreeData.add(layerTreeData.rootID, Node<LData>(s1, data));
-
+			
 			auto s2 = NodeNumber();
 			data = LData(u8"平地1", texture1, texture1, false, false, false);
 			layerTreeData.newID(s2, u8"関東平地の情報");
@@ -64,14 +70,14 @@ namespace MapMakeData::Layer {
 			data = LData(u8"平地2-2", texture1, texture1, false, false, false);
 			layerTreeData.newID(s7, u8"LayerImage");
 			layerTreeData.add(s5, Node<LData>(s7, data));
-
+			
 		}
 
 		// 補正を掛ける
 		layerFolderCorrection();
 	}
 
-
+	
 	void LayerData::layerFolderCorrection_s(Node<Sub::LayerBoxData>& tree) {
 		if (tree.pNext.size() == 0) {
 			tree.data.layerfolder_flag = false;

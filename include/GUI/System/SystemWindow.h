@@ -9,6 +9,9 @@
 
 using namespace std;
 
+typedef std::variant<GUI::System::StartWindow> SVData;
+
+
 namespace GUI {
 	namespace General_SystemWindow {
 
@@ -78,6 +81,8 @@ namespace GUI {
 			sysGeneral() {
 				this->Windows.clear();
 
+				this->NowPop.clear();
+
 			}
 
 			/*!
@@ -86,13 +91,16 @@ namespace GUI {
 			@note Key=IDデータ , 値 = variantに登録してある変数の型なら何でも
 			@code std::vector<Sub::Window> Windows;
 			*/
-			std::map<Sub::WindowNumber,
-				std::variant <
-				GUI::System::StartWindow
-				>
-			> Windows;
+			std::map<Sub::WindowNumber, SVData> Windows;
 
 			void draw();
+
+			void add(Sub::WindowNumber key, SVData data);
+
+			void remove(Sub::WindowNumber key);
+
+			/*! @brief 現在起動しているウィンドウ種別の数 */
+			std::map<Sub::SysWindowType, int> NowPop;
 
 		};
 

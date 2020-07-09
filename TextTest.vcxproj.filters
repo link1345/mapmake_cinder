@@ -500,6 +500,9 @@
     <ClInclude Include="include\GUI\Widgets\HelpMarker.h">
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
+    <ClInclude Include="include\GUI\Widgets\WindowBase.h">
+      <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.vert">

@@ -8,7 +8,6 @@ namespace AppSystem {
 
 	void SystemData::init() {
 		this->quitFlag = false;
-		this->startGUIFlag = true;
 	}
 
 

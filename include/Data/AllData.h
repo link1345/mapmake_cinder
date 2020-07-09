@@ -30,6 +30,7 @@ namespace MapMakeData {
 	class AllData {
 	public:
 		AllData();
+		~AllData() {};
 
 		void init();
 
@@ -59,8 +60,6 @@ namespace MapMakeData {
 
 		/*! @brief ファイル操作周り */
 		MapMakeData::File::FileData fileData;
-		
-
 
 		/*! @brief ヌルイメージgeter
 			@return         this->NullImage

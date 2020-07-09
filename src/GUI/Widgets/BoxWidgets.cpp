@@ -109,71 +109,78 @@ namespace ImGui {
 		flags = ImGuiWindowFlags_AlwaysAutoResize;
 
 		//flags = ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoMove;
+
+		bool b = false;
+		b = ImGui::BeginChild(name, size, border, flags);
+
+
+		auto child_window = ImGui::GetCurrentWindow();
 		
-		bool b = ImGui::BeginChild(name, size, border, flags);
-		
-		
-		//bool b = ImGui::Begin(name,NULL,flags);
+		//ImGuiButtonFlags bflag = ImGuiButtonFlags_MouseButtonDefault_;
+		ImGuiButtonFlags bflag = ImGuiButtonFlags_NoHoldingActiveId;
+
+
+		if (child_window->DC.ItemFlags & ImGuiItemFlags_ButtonRepeat)
+			bflag |= ImGuiButtonFlags_Repeat;
+		bool hovered, held;
+
+		//ImRect bb = ImRect(child_window->Pos, child_window->Pos + child_window->Size);
+		ImRect bb = child_window->WorkRect;
+
+		auto id = ImGui::GetID(name);
+
+
+		bool pressed = ButtonBehavior(bb, id, &hovered, &held, bflag);
+		//bool pressed = false;
+
+		ImGuiCol color;
+
+		if (hovered || selected || shift_selected)
 		{
-			auto child_window = ImGui::GetCurrentWindow();
-
-			//ImGuiButtonFlags bflag = ImGuiButtonFlags_MouseButtonDefault_;
-			ImGuiButtonFlags bflag = ImGuiButtonFlags_NoHoldingActiveId;
-
-
-			if (child_window->DC.ItemFlags & ImGuiItemFlags_ButtonRepeat)
-				bflag |= ImGuiButtonFlags_Repeat;
-			bool hovered, held;
-
-			//ImRect bb = ImRect(child_window->Pos, child_window->Pos + child_window->Size);
-			ImRect bb = child_window->WorkRect;
-			
-			auto id = ImGui::GetID(name);
-
-			bool pressed = ButtonBehavior(bb, id, &hovered, &held, bflag);
-			//bool pressed = false;
-			
-			ImGuiCol color;
-
-
-			if (hovered || selected || shift_selected)
-			{
-				if (held && hovered && ImGui::GetIO().KeyShift) {
-					color = ImGuiCol_HeaderActive;
-				}
-				else if (held && hovered) {
-					color = ImGuiCol_HeaderActive;
-				}
-				else if (hovered) {
-					color = ImGuiCol_HeaderHovered;
-				}
-				else if (shift_selected) {
-					color = ImGuiCol_HeaderActive;
-				}
-				else if (selected) {
-					color = ImGuiCol_Header;
-				}
-
-				const ImU32 col = GetColorU32(color);
-				RenderNavHighlight(bb, id);
-
-				RenderFrame(bb.Min, bb.Max, col, true, ImGui::GetStyle().FrameRounding);
-
-				if (pressed && ImGui::GetIO().KeyShift && !selected && !shift_selected) shift_selected = true;
-				else if (pressed && !selected && !shift_selected) selected = true;
-				else if (pressed && ImGui::GetIO().KeyShift && !selected && shift_selected) shift_selected = false;
-				else if (pressed && selected) selected = false;
-
+			if (held && hovered && ImGui::GetIO().KeyShift) {
+				color = ImGuiCol_HeaderActive;
 			}
+			else if (held && hovered) {
+				color = ImGuiCol_HeaderActive;
+			}
+			else if (hovered) {
+				color = ImGuiCol_HeaderHovered;
+			}
+			else if (shift_selected) {
+				color = ImGuiCol_HeaderActive;
+			}
+			else if (selected) {
+				color = ImGuiCol_Header;
+			}
+
+			ImU32 col = GetColorU32(color);
+
+			RenderNavHighlight(bb, id);
+			RenderFrame(bb.Min, bb.Max, col, true, ImGui::GetStyle().FrameRounding);
+
+			if (pressed && ImGui::GetIO().KeyShift && !selected && !shift_selected) shift_selected = true;
+			else if (pressed && !selected && !shift_selected) selected = true;
+			else if (pressed && ImGui::GetIO().KeyShift && !selected && shift_selected) shift_selected = false;
+			else if (pressed && selected) selected = false;
+
 		}
-		
-		
+
+
 
 		return b;
 	}
 
 	void EndSelectBox() {
 		//ImGui::End();
+
 		ImGui::EndChild();
 	 }
+
+	void SelectAddItem(const char* name) {
+		auto child_window = ImGui::GetCurrentWindow();
+		ImRect bb = child_window->WorkRect;
+		auto id = ImGui::GetID(name);
+		if (!ItemAdd(bb, id));
+	}
+
 }

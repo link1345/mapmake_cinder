@@ -17,9 +17,9 @@ namespace ToolBox {
 			cinder::Surface::Iter iter = icon.getIter();
 			while (iter.line()) {
 				while (iter.pixel()) {
-					iter.r() = 255 - color.x;
-					iter.g() = 255 - color.y;
-					iter.b() = 255 - color.z;
+					iter.r() = 255 - (uint8_t)color.x;
+					iter.g() = 255 - (uint8_t)color.y;
+					iter.b() = 255 - (uint8_t)color.z;
 				}
 			}
 		}
@@ -35,9 +35,9 @@ namespace ToolBox {
 			cinder::Surface::Iter iter = icon.getIter();
 			while (iter.line()) {
 				while (iter.pixel()) {
-					iter.r() = color.x;
-					iter.g() = color.y;
-					iter.b() = color.z;
+					iter.r() = (uint8_t)color.x;
+					iter.g() = (uint8_t)color.y;
+					iter.b() = (uint8_t)color.z;
 				}
 			}
 		}

@@ -190,7 +190,7 @@ namespace NextStd {
 			for (int i = 0; i < n; i++) {
 				space += " ";
 			}
-			console() << u8"leaf:" << space << tree.ID.nodeName.c_str() << u8" ID:" << tree.ID.nodeID << std::endl;
+			//console() << u8"leaf:" << space << tree.ID.nodeName.c_str() << u8" ID:" << tree.ID.nodeID << std::endl;
 
 			for (auto leaf : tree.pNext) {
 				show_s(leaf, n + 1);
@@ -262,8 +262,9 @@ namespace NextStd {
 			// Ž©g‚ªe–Ú•W‚È‚ç
 			if (tree.ID == parentNumber) {
 				tree.pNext.push_back(add_node);
-				//Print << U"add:" << add_node.ID.nodeName << U"," << add_node.ID.nodeID <<  U" : " << add_node.rect.size;
-
+				//console() << U"end:"  << endl;
+				//console() << u8"add:" << add_node.ID.nodeName.c_str() << u8"," << add_node.ID.nodeID << endl;
+				
 				return true;
 			}
 

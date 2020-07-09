@@ -16,6 +16,7 @@
 #include "Data/AllData.h"
 #include "GUI/Widgets/BoxWidgets.h"
 
+#include "GUI/Widgets/WindowBase.h"
 
 using namespace std;
 using namespace ci;
@@ -52,22 +53,19 @@ namespace GUI {
 
 		}
 
-		class LayerWindow {
+		class LayerWindow : public GUI::WindowBase{
 		public:
-			LayerWindow(){
+			LayerWindow() : WindowBase(){
 				// とりあえず、初期化だけはしておく。
 				this->image = MapMakeData::MainData.nullImage();
-
-				this->closeFlag = true;
 			}
+			~LayerWindow() {};
 
-			void draw();
+			void draw() override;
 
 			/*! @brief 使用用途予定未定の画像。とりあえず、使う予定だけはあるので…、許してちょ！
 			*/
 			gl::Texture2dRef image;
-
-			bool closeFlag;
 
 		};
 
