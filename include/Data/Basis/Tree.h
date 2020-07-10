@@ -14,6 +14,8 @@ using namespace std;
 
 namespace NextStd {
 
+	/*! @brief	Tree構造のノード名・IDを保存するクラス
+	*/
 	struct NodeNumber {
 		string nodeName;
 		size_t nodeID;
@@ -39,6 +41,9 @@ namespace NextStd {
 		}
 	};
 
+	/*! @brief	Tree構造のノードを作るためのクラス
+		@note	テンプレートがノード情報を格納するところに使われています。使用の際は登録してください。
+	*/
 	template <class DataType>
 	struct Node
 	{
@@ -74,6 +79,9 @@ namespace NextStd {
 		}
 	};
 
+	/*! @brief	Tree構造を作るためのクラス
+		@note	テンプレートがノード情報を格納するところに使われています。使用の際は登録してください。
+	*/
 	template <class DataType>
 	struct Tree
 	{
@@ -84,19 +92,32 @@ namespace NextStd {
 			this->pRoot = Node<DataType>(rootID);
 		}
 
+		/*! @brief	ノード検索(ポインターなし)
+			@param[in]      name	ノード名
+			@return         ノードに至るまでの経路
+		*/
 		list<Node<DataType>> search(NodeNumber name) {
 			list<Node<DataType>> tree;
 			search_s(this->pRoot, name, tree);
 			return tree;
 		}
 
+		/*! @brief	ノード検索(ポインターあり)
+			@param[in]      searchNumber	ノード名
+			@return         ノードに至るまでの経路
+		*/
 		list < Node<DataType>* > p_search(NodeNumber searchNumber) {
 			list<Node<DataType>*> tree;
 			p_search_s(this->pRoot, searchNumber, tree);
 			return tree;
 		};
 
-		// ノード追加
+		/*! @brief	親ノード追加
+			@param[in]      parentNumber	追加する親のノード名。
+			@param[in]      add_node		追加するノードの中身
+			@return         追加出来れば、true
+			@note			親に追加するため、兄弟の最後尾に追加するという形になる。同名のノードがあれば、追加しない。
+		*/
 		bool add(NodeNumber parentNumber, Node<DataType> add_node) {
 			// 追加処理する前に同名のノードがあるか、確認。あるならやらない。
 			if (this->search(add_node.ID).size() != 0) {
@@ -110,6 +131,13 @@ namespace NextStd {
 			}
 		};
 
+		/*! @brief	兄弟ノード追加
+			@param[in]		frontNumber	追加する兄弟のノード名
+			@param[in]		add_node		追加するのノードの中身
+			@param[in]		s				追加する兄弟からの番号
+			@return         追加出来れば、true
+			@note			兄弟の間に追加する。sが0なら、parentNumberの兄。sが1ならparentNuberの弟となる。
+		*/
 		bool insert(NodeNumber frontNumber, Node<DataType> add_node, int s = 0) {
 			// 追加処理する前に同名のノードがあるか、確認。あるならやらない。
 			if (this->search(add_node.ID).size() != 0) {
@@ -123,21 +151,28 @@ namespace NextStd {
 			}
 		}
 
-		// このノードが、上から何番目にあるか
+		/*! @brief	ノードが上から何階層目にあるか
+			@param[in]      frontNumber		目的のノード名
+			@return			何階層であるか
+		*/
 		int topNumber(NodeNumber frontNumber) {
 			int num = 0;
 			bool hit = topNumber_s(this->pRoot, frontNumber, num);
 			return num;
 		}
 
-		// ノード削除
+		/*! @brief	ノード削除
+			@param[in]      parentNumber	目的のノード名
+			@return			消したらtrue
+		*/
 		bool remove(NodeNumber parentNumber) {
 			// 追加処理する前に同名のノードがあるか、確認。あるならやらない。
 			if (this->search(this->rootID).size() == 0) return false;
 			return remove_s(this->pRoot, parentNumber);
 		};
 
-		// クリア処理
+		/*! @brief	全ノード削除。
+		*/
 		void clear() {
 			// ルートを消した上で、再度、ルートを付けておく。
 			this->remove(this->rootID);
@@ -145,12 +180,19 @@ namespace NextStd {
 			//this = Node<DataType>(rootID);
 		}
 
-		// 中身確認
+		/*! @brief	中身確認。
+			@note	console()で中身を表示します。
+		*/
 		void show() {
 			show_s(this->pRoot, 0);
 		};
 
-		// 新しいノードのIDを作成する。
+		/*! @brief	新ノード名を生成
+			@param[in]      n			生成する目的のノードIDを格納する変数。
+			@param[in]      nodeName	ノード名。
+			@return			ノード名の生成に成功したら、true
+			@note	従来の奴に被らないように、新しいノード名を作成します。なお、ノードの登録は出来ません。addでやってください。
+		*/
 		bool newID(NodeNumber& n, string nodeName) {
 			for (int i = 0; i < 32766; i++) {
 				//auto num = RandomUint16();
@@ -166,6 +208,10 @@ namespace NextStd {
 			return false;
 		};
 
+		/*! @brief	ノード情報取得(ポインター付き)
+			@param[in]      name			取得したいノード名
+			@return			ノード情報
+		*/
 		Node<DataType>& at(NodeNumber name) {
 			auto a = this->p_search(name);
 			if (a.size() == 0) {
@@ -190,7 +236,7 @@ namespace NextStd {
 			for (int i = 0; i < n; i++) {
 				space += " ";
 			}
-			//console() << u8"leaf:" << space << tree.ID.nodeName.c_str() << u8" ID:" << tree.ID.nodeID << std::endl;
+			console() << u8"leaf:" << space << tree.ID.nodeName.c_str() << u8" ID:" << tree.ID.nodeID << std::endl;
 
 			for (auto leaf : tree.pNext) {
 				show_s(leaf, n + 1);

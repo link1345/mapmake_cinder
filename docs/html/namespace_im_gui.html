@@ -87,6 +87,20 @@ $(function() {
 <tr class="separator:a6925f0990e41a36eacaf3802625d1034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6bea747cfb0feadfff0c0f5f0e173ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_im_gui.html#af6bea747cfb0feadfff0c0f5f0e173ff">EndSelectBox</a> ()</td></tr>
 <tr class="separator:af6bea747cfb0feadfff0c0f5f0e173ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6751af52d62a03c57414a3c38bbf95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_im_gui.html#ac6751af52d62a03c57414a3c38bbf95c">SelectAddItem</a> (const char *name)</td></tr>
+<tr class="separator:ac6751af52d62a03c57414a3c38bbf95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ddd38777fac51329149b6c79683eb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_im_gui.html#ac3ddd38777fac51329149b6c79683eb6">NoTextTreeNodeBehavior</a> (ImGuiID id, ImGuiTreeNodeFlags flags, const char *label, const char *label_end)</td></tr>
+<tr class="memdesc:ac3ddd38777fac51329149b6c79683eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">[外部使用非推奨]  <a href="#ac3ddd38777fac51329149b6c79683eb6">[詳解]</a><br /></td></tr>
+<tr class="separator:ac3ddd38777fac51329149b6c79683eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f04b3edaf61b38cb1609d77e3321094"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_im_gui.html#a7f04b3edaf61b38cb1609d77e3321094">NoTextTreeNodeExV</a> (const void *ptr_id, ImGuiTreeNodeFlags flags, const char *fmt, va_list args)</td></tr>
+<tr class="memdesc:a7f04b3edaf61b38cb1609d77e3321094"><td class="mdescLeft">&#160;</td><td class="mdescRight">[外部使用非推奨]  <a href="#a7f04b3edaf61b38cb1609d77e3321094">[詳解]</a><br /></td></tr>
+<tr class="separator:a7f04b3edaf61b38cb1609d77e3321094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2385e7e97b7a1dfd7e97e83df70f7882"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_im_gui.html#a2385e7e97b7a1dfd7e97e83df70f7882">NoTextTreeNode</a> (const void *ptr_id, const char *fmt,...)</td></tr>
+<tr class="memdesc:a2385e7e97b7a1dfd7e97e83df70f7882"><td class="mdescLeft">&#160;</td><td class="mdescRight">TreeNodeのない版の関数  <a href="#a2385e7e97b7a1dfd7e97e83df70f7882">[詳解]</a><br /></td></tr>
+<tr class="separator:a2385e7e97b7a1dfd7e97e83df70f7882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d8a6bf675634642e613f80de8bb254"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_im_gui.html#a26d8a6bf675634642e613f80de8bb254">NoTextTreeNode</a> (const char *label)</td></tr>
+<tr class="memdesc:a26d8a6bf675634642e613f80de8bb254"><td class="mdescLeft">&#160;</td><td class="mdescRight">TreeNodeのない版の関数  <a href="#a26d8a6bf675634642e613f80de8bb254">[詳解]</a><br /></td></tr>
+<tr class="separator:a26d8a6bf675634642e613f80de8bb254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">列挙型詳解</h2>
 <a id="a73b6d7378755a219e516abd4bc8199a1"></a>
@@ -214,6 +228,166 @@ $(function() {
           <td class="memname">void ImGui::EndSelectBox </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2385e7e97b7a1dfd7e97e83df70f7882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2385e7e97b7a1dfd7e97e83df70f7882">&#9670;&nbsp;</a></span>NoTextTreeNode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui::NoTextTreeNode </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>ptr_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TreeNodeのない版の関数 </p>
+<dl class="section note"><dt>覚え書き</dt><dd>ImGui::SetNextItemOpen()で開閉します。 </dd></dl>
+
+</div>
+</div>
+<a id="a26d8a6bf675634642e613f80de8bb254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d8a6bf675634642e613f80de8bb254">&#9670;&nbsp;</a></span>NoTextTreeNode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui::NoTextTreeNode </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TreeNodeのない版の関数 </p>
+<dl class="section note"><dt>覚え書き</dt><dd>ImGui::SetNextItemOpen()で開閉します。 </dd></dl>
+
+</div>
+</div>
+<a id="ac3ddd38777fac51329149b6c79683eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3ddd38777fac51329149b6c79683eb6">&#9670;&nbsp;</a></span>NoTextTreeNodeBehavior()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui::NoTextTreeNodeBehavior </td>
+          <td>(</td>
+          <td class="paramtype">ImGuiID&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ImGuiTreeNodeFlags&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label_end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[外部使用非推奨] </p>
+
+</div>
+</div>
+<a id="a7f04b3edaf61b38cb1609d77e3321094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f04b3edaf61b38cb1609d77e3321094">&#9670;&nbsp;</a></span>NoTextTreeNodeExV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui::NoTextTreeNodeExV </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>ptr_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ImGuiTreeNodeFlags&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[外部使用非推奨] </p>
+
+</div>
+</div>
+<a id="ac6751af52d62a03c57414a3c38bbf95c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6751af52d62a03c57414a3c38bbf95c">&#9670;&nbsp;</a></span>SelectAddItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui::SelectAddItem </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

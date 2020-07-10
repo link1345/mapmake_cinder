@@ -1,7 +1,15 @@
+/*! @addtogroup Widgets
+	@file       NoTextTreeNodeWidgets.h
+	@brief		TreeNodeの操作バーがないバージョンを登録してある関数です。
+	@date       2020/07/10
+*/
+
 #include "GUI/Widgets/NoTextTreeNodeWidgets.h"
 
 namespace ImGui {
 
+	/*! @brief	[外部使用非推奨]
+	*/
 	bool NoTextTreeNodeBehavior(ImGuiID id, ImGuiTreeNodeFlags flags, const char* label, const char* label_end)
 	{
 		ImGuiWindow* window = GetCurrentWindow();
@@ -189,6 +197,8 @@ namespace ImGui {
 		return is_open;
 	}
 
+	/*! @brief	[外部使用非推奨]
+	*/
 	bool NoTextTreeNodeExV(const void* ptr_id, ImGuiTreeNodeFlags flags, const char* fmt, va_list args)
 	{
 		ImGuiWindow* window = GetCurrentWindow();
@@ -200,6 +210,9 @@ namespace ImGui {
 		return NoTextTreeNodeBehavior(window->GetID(ptr_id), flags, g.TempBuffer, label_end);
 	}
 
+	/*! @brief	TreeNodeのない版の関数
+		@note	ImGui::SetNextItemOpen()で開閉します。
+	*/
 	bool NoTextTreeNode(const void* ptr_id, const char* fmt, ...)
 	{
 		va_list args;
@@ -209,6 +222,9 @@ namespace ImGui {
 		return is_open;
 	}
 
+	/*! @brief	TreeNodeのない版の関数
+		@note	ImGui::SetNextItemOpen()で開閉します。
+	*/
 	bool NoTextTreeNode(const char* label)
 	{
 		ImGuiWindow* window = GetCurrentWindow();

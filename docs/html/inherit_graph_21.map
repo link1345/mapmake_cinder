@@ -1,5 +1,0 @@
-<map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$class_texture_1_1_screen.html" title="[仮想]基礎スクリーン " alt="" coords="5,31,120,57"/>
-<area shape="rect" id="node2" href="$class_texture_1_1_map_image2_d_window.html" title="マップを2Dで見る場合の処理。 " alt="" coords="168,5,363,32"/>
-<area shape="rect" id="node3" href="$class_texture_1_1_map_image3_d_window.html" title="マップを3Dで見る場合の処理。 @ " alt="" coords="168,56,363,83"/>
-</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['backwindow',['backWindow',['../class_g_u_i_1_1_main_g_u_i.html#aab2920cb5e537741fc4b3b99ac658d1e',1,'GUI::MainGUI']]]
+  ['adddata',['addData',['../class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html#a384112927ddfc17f7f448ca43bbaecd1',1,'GUI::SubWindow::Sub::Edit']]]
 ];

@@ -3,6 +3,9 @@
 #include "cinder/CinderImGui.h"
 
 namespace GUI {
+
+	/*!	@brief	GUI WindowŠÖŒW‚ÌŠî’êƒNƒ‰ƒX
+	*/
 	class WindowBase {
 	public :
 		WindowBase() {

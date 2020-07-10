@@ -1,8 +1,8 @@
-﻿/*! @addtogroup GUI管理
+/*! @addtogroup GUI�Ǘ�
 	@file       SubWindow.h
-	@brief      サブウィンドウ処理周りについて
-	@note		メインメニューバーと背景以外のGUI処理に関するもの
-				\n上位にGUI.hがある。
+	@brief      �T�u�E�B���h�E��������ɂ���
+	@note		���C�����j���[�o�[�Ɣw�i�ȊO��GUI�����Ɋւ������
+				\n��ʂ�GUI.h������B
 	@date       2020/06/25
 */
 
@@ -33,8 +33,8 @@ namespace GUI {
 		namespace Sub {
 
 			/*!
-			@brief ウィンドウの種別の列挙型
-			@attention 新しいウィンドウ種別が出来たら、必ずここに追加してください。
+			@brief �E�B���h�E�̎�ʂ̗񋓌^
+			@attention �V�����E�B���h�E��ʂ��o������A�K�������ɒǉ����Ă��������B
 			*/
 			enum class SubWindowType {
 				LayerWindow,
@@ -42,7 +42,7 @@ namespace GUI {
 			};
 
 			/*!
-			@brief ウィンドウIDの保存
+			@brief �E�B���h�EID�̕ۑ�
 			*/
 			struct WindowNumber {
 				string nodeName;
@@ -59,7 +59,7 @@ namespace GUI {
 					this->nodeID = nodeID;
 					this->type = type;
 				}
-				bool operator==(const WindowNumber& other) // コピー代入
+				bool operator==(const WindowNumber& other) // �R�s�[���
 				{
 					if (this->nodeID == other.nodeID &&
 						this->nodeName == other.nodeName &&
@@ -93,10 +93,10 @@ namespace GUI {
 
 
 		/*!
-		@brief ウィンドウの一覧を管理するクラス
-		@attention このクラスは、ウィンドウの枠を作成するクラスの管理であって、openglの描画管理ではありません。\n
-		また、中の処理の変数に関する点については、外部と連携が必要な場合のみ、グローバルMapMakeData::MainDataに記述するようにしてください。
-		@sa グローバルMapMakeData::MainDataと関係している
+		@brief �E�B���h�E�̈ꗗ���Ǘ�����N���X
+		@attention ���̃N���X�́A�E�B���h�E�̘g���쐬����N���X�̊Ǘ��ł����āAopengl�̕`��Ǘ��ł͂���܂���B\n
+		�܂��A���̏����̕ϐ��Ɋւ���_�ɂ��ẮA�O���ƘA�g���K�v�ȏꍇ�̂݁A�O���[�o��MapMakeData::MainData�ɋL�q����悤�ɂ��Ă��������B
+		@sa �O���[�o��MapMakeData::MainData�Ɗ֌W���Ă���
 		*/
 		class General {
 		public:
@@ -110,30 +110,30 @@ namespace GUI {
 				this->LimitPop[Sub::SubWindowType::TerrainToolWindow] = 1;
 			}
 
-			/*!
-			@brief
-			ここにwindows変数のdrawを行う処理についてを書く。
+			/*!	@brief	�E�B���h�E�`��֐�
 			*/
 			void draw();
 
+			/*!	@brief	�E�B���h�E��ǉ�
+			*/
 			void add(Sub::WindowNumber key, VData data);
 
+			/*!	@brief	�E�B���h�E���폜
+			*/
 			void remove(Sub::WindowNumber key);
 
-
-
 			/*!
-			@brief ウィンドウ一覧
-			@note  (※ 今のところ記述済みのバージョンを使おうと考えていますが、難解なプログラムになるようなら、下記のを使います。　2020/06/24)
-			@note Key=IDデータ , 値 = variantに登録してある変数の型なら何でも
+			@brief �E�B���h�E�ꗗ
+			@note  (�� ���̂Ƃ���L�q�ς݂̃o�[�W�������g�����ƍl���Ă��܂����A����ȃv���O�����ɂȂ�悤�Ȃ�A���L�̂��g���܂��B�@2020/06/24)
+			@note Key=ID�f�[�^ , �l = variant�ɓo�^���Ă���ϐ��̌^�Ȃ牽�ł�
 			@code std::vector<Sub::Window> Windows;
 			*/
 			std::map<Sub::WindowNumber, VData > Windows;
 
-			/*! @brief ウィンドウ種別ごとに起動していい数を決める (0 = 無限) */
+			/*! @brief �E�B���h�E��ʂ��ƂɋN�����Ă����������߂� (0 = ����) */
 			std::map<Sub::SubWindowType, int> LimitPop;
 
-			/*! @brief 現在起動しているウィンドウ種別の数 */
+			/*! @brief ���݋N�����Ă���E�B���h�E��ʂ̐� */
 			std::map<Sub::SubWindowType, int> NowPop;
 
 		};

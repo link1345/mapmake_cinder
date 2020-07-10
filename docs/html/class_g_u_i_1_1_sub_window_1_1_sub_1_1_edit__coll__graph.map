@@ -1,0 +1,5 @@
+<map id="GUI::SubWindow::Sub::Edit" name="GUI::SubWindow::Sub::Edit">
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_sub_window_1_1_sub_1_1edit_data.html" title="GUI::SubWindow::Sub\l::editData" alt="" coords="5,109,157,151"/>
+<area shape="rect" id="node3" href="$struct_next_std_1_1_node_number.html" title="Tree構造のノード名・IDを保存するクラス " alt="" coords="93,5,245,32"/>
+<area shape="rect" id="node4" href="$class_g_u_i_1_1_sub_window_1_1_sub_1_1move_data.html" title="GUI::SubWindow::Sub\l::moveData" alt="" coords="181,109,333,151"/>
+</map>

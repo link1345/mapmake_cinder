@@ -1,6 +1,6 @@
 /*! @addtogroup メイン
-    @file       main.h
-    @brief      一番上位に位置するヘッダー
+	@file       main.h
+	@brief      一番上位に位置するヘッダー
 	@date       2020/06/25
 */
 

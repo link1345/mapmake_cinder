@@ -4,6 +4,8 @@ typedef class MapMakeData::Layer::Sub::LayerBoxData MLData;
 
 namespace GUI::SubWindow {
 
+	/*!	@brief	各レイヤーのマウス操作のための関数
+	*/
 	void LayerBoxFolderDraw(Tree<MLData>& rootTree, Node<MLData>& node, char* id, int n, GUI::SubWindow::Sub::Edit& edit) {
 		
 		char nameid[100] = {};
@@ -76,6 +78,9 @@ namespace GUI::SubWindow {
 		
 	}
 
+	/*!	@brief	各レイヤーの表示のための関数
+		@note	LayerBoxFolderDrawを呼び出してます。
+	*/
 	void LayerBoxDraw(Tree<MLData>& rootTree, Node<MLData>& node,
 		char* id, int n, GUI::SubWindow::Sub::Edit& edit) {
 
@@ -165,6 +170,9 @@ namespace GUI::SubWindow {
 
 	}
 
+	/*!	@brief	レイヤーの表示のための関数
+		@note	LayerBoxDrawを呼び出してます。また、自身を再帰で呼び出してます。
+	*/
 	void draw_LayerBox(Tree<MLData>& rootTree, Node<MLData>& tree,
 		int n, GUI::SubWindow::Sub::Edit& edit) {
 
@@ -224,6 +232,8 @@ namespace GUI::SubWindow {
 
 	};
 
+	/*!	@brief	レイヤーウィンドウの表示のための関数
+	*/
 	void LayerBox(Tree<MLData>& data, gl::Texture2dRef NullImage) {
 		ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
 

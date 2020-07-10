@@ -1,3 +1,6 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$class_g_u_i_1_1_sub_window_1_1_terrain_tool_window.html" title="GUI::SubWindow::TerrainTool\lWindow" alt="" coords="5,5,197,47"/>
+<area shape="rect" id="node1" href="$class_g_u_i_1_1_window_base.html" title="GUI Window関係の基底クラス " alt="" coords="5,64,133,91"/>
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_sub_window_1_1_layer_window.html" title="GUI::SubWindow::LayerWindow" alt="" coords="181,5,388,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_sub_window_1_1_terrain_tool_window.html" title="GUI::SubWindow::TerrainTool\lWindow" alt="" coords="189,57,381,98"/>
+<area shape="rect" id="node4" href="$class_g_u_i_1_1_system_1_1_start_window.html" title="GUI::System::StartWindow" alt="" coords="195,123,374,149"/>
 </map>

@@ -77,13 +77,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Tree構造を作るためのクラス  
+ <a href="struct_next_std_1_1_tree.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="_tree_8h_source.html">Tree.h</a>&gt;</code></p>
 <div class="dynheader">
 NextStd::Tree&lt; DataType &gt; 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_next_std_1_1_tree__coll__graph.png" border="0" usemap="#_next_std_1_1_tree_3_01_data_type_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="_next_std_1_1_tree_3_01_data_type_01_4_coll__map" id="_next_std_1_1_tree_3_01_data_type_01_4_coll__map">
-<area shape="rect" id="node2" href="struct_next_std_1_1_node_number.html" title="NextStd::NodeNumber" alt="" coords="20,5,172,32"/>
+<area shape="rect" id="node2" href="struct_next_std_1_1_node_number.html" title="Tree構造のノード名・IDを保存するクラス " alt="" coords="20,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
@@ -92,24 +95,34 @@ NextStd::Tree&lt; DataType &gt; 連携図</div>
 <tr class="memitem:a0d7a3ba5d3c85078fdf2afe6ae98f4f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a0d7a3ba5d3c85078fdf2afe6ae98f4f4">Tree</a> ()</td></tr>
 <tr class="separator:a0d7a3ba5d3c85078fdf2afe6ae98f4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c46953d85b43eec3c650d6e01ad2c1"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a82c46953d85b43eec3c650d6e01ad2c1">search</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> name)</td></tr>
+<tr class="memdesc:a82c46953d85b43eec3c650d6e01ad2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノード検索(ポインターなし)  <a href="#a82c46953d85b43eec3c650d6e01ad2c1">[詳解]</a><br /></td></tr>
 <tr class="separator:a82c46953d85b43eec3c650d6e01ad2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a340445f03c7a9b3b00294a43c68385c5"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; *&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a340445f03c7a9b3b00294a43c68385c5">p_search</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> searchNumber)</td></tr>
+<tr class="memdesc:a340445f03c7a9b3b00294a43c68385c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノード検索(ポインターあり)  <a href="#a340445f03c7a9b3b00294a43c68385c5">[詳解]</a><br /></td></tr>
 <tr class="separator:a340445f03c7a9b3b00294a43c68385c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a446ccb18a701688d06254d8ca0f6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a20a446ccb18a701688d06254d8ca0f6f">add</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> parentNumber, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; add_node)</td></tr>
+<tr class="memdesc:a20a446ccb18a701688d06254d8ca0f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">親ノード追加  <a href="#a20a446ccb18a701688d06254d8ca0f6f">[詳解]</a><br /></td></tr>
 <tr class="separator:a20a446ccb18a701688d06254d8ca0f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd62ac055e42a2a81d8a58d66d3a7cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a7fd62ac055e42a2a81d8a58d66d3a7cf">insert</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> frontNumber, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; add_node, int s=0)</td></tr>
+<tr class="memdesc:a7fd62ac055e42a2a81d8a58d66d3a7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">兄弟ノード追加  <a href="#a7fd62ac055e42a2a81d8a58d66d3a7cf">[詳解]</a><br /></td></tr>
 <tr class="separator:a7fd62ac055e42a2a81d8a58d66d3a7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d5ed155cc59782687c54d28509df624"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a9d5ed155cc59782687c54d28509df624">topNumber</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> frontNumber)</td></tr>
+<tr class="memdesc:a9d5ed155cc59782687c54d28509df624"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノードが上から何階層目にあるか  <a href="#a9d5ed155cc59782687c54d28509df624">[詳解]</a><br /></td></tr>
 <tr class="separator:a9d5ed155cc59782687c54d28509df624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8356e7ed7a9aa5fe2182e8a34633a1fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a8356e7ed7a9aa5fe2182e8a34633a1fa">remove</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> parentNumber)</td></tr>
+<tr class="memdesc:a8356e7ed7a9aa5fe2182e8a34633a1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノード削除  <a href="#a8356e7ed7a9aa5fe2182e8a34633a1fa">[詳解]</a><br /></td></tr>
 <tr class="separator:a8356e7ed7a9aa5fe2182e8a34633a1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdf0ed8f447d2535fca08700174fb96a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#acdf0ed8f447d2535fca08700174fb96a">clear</a> ()</td></tr>
+<tr class="memdesc:acdf0ed8f447d2535fca08700174fb96a"><td class="mdescLeft">&#160;</td><td class="mdescRight">全ノード削除。  <a href="#acdf0ed8f447d2535fca08700174fb96a">[詳解]</a><br /></td></tr>
 <tr class="separator:acdf0ed8f447d2535fca08700174fb96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7439e17bc12731129ca380dc99d3f5e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a7439e17bc12731129ca380dc99d3f5e9">show</a> ()</td></tr>
+<tr class="memdesc:a7439e17bc12731129ca380dc99d3f5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">中身確認。  <a href="#a7439e17bc12731129ca380dc99d3f5e9">[詳解]</a><br /></td></tr>
 <tr class="separator:a7439e17bc12731129ca380dc99d3f5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7a3cf9824493b9b2a82641a69851ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a7a7a3cf9824493b9b2a82641a69851ff">newID</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> &amp;n, string nodeName)</td></tr>
+<tr class="memdesc:a7a7a3cf9824493b9b2a82641a69851ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">新ノード名を生成  <a href="#a7a7a3cf9824493b9b2a82641a69851ff">[詳解]</a><br /></td></tr>
 <tr class="separator:a7a7a3cf9824493b9b2a82641a69851ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad528c90175634f4b20b3d140684151f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#aad528c90175634f4b20b3d140684151f">at</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> name)</td></tr>
+<tr class="memdesc:aad528c90175634f4b20b3d140684151f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノード情報取得(ポインター付き)  <a href="#aad528c90175634f4b20b3d140684151f">[詳解]</a><br /></td></tr>
 <tr class="separator:aad528c90175634f4b20b3d140684151f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -138,7 +151,13 @@ NextStd::Tree&lt; DataType &gt; 連携図</div>
 <tr class="memitem:a71fe5274e59811472664ec41f4dc6fc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a71fe5274e59811472664ec41f4dc6fc6">remove_s</a> (<a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; &amp;tree, <a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> parentNumber)</td></tr>
 <tr class="separator:a71fe5274e59811472664ec41f4dc6fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;class DataType&gt;<br />
+struct NextStd::Tree&lt; DataType &gt;</h3>
+
+<p>Tree構造を作るためのクラス </p>
+<dl class="section note"><dt>覚え書き</dt><dd>テンプレートがノード情報を格納するところに使われています。使用の際は登録してください。 </dd></dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a0d7a3ba5d3c85078fdf2afe6ae98f4f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d7a3ba5d3c85078fdf2afe6ae98f4f4">&#9670;&nbsp;</a></span>Tree()</h2>
 
@@ -202,6 +221,17 @@ template&lt;class DataType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>親ノード追加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parentNumber</td><td>追加する親のノード名。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">add_node</td><td>追加するノードの中身 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>追加出来れば、true </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>親に追加するため、兄弟の最後尾に追加するという形になる。同名のノードがあれば、追加しない。 </dd></dl>
 
 </div>
 </div>
@@ -275,6 +305,15 @@ template&lt;class DataType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>ノード情報取得(ポインター付き) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>取得したいノード名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ノード情報 </dd></dl>
+
 </div>
 </div>
 <a id="ac2d5c960e9ce864835cf90aa7496c9a1"></a>
@@ -346,6 +385,8 @@ template&lt;class DataType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>全ノード削除。 </p>
+
 </div>
 </div>
 <a id="a7fd62ac055e42a2a81d8a58d66d3a7cf"></a>
@@ -389,6 +430,18 @@ template&lt;class DataType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>兄弟ノード追加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frontNumber</td><td>追加する兄弟のノード名 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">add_node</td><td>追加するのノードの中身 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>追加する兄弟からの番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>追加出来れば、true </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>兄弟の間に追加する。sが0なら、parentNumberの兄。sが1ならparentNuberの弟となる。 </dd></dl>
 
 </div>
 </div>
@@ -478,6 +531,17 @@ template&lt;class DataType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>新ノード名を生成 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>生成する目的のノードIDを格納する変数。 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nodeName</td><td>ノード名。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ノード名の生成に成功したら、true </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>従来の奴に被らないように、新しいノード名を作成します。なお、ノードの登録は出来ません。addでやってください。 </dd></dl>
+
 </div>
 </div>
 <a id="a340445f03c7a9b3b00294a43c68385c5"></a>
@@ -505,6 +569,15 @@ template&lt;class DataType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>ノード検索(ポインターあり) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">searchNumber</td><td>ノード名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ノードに至るまでの経路 </dd></dl>
 
 </div>
 </div>
@@ -578,6 +651,15 @@ template&lt;class DataType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>ノード削除 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parentNumber</td><td>目的のノード名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>消したらtrue </dd></dl>
+
 </div>
 </div>
 <a id="a71fe5274e59811472664ec41f4dc6fc6"></a>
@@ -643,6 +725,15 @@ template&lt;class DataType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>ノード検索(ポインターなし) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>ノード名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ノードに至るまでの経路 </dd></dl>
 
 </div>
 </div>
@@ -715,6 +806,9 @@ template&lt;class DataType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>中身確認。 </p>
+<dl class="section note"><dt>覚え書き</dt><dd>console()で中身を表示します。 </dd></dl>
+
 </div>
 </div>
 <a id="aaa99a227f1628e28d87e9254d4641632"></a>
@@ -780,6 +874,15 @@ template&lt;class DataType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>ノードが上から何階層目にあるか </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">frontNumber</td><td>目的のノード名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>何階層であるか </dd></dl>
 
 </div>
 </div>
