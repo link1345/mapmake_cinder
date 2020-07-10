@@ -15,6 +15,7 @@
 // my
 #include "Data/AllData.h"
 #include "GUI/Widgets/BoxWidgets.h"
+#include "GUI/Widgets/NoTextTreeNodeWidgets.h"
 
 #include "GUI/Widgets/WindowBase.h"
 
@@ -22,6 +23,7 @@ using namespace std;
 using namespace ci;
 using namespace ci::app;
 using namespace ci::log;
+
 
 
 namespace GUI {
@@ -50,6 +52,21 @@ namespace GUI {
 				NodeNumber next;
 				NodeNumber payload_n;
 			};
+
+
+			class Edit {
+			public :
+				Edit() {};
+				~Edit() {};
+
+				GUI::SubWindow::Sub::editData removeData;
+				GUI::SubWindow::Sub::editData upfileData;
+				GUI::SubWindow::Sub::editData addData;
+				GUI::SubWindow::Sub::moveData moveData;
+
+
+			};
+
 
 		}
 

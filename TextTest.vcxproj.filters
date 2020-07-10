@@ -288,6 +288,9 @@
     <ClCompile Include="src\Data\SystemData.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="src\GUI\Widgets\NoTextTreeNodeWidgets.cpp">
+      <Filter>Source Files\GUI\Widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp">
@@ -501,6 +504,9 @@
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
     <ClInclude Include="include\GUI\Widgets\WindowBase.h">
+      <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Widgets\NoTextTreeNodeWidgets.h">
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
   </ItemGroup>

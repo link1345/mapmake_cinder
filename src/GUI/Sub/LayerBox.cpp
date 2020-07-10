@@ -4,8 +4,7 @@ typedef class MapMakeData::Layer::Sub::LayerBoxData MLData;
 
 namespace GUI::SubWindow {
 
-	void LayerBoxFolderDraw(Tree<MLData>& rootTree, Node<MLData>& node, char* id,
-		GUI::SubWindow::Sub::editData& removedata, GUI::SubWindow::Sub::editData& adddata, GUI::SubWindow::Sub::moveData& modata) {
+	void LayerBoxFolderDraw(Tree<MLData>& rootTree, Node<MLData>& node, char* id, int n, GUI::SubWindow::Sub::Edit& edit) {
 		
 		char nameid[100] = {};
 		sprintf_s(nameid,100, u8"layerbox%s", id);
@@ -26,9 +25,9 @@ namespace GUI::SubWindow {
 				NodeNumber payload_n = *(const NodeNumber*)payload->Data;
 
 				// 安全に行うために、後で、処理するように変更するようにする！！！
-				modata.flag = true;
-				modata.next = node.ID;
-				modata.payload_n = payload_n;
+				edit.moveData.flag = true;
+				edit.moveData.next = node.ID;
+				edit.moveData.payload_n = payload_n;
 
 				//console() << u8"old: " << payload_n.nodeName.c_str() << u8" " << payload_n.nodeID << endl;
 				//console() << u8"next: " << node.ID.nodeName.c_str() << u8" " << node.ID.nodeID << endl;
@@ -47,20 +46,29 @@ namespace GUI::SubWindow {
 				//if (ImGui::MenuItem(u8"追加")) {
 				ImGui::CloseCurrentPopup();
 
-				adddata.flag = true;
-				adddata.id = node.ID;
+				edit.addData.flag = true;
+				edit.addData.id = node.ID;
 			}
 			if (ImGui::MenuItem(u8"削除")) {
 				ImGui::CloseCurrentPopup();
 
-				removedata.flag = true;
-				removedata.id = node.ID;
+				edit.removeData.flag = true;
+				edit.removeData.id = node.ID;
+			}
+
+			bool upfile = ( n > 1 ) ? true : false;
+
+			if (ImGui::MenuItem(u8"上位階層に移動","", false, upfile)) {
+				ImGui::CloseCurrentPopup();
+
+				edit.upfileData.flag = true;
+				edit.upfileData.id = node.ID;
 			}
 			if (ImGui::MenuItem(u8"グループ化")) {
 				ImGui::CloseCurrentPopup();
 
-				adddata.flag = true;
-				adddata.id = node.ID;
+				edit.addData.flag = true;
+				edit.addData.id = node.ID;
 			}
 
 			ImGui::EndPopup();
@@ -69,7 +77,7 @@ namespace GUI::SubWindow {
 	}
 
 	void LayerBoxDraw(Tree<MLData>& rootTree, Node<MLData>& node,
-		char* id, GUI::SubWindow::Sub::editData& removedata, GUI::SubWindow::Sub::editData& adddata, GUI::SubWindow::Sub::moveData& modata) {
+		char* id, int n, GUI::SubWindow::Sub::Edit& edit) {
 
 		ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
 
@@ -93,52 +101,11 @@ namespace GUI::SubWindow {
 
 		ImGui::BeginGroup();
 		{
-			/* // old
-			if (!node.data.layerfolder_flag) {
-				
-				//ImGui::Separator();
-
-				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {
-
-					ImGui::Text(u8"%s", node.data.name.c_str());
-
-					ImGui::Image(node.data.image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
-					ImGui::SameLine();
-					ImGui::Image(node.data.image3d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
-
-					// 右クリック処理
-					ImGui::SelectAddItem(nameid);
-					LayerBoxFolderDraw(rootTree, node, nameid, removedata, adddata, modata);
-				}
-
-				ImGui::EndSelectBox();
-				
-			}
-			else {
-				
-				float font = ImGui::GetFontSize();
-
-				char title_parent[100] = {};
-				sprintf_s(title_parent, 100, u8"フォルダ");
-				ImGui::Text(u8"%s", title_parent);
-
-				ImGui::SameLine();
-				ImGui::Image(node.data.image2d, vec2(font, font), vec2(0, 1), vec2(1, 0));
-				ImGui::SameLine();
-
-				ImGui::Text(u8" : %s", node.data.name.c_str());
-
-				ImGui::TextColored(ImVec4(0.5f, 0.5f, 0.5f, 1), u8" : %s", node.data.name.c_str());
-								
-			}*/
-
-
 			// ----------------------
 			// NEW
 
 			if (!node.data.layerfolder_flag) {
-
-				//ImGui::Separator();
+				// 一般処理
 
 				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {
 
@@ -150,19 +117,24 @@ namespace GUI::SubWindow {
 
 					// 右クリック処理
 					ImGui::SelectAddItem(nameid);
-					LayerBoxFolderDraw(rootTree, node, nameid, removedata, adddata, modata);
+					LayerBoxFolderDraw(rootTree, node, nameid, n, edit);
 				}
 
 				ImGui::EndSelectBox();
 
 			}
 			else {
+				// フォルダ処理
+				
 				size = ImGui::GetFontSize();
 
 				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), false, window_flags)) {
 
 					// これをフォルダアイコンに
-					ImGui::Image(node.data.image2d, vec2( size  , size ), vec2(0, 1), vec2(1, 0));
+					if(node.data.selectflag)
+						ImGui::Image(MapMakeData::MainData.icon[MapMakeData::Icon::ICON_FolderOpen], vec2( size  , size ), vec2(0, 1), vec2(1, 0));
+					else
+						ImGui::Image(MapMakeData::MainData.icon[MapMakeData::Icon::ICON_FolderClose], vec2( size, size ), vec2(0, 1), vec2(1, 0));
 
 					ImGui::SameLine();
 
@@ -178,12 +150,12 @@ namespace GUI::SubWindow {
 
 					// 右クリック処理
 					ImGui::SelectAddItem(nameid);
-					LayerBoxFolderDraw(rootTree, node, nameid, removedata, adddata, modata);
+					LayerBoxFolderDraw(rootTree, node, nameid, n, edit);
 				}
 
 				ImGui::EndSelectBox();
+				
 			}
-
 
 
 		}
@@ -194,7 +166,7 @@ namespace GUI::SubWindow {
 	}
 
 	void draw_LayerBox(Tree<MLData>& rootTree, Node<MLData>& tree,
-		int n, GUI::SubWindow::Sub::editData& removedata, GUI::SubWindow::Sub::editData& adddata, GUI::SubWindow::Sub::moveData& modata) {
+		int n, GUI::SubWindow::Sub::Edit& edit) {
 
 		string space = "";
 		for (int i = 0; i < n; i++) {
@@ -202,19 +174,19 @@ namespace GUI::SubWindow {
 		}
 		// ID make
 		char treeid[100] = {};
-		sprintf_s(treeid, 100, u8"%s%d", tree.ID.nodeName.c_str(), (int)tree.ID.nodeID);
+		sprintf_s(treeid, 100, u8"treeNode %s%d", tree.ID.nodeName.c_str(), (int)tree.ID.nodeID);
 
 		//ImGui::Text(treeid);
 		// 中身
 
 		//if (n != 0 && tree.pNext.size() == 0) {
 		if (n != 0) {
-			LayerBoxDraw(rootTree, tree, treeid, removedata, adddata, modata);
+			LayerBoxDraw(rootTree, tree, treeid, n, edit);
 		}
 
 		if (n == 0) {
 			for (auto& leaf : tree.pNext) {
-				draw_LayerBox(rootTree, leaf, n + 1, removedata, adddata, modata);
+				draw_LayerBox(rootTree, leaf, n + 1, edit);
 			}
 		}
 		else {
@@ -226,15 +198,22 @@ namespace GUI::SubWindow {
 				auto color = ImGui::GetStyleColorVec4(ImGuiCol_Text);
 				ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 0.5f, 0.5f, 1));
 				
-				if (ImGui::TreeNode(treeid, u8"%s", tree.ID.nodeName.c_str())) {
+				if (tree.data.selectflag) {
+					ImGui::SetNextItemOpen(true);
+				}
+				else {
+					ImGui::SetNextItemOpen(false);
+				}
+
+				//if (ImGui::TreeNode(treeid, u8"%s", tree.ID.nodeName.c_str())) {
+				if (ImGui::NoTextTreeNode(treeid, u8"%s", tree.ID.nodeName.c_str())) {
 
 					ImGui::PopStyleColor();
 
 					for (auto& leaf : tree.pNext) {
-						draw_LayerBox(rootTree, leaf, n + 1, removedata, adddata, modata);
+						draw_LayerBox(rootTree, leaf, n + 1, edit);
 					}
 					ImGui::TreePop();
-
 				}
 				else {
 					ImGui::PopStyleColor();
@@ -248,57 +227,60 @@ namespace GUI::SubWindow {
 	void LayerBox(Tree<MLData>& data, gl::Texture2dRef NullImage) {
 		ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
 
-		GUI::SubWindow::Sub::editData adddata;
-		GUI::SubWindow::Sub::editData removedata;
-		GUI::SubWindow::Sub::moveData modata;
+		GUI::SubWindow::Sub::Edit edit;
 
-		draw_LayerBox(data, data.pRoot, 0, removedata, adddata, modata);
+		draw_LayerBox(data, data.pRoot, 0, edit);
 
-		// 全て終わった後に安全にデータを消去する 
+		// 全て終わった後に安全に処理する 
 		// ※ LayerBoxDrawの途中で切ると、endを上手く行えずプロセス死ぬ。
-		if (removedata.flag == true) {
-			data.remove(removedata.id);
+
+		// 削除
+		if (edit.removeData.flag == true) {
+			data.remove(edit.removeData.id);
 		}
 
-		if (adddata.flag == true) {
+		// 追加
+		if (edit.addData.flag == true) {
 			auto s1 = NodeNumber();
 			auto d1 = MLData(u8"グランドキャニオン", NullImage, NullImage, false, false, false);
 			data.newID(s1, "LayerImage");
-			//data.add(adddata.id, Node<LayerBoxData>(s1, d1));
-			data.insert(adddata.id, Node<MLData>(s1, d1), 1);
+			data.insert(edit.addData.id, Node<MLData>(s1, d1), 1);
 		}
 
-		if (modata.flag == true && !data.at(modata.next).data.layerfolder_flag) {
-			auto move_tmp = data.at(modata.payload_n);
-			auto& searchData = data.p_search(modata.next);
+		// 上位階層に移動
+		if (edit.upfileData.flag == true) {
+			auto& searchData = data.p_search(edit.upfileData.id);
+			auto a = *(std::next(searchData.begin(), 1));// 2番目のデータ(親)にアクセスして、そこにツッコむ。
+
+			auto move_tmp = data.at(edit.upfileData.id);
+			console() << a->data.name << endl;
+			
+			data.remove(edit.upfileData.id);
+			data.insert(a->ID, move_tmp, 1);
+
+		}
+
+		// 移動
+		if (edit.moveData.flag == true && !data.at(edit.moveData.next).data.layerfolder_flag) {
+			auto move_tmp = data.at(edit.moveData.payload_n);
+			auto& searchData = data.p_search(edit.moveData.next);
 
 			bool hit = false;
 			for (auto i : searchData) {
-				if (i->ID.nodeID == modata.payload_n.nodeID &&
-					i->ID.nodeName == modata.payload_n.nodeName) hit = true;
+				if (i->ID.nodeID == edit.moveData.payload_n.nodeID &&
+					i->ID.nodeName == edit.moveData.payload_n.nodeName) hit = true;
 			}
 
 			if (!hit) {
-				auto old_num = data.topNumber(modata.payload_n);
-				auto new_num = data.topNumber(modata.next);
-				//console() << modata.payload_n.nodeID << std::endl;
-				data.remove(modata.payload_n);
+				auto old_num = data.topNumber(edit.moveData.payload_n);
+				auto new_num = data.topNumber(edit.moveData.next);
+				data.remove(edit.moveData.payload_n);
 				
-				auto a = *(std::next(searchData.begin(), 1));// 2番目のデータ(親)にアクセスして、そこにツッコむ。
-
-				//console() << u8"old: " << modata.payload_n.nodeName.c_str() << u8" " << modata.payload_n.nodeID << endl;
-				//console() << u8"next: " << modata.next.nodeName.c_str() << u8" " << modata.next.nodeID << endl;
-
-
-				//console() << a->ID.nodeName << a->ID.nodeID << endl;
-				//data.add(a->ID,move_tmp);
-
-				//console() << old_num << u8" " << new_num << endl;
 				if (old_num < new_num) {
-					data.insert(modata.next, move_tmp, 1);
+					data.insert(edit.moveData.next, move_tmp, 1);
 				}
 				else {
-					data.insert(modata.next, move_tmp);
+					data.insert(edit.moveData.next, move_tmp);
 				}
 
 			}
@@ -306,12 +288,12 @@ namespace GUI::SubWindow {
 				//console() << u8"親が自身の子供へ移動することはできないよ！" << endl;
 			}
 		}
-		else if (modata.flag == true && data.at(modata.next).data.layerfolder_flag) {
+		else if (edit.moveData.flag == true && data.at(edit.moveData.next).data.layerfolder_flag) {
 
-			auto move_tmp = data.at(modata.payload_n);
+			auto move_tmp = data.at(edit.moveData.payload_n);
 
-			data.remove(modata.payload_n);
-			data.add(modata.next, move_tmp);
+			data.remove(edit.moveData.payload_n);
+			data.add(edit.moveData.next, move_tmp);
 		}
 
 	}

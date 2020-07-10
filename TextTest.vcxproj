@@ -254,6 +254,7 @@
     <ClCompile Include="src\GUI\System\StartWindow.cpp" />
     <ClCompile Include="src\GUI\System\SystemWindow.cpp" />
     <ClCompile Include="src\GUI\Widgets\BoxWidgets.cpp" />
+    <ClCompile Include="src\GUI\Widgets\NoTextTreeNodeWidgets.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -323,6 +324,7 @@
     <ClInclude Include="include\GUI\System\SystemWindow.h" />
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h" />
     <ClInclude Include="include\GUI\Widgets\HelpMarker.h" />
+    <ClInclude Include="include\GUI\Widgets\NoTextTreeNodeWidgets.h" />
     <ClInclude Include="include\GUI\Widgets\WindowBase.h" />
     <ClInclude Include="include\IconData.h" />
     <ClInclude Include="include\main.h" />
