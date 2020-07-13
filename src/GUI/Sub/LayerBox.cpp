@@ -309,8 +309,12 @@ namespace GUI::SubWindow {
 	}
 
 
-	void LayerWindow::draw() {	
-		if (ImGui::Begin(u8"レイヤー", &this->openFlag, ImGuiWindowFlags_MenuBar)){
+	void LayerWindow::draw(string mID) {
+
+		string nID = u8"レイヤー##" + mID;
+
+		if (ImGui::Begin(nID.c_str(), &this->openFlag, ImGuiWindowFlags_MenuBar)){
+
 			auto menuSize = MapMakeData::MainData.windowData.MenuSize;
 
 			if (ImGui::BeginMenuBar()) {
@@ -379,7 +383,6 @@ namespace GUI::SubWindow {
 			LayerBox(MapMakeData::MainData.layerData.layerTreeData, MapMakeData::MainData.nullImage());
 		}
 		ImGui::End();
-
 
 		// FPS確認
 		//ImGui::Text("FPS %f", getAverageFps());

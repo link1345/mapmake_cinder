@@ -18,7 +18,7 @@ namespace GUI::MainWindow {
 			{
 				if (ImGui::MenuItem(u8"新規作成"))
 				{
-					GUI::gui.createWindow(GUI::MainWindow::windowName::StartWindow);
+					GUI::gui.createWindow(GUI::System::StartWindow());
 				}
 				if (ImGui::MenuItem(u8"[体験版NG]保存", "", false, false)) {}
 				if (ImGui::MenuItem(u8"[体験版NG]上書き保存", "Ctrl+S", false, false)) {}
@@ -35,22 +35,33 @@ namespace GUI::MainWindow {
 				ImGui::EndMenu();
 			}
 			if (ImGui::BeginMenu(u8"ウィンドウ")) {
-				bool flag = (GUI::gui.subWindows.NowPop[GUI::General_SubWindow::Sub::SubWindowType::LayerWindow] >= 1 ) ? true : false;
+				bool Layerflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::LayerWindow).hash_code()] >= 1 ) ? true : false;
+				bool Penflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] >= 1) ? true : false;
 
-				if (ImGui::MenuItem(u8"レイヤー一覧", "Alt+1", flag )) {
+				if (ImGui::MenuItem(u8"レイヤー一覧", "Alt+1", Layerflag )) {
 					// LayerWindowの数が、1以上あるなら、閉じておく。
-					if (flag) {
-						GUI::gui.closeWindow(GUI::MainWindow::windowName::LayerWindow);
+					if (Layerflag) {
+						GUI::gui.createWindow(GUI::SubWindow::LayerWindow());
 					}
 					else{
-						GUI::gui.createWindow(GUI::MainWindow::windowName::LayerWindow);
+						GUI::gui.createWindow(GUI::SubWindow::LayerWindow());
 					}
 				}
-				if (ImGui::MenuItem(u8"ピン一覧", "Alt+2", true)) {}
+				if (ImGui::MenuItem(u8"[未実装]ピン一覧", "Alt+2", true)) {}
 				ImGui::Separator();
 				// ミニマップとは…
 				//  等高線・地形区別線・モノクロ2Dミニマップなどのことを指す。複数起動させることが可能。
-				if (ImGui::MenuItem(u8"新規ミニマップ", "Alt+3")) {}
+				if (ImGui::MenuItem(u8"[未実装]新規ミニマップ", "Alt+3")) {}
+				if (ImGui::MenuItem(u8"[未実装]筆追加", "Alt+4")) {
+					// LayerWindowの数が、1以上あるなら、閉じておく。
+					if (Penflag) {
+						//GUI::gui.closeWindow();
+					}
+					else {
+						//GUI::gui.createWindow(GUI::MainWindow::windowName::TerrainPenWindow);
+					}
+				
+				}
 
 
 				ImGui::EndMenu();

@@ -3,7 +3,7 @@
 
 namespace GUI::SubWindow {
 
-	void TerrainToolWindow::draw() {
+	void TerrainToolWindow::draw(std::string mID) {
 
 		//auto window = getWindowSize();
 		auto window = ImGui::GetWindowSize();

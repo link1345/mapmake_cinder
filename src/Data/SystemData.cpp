@@ -1,18 +1,21 @@
+
+
 #include "Data/SystemData.h"
 
 namespace AppSystem {
 
-	SystemData::SystemData() {
-		this->init();
-	}
+    SystemData::SystemData() {
+        this->init();
+    }
 
-	void SystemData::init() {
-		this->quitFlag = false;
-	}
+    void SystemData::init() {
+        this->quitFlag = false;
+    }
 
 
-	void SystemData::setSampleData(int mode) {
-		this->init();
-	}
+    void SystemData::setSampleData(int mode) {
+        this->init();
+    }
 
 }
+

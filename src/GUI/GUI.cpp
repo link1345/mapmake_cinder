@@ -5,76 +5,63 @@ namespace GUI {
 	MainGUI::MainGUI() {
 		this->mainMenuBar = MainWindow::MainMenuBar();
 		this->backWindow = MainWindow::BackGroundWindow();
-		this->subWindows = General_SubWindow::General();
-		this->sysWindows = General_SystemWindow::sysGeneral();
+		this->Windows = General_Window::General();
 
-		this->sysWindows.Windows.clear();
-		this->subWindows.Windows.clear();
+		this->Windows.Windows.clear();
 
 	}
 
 	void MainGUI::reset() {
-		/*
-		auto sysid = GUI::General_SystemWindow::Sub::WindowNumber("sysWin", 0,
-			GUI::General_SystemWindow::Sub::SysWindowType::StartWindow);
-		this->sysWindows.Windows[sysid] = GUI::System::StartWindow();
-		*/
-		this->createWindow(MainWindow::windowName::StartWindow);
-		this->createWindow(MainWindow::windowName::LayerWindow);
+
+		// new
+		this->createWindow(GUI::System::StartWindow());
+		this->createWindow(GUI::SubWindow::LayerWindow());
+		//this->createWindow(GUI::SubWindow::LayerWindow(),100);
 
 		this->mainMenuBar.image = MapMakeData::MainData.nullImage();
 	}
 
-	void MainGUI::createWindow(MainWindow::windowName mode) {
+	//void MainGUI::createWindow(GUI::General_Window::Sub::WindowType mode) {
 
-		switch (mode) {
-		case MainWindow::windowName::LayerWindow:
-			{
-				auto id = GUI::General_SubWindow::Sub::WindowNumber("layerWin", 0,
-					GUI::General_SubWindow::Sub::SubWindowType::LayerWindow);
-				//this->subWindows.Windows[id] = GUI::SubWindow::LayerWindow();
-				this->subWindows.add(id, GUI::SubWindow::LayerWindow());
-			}
-			break;
-		case MainWindow::windowName::StartWindow:
-			{
-				auto id = GUI::General_SystemWindow::Sub::WindowNumber("sysWin", 0,
-					GUI::General_SystemWindow::Sub::SysWindowType::StartWindow);
-				this->sysWindows.add(id, GUI::System::StartWindow());
-			}
-			break;
-		}
+	template<class t>
+	inline void MainGUI::createWindow(t mode) {
+
+		auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name(), 0, typeid(mode).hash_code());
+		console() << typeid(mode).hash_code() << endl;
+		this->Windows.add(id, mode);
 	}
 
-	void MainGUI::closeWindow(MainWindow::windowName mode) {
+	template<class t>
+	inline void MainGUI::closeWindow(t mode) {
 
-		switch (mode) {
-		case MainWindow::windowName::LayerWindow:
-			{
-				auto id = GUI::General_SubWindow::Sub::WindowNumber("layerWin", 0,
-					GUI::General_SubWindow::Sub::SubWindowType::LayerWindow);
-				//this->subWindows.Windows.erase(id);
-				this->subWindows.remove(id);
-			}
-			break;
-		case MainWindow::windowName::StartWindow:
-			{
-				auto id = GUI::General_SystemWindow::Sub::WindowNumber("sysWin", 0,
-					GUI::General_SystemWindow::Sub::SysWindowType::StartWindow);
-				this->sysWindows.remove(id);
-			}
-			break;
-		}
+		auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name(), 0,
+			typeid(mode).hash_code());
+		this->Windows.remove(id);
+
+
+	}
+	template<class t>
+	inline void MainGUI::createWindow(t mode, size_t s) {
+		auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name() + std::to_string(s), 0, typeid(mode).hash_code());
+		console() << typeid(mode).hash_code() << endl;
+		this->Windows.add(id, mode);
 	}
 
+	template<class t>
+	inline void MainGUI::closeWindow(t mode, size_t s) {
+
+		auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name() + std::to_string(s), 0,
+			typeid(mode).hash_code());
+		this->Windows.remove(id);
+
+
+	}
 
 	void MainGUI::draw() {
 		this->mainMenuBar.draw();
 		//this->backWindow.draw();
 
-		this->subWindows.draw();
-
-		this->sysWindows.draw();
+		this->Windows.draw();
 	}
 
 }

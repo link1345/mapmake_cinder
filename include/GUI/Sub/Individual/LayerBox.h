@@ -78,7 +78,7 @@ namespace GUI {
 			}
 			~LayerWindow() {};
 
-			void draw() override;
+			void draw(string mID) override;
 
 			/*! @brief 使用用途予定未定の画像。とりあえず、使う予定だけはあるので…、許してちょ！
 			*/

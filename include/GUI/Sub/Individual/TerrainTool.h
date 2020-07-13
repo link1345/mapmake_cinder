@@ -7,6 +7,9 @@
 
 
 #pragma once
+
+#include <string>
+
 #include <cinder/app/App.h>
 #include <cinder/app/RendererGl.h>
 #include <cinder/gl/gl.h>
@@ -21,7 +24,7 @@ namespace SubWindow {
 	// 地形ツール画面について
 	class TerrainToolWindow : public GUI::WindowBase{
 	public:
-		void draw() override;
+		void draw(std::string mID) override;
 
 	};
 

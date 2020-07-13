@@ -1,7 +1,7 @@
 ﻿#include "GUI/System/Individual/StartWindow.h"
 
 namespace  GUI::System {
-	void StartWindow::draw() {
+	void StartWindow::draw(string mID) {
 
 		if (startFlag) {
 			ImGui::OpenPopup("Start");

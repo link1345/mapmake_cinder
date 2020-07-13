@@ -1,13 +1,5 @@
-/*! @addtogroup GUI管理
-	@file       SubWindow.h
-	@brief      サブウィンドウ処理周りについて
-	@note		メインメニューバーと背景以外のGUI処理に関するもの
-				\n上位にGUI.hがある。
-	@date       2020/06/25
-*/
-
-
 #pragma once
+
 #include <variant>
 #include <vector>
 #include <map>
@@ -16,8 +8,9 @@
 #include <cinder/app/RendererGl.h>
 #include <cinder/gl/gl.h>
 
-#include "Data/AllData.h"
+#include <cinder/CinderImGui.h>
 
+#include "GUI/System/Individual/StartWindow.h"
 #include "GUI/Sub/Individual/TerrainTool.h"
 #include "GUI/Sub/Individual/LayerBox.h"
 
@@ -25,21 +18,30 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-typedef std::variant<GUI::SubWindow::TerrainToolWindow,GUI::SubWindow::LayerWindow> VData;
+
+// ----- ここを書き換えるだけで、新ウィンドウを追加できます。 ------
+using t1 = GUI::SubWindow::TerrainToolWindow;
+using t2 = GUI::SubWindow::LayerWindow;
+using t3 = GUI::System::StartWindow;
+typedef std::variant<t1,t2,t3> VData;
+// -----------------------------------------------------------------
 
 namespace GUI {
-	namespace General_SubWindow {
+	namespace General_Window {
 
 		namespace Sub {
 
 			/*!
-			@brief ウィンドウの種別の列挙型
+			@brief ウィンドウの種別の列挙型(元)
 			@attention 新しいウィンドウ種別が出来たら、必ずここに追加してください。
 			*/
-			enum class SubWindowType {
+			typedef size_t WindowType;
+			/*
+			enum class WindowType {
 				LayerWindow,
-				TerrainToolWindow
-			};
+				TerrainPenWindow
+			};*/
+
 
 			/*!
 			@brief ウィンドウIDの保存
@@ -47,14 +49,14 @@ namespace GUI {
 			struct WindowNumber {
 				string nodeName;
 				size_t nodeID;
-				SubWindowType type;
+				WindowType type;
 
 				WindowNumber() {
 					this->nodeName = "";
 					this->nodeID = 0;
-					SubWindowType type = SubWindowType::TerrainToolWindow;
+					this->type = 0;
 				}
-				WindowNumber(string nodeName, size_t nodeID, SubWindowType type) {
+				WindowNumber(string nodeName, size_t nodeID, WindowType type) {
 					this->nodeName = nodeName;
 					this->nodeID = nodeID;
 					this->type = type;
@@ -63,7 +65,7 @@ namespace GUI {
 				{
 					if (this->nodeID == other.nodeID &&
 						this->nodeName == other.nodeName &&
-						this->type == other.type ) {
+						this->type == other.type) {
 						return true;
 					}
 					else return false;
@@ -83,13 +85,10 @@ namespace GUI {
 						}
 					}
 					return false;
-					
+
 				}
 			};
 		}
-
-
-
 
 
 		/*!
@@ -106,8 +105,13 @@ namespace GUI {
 				this->NowPop.clear();
 				this->LimitPop.clear();
 
-				this->LimitPop[Sub::SubWindowType::LayerWindow] = 1;
-				this->LimitPop[Sub::SubWindowType::TerrainToolWindow] = 1;
+				//this->LimitPop[Sub::WindowType::LayerWindow] = 1;
+				//this->LimitPop[Sub::WindowType::TerrainPenWindow] = 1;
+				
+				this->LimitPop[typeid(GUI::System::StartWindow).hash_code()] = 1;
+
+				this->LimitPop[typeid(GUI::SubWindow::LayerWindow).hash_code()] = 2;
+				this->LimitPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] = 1;
 			}
 
 			/*!	@brief	ウィンドウ描画関数
@@ -131,10 +135,10 @@ namespace GUI {
 			std::map<Sub::WindowNumber, VData > Windows;
 
 			/*! @brief ウィンドウ種別ごとに起動していい数を決める (0 = 無限) */
-			std::map<Sub::SubWindowType, int> LimitPop;
+			std::map<Sub::WindowType, int> LimitPop;
 
 			/*! @brief 現在起動しているウィンドウ種別の数 */
-			std::map<Sub::SubWindowType, int> NowPop;
+			std::map<Sub::WindowType, int> NowPop;
 
 		};
 

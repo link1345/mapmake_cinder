@@ -24,8 +24,7 @@
 #include "Data/SystemData.h"
 #include "Data/AllData.h"
 
-#include "GUI/System/SystemWindow.h"
-#include "GUI/Sub/SubWindow.h"
+#include "GUI/Window.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -52,11 +51,13 @@ namespace GUI {
 			void draw();
 		};
 
-
+		/*
 		enum class windowName {
 			StartWindow,
-			LayerWindow
+			LayerWindow,
+			TerrainPenWindow
 		};
+		*/
 
 	}
 
@@ -77,8 +78,18 @@ namespace GUI {
 		void resize();
 		void update();
 
-		void createWindow(MainWindow::windowName mode);
-		void closeWindow(MainWindow::windowName mode);
+		template<class t>
+		void createWindow(t data);
+		template<class t>
+		void createWindow(t data,size_t id);
+		
+		template<class t>
+		void closeWindow(t data);
+		template<class t>
+		void closeWindow(t data, size_t id);
+
+		//void createWindow(GUI::General_Window::Sub::WindowType mode);
+		//void closeWindow(GUI::General_Window::Sub::WindowType mode);
 
 		/*! メインメニューバーについて */
 		MainWindow::MainMenuBar mainMenuBar;
@@ -87,10 +98,7 @@ namespace GUI {
 		MainWindow::BackGroundWindow backWindow;
 
 		/*! System周りのウィンドウについて */
-		General_SystemWindow::sysGeneral sysWindows;
-
-		/*! メインメニューバー・背景以外の表示について */
-		General_SubWindow::General subWindows;
+		General_Window::General Windows;
 
 	};
 

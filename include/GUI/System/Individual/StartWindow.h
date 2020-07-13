@@ -21,13 +21,14 @@ namespace GUI {
 		public:
 			StartWindow() {
 				this->startFlag = true;
+				this->test = true;
 			};
 			~StartWindow() {};
 
-			void draw() override;
+			void draw(string mID) override;
 
 			bool startFlag;
-
+			bool test;
 
 			function<gl::Texture2dRef(int)> image_f = [](int boxNum) {
 				vec2 size = vec2(200,200);

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "cinder/CinderImGui.h"
 
 namespace GUI {
@@ -15,7 +17,7 @@ namespace GUI {
 
 		/*! @brief •`‰æŠÖ”
 		*/
-		virtual void draw() {
+		virtual void draw(std::string mID) {
 			if (ImGui::Begin("test", &this->openFlag), ImGuiWindowFlags_AlwaysAutoResize) {
 				
 				ImGui::Text("testtesttesttest");

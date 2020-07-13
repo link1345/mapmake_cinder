@@ -273,23 +273,20 @@
     <ClCompile Include="src\GUI\Sub\TerrainTool.cpp">
       <Filter>Source Files\GUI\Sub\Individual</Filter>
     </ClCompile>
-    <ClCompile Include="src\GUI\SubWindow.cpp">
-      <Filter>Source Files\GUI\Sub</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GUI\System\SystemWindow.cpp">
-      <Filter>Source Files\GUI\System</Filter>
-    </ClCompile>
     <ClCompile Include="src\GUI\MainMenu.cpp">
       <Filter>Source Files\GUI\Sub\Individual</Filter>
     </ClCompile>
     <ClCompile Include="src\GUI\System\StartWindow.cpp">
       <Filter>Source Files\GUI\System\Individual</Filter>
     </ClCompile>
-    <ClCompile Include="src\Data\SystemData.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
     <ClCompile Include="src\GUI\Widgets\NoTextTreeNodeWidgets.cpp">
       <Filter>Source Files\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Window.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Data\SystemData.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -455,9 +452,6 @@
     <ClInclude Include="include\GUI\GUI.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="include\GUI\Sub\SubWindow.h">
-      <Filter>Header Files\GUI\Sub</Filter>
-    </ClInclude>
     <ClInclude Include="include\GUI\Sub\Individual\LayerBox.h">
       <Filter>Header Files\GUI\Sub\Individual</Filter>
     </ClInclude>
@@ -482,9 +476,6 @@
     <ClInclude Include="include\Data\SystemData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\GUI\System\SystemWindow.h">
-      <Filter>Header Files\GUI\System</Filter>
-    </ClInclude>
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h">
       <Filter>Header Files\GUI\System\Individual</Filter>
     </ClInclude>
@@ -508,6 +499,12 @@
     </ClInclude>
     <ClInclude Include="include\GUI\Widgets\NoTextTreeNodeWidgets.h">
       <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\TerrainPenData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Window.h">
+      <Filter>Header Files\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
