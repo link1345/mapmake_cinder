@@ -1,0 +1,18 @@
+<map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Window.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Window.h">
+<area shape="rect" id="node9" href="$_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="716,109,865,151"/>
+<area shape="rect" id="node28" href="$_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="831,288,958,329"/>
+<area shape="rect" id="node29" href="$_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="1237,109,1363,151"/>
+<area shape="rect" id="node11" href="$_system_data_8h.html" title="Data/SystemData.h" alt="" coords="671,206,807,233"/>
+<area shape="rect" id="node12" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="1512,206,1619,233"/>
+<area shape="rect" id="node26" href="$_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="418,206,595,233"/>
+<area shape="rect" id="node27" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="925,377,1112,404"/>
+<area shape="rect" id="node15" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1846,377,1973,404"/>
+<area shape="rect" id="node19" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="1631,295,1723,322"/>
+<area shape="rect" id="node23" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="1287,295,1393,322"/>
+<area shape="rect" id="node24" href="$_file_data_8h.html" title="FileData.h" alt="" coords="1418,295,1499,322"/>
+<area shape="rect" id="node25" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="1523,295,1607,322"/>
+<area shape="rect" id="node20" href="$_resources_8h.html" title="Resources.h" alt="" coords="1257,377,1351,404"/>
+<area shape="rect" id="node22" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="1595,377,1770,404"/>
+<area shape="rect" id="node30" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="2171,206,2354,233"/>
+<area shape="rect" id="node33" href="$_no_text_tree_node_widgets_8h.html" title="TreeNodeの操作バーがないバージョンを登録してある関数です。 " alt="" coords="1951,199,2147,240"/>
+</map>

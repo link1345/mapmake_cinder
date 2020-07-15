@@ -1,5 +1,3 @@
-
-
 #include "Data/SystemData.h"
 
 namespace AppSystem {

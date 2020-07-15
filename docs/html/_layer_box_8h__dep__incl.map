@@ -1,10 +1,10 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/LayerBox.h">
-<area shape="rect" id="node2" href="$_sub_window_8h.html" title="サブウィンドウ処理周りについて " alt="" coords="383,109,555,165"/>
-<area shape="rect" id="node9" href="$_layer_box_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/LayerBox.cpp" alt="" coords="579,109,753,165"/>
-<area shape="rect" id="node3" href="$_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="320,213,492,269"/>
-<area shape="rect" id="node5" href="$_sub_window_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/SubWindow.cpp" alt="" coords="389,421,564,477"/>
+<area shape="rect" id="node2" href="$_window_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/Window.h" alt="" coords="319,109,491,165"/>
+<area shape="rect" id="node9" href="$_layer_box_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/LayerBox.cpp" alt="" coords="515,109,689,165"/>
+<area shape="rect" id="node3" href="$_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="220,213,392,269"/>
+<area shape="rect" id="node8" href="$_window_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Window.cpp" alt="" coords="416,213,591,269"/>
 <area shape="rect" id="node4" href="$main_8h.html" title="一番上位に位置するヘッダー " alt="" coords="23,317,195,373"/>
-<area shape="rect" id="node7" href="$_g_u_i_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/GUI.cpp" alt="" coords="219,317,393,373"/>
-<area shape="rect" id="node8" href="$_main_menu_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/MainMenu.cpp" alt="" coords="417,317,592,373"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title="全ての処理の根源のファイル " alt="" coords="5,429,212,470"/>
+<area shape="rect" id="node6" href="$_g_u_i_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/GUI.cpp" alt="" coords="219,317,393,373"/>
+<area shape="rect" id="node7" href="$_main_menu_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/MainMenu.cpp" alt="" coords="417,317,592,373"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="全ての処理の根源のファイル " alt="" coords="5,421,212,463"/>
 </map>

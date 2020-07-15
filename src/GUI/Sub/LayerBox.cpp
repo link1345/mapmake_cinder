@@ -1,5 +1,7 @@
 #include "GUI/Sub/Individual/LayerBox.h"
 
+#include "GUI/GUI.h"
+
 typedef class MapMakeData::Layer::Sub::LayerBoxData MLData;
 
 namespace GUI::SubWindow {
@@ -42,10 +44,10 @@ namespace GUI::SubWindow {
 		// 安全に行うために、後で、処理するように変更するようにする！！！
 		if (ImGui::BeginPopupContextItem(nameid))
 		{
-			char texttest[100] = {};
-			sprintf_s(texttest,100, u8"追加 %s", nameid);
-			if (ImGui::MenuItem(texttest)) {
-				//if (ImGui::MenuItem(u8"追加")) {
+			//char texttest[100] = {};
+			//sprintf_s(texttest,100, u8"追加 %s", nameid);
+			//if (ImGui::MenuItem(texttest)) {
+			if (ImGui::MenuItem(u8"追加")) {
 				ImGui::CloseCurrentPopup();
 
 				edit.addData.flag = true;
@@ -66,7 +68,7 @@ namespace GUI::SubWindow {
 				edit.upfileData.flag = true;
 				edit.upfileData.id = node.ID;
 			}
-			if (ImGui::MenuItem(u8"グループ化")) {
+			if (ImGui::MenuItem(u8"[未実装]グループ化")) {
 				ImGui::CloseCurrentPopup();
 
 				edit.addData.flag = true;
@@ -114,7 +116,7 @@ namespace GUI::SubWindow {
 
 				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {
 
-					ImGui::Text(u8"%s", node.data.name.c_str());
+					ImGui::Text(u8"%s Pen:%s", node.data.name.c_str() , node.data.penKey.name.c_str());
 
 					ImGui::Image(node.data.image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
 					ImGui::SameLine();
@@ -251,10 +253,8 @@ namespace GUI::SubWindow {
 
 		// 追加
 		if (edit.addData.flag == true) {
-			auto s1 = NodeNumber();
-			auto d1 = MLData(u8"グランドキャニオン", NullImage, NullImage, false, false, false);
-			data.newID(s1, "LayerImage");
-			data.insert(edit.addData.id, Node<MLData>(s1, d1), 1);
+			
+			GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(edit.addData.id , false, 1));
 		}
 
 		// 上位階層に移動
@@ -311,6 +311,8 @@ namespace GUI::SubWindow {
 
 	void LayerWindow::draw(string mID) {
 
+		ImGui::ShowDemoWindow();
+
 		string nID = u8"レイヤー##" + mID;
 
 		if (ImGui::Begin(nID.c_str(), &this->openFlag, ImGuiWindowFlags_MenuBar)){
@@ -322,15 +324,20 @@ namespace GUI::SubWindow {
 				if (ImGui::BeginMenu(u8"編集")) {
 					if (ImGui::MenuItem(u8"レイヤー追加")) {
 
+
+						GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
+							MapMakeData::MainData.layerData.layerTreeData.rootID, true
+						));
+						/*
 						auto s1 = NodeNumber();
 						auto data = MLData(u8"グランドキャニオン",
-							this->image, this->image,
+							this->image, this->image, MapMakeData::TerrainPen::Sub::Key(),
 							false, false, false);
 						MapMakeData::MainData.layerData.layerTreeData.newID(s1, "LayerImage");
 						MapMakeData::MainData.layerData.layerTreeData.add(
 							MapMakeData::MainData.layerData.layerTreeData.rootID,
 							Node<MLData>(s1, data)
-						);
+						);*/
 
 					}
 					ImGui::EndMenu();

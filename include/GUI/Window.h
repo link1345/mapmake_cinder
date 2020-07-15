@@ -13,6 +13,7 @@
 #include "GUI/System/Individual/StartWindow.h"
 #include "GUI/Sub/Individual/TerrainTool.h"
 #include "GUI/Sub/Individual/LayerBox.h"
+#include "GUI/Sub/Individual/LayerSetting.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -23,7 +24,9 @@ using namespace std;
 using t1 = GUI::SubWindow::TerrainToolWindow;
 using t2 = GUI::SubWindow::LayerWindow;
 using t3 = GUI::System::StartWindow;
-typedef std::variant<t1,t2,t3> VData;
+using t4 = GUI::SubWindow::LayerSettingWindow;
+
+typedef std::variant<t1,t2,t3,t4> VData;
 // -----------------------------------------------------------------
 
 namespace GUI {
@@ -36,12 +39,6 @@ namespace GUI {
 			@attention 新しいウィンドウ種別が出来たら、必ずここに追加してください。
 			*/
 			typedef size_t WindowType;
-			/*
-			enum class WindowType {
-				LayerWindow,
-				TerrainPenWindow
-			};*/
-
 
 			/*!
 			@brief ウィンドウIDの保存
@@ -104,9 +101,6 @@ namespace GUI {
 
 				this->NowPop.clear();
 				this->LimitPop.clear();
-
-				//this->LimitPop[Sub::WindowType::LayerWindow] = 1;
-				//this->LimitPop[Sub::WindowType::TerrainPenWindow] = 1;
 				
 				this->LimitPop[typeid(GUI::System::StartWindow).hash_code()] = 1;
 

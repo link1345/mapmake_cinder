@@ -4,6 +4,14 @@
 	@date       2020/06/25
 */
 
+#include <windows.h>
+
+#include <iostream>
+#include <string>
+#include <locale>
+#include <codecvt>
+
+#include "cinder/app/RendererGl.h"
 
 #include "Data/SystemData.h"
 #include "Data/AllData.h"
@@ -11,6 +19,8 @@
 #include "main.h"
 #include "Resources.h"
 #include "cinder/CinderImGui.h"
+
+#include "cinder/app/AppBase.h"
 
 // ---------------------
 // グローバル変数を宣言しておく
@@ -46,16 +56,23 @@ void BasicApp::setup()
 }
 
 void BasicApp::InitImGui() {
-	ImGui::Initialize();
+
+	ImGui::Options options = ImGui::Options();
+	ImGui::Initialize(options);
+
 	ImGuiIO& io = ImGui::GetIO();
 	static ImWchar font_japanese[0xFFFF];
 	for (int i = 1; i < 0xFFFE; i++) {
 		font_japanese[i - 1] = i;
 	}
 
-	io.Fonts->AddFontFromFileTTF(u8"C:\\Windows\\Fonts\\meiryo.ttc", 25.0f, NULL, font_japanese);
+	//io.Fonts->AddFontFromFileTTF(u8"assets/mplus-TESTFLIGHT-063a/mplus-2c-black.ttf", 25.0f, NULL, font_japanese);
+	io.Fonts->AddFontFromFileTTF(u8"assets/mplus-TESTFLIGHT-063a/mplus-2c-black.ttf", 25.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
 
+	io.ImeWindowHandle = getRenderer()->getHwnd();
+	io.Fonts->Build();
 }
+
 
 void BasicApp::update() {
 	this->updateQuit();

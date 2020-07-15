@@ -15,6 +15,10 @@
 #include <cinder/gl/gl.h>
 
 #include <cinder/CinderImGui.h>
+#include "GUI/Widgets/BoxWidgets.h"
+
+
+#include "Data/AllData.h"
 
 #include "GUI/Widgets/WindowBase.h"
 
@@ -26,6 +30,8 @@ namespace SubWindow {
 	public:
 		void draw(std::string mID) override;
 
+
+		void Draw_PenWindow();
 	};
 
 }

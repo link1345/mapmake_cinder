@@ -288,6 +288,12 @@
     <ClCompile Include="src\Data\SystemData.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="src\GUI\Sub\TerrainPentable.cpp">
+      <Filter>Source Files\GUI\Sub\Individual</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\LayerSetting.cpp">
+      <Filter>Source Files\GUI\Sub\Individual</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp">
@@ -505,6 +511,15 @@
     </ClInclude>
     <ClInclude Include="include\GUI\Window.h">
       <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Sub\TerrainPenTable.h">
+      <Filter>Header Files\GUI\Sub\Individual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\TerrainData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Sub\Individual\LayerSetting.h">
+      <Filter>Header Files\GUI\Sub\Individual</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

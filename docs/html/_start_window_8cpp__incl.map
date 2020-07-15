@@ -1,14 +1,14 @@
 <map id="C:/Users/link/source/mapmake/vc2019/src/GUI/System/StartWindow.cpp" name="C:/Users/link/source/mapmake/vc2019/src/GUI/System/StartWindow.cpp">
-<area shape="rect" id="node2" href="$_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="439,109,588,151"/>
-<area shape="rect" id="node8" href="$_system_data_8h.html" title="Data/SystemData.h" alt="" coords="1214,199,1350,225"/>
-<area shape="rect" id="node9" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="1083,199,1190,225"/>
-<area shape="rect" id="node23" href="$_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="37,199,214,225"/>
-<area shape="rect" id="node24" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="239,199,426,225"/>
-<area shape="rect" id="node12" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1174,348,1301,375"/>
-<area shape="rect" id="node16" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="722,273,814,300"/>
-<area shape="rect" id="node20" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="1224,273,1331,300"/>
-<area shape="rect" id="node21" href="$_file_data_8h.html" title="FileData.h" alt="" coords="1356,273,1437,300"/>
-<area shape="rect" id="node22" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="1461,273,1545,300"/>
-<area shape="rect" id="node17" href="$_resources_8h.html" title="Resources.h" alt="" coords="754,348,849,375"/>
-<area shape="rect" id="node19" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="873,348,1048,375"/>
+<area shape="rect" id="node2" href="$_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="784,109,933,151"/>
+<area shape="rect" id="node8" href="$_system_data_8h.html" title="Data/SystemData.h" alt="" coords="936,199,1072,225"/>
+<area shape="rect" id="node9" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="805,199,912,225"/>
+<area shape="rect" id="node23" href="$_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="1409,199,1586,225"/>
+<area shape="rect" id="node24" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1147,348,1333,375"/>
+<area shape="rect" id="node12" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="995,348,1122,375"/>
+<area shape="rect" id="node16" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="567,273,659,300"/>
+<area shape="rect" id="node20" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="921,273,1028,300"/>
+<area shape="rect" id="node21" href="$_file_data_8h.html" title="FileData.h" alt="" coords="1053,273,1134,300"/>
+<area shape="rect" id="node22" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="1158,273,1242,300"/>
+<area shape="rect" id="node17" href="$_resources_8h.html" title="Resources.h" alt="" coords="574,348,669,375"/>
+<area shape="rect" id="node19" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="745,348,919,375"/>
 </map>

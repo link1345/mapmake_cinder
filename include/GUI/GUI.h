@@ -79,14 +79,32 @@ namespace GUI {
 		void update();
 
 		template<class t>
-		void createWindow(t data);
+		void createWindow(t mode) {
+			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name(), 0, typeid(mode).hash_code());
+			console() << typeid(mode).hash_code() << endl;
+			this->Windows.add(id, mode);
+		}
+
 		template<class t>
-		void createWindow(t data,size_t id);
+		void createWindow(t mode,size_t id) {
+			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name() + std::to_string(s), 0, typeid(mode).hash_code());
+			console() << typeid(mode).hash_code() << endl;
+			this->Windows.add(id, mode);
+		}
+
 		
 		template<class t>
-		void closeWindow(t data);
+		void closeWindow(t mode) {
+			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name(), 0,
+				typeid(mode).hash_code());
+			this->Windows.remove(id);
+		}
 		template<class t>
-		void closeWindow(t data, size_t id);
+		void closeWindow(t mode, size_t id) {
+			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name() + std::to_string(s), 0,
+				typeid(mode).hash_code());
+			this->Windows.remove(id);
+		}
 
 		//void createWindow(GUI::General_Window::Sub::WindowType mode);
 		//void closeWindow(GUI::General_Window::Sub::WindowType mode);

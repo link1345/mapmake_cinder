@@ -36,12 +36,12 @@ namespace GUI::MainWindow {
 			}
 			if (ImGui::BeginMenu(u8"ウィンドウ")) {
 				bool Layerflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::LayerWindow).hash_code()] >= 1 ) ? true : false;
-				bool Penflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] >= 1) ? true : false;
+				bool TerToolflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] >= 1) ? true : false;
 
 				if (ImGui::MenuItem(u8"レイヤー一覧", "Alt+1", Layerflag )) {
 					// LayerWindowの数が、1以上あるなら、閉じておく。
 					if (Layerflag) {
-						GUI::gui.createWindow(GUI::SubWindow::LayerWindow());
+						GUI::gui.closeWindow(GUI::SubWindow::LayerWindow());
 					}
 					else{
 						GUI::gui.createWindow(GUI::SubWindow::LayerWindow());
@@ -52,13 +52,21 @@ namespace GUI::MainWindow {
 				// ミニマップとは…
 				//  等高線・地形区別線・モノクロ2Dミニマップなどのことを指す。複数起動させることが可能。
 				if (ImGui::MenuItem(u8"[未実装]新規ミニマップ", "Alt+3")) {}
-				if (ImGui::MenuItem(u8"[未実装]筆追加", "Alt+4")) {
+				//if (ImGui::MenuItem(u8"[未実装]筆追加", "Alt+4")) {
 					// LayerWindowの数が、1以上あるなら、閉じておく。
-					if (Penflag) {
+					//if (Penflag) {
 						//GUI::gui.closeWindow();
+					//}
+					//else {
+						//GUI::gui.createWindow(GUI::MainWindow::windowName::TerrainPenWindow);
+					//}
+				//}
+				if (ImGui::MenuItem(u8"[未実装]地形ツール", "Alt+5", TerToolflag)) {
+					if (TerToolflag) {
+						GUI::gui.closeWindow(GUI::SubWindow::TerrainToolWindow());
 					}
 					else {
-						//GUI::gui.createWindow(GUI::MainWindow::windowName::TerrainPenWindow);
+						GUI::gui.createWindow(GUI::SubWindow::TerrainToolWindow());
 					}
 				
 				}

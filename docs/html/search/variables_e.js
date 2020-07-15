@@ -5,9 +5,7 @@ var searchData=
   ['selectflag',['selectflag',['../class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html#a262f5335daa846ea1ed8376723f4ff68',1,'MapMakeData::Layer::Sub::LayerBoxData']]],
   ['shift_5fselectflag',['shift_selectflag',['../class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html#a4c5f879166089118ed269268e8a62628',1,'MapMakeData::Layer::Sub::LayerBoxData']]],
   ['startflag',['startFlag',['../class_g_u_i_1_1_system_1_1_start_window.html#a4d8785059c11b420e2d46ef041cab7f0',1,'GUI::System::StartWindow']]],
-  ['subwindows',['subWindows',['../class_g_u_i_1_1_main_g_u_i.html#a4e8a742e6e09a5fd65a881f2b6b6a705',1,'GUI::MainGUI']]],
   ['syncflag',['syncFlag',['../class_texture_1_1_screen.html#a70d7ae94266ea27e5032bb2aa48368d7',1,'Texture::Screen']]],
   ['syncparentimage_5fcenterpoint',['syncParentImage_centerPoint',['../class_texture_1_1_screen.html#a4056b3653fe58ec14bdf04db7f1aad07',1,'Texture::Screen']]],
-  ['sys',['sys',['../namespace_app_system.html#ae5e275dc2606016600fb529fc424d9e0',1,'AppSystem']]],
-  ['syswindows',['sysWindows',['../class_g_u_i_1_1_main_g_u_i.html#a5e25a0aa38a52f73cc6874dbb4217eb9',1,'GUI::MainGUI']]]
+  ['sys',['sys',['../namespace_app_system.html#ae5e275dc2606016600fb529fc424d9e0',1,'AppSystem']]]
 ];

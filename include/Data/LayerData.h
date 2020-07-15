@@ -17,8 +17,9 @@
 #include "Data/ToolBox/ImageTool.h"
 // ----------------------------------------
 
-
 #include "Data/Basis/Tree.h"
+
+#include "Data/TerrainData.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -40,6 +41,10 @@ namespace MapMakeData {
 				this->name = u8"";
 				this->image2d = gl::Texture2dRef();
 				this->image3d = gl::Texture2dRef();
+
+				// デフォルトペンを設定する。
+				this->penKey = TerrainPen::Sub::Key();
+
 				this->selectflag = false;
 				this->shift_selectflag = false;
 
@@ -47,10 +52,14 @@ namespace MapMakeData {
 			}
 
 			LayerBoxData(std::string name, gl::Texture2dRef image2d, gl::Texture2dRef image3d,
+				TerrainPen::Sub::Key penKey,
 				bool selectflag, bool shift_selectflag, bool layerfolder_flag) {
 				this->name = name;
 				this->image2d = image2d;
 				this->image3d = image3d;
+
+				this->penKey = penKey;
+
 				this->selectflag = selectflag;
 				this->shift_selectflag = shift_selectflag;
 
@@ -70,6 +79,11 @@ namespace MapMakeData {
 			/*! @brief	レイヤーイメージ図 3D
 			*/
 			gl::Texture2dRef image3d;
+
+			/*! @brief	使用しているペンの種類
+			*/
+			TerrainPen::Sub::Key penKey;
+
 
 			/*! @brief	選択中であるか true=選択中
 			*/

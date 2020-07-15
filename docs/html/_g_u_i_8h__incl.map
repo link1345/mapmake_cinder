@@ -1,20 +1,19 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/GUI.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/GUI.h">
-<area shape="rect" id="node6" href="$_system_data_8h.html" title="Data/SystemData.h" alt="" coords="135,281,271,307"/>
-<area shape="rect" id="node7" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="607,281,714,307"/>
-<area shape="rect" id="node22" href="$_system_window_8h.html" title="GUI/System/SystemWindow.h" alt="" coords="896,109,1095,136"/>
-<area shape="rect" id="node29" href="$_sub_window_8h.html" title="サブウィンドウ処理周りについて " alt="" coords="1119,109,1274,136"/>
-<area shape="rect" id="node9" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="187,452,313,479"/>
-<area shape="rect" id="node13" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="491,370,583,397"/>
-<area shape="rect" id="node19" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="607,370,714,397"/>
-<area shape="rect" id="node20" href="$_file_data_8h.html" title="FileData.h" alt="" coords="739,370,820,397"/>
-<area shape="rect" id="node21" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="844,370,928,397"/>
-<area shape="rect" id="node15" href="$_resources_8h.html" title="Resources.h" alt="" coords="691,452,785,479"/>
-<area shape="rect" id="node17" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="389,452,564,479"/>
-<area shape="rect" id="node26" href="$_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="667,184,817,225"/>
-<area shape="rect" id="node27" href="$_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="347,281,524,307"/>
-<area shape="rect" id="node28" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1151,452,1338,479"/>
-<area shape="rect" id="node30" href="$_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="1308,363,1435,404"/>
-<area shape="rect" id="node31" href="$_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="1359,184,1485,225"/>
-<area shape="rect" id="node32" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1764,281,1947,307"/>
-<area shape="rect" id="node35" href="$_no_text_tree_node_widgets_8h.html" title="TreeNodeの操作バーがないバージョンを登録してある関数です。 " alt="" coords="1971,273,2167,315"/>
+<area shape="rect" id="node6" href="$_system_data_8h.html" title="Data/SystemData.h" alt="" coords="195,281,331,307"/>
+<area shape="rect" id="node7" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="695,281,801,307"/>
+<area shape="rect" id="node22" href="$_window_8h.html" title="GUI/Window.h" alt="" coords="1203,109,1309,136"/>
+<area shape="rect" id="node9" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="605,452,731,479"/>
+<area shape="rect" id="node13" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="975,370,1067,397"/>
+<area shape="rect" id="node19" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="528,370,635,397"/>
+<area shape="rect" id="node20" href="$_file_data_8h.html" title="FileData.h" alt="" coords="659,370,741,397"/>
+<area shape="rect" id="node21" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="765,370,849,397"/>
+<area shape="rect" id="node15" href="$_resources_8h.html" title="Resources.h" alt="" coords="1006,452,1101,479"/>
+<area shape="rect" id="node17" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="807,452,982,479"/>
+<area shape="rect" id="node26" href="$_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="1181,184,1331,225"/>
+<area shape="rect" id="node29" href="$_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="1091,363,1218,404"/>
+<area shape="rect" id="node30" href="$_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="1355,184,1482,225"/>
+<area shape="rect" id="node27" href="$_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="1395,281,1573,307"/>
+<area shape="rect" id="node28" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1227,452,1413,479"/>
+<area shape="rect" id="node31" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1801,281,1983,307"/>
+<area shape="rect" id="node34" href="$_no_text_tree_node_widgets_8h.html" title="TreeNodeの操作バーがないバージョンを登録してある関数です。 " alt="" coords="2007,273,2203,315"/>
 </map>

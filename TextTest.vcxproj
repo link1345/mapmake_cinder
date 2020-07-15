@@ -249,7 +249,9 @@
     <ClCompile Include="src\GUI\GUI.cpp" />
     <ClCompile Include="src\GUI\MainMenu.cpp" />
     <ClCompile Include="src\GUI\Sub\LayerBox.cpp" />
+    <ClCompile Include="src\GUI\Sub\LayerSetting.cpp" />
     <ClCompile Include="src\GUI\Sub\TerrainTool.cpp" />
+    <ClCompile Include="src\GUI\Sub\TerrainPentable.cpp" />
     <ClCompile Include="src\GUI\System\StartWindow.cpp" />
     <ClCompile Include="src\GUI\Widgets\BoxWidgets.cpp" />
     <ClCompile Include="src\GUI\Widgets\NoTextTreeNodeWidgets.cpp" />
@@ -311,6 +313,7 @@
     <ClInclude Include="include\Data\FileData.h" />
     <ClInclude Include="include\Data\LayerData.h" />
     <ClInclude Include="include\Data\MapImageData.h" />
+    <ClInclude Include="include\Data\TerrainData.h" />
     <ClInclude Include="include\Data\TerrainPenData.h" />
     <ClInclude Include="include\Data\SystemData.h" />
     <ClInclude Include="include\Data\ToolBox\ImageTool.h" />
@@ -318,6 +321,7 @@
     <ClInclude Include="include\File\FileSave.h" />
     <ClInclude Include="include\GUI\GUI.h" />
     <ClInclude Include="include\GUI\Sub\Individual\LayerBox.h" />
+    <ClInclude Include="include\GUI\Sub\Individual\LayerSetting.h" />
     <ClInclude Include="include\GUI\Sub\Individual\TerrainTool.h" />
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h" />
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h" />
@@ -329,6 +333,7 @@
     <ClInclude Include="include\main.h" />
     <ClInclude Include="include\Resources.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="src\GUI\Sub\TerrainPenTable.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.frag">

@@ -20,6 +20,8 @@
 #include "Data/Basis/Tree.h"
 
 #include "LayerData.h"
+#include "TerrainData.h"
+
 #include "WindowData.h"
 #include "FileData.h"
 
@@ -57,6 +59,9 @@ namespace MapMakeData {
 
 		/*! @brief レイヤー情報 */
 		MapMakeData::Layer::LayerData layerData;
+
+		/*! @brief 地形ペン情報 */
+		MapMakeData::Terrain::TerrainData terrainData;
 
 		/*! @brief ファイル操作周り */
 		MapMakeData::File::FileData fileData;

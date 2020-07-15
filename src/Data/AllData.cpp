@@ -68,6 +68,8 @@ namespace MapMakeData {
 		this->reset();
 
 		this->layerData.setSampleData(mode);
+
+		this->terrainData.setSampleData(0);
 	}
 
 }
