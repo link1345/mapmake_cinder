@@ -12,8 +12,8 @@
 
 #include "GUI/System/Individual/StartWindow.h"
 #include "GUI/Sub/Individual/TerrainTool.h"
-#include "GUI/Sub/Individual/LayerBox.h"
-#include "GUI/Sub/Individual/LayerSetting.h"
+#include "GUI/Sub/Individual/Layer/LayerBox.h"
+#include "GUI/Sub/Individual/Layer/LayerSetting.h"
 
 using namespace ci;
 using namespace ci::app;

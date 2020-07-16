@@ -1,4 +1,4 @@
-#include "GUI/Sub/Individual/LayerBox.h"
+#include "GUI/Sub/Individual/Layer/LayerBox.h"
 
 #include "GUI/GUI.h"
 
@@ -114,13 +114,28 @@ namespace GUI::SubWindow {
 			if (!node.data.layerfolder_flag) {
 				// 一般処理
 
-				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {
+				//auto bgColor = ImGui::GetStyleColorVec4(ImGuiCol_::ImGuiCol_WindowBg);
 
-					ImGui::Text(u8"%s Pen:%s", node.data.name.c_str() , node.data.penKey.name.c_str());
+				auto key = MapMakeData::MainData.terrainData.pens.pen[node.data.penKey].keyColor;
+				auto mbgColor = MapMakeData::MainData.terrainData.tercolor.color[key];
+
+				mbgColor = ImVec4(mbgColor.x , mbgColor.y , mbgColor.z , 0.3);
+
+				ImGui::PushStyleColor(ImGuiCol_::ImGuiCol_Border , mbgColor);
+				ImGui::PushStyleVar(ImGuiStyleVar_::ImGuiStyleVar_ChildBorderSize, 4);
+
+				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {;
+					ImGui::PopStyleColor();
+					ImGui::PopStyleVar();
+
+					ImGui::TextWrapped(u8"%s Pen:%s", node.data.name.c_str() , node.data.penKey.name.c_str());
+
 
 					ImGui::Image(node.data.image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
 					ImGui::SameLine();
 					ImGui::Image(node.data.image3d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
+					ImGui::SameLine();
+					ImGui::TextWrapped(node.data.explanation.c_str());
 
 					// 右クリック処理
 					ImGui::SelectAddItem(nameid);
@@ -128,7 +143,6 @@ namespace GUI::SubWindow {
 				}
 
 				ImGui::EndSelectBox();
-
 			}
 			else {
 				// フォルダ処理

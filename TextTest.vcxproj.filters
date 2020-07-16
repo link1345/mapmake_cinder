@@ -106,6 +106,15 @@
     <Filter Include="Header Files\Data\ToolBox">
       <UniqueIdentifier>{7dd4852e-a7ed-49d1-803d-499de61a7f15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GUI\Sub\Individual\Layer">
+      <UniqueIdentifier>{eaaef42a-5fc0-45f4-b82c-fd9fa7dfe37a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI\Sub\Individual\Layer">
+      <UniqueIdentifier>{2a1113a6-82ba-40b7-b235-5643160f4a9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Layer">
+      <UniqueIdentifier>{50dd8646-bc99-441b-85ad-a2c062e77ca4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp">
@@ -267,9 +276,6 @@
     <ClCompile Include="src\Data\MapImageData.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
-    <ClCompile Include="src\GUI\Sub\LayerBox.cpp">
-      <Filter>Source Files\GUI\Sub\Individual</Filter>
-    </ClCompile>
     <ClCompile Include="src\GUI\Sub\TerrainTool.cpp">
       <Filter>Source Files\GUI\Sub\Individual</Filter>
     </ClCompile>
@@ -291,8 +297,11 @@
     <ClCompile Include="src\GUI\Sub\TerrainPentable.cpp">
       <Filter>Source Files\GUI\Sub\Individual</Filter>
     </ClCompile>
-    <ClCompile Include="src\GUI\Sub\LayerSetting.cpp">
-      <Filter>Source Files\GUI\Sub\Individual</Filter>
+    <ClCompile Include="src\GUI\Sub\Layer\LayerBox.cpp">
+      <Filter>Source Files\GUI\Sub\Individual\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\Layer\LayerSetting.cpp">
+      <Filter>Source Files\GUI\Sub\Individual\Layer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -443,12 +452,6 @@
     <ClInclude Include="include\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Data\LayerData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Data\WindowData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="include\Data\AllData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
@@ -458,29 +461,17 @@
     <ClInclude Include="include\GUI\GUI.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="include\GUI\Sub\Individual\LayerBox.h">
-      <Filter>Header Files\GUI\Sub\Individual</Filter>
-    </ClInclude>
     <ClInclude Include="include\GUI\Sub\Individual\TerrainTool.h">
       <Filter>Header Files\GUI\Sub\Individual</Filter>
     </ClInclude>
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h">
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="include\Data\FileData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Data\MapImageData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="include\Data\Basis\opengl_Screen.h">
       <Filter>Header Files\Data\Basis</Filter>
     </ClInclude>
     <ClInclude Include="include\Data\Basis\Tree.h">
       <Filter>Header Files\Data\Basis</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Data\SystemData.h">
-      <Filter>Header Files\Data</Filter>
     </ClInclude>
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h">
       <Filter>Header Files\GUI\System\Individual</Filter>
@@ -494,9 +485,6 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\IconData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="include\GUI\Widgets\HelpMarker.h">
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
@@ -506,20 +494,47 @@
     <ClInclude Include="include\GUI\Widgets\NoTextTreeNodeWidgets.h">
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="include\Data\TerrainPenData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="include\GUI\Window.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
     <ClInclude Include="src\GUI\Sub\TerrainPenTable.h">
       <Filter>Header Files\GUI\Sub\Individual</Filter>
     </ClInclude>
-    <ClInclude Include="include\Data\TerrainData.h">
+    <ClInclude Include="include\GUI\Sub\Individual\Layer\LayerBox.h">
+      <Filter>Header Files\GUI\Sub\Individual\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Sub\Individual\Layer\LayerSetting.h">
+      <Filter>Header Files\GUI\Sub\Individual\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\Basis\ColorPalette.h">
+      <Filter>Header Files\Data\Basis</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\FileData.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\GUI\Sub\Individual\LayerSetting.h">
-      <Filter>Header Files\GUI\Sub\Individual</Filter>
+    <ClInclude Include="include\IconData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\MapImageData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\SystemData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\WindowData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\LayerData.h">
+      <Filter>Header Files\Data\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\TerrainColorData.h">
+      <Filter>Header Files\Data\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\TerrainData.h">
+      <Filter>Header Files\Data\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\TerrainPenData.h">
+      <Filter>Header Files\Data\Layer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

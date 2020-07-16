@@ -38,10 +38,18 @@ namespace GUI {
 			LayerSettingWindow() : WindowBase() {
 				this->startFlag = true;
 
-				this->inputLayerName = "グランドキャニオン";
+				//this->inputLayerName = u8"グランドキャニオン";
 				this->s = 0;
 
 				this->addFlag = false;
+
+				this->NameErrorFlag = false;
+
+				
+				this->sendData = MLData(u8"", MapMakeData::MainData.nullImage(), MapMakeData::MainData.nullImage(),
+					MapMakeData::TerrainPen::Sub::Key()
+					, false, false, false, u8"");
+
 			}
 			LayerSettingWindow(NodeNumber frontNumber, bool addFlag = false, int s = 0) : WindowBase() {
 				this->startFlag = true;
@@ -50,6 +58,12 @@ namespace GUI {
 				this->s = s;
 
 				this->addFlag = addFlag;
+
+				this->NameErrorFlag = false;
+
+				this->sendData = MLData(u8"", MapMakeData::MainData.nullImage(), MapMakeData::MainData.nullImage(),
+					MapMakeData::TerrainPen::Sub::Key()
+					, false, false, false, u8"");
 			}
 
 
@@ -59,22 +73,23 @@ namespace GUI {
 
 			bool startFlag;
 
-			// 新しく作るやつの名前。
-			string inputLayerName;
+			MLData sendData;
 
-			// 追加先の情報
+			/*! 追加先の情報 */
 			NodeNumber node;
 			int s;
 
-			// 検索欄の処理
+			/*! 検索欄の処理 */
 			ImGuiTextFilter filter;
 
-			// ペンの選択ID
-			MapMakeData::TerrainPen::Sub::Key item_current_idx;
+			/*! ペンの選択ID */
+			//MapMakeData::TerrainPen::Sub::Key item_current_idx;
 
-			// 追加させるか？ true=add , false=insert
+			/*! 追加させるか？ true=add , false=insert */
 			bool addFlag;
 
+			/*! NameErrorFlag */
+			bool NameErrorFlag;
 		};
 
 	}

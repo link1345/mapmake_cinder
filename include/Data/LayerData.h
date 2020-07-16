@@ -26,7 +26,6 @@ using namespace ci::app;
 using namespace ci::log;
 using namespace NextStd;
 
-
 namespace MapMakeData {
 	namespace Layer {
 
@@ -49,11 +48,13 @@ namespace MapMakeData {
 				this->shift_selectflag = false;
 
 				this->layerfolder_flag = false;
+
+				this->explanation = u8"";
 			}
 
 			LayerBoxData(std::string name, gl::Texture2dRef image2d, gl::Texture2dRef image3d,
 				TerrainPen::Sub::Key penKey,
-				bool selectflag, bool shift_selectflag, bool layerfolder_flag) {
+				bool selectflag, bool shift_selectflag, bool layerfolder_flag, std::string explanation) {
 				this->name = name;
 				this->image2d = image2d;
 				this->image3d = image3d;
@@ -64,6 +65,8 @@ namespace MapMakeData {
 				this->shift_selectflag = shift_selectflag;
 
 				this->layerfolder_flag = layerfolder_flag;
+
+				this->explanation = explanation;
 			}
 
 			~LayerBoxData() {};
@@ -96,6 +99,10 @@ namespace MapMakeData {
 			/*! @brief	ƒtƒHƒ‹ƒ_‚Å‚ ‚é‚© true=yes
 			*/
 			bool layerfolder_flag;
+
+			/*! @brief	à–¾•¶ true=yes
+			*/
+			std::string explanation;
 
 		};
 

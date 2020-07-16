@@ -66,8 +66,8 @@ void BasicApp::InitImGui() {
 		font_japanese[i - 1] = i;
 	}
 
-	//io.Fonts->AddFontFromFileTTF(u8"assets/mplus-TESTFLIGHT-063a/mplus-2c-black.ttf", 25.0f, NULL, font_japanese);
-	io.Fonts->AddFontFromFileTTF(u8"assets/mplus-TESTFLIGHT-063a/mplus-2c-black.ttf", 25.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
+	io.Fonts->AddFontFromFileTTF(u8"assets/mplus-TESTFLIGHT-063a/mplus-2c-black.ttf", 25.0f, NULL, font_japanese);
+	//io.Fonts->AddFontFromFileTTF(u8"assets/mplus-TESTFLIGHT-063a/mplus-2c-black.ttf", 25.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
 
 	io.ImeWindowHandle = getRenderer()->getHwnd();
 	io.Fonts->Build();

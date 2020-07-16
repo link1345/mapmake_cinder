@@ -7,13 +7,14 @@
 #include <cinder/app/RendererGl.h>
 #include <cinder/gl/gl.h>
 
+#include "Data/TerrainColorData.h"
 
 namespace MapMakeData {
 
 	namespace TerrainPen {
 
 		namespace Sub {
-			
+
 			class Key {
 			public:
 				Key() {
@@ -34,21 +35,25 @@ namespace MapMakeData {
 
 				}
 			};
-			
 
 			class Pen {
 			public:
 				Pen() {
 					this->gaussianFilter = 0;
 					this->bezierCurve = DefaultBezierCurve();
-					//this->name = "";
+
+					this->keyColor = u8"Default";
 				};
-				//Pen(std::string name, int gaussianFilter, std::list<cinder::vec2> bezierCurve) {
-				Pen(int gaussianFilter, std::list<cinder::vec2> bezierCurve) {
+				Pen(int gaussianFilter, std::list<cinder::vec2> bezierCurve,
+					std::string exp = u8"", MapMakeData::KeyColorName color = u8"Default") {
 					this->gaussianFilter = gaussianFilter;
 					this->bezierCurve = bezierCurve;
-					//this->name = name;
+
+					this->explanation = exp;
+
+					this->keyColor = color;
 				};
+
 				~Pen() {};
 
 				static std::list<cinder::vec2> DefaultBezierCurve() {
@@ -57,9 +62,6 @@ namespace MapMakeData {
 					v.push_back(cinder::vec2(1, 1));
 					return v;
 				}
-
-
-				//std::string name;
 
 				// その他
 
@@ -70,23 +72,29 @@ namespace MapMakeData {
 				/*!	@brief	ベジェ曲線の値
 				*/
 				std::list<cinder::vec2> bezierCurve;
+
+				// ----
+
+				/*! @brief 説明文 */
+				std::string explanation;
+
+				/*! @brief 識別を簡単にするための色 */
+				MapMakeData::KeyColorName keyColor;
 			};
 
-
 		}
-
 
 		class TerrainPenData {
 		public:
 			TerrainPenData() { 
 				this->pen.clear();
-				this->pen[Sub::Key("defaultPen")] = Sub::Pen(0, Sub::Pen::DefaultBezierCurve());
+				this->pen[Sub::Key("defaultPen")] = Sub::Pen(0, Sub::Pen::DefaultBezierCurve(),u8"デフォルトのペン");
 			};
 			~TerrainPenData() {};
 
 			void setSampleData() {
 				this->pen[Sub::Key(u8"pen1")] =
-					Sub::Pen( 10, Sub::Pen::DefaultBezierCurve());
+					Sub::Pen( 10, Sub::Pen::DefaultBezierCurve(),u8"サンプルペン1", u8"Mountain");
 			};
 
 			std::map<Sub::Key,Sub::Pen> pen;
