@@ -119,7 +119,7 @@ namespace GUI::SubWindow {
 				auto key = MapMakeData::MainData.terrainData.pens.pen[node.data.penKey].keyColor;
 				auto mbgColor = MapMakeData::MainData.terrainData.tercolor.color[key];
 
-				mbgColor = ImVec4(mbgColor.x , mbgColor.y , mbgColor.z , 0.3);
+				mbgColor = ImVec4(mbgColor.x , mbgColor.y , mbgColor.z , 0.3f);
 
 				ImGui::PushStyleColor(ImGuiCol_::ImGuiCol_Border , mbgColor);
 				ImGui::PushStyleVar(ImGuiStyleVar_::ImGuiStyleVar_ChildBorderSize, 4);
@@ -327,81 +327,81 @@ namespace GUI::SubWindow {
 
 		ImGui::ShowDemoWindow();
 
+		//string nID = u8"レイヤー [" + MapMakeData::MainData.groundData.selectKey + "] ##" + mID;
 		string nID = u8"レイヤー##" + mID;
 
 		if (ImGui::Begin(nID.c_str(), &this->openFlag, ImGuiWindowFlags_MenuBar)){
 
-			auto menuSize = MapMakeData::MainData.windowData.MenuSize;
+			if (MapMakeData::MainData.groundData.select) {
 
-			if (ImGui::BeginMenuBar()) {
+				auto* gLayer = &MapMakeData::MainData.groundData.gData[MapMakeData::MainData.groundData.selectKey];
 
-				if (ImGui::BeginMenu(u8"編集")) {
-					if (ImGui::MenuItem(u8"レイヤー追加")) {
+				auto menuSize = MapMakeData::MainData.windowData.MenuSize;
+
+				if (ImGui::BeginMenuBar()) {
+
+					if (ImGui::BeginMenu(u8"編集")) {
+						if (ImGui::MenuItem(u8"レイヤー追加")) {
+
+							//GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
+							//	MapMakeData::MainData.layerData.layerTreeData.rootID, true
+							//));
+
+							GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
+								gLayer->layerTreeData.rootID, true
+							));
 
 
-						GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
-							MapMakeData::MainData.layerData.layerTreeData.rootID, true
-						));
-						/*
-						auto s1 = NodeNumber();
-						auto data = MLData(u8"グランドキャニオン",
-							this->image, this->image, MapMakeData::TerrainPen::Sub::Key(),
-							false, false, false);
-						MapMakeData::MainData.layerData.layerTreeData.newID(s1, "LayerImage");
-						MapMakeData::MainData.layerData.layerTreeData.add(
-							MapMakeData::MainData.layerData.layerTreeData.rootID,
-							Node<MLData>(s1, data)
-						);*/
-
-					}
-					ImGui::EndMenu();
-				}
-				if (ImGui::BeginMenu(u8"表示")) {
-					if (ImGui::BeginMenu(u8"メイン表示変更")) {
-						if (ImGui::MenuItem(u8"3Dモード", NULL, true)) {
 						}
-						if (ImGui::MenuItem(u8"3Dレイヤーモード", NULL, false)) {
-						}
-						if (ImGui::MenuItem(u8"2Dモード", NULL, false)) {
-						}
-						if (ImGui::MenuItem(u8"2Dレイヤーモード", NULL, false)) {
-						}
-
 						ImGui::EndMenu();
 					}
-					ImGui::EndMenu();
+					if (ImGui::BeginMenu(u8"表示")) {
+						if (ImGui::BeginMenu(u8"メイン表示変更")) {
+							if (ImGui::MenuItem(u8"3Dモード", NULL, true)) {
+							}
+							if (ImGui::MenuItem(u8"3Dレイヤーモード", NULL, false)) {
+							}
+							if (ImGui::MenuItem(u8"2Dモード", NULL, false)) {
+							}
+							if (ImGui::MenuItem(u8"2Dレイヤーモード", NULL, false)) {
+							}
+
+							ImGui::EndMenu();
+						}
+						ImGui::EndMenu();
+					}
+
+					// ボタン形式 切り替え簡易版。
+					// 表示切替え
+					ImGui::ImageButton((void*)(intptr_t)this->image->getId(),
+						vec2(menuSize, menuSize)
+						, vec2(0, 1), vec2(1, 0));
+
+					if (ImGui::IsItemHovered())
+					{
+						ImGui::BeginTooltip();
+						ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
+						if (true) {
+							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dモード]");
+						}
+						else if (false) {
+							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dレイヤーモード]");
+						}
+						else if (false) {
+							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dモード]");
+						}
+						else if (false) {
+							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dレイヤーモード]");
+						}
+						ImGui::PopTextWrapPos();
+						ImGui::EndTooltip();
+					}
+
+					ImGui::EndMenuBar();
 				}
 
-				// ボタン形式 切り替え簡易版。
-				// 表示切替え
-				ImGui::ImageButton((void*)(intptr_t)this->image->getId(),
-					vec2(menuSize, menuSize)
-					, vec2(0, 1), vec2(1, 0));
-
-				if (ImGui::IsItemHovered())
-				{
-					ImGui::BeginTooltip();
-					ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
-					if (true) {
-						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dモード]");
-					}
-					else if (false) {
-						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dレイヤーモード]");
-					}
-					else if (false) {
-						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dモード]");
-					}
-					else if (false) {
-						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dレイヤーモード]");
-					}
-					ImGui::PopTextWrapPos();
-					ImGui::EndTooltip();
-				}
-
-				ImGui::EndMenuBar();
+				LayerBox(gLayer->layerTreeData, MapMakeData::MainData.nullImage());
 			}
-
-			LayerBox(MapMakeData::MainData.layerData.layerTreeData, MapMakeData::MainData.nullImage());
 		}
 		ImGui::End();
 

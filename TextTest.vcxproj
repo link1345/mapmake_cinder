@@ -248,6 +248,7 @@
     <ClCompile Include="src\Data\SystemData.cpp" />
     <ClCompile Include="src\GUI\GUI.cpp" />
     <ClCompile Include="src\GUI\MainMenu.cpp" />
+    <ClCompile Include="src\GUI\Sub\Ground\Ground.cpp" />
     <ClCompile Include="src\GUI\Sub\Layer\LayerBox.cpp" />
     <ClCompile Include="src\GUI\Sub\Layer\LayerSetting.cpp" />
     <ClCompile Include="src\GUI\Sub\TerrainTool.cpp" />
@@ -307,11 +308,13 @@
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Box2D\src\Box2D\Rope\b2Rope.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\CinderClipper.h" />
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp" />
+    <ClInclude Include="GroundData.h" />
     <ClInclude Include="include\Data\AllData.h" />
     <ClInclude Include="include\Data\Basis\ColorPalette.h" />
     <ClInclude Include="include\Data\Basis\opengl_Screen.h" />
     <ClInclude Include="include\Data\Basis\Tree.h" />
     <ClInclude Include="include\Data\FileData.h" />
+    <ClInclude Include="include\Data\GroundData.h" />
     <ClInclude Include="include\Data\LayerData.h" />
     <ClInclude Include="include\Data\MapImageData.h" />
     <ClInclude Include="include\Data\TerrainColorData.h" />
@@ -322,6 +325,7 @@
     <ClInclude Include="include\Data\WindowData.h" />
     <ClInclude Include="include\File\FileSave.h" />
     <ClInclude Include="include\GUI\GUI.h" />
+    <ClInclude Include="include\GUI\Sub\Individual\Ground\Ground.h" />
     <ClInclude Include="include\GUI\Sub\Individual\Layer\LayerBox.h" />
     <ClInclude Include="include\GUI\Sub\Individual\Layer\LayerSetting.h" />
     <ClInclude Include="include\GUI\Sub\Individual\TerrainTool.h" />

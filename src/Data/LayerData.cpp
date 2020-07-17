@@ -6,7 +6,7 @@ namespace MapMakeData::Layer {
 
 	LayerData::LayerData() {
 		this->layerTreeData.clear();
-		this->canvasSize = 50;
+		this->explanation = "";
 	}
 
 	void LayerData::setSampleData(int mode) {

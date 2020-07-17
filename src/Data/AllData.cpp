@@ -11,8 +11,10 @@ namespace MapMakeData {
 	}
 
 	void AllData::init() {
-		this->layerData.layerTreeData.clear();
-		//this->layerData = MapMakeData::Layer::LayerData();
+
+		this->groundData = MapMakeData::Ground::GroundData();
+		//this->layerData.layerTreeData.clear();
+		
 		this->windowData = MapMakeData::Window::WindowData();
 	}
 
@@ -67,9 +69,12 @@ namespace MapMakeData {
 	void AllData::setSampleData(int mode) {
 		this->reset();
 
-		this->layerData.setSampleData(mode);
+		//this->layerData.setSampleData(mode);
+		this->groundData.setSampleData();
 
 		this->terrainData.setSampleData(0);
+
+
 	}
 
 }

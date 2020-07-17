@@ -67,12 +67,12 @@ namespace  GUI::System {
 
 		if (ImGui::BeginPopupModal("Setup", NULL, ImGuiWindowFlags_AlwaysAutoResize))
 		{
-			static gl::Texture2dRef imagebox = image_f(MapMakeData::MainData.layerData.canvasSize);
+			static gl::Texture2dRef imagebox = image_f(MapMakeData::MainData.groundData.canvasSize);
 			//static gl::FboRef imagebox = image_f(boxNum);
 
 			char label1[50] = u8"";
 
-			sprintf_s(label1, 50, u8"x:%d  y:%d", 100 - MapMakeData::MainData.layerData.canvasSize, MapMakeData::MainData.layerData.canvasSize);
+			sprintf_s(label1, 50, u8"x:%d  y:%d", 100 - MapMakeData::MainData.groundData.canvasSize, MapMakeData::MainData.groundData.canvasSize);
 
 			static bool tree1_open = true;
 			if (tree1_open == true) {
@@ -82,9 +82,11 @@ namespace  GUI::System {
 			if (ImGui::TreeNodeEx(u8"ワールドマップのサイズ比率")) {
 				// ここで、SliderのID(ラベル)が何も書かれていない場合、前のアイテムとID衝突を起こします。
 				ImGui::PushID(10);
-				if (ImGui::SliderInt(u8"", &MapMakeData::MainData.layerData.canvasSize, 1, 99, label1)) {
-					imagebox = image_f(MapMakeData::MainData.layerData.canvasSize);
+				if (ImGui::SliderInt(u8"", &MapMakeData::MainData.groundData.canvasSize, 1, 99, label1)) {
+					imagebox = image_f(MapMakeData::MainData.groundData.canvasSize);
 				}
+
+
 				ImGui::PopID();
 
 				ImGui::SameLine();

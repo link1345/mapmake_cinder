@@ -35,9 +35,19 @@ namespace GUI::MainWindow {
 				ImGui::EndMenu();
 			}
 			if (ImGui::BeginMenu(u8"ウィンドウ")) {
+				bool Groundflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::GroundWindow).hash_code()] >= 1) ? true : false;
 				bool Layerflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::LayerWindow).hash_code()] >= 1 ) ? true : false;
 				bool TerToolflag = (GUI::gui.Windows.NowPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] >= 1) ? true : false;
 
+				if (ImGui::MenuItem(u8"大地一覧", "Alt+0", Groundflag)) {
+					// LayerWindowの数が、1以上あるなら、閉じておく。
+					if (Groundflag) {
+						GUI::gui.closeWindow(GUI::SubWindow::GroundWindow());
+					}
+					else {
+						GUI::gui.createWindow(GUI::SubWindow::GroundWindow());
+					}
+				}
 				if (ImGui::MenuItem(u8"レイヤー一覧", "Alt+1", Layerflag )) {
 					// LayerWindowの数が、1以上あるなら、閉じておく。
 					if (Layerflag) {

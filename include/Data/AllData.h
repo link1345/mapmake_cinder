@@ -19,7 +19,8 @@
 
 #include "Data/Basis/Tree.h"
 
-#include "LayerData.h"
+#include "Data/GroundData.h"
+
 #include "TerrainData.h"
 
 #include "WindowData.h"
@@ -57,8 +58,9 @@ namespace MapMakeData {
 		 */
 		MapMakeData::Window::WindowData windowData;
 
-		/*! @brief レイヤー情報 */
-		MapMakeData::Layer::LayerData layerData;
+		/*! @brief 大地情報 */
+		//std::map<std::string, Layer::LayerData> layerData;
+		MapMakeData::Ground::GroundData groundData;
 
 		/*! @brief 地形ペン情報 */
 		MapMakeData::Terrain::TerrainData terrainData;

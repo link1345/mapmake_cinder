@@ -10,6 +10,7 @@
 
 #include <cinder/CinderImGui.h>
 
+#include "GUI/Sub/Individual/Ground/Ground.h"
 #include "GUI/System/Individual/StartWindow.h"
 #include "GUI/Sub/Individual/TerrainTool.h"
 #include "GUI/Sub/Individual/Layer/LayerBox.h"
@@ -25,8 +26,9 @@ using t1 = GUI::SubWindow::TerrainToolWindow;
 using t2 = GUI::SubWindow::LayerWindow;
 using t3 = GUI::System::StartWindow;
 using t4 = GUI::SubWindow::LayerSettingWindow;
+using t5 = GUI::SubWindow::GroundWindow;
 
-typedef std::variant<t1,t2,t3,t4> VData;
+typedef std::variant<t1,t2,t3,t4,t5> VData;
 // -----------------------------------------------------------------
 
 namespace GUI {
@@ -104,7 +106,8 @@ namespace GUI {
 				
 				this->LimitPop[typeid(GUI::System::StartWindow).hash_code()] = 1;
 
-				this->LimitPop[typeid(GUI::SubWindow::LayerWindow).hash_code()] = 2;
+				this->LimitPop[typeid(GUI::SubWindow::GroundWindow).hash_code()] = 1;
+				this->LimitPop[typeid(GUI::SubWindow::LayerWindow).hash_code()] = 1;
 				this->LimitPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] = 1;
 			}
 

@@ -115,7 +115,6 @@ namespace MapMakeData {
 				return false;
 			}
 		};
-
 	}
 
 		/*! @brief	レイヤー情報を保持するためのクラス
@@ -144,9 +143,9 @@ namespace MapMakeData {
 			*/
 			Tree<Sub::LayerBoxData> layerTreeData;
 
-			/*! @brief	キャンバスサイズ
-			*/
-			int canvasSize;
+
+			/*! @brief 説明文 */
+			std::string explanation;
 
 
 			/*! @brief	レイヤー情報の補正用関数

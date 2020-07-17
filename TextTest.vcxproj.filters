@@ -115,6 +115,15 @@
     <Filter Include="Header Files\Data\Layer">
       <UniqueIdentifier>{50dd8646-bc99-441b-85ad-a2c062e77ca4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GUI\Sub\Individual\Ground">
+      <UniqueIdentifier>{8790d641-86cd-4ad0-a7be-a9bf5f0eca42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Sub\Individual\Ground">
+      <UniqueIdentifier>{26f69eb4-d917-45b0-baa9-4dfe8dcb6e89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Ground">
+      <UniqueIdentifier>{39c343b5-3eda-49eb-8cd3-2e1756c09248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp">
@@ -302,6 +311,9 @@
     </ClCompile>
     <ClCompile Include="src\GUI\Sub\Layer\LayerSetting.cpp">
       <Filter>Source Files\GUI\Sub\Individual\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\Ground\Ground.cpp">
+      <Filter>Source Files\GUI\Sub\Individual\Ground</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -535,6 +547,15 @@
     </ClInclude>
     <ClInclude Include="include\Data\TerrainPenData.h">
       <Filter>Header Files\Data\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Sub\Individual\Ground\Ground.h">
+      <Filter>Header Files\GUI\Sub\Individual\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundData.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\GroundData.h">
+      <Filter>Header Files\Data\Ground</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
