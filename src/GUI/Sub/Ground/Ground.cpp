@@ -1,10 +1,33 @@
 #include "GUI/Sub/Individual/Ground/Ground.h"
 
+#include "GUI/GUI.h"
+
 namespace GUI::SubWindow {
 	void GroundWindow::draw(string mID) {
-		string gID = u8"大地一覧" + mID;
+		string gID = u8"大地一覧##" + mID;
 
 		if (ImGui::Begin(gID.c_str(), &this->openFlag, ImGuiWindowFlags_::ImGuiWindowFlags_MenuBar)) {
+
+			if (ImGui::BeginMenuBar()) {
+
+				if (ImGui::BeginMenu(u8"編集")) {
+					if (ImGui::MenuItem(u8"大地追加")) {
+						GUI::gui.createWindow(GUI::SubWindow::GroundSettingWindow());
+					}
+					if (ImGui::MenuItem(u8"大地編集","",false, MapMakeData::MainData.groundData.select )) {
+						GUI::gui.createWindow(GUI::SubWindow::GroundSettingWindow(
+							MapMakeData::MainData.groundData.selectKey					
+						));
+					}
+					if (ImGui::MenuItem(u8"大地削除")) {
+
+					}
+					ImGui::EndMenu();
+				}
+
+				ImGui::EndMenuBar();
+			}
+
 
 			for (auto& [key, value] : MapMakeData::MainData.groundData.gData) {
 				
@@ -28,6 +51,9 @@ namespace GUI::SubWindow {
 				}
 
 			}
+
+
+
 	
 		}
 

@@ -9,6 +9,9 @@ namespace GUI::SubWindow {
 			if (startFlag) {
 				ImGui::OpenPopup(u8"レイヤー設定");
 				startFlag = false;
+
+				//console() << "node " << this->node.nodeName << " " << this->node.nodeID << endl;
+
 			}
 
 			if (ImGui::BeginPopupModal(u8"レイヤー設定", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {

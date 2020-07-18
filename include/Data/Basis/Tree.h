@@ -17,19 +17,9 @@ namespace NextStd {
 	/*! @brief	Tree構造のノード名・IDを保存するクラス
 	*/
 	struct NodeNumber {
+	public:
 		string nodeName;
 		size_t nodeID;
-
-		bool operator==(const NodeNumber rhs) {
-			if (this->nodeID == rhs.nodeID &&
-				this->nodeName == rhs.nodeName ) {
-				return true;
-			}
-			else {
-				return false;
-			}
-		};
-
 
 		NodeNumber() {
 			this->nodeName = "";
@@ -39,7 +29,26 @@ namespace NextStd {
 			this->nodeName = nodeName;
 			this->nodeID = nodeID;
 		}
+
+		bool operator==(const NodeNumber rhs) {
+			if (this->nodeID == rhs.nodeID &&
+				this->nodeName == rhs.nodeName) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		NodeNumber& operator=(const NodeNumber& rhs){
+			this->nodeID = rhs.nodeID;
+			this->nodeName = rhs.nodeName;
+			return *this;
+		}
+		
 	};
+	
+
 
 	/*! @brief	Tree構造のノードを作るためのクラス
 		@note	テンプレートがノード情報を格納するところに使われています。使用の際は登録してください。
@@ -77,6 +86,15 @@ namespace NextStd {
 			this->pNext = pNext;
 			this->data = data;
 		}
+
+		Node<DataType>& operator= (const Node<DataType>& a)
+		{
+			this->ID = a.ID;
+			this->pNext = a.pNext;
+			this->data = a.data;
+			return *this;
+		}
+
 	};
 
 	/*! @brief	Tree構造を作るためのクラス
@@ -91,6 +109,15 @@ namespace NextStd {
 		Tree() {
 			this->pRoot = Node<DataType>(rootID);
 		}
+		~Tree() {};
+
+		Tree<DataType>& operator= (const Tree<DataType>& a)
+		{
+			//this->rootID = a.rootID; // こいつは定数なので要らぬ。
+			this->pRoot = a.pRoot;
+			return *this;
+		}
+
 
 		/*! @brief	ノード検索(ポインターなし)
 			@param[in]      name	ノード名

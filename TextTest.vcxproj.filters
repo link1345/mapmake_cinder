@@ -315,6 +315,9 @@
     <ClCompile Include="src\GUI\Sub\Ground\Ground.cpp">
       <Filter>Source Files\GUI\Sub\Individual\Ground</Filter>
     </ClCompile>
+    <ClCompile Include="src\GUI\Sub\Ground\GroundSetting.cpp">
+      <Filter>Source Files\GUI\Sub\Individual\Ground</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp">
@@ -551,11 +554,11 @@
     <ClInclude Include="include\GUI\Sub\Individual\Ground\Ground.h">
       <Filter>Header Files\GUI\Sub\Individual\Ground</Filter>
     </ClInclude>
-    <ClInclude Include="GroundData.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="include\Data\GroundData.h">
       <Filter>Header Files\Data\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Sub\Individual\Ground\GroundSetting.h">
+      <Filter>Header Files\GUI\Sub\Individual\Ground</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

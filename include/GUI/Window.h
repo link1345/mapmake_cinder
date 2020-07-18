@@ -10,11 +10,14 @@
 
 #include <cinder/CinderImGui.h>
 
-#include "GUI/Sub/Individual/Ground/Ground.h"
 #include "GUI/System/Individual/StartWindow.h"
 #include "GUI/Sub/Individual/TerrainTool.h"
 #include "GUI/Sub/Individual/Layer/LayerBox.h"
 #include "GUI/Sub/Individual/Layer/LayerSetting.h"
+
+#include "GUI/Sub/Individual/Ground/Ground.h"
+#include "GUI/Sub/Individual/Ground/GroundSetting.h"
+
 
 using namespace ci;
 using namespace ci::app;
@@ -27,8 +30,9 @@ using t2 = GUI::SubWindow::LayerWindow;
 using t3 = GUI::System::StartWindow;
 using t4 = GUI::SubWindow::LayerSettingWindow;
 using t5 = GUI::SubWindow::GroundWindow;
+using t6 = GUI::SubWindow::GroundSettingWindow;
 
-typedef std::variant<t1,t2,t3,t4,t5> VData;
+typedef std::variant<t1,t2,t3,t4,t5,t6> VData;
 // -----------------------------------------------------------------
 
 namespace GUI {

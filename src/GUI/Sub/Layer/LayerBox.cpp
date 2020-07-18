@@ -171,7 +171,7 @@ namespace GUI::SubWindow {
 
 					// 右クリック処理
 					ImGui::SelectAddItem(nameid);
-					LayerBoxFolderDraw(rootTree, node, nameid, n, edit);
+					//LayerBoxFolderDraw(rootTree, node, nameid, n, edit);
 				}
 
 				ImGui::EndSelectBox();
@@ -277,7 +277,6 @@ namespace GUI::SubWindow {
 			auto a = *(std::next(searchData.begin(), 1));// 2番目のデータ(親)にアクセスして、そこにツッコむ。
 
 			auto move_tmp = data.at(edit.upfileData.id);
-			console() << a->data.name << endl;
 			
 			data.remove(edit.upfileData.id);
 			data.insert(a->ID, move_tmp, 1);
@@ -342,10 +341,6 @@ namespace GUI::SubWindow {
 
 					if (ImGui::BeginMenu(u8"編集")) {
 						if (ImGui::MenuItem(u8"レイヤー追加")) {
-
-							//GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
-							//	MapMakeData::MainData.layerData.layerTreeData.rootID, true
-							//));
 
 							GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
 								gLayer->layerTreeData.rootID, true

@@ -115,7 +115,9 @@ namespace MapMakeData {
 				return false;
 			}
 		};
+
 	}
+
 
 		/*! @brief	レイヤー情報を保持するためのクラス
 			@sa class LayerWindow(ImGui)は、この情報を直に関係している。
@@ -129,10 +131,11 @@ namespace MapMakeData {
 			/*! @brief	=オペレータ
 				@note	動作があやしぃ…かも
 			*/
-			LayerData operator =(const LayerData obj){
+			LayerData operator= (const LayerData obj){
+				this->explanation = obj.explanation;
+				this->layerTreeData = obj.layerTreeData;
 				return *this;
 			}
-
 
 			/*! @brief	サンプルデータ作成用関数
 			*/

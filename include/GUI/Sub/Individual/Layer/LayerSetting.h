@@ -61,6 +61,7 @@ namespace GUI {
 
 				this->NameErrorFlag = false;
 
+
 				this->sendData = MLData(u8"", MapMakeData::MainData.nullImage(), MapMakeData::MainData.nullImage(),
 					MapMakeData::TerrainPen::Sub::Key()
 					, false, false, false, u8"");

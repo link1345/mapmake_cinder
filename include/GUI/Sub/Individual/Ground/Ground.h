@@ -34,6 +34,7 @@ namespace GUI {
 			~GroundWindow() {};
 
 			void draw(string mID) override;
+
 		};
 
 	}
