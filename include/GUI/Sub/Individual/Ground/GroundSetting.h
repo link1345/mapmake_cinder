@@ -36,16 +36,24 @@ namespace GUI {
 				this->NameErrorFlag = false;
 				this->editMode = false;
 
+				this->keyEdit = false;
+
 				this->sendData = MapMakeData::Layer::LayerData();
 				this->sendKey = "";
+
+				this->oldKey = this->sendKey;
 			}
 			GroundSettingWindow(string setKey) : WindowBase() {
 				this->startFlag = true;
 				this->NameErrorFlag = false;
 				this->editMode = true;
 
+				this->keyEdit = false;
+
 				this->sendData = MapMakeData::MainData.groundData.gData[setKey];
 				this->sendKey = setKey;
+
+				this->oldKey = this->sendKey;
 			}
 
 			~GroundSettingWindow() {};
@@ -57,6 +65,9 @@ namespace GUI {
 			bool NameErrorFlag;
 
 			bool editMode;
+
+			bool keyEdit;
+			string oldKey;
 
 			string sendKey;
 			MapMakeData::Layer::LayerData sendData;

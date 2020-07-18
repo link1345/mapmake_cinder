@@ -31,6 +31,13 @@ namespace GUI {
 	namespace SubWindow {
 
 		namespace Sub {
+
+			enum class EditMode {
+				Add,
+				Inser,
+				Edit
+			};
+
 		}
 
 		class LayerSettingWindow : public GUI::WindowBase {
@@ -41,7 +48,7 @@ namespace GUI {
 				//this->inputLayerName = u8"グランドキャニオン";
 				this->s = 0;
 
-				this->addFlag = false;
+				this->mode = Sub::EditMode::Add;
 
 				this->NameErrorFlag = false;
 
@@ -51,21 +58,36 @@ namespace GUI {
 					, false, false, false, u8"");
 
 			}
-			LayerSettingWindow(NodeNumber frontNumber, bool addFlag = false, int s = 0) : WindowBase() {
+			LayerSettingWindow(NodeNumber frontNumber, Sub::EditMode mode, int s = 0) : WindowBase() {
 				this->startFlag = true;
 
 				this->node = frontNumber;
 				this->s = s;
 
-				this->addFlag = addFlag;
+				this->mode = mode;
 
 				this->NameErrorFlag = false;
-
 
 				this->sendData = MLData(u8"", MapMakeData::MainData.nullImage(), MapMakeData::MainData.nullImage(),
 					MapMakeData::TerrainPen::Sub::Key()
 					, false, false, false, u8"");
 			}
+
+			LayerSettingWindow(NodeNumber node) : WindowBase() {
+				this->startFlag = true;
+
+				this->node = node;
+				
+				this->s = 0;
+				this->mode = Sub::EditMode::Edit;
+
+				this->NameErrorFlag = false;
+
+
+				auto gKey = MapMakeData::MainData.groundData.selectKey;
+				this->sendData = MapMakeData::MainData.groundData.gData[gKey].layerTreeData.at(this->node).data;
+			}
+
 
 
 			~LayerSettingWindow() {};
@@ -86,8 +108,8 @@ namespace GUI {
 			/*! ペンの選択ID */
 			//MapMakeData::TerrainPen::Sub::Key item_current_idx;
 
-			/*! 追加させるか？ true=add , false=insert */
-			bool addFlag;
+			/*! 追加させるか？ 0=add , 1=insert */
+			Sub::EditMode mode;
 
 			/*! NameErrorFlag */
 			bool NameErrorFlag;

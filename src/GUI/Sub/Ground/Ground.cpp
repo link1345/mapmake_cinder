@@ -11,16 +11,18 @@ namespace GUI::SubWindow {
 			if (ImGui::BeginMenuBar()) {
 
 				if (ImGui::BeginMenu(u8"編集")) {
-					if (ImGui::MenuItem(u8"大地追加")) {
+					if (ImGui::MenuItem(u8"追加")) {
 						GUI::gui.createWindow(GUI::SubWindow::GroundSettingWindow());
 					}
-					if (ImGui::MenuItem(u8"大地編集","",false, MapMakeData::MainData.groundData.select )) {
+					if (ImGui::MenuItem(u8"編集","",false, MapMakeData::MainData.groundData.select )) {
 						GUI::gui.createWindow(GUI::SubWindow::GroundSettingWindow(
 							MapMakeData::MainData.groundData.selectKey					
 						));
 					}
-					if (ImGui::MenuItem(u8"大地削除")) {
-
+					if (ImGui::MenuItem(u8"削除","", false, MapMakeData::MainData.groundData.select )) {
+						MapMakeData::MainData.groundData.gData.erase(MapMakeData::MainData.groundData.selectKey);
+						MapMakeData::MainData.groundData.select = false;
+						MapMakeData::MainData.groundData.selectKey = "";
 					}
 					ImGui::EndMenu();
 				}

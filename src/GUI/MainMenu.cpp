@@ -57,6 +57,15 @@ namespace GUI::MainWindow {
 						GUI::gui.createWindow(GUI::SubWindow::LayerWindow());
 					}
 				}
+				if (ImGui::MenuItem(u8"[未実装]地形ツール", "Alt+5", TerToolflag)) {
+					if (TerToolflag) {
+						GUI::gui.closeWindow(GUI::SubWindow::TerrainToolWindow());
+					}
+					else {
+						GUI::gui.createWindow(GUI::SubWindow::TerrainToolWindow());
+					}
+
+				}
 				if (ImGui::MenuItem(u8"[未実装]ピン一覧", "Alt+2", true)) {}
 				ImGui::Separator();
 				// ミニマップとは…
@@ -71,15 +80,7 @@ namespace GUI::MainWindow {
 						//GUI::gui.createWindow(GUI::MainWindow::windowName::TerrainPenWindow);
 					//}
 				//}
-				if (ImGui::MenuItem(u8"[未実装]地形ツール", "Alt+5", TerToolflag)) {
-					if (TerToolflag) {
-						GUI::gui.closeWindow(GUI::SubWindow::TerrainToolWindow());
-					}
-					else {
-						GUI::gui.createWindow(GUI::SubWindow::TerrainToolWindow());
-					}
 				
-				}
 
 
 				ImGui::EndMenu();

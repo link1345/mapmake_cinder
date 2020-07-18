@@ -53,6 +53,12 @@ namespace GUI::SubWindow {
 				edit.addData.flag = true;
 				edit.addData.id = node.ID;
 			}
+			if (ImGui::MenuItem(u8"編集")) {
+				ImGui::CloseCurrentPopup();
+
+				edit.editData.flag = true;
+				edit.editData.id = node.ID;
+			}
 			if (ImGui::MenuItem(u8"削除")) {
 				ImGui::CloseCurrentPopup();
 
@@ -73,6 +79,13 @@ namespace GUI::SubWindow {
 
 				edit.addData.flag = true;
 				edit.addData.id = node.ID;
+			}
+			// フォルダの時だけ、説明文を表示させる項目を追加する。
+			if (node.data.layerfolder_flag) {
+				ImGui::Text(u8"説明文...");
+				if (ImGui::IsItemHovered()) {
+					ImGui::SetTooltip(u8"名前: %s\n説明: %s", node.data.name.c_str(), node.data.explanation.c_str());
+				}
 			}
 
 			ImGui::EndPopup();
@@ -171,7 +184,7 @@ namespace GUI::SubWindow {
 
 					// 右クリック処理
 					ImGui::SelectAddItem(nameid);
-					//LayerBoxFolderDraw(rootTree, node, nameid, n, edit);
+					LayerBoxFolderDraw(rootTree, node, nameid, n, edit);
 				}
 
 				ImGui::EndSelectBox();
@@ -268,8 +281,15 @@ namespace GUI::SubWindow {
 		// 追加
 		if (edit.addData.flag == true) {
 			
-			GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(edit.addData.id , false, 1));
+			GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(edit.addData.id , Sub::EditMode::Inser, 1));
 		}
+
+		// 追加
+		if (edit.editData.flag == true) {
+
+			GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(edit.editData.id));
+		}
+
 
 		// 上位階層に移動
 		if (edit.upfileData.flag == true) {
@@ -343,7 +363,7 @@ namespace GUI::SubWindow {
 						if (ImGui::MenuItem(u8"レイヤー追加")) {
 
 							GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
-								gLayer->layerTreeData.rootID, true
+								gLayer->layerTreeData.rootID, Sub::EditMode::Add
 							));
 
 

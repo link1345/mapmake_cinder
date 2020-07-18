@@ -63,6 +63,7 @@ namespace GUI {
 				GUI::SubWindow::Sub::editData removeData;
 				GUI::SubWindow::Sub::editData upfileData;
 				GUI::SubWindow::Sub::editData addData;
+				GUI::SubWindow::Sub::editData editData;
 				GUI::SubWindow::Sub::moveData moveData;
 
 

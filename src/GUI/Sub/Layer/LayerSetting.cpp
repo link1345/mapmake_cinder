@@ -18,68 +18,87 @@ namespace GUI::SubWindow {
 
 				auto gKey = MapMakeData::MainData.groundData.selectKey;
 
-				ImGui::InputText(u8"地形名", &this->sendData.name);
 
-				const char* combo_label = this->sendData.penKey.name.c_str();
-				if (ImGui::BeginCombo(u8"ブラシの種類", combo_label, 0)) {
+				if( this->mode != Sub::EditMode::Edit )
+					ImGui::Checkbox(u8"フォルダであるか？", &this->sendData.layerfolder_flag);
 
-					filter.Draw();
 
-					for (auto& [key, value] : MapMakeData::MainData.terrainData.pens.pen) {
-						if (filter.PassFilter(key.name.c_str())) {
+				if (!this->sendData.layerfolder_flag) {
+					ImGui::InputText(u8"地形名", &this->sendData.name);
 
-							// 枠を大きくして、色付けする。
-							auto mbgColor = MapMakeData::MainData.terrainData.tercolor.color[value.keyColor];
-							mbgColor = ImVec4(mbgColor.x, mbgColor.y, mbgColor.z, 0.3f);
-							ImGui::PushStyleColor(ImGuiCol_::ImGuiCol_Border, mbgColor);
-							ImGui::PushStyleVar(ImGuiStyleVar_::ImGuiStyleVar_ChildBorderSize, 4);
+					const char* combo_label = this->sendData.penKey.name.c_str();
+					if (ImGui::BeginCombo(u8"ブラシの種類", combo_label, 0)) {
 
-							const bool is_selected = (this->sendData.penKey.name == key.name);
-							bool select = is_selected;
-							bool sh_select = false;
+						filter.Draw();
 
-							// ボックスを作る。
-							ImGui::BeginSelectBox(key.name.c_str(), select, sh_select, vec2(0, 100), true, 0);
+						for (auto& [key, value] : MapMakeData::MainData.terrainData.pens.pen) {
+							if (filter.PassFilter(key.name.c_str())) {
 
-							ImGui::PopStyleVar();
-							ImGui::PopStyleColor();
+								// 枠を大きくして、色付けする。
+								auto mbgColor = MapMakeData::MainData.terrainData.tercolor.color[value.keyColor];
+								mbgColor = ImVec4(mbgColor.x, mbgColor.y, mbgColor.z, 0.3f);
+								ImGui::PushStyleColor(ImGuiCol_::ImGuiCol_Border, mbgColor);
+								ImGui::PushStyleVar(ImGuiStyleVar_::ImGuiStyleVar_ChildBorderSize, 4);
 
-							// タイトル
-							ImGui::Text(key.name.c_str());
+								const bool is_selected = (this->sendData.penKey.name == key.name);
+								bool select = is_selected;
+								bool sh_select = false;
 
-							// イメージ
-							ImGui::Image(MapMakeData::MainData.nullImage(), vec2(50, 50));
-							ImGui::SameLine();
+								// ボックスを作る。
+								ImGui::BeginSelectBox(key.name.c_str(), select, sh_select, vec2(0, 100), true, 0);
 
-							// 説明文
-							ImGui::Text(value.explanation.c_str());
+								ImGui::PopStyleVar();
+								ImGui::PopStyleColor();
 
-							ImGui::EndSelectBox();
+								// タイトル
+								ImGui::Text(key.name.c_str());
 
-							if (select)
-								this->sendData.penKey = key;
+								// イメージ
+								ImGui::Image(MapMakeData::MainData.nullImage(), vec2(50, 50));
+								ImGui::SameLine();
 
-							// 選択し終わったら、閉じておく。
-							if (select = !is_selected && select)
-								ImGui::CloseCurrentPopup();
+								// 説明文
+								ImGui::Text(value.explanation.c_str());
 
-							if (is_selected)
-								ImGui::SetItemDefaultFocus();
+								ImGui::EndSelectBox();
 
+								if (select)
+									this->sendData.penKey = key;
+
+								// 選択し終わったら、閉じておく。
+								if (select = !is_selected && select)
+									ImGui::CloseCurrentPopup();
+
+								if (is_selected)
+									ImGui::SetItemDefaultFocus();
+
+							}
 						}
+
+						ImGui::EndCombo();
 					}
 
-					ImGui::EndCombo();
+					ImGui::Text(u8"説明文");
+					ImGui::InputTextMultiline(u8"##説明文", &this->sendData.explanation, ImVec2(-FLT_MIN, ImGui::GetTextLineHeight() * 3), ImGuiInputTextFlags_AllowTabInput);
+
+					// エラー処理
+					if (this->NameErrorFlag)
+						ImGui::TextColored(ImVec4(255, 0, 0, 255), u8"ERROR:「地形名」を記入してください。");
+
+					ImGui::NewLine();
+				}
+				else {
+					ImGui::InputText(u8"フォルダ名", &this->sendData.name);
+					
+					ImGui::Text(u8"説明文");
+					ImGui::InputTextMultiline(u8"##説明文", &this->sendData.explanation, ImVec2(-FLT_MIN, ImGui::GetTextLineHeight() * 3), ImGuiInputTextFlags_AllowTabInput);
+					
+					if (this->NameErrorFlag)
+						ImGui::TextColored(ImVec4(255, 0, 0, 255), u8"ERROR:「フォルダ名」を記入してください。");
+
+					ImGui::NewLine();
 				}
 
-				ImGui::Text(u8"説明文");
-				ImGui::InputTextMultiline(u8"##説明文", &this->sendData.explanation, ImVec2(-FLT_MIN, ImGui::GetTextLineHeight() * 3), ImGuiInputTextFlags_AllowTabInput);
-
-				// エラー処理
-				if (this->NameErrorFlag)
-					ImGui::TextColored(ImVec4(255, 0, 0, 255), u8"ERROR:「地形名」を記入してください。");
-
-				ImGui::NewLine();
 
 				// 決定処理
 				if (ImGui::Button(u8"決定")) {
@@ -90,13 +109,13 @@ namespace GUI::SubWindow {
 						//MapMakeData::MainData.layerData.layerTreeData.newID(s1, "LayerImage");
 						MapMakeData::MainData.groundData.gData[gKey].layerTreeData.newID(s1 , "LayerImage");
 
-						if (addFlag)
-							//MapMakeData::MainData.layerData.layerTreeData.add(this->node, Node<MLData>(s1, sendData));
+						if (Sub::EditMode::Add == this->mode)
 							MapMakeData::MainData.groundData.gData[gKey].layerTreeData.add(this->node, Node<MLData>(s1, sendData));
-						else
-							//MapMakeData::MainData.layerData.layerTreeData.insert(this->node, Node<MLData>(s1, sendData), this->s);
+						else if(Sub::EditMode::Inser == this->mode)
 							MapMakeData::MainData.groundData.gData[gKey].layerTreeData.insert(this->node, Node<MLData>(s1, sendData), this->s);
-
+						else if (Sub::EditMode::Edit == this->mode) {
+							MapMakeData::MainData.groundData.gData[gKey].layerTreeData.at(this->node).data = sendData;
+						}
 						ImGui::CloseCurrentPopup();
 
 					}

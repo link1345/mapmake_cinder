@@ -8,6 +8,9 @@ namespace GUI::SubWindow {
 		else name = u8"【新規】大地設定";
 
 		if (startFlag) {
+			// 一時的に他の処理で、大地キーを読み込まないようにさせる。
+			MapMakeData::MainData.groundData.select = false;
+
 			ImGui::OpenPopup(name.c_str());
 			startFlag = false;
 		}
@@ -16,7 +19,8 @@ namespace GUI::SubWindow {
 
 			auto gKey = MapMakeData::MainData.groundData.selectKey;
 			
-			ImGui::InputText(u8"大地名", &this->sendKey);
+			if (ImGui::InputText(u8"大地名", &this->sendKey))
+				this->keyEdit = true;
 
 			ImGui::Text(u8"説明文");
 			ImGui::InputTextMultiline(u8"##説明文", &this->sendData.explanation, ImVec2(-FLT_MIN, ImGui::GetTextLineHeight() * 3), ImGuiInputTextFlags_AllowTabInput);
@@ -30,20 +34,25 @@ namespace GUI::SubWindow {
 			// 決定処理
 			if (ImGui::Button(u8"決定")) {
 				if (this->sendKey != "") {
+					if (editMode && this->keyEdit) {
+						MapMakeData::MainData.groundData.gData.erase(this->oldKey);
+					}
 					MapMakeData::MainData.groundData.gData[this->sendKey] = this->sendData;
+					MapMakeData::MainData.groundData.selectKey = this->sendKey;
 
 					ImGui::CloseCurrentPopup();
-
+					this->openFlag = false;
 				}
 				else this->NameErrorFlag = true;
 
-				this->openFlag = false;
+				MapMakeData::MainData.groundData.select = true;
 			}
 			ImGui::SameLine();
 			if (ImGui::Button(u8"キャンセル")) {
 				ImGui::CloseCurrentPopup();
-
 				this->openFlag = false;
+
+				MapMakeData::MainData.groundData.select = true;
 			}
 			
 
