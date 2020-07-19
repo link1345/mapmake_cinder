@@ -18,6 +18,8 @@
 #include "GUI/Sub/Individual/Ground/Ground.h"
 #include "GUI/Sub/Individual/Ground/GroundSetting.h"
 
+#include "GUI/Sub/Individual/Mask/Mask.h"
+
 
 using namespace ci;
 using namespace ci::app;
@@ -25,14 +27,15 @@ using namespace std;
 
 
 // ----- ここを書き換えるだけで、新ウィンドウを追加できます。 ------
-using t1 = GUI::SubWindow::TerrainToolWindow;
-using t2 = GUI::SubWindow::LayerWindow;
-using t3 = GUI::System::StartWindow;
-using t4 = GUI::SubWindow::LayerSettingWindow;
-using t5 = GUI::SubWindow::GroundWindow;
-using t6 = GUI::SubWindow::GroundSettingWindow;
-
-typedef std::variant<t1,t2,t3,t4,t5,t6> VData;
+using VData = std::variant<
+	GUI::SubWindow::TerrainToolWindow ,
+	GUI::SubWindow::LayerWindow ,
+	GUI::System::StartWindow ,
+	GUI::SubWindow::LayerSettingWindow ,
+	GUI::SubWindow::GroundWindow ,
+	GUI::SubWindow::GroundSettingWindow , 
+	GUI::SubWindow::MaskWindow
+>;
 // -----------------------------------------------------------------
 
 namespace GUI {
@@ -44,7 +47,7 @@ namespace GUI {
 			@brief ウィンドウの種別の列挙型(元)
 			@attention 新しいウィンドウ種別が出来たら、必ずここに追加してください。
 			*/
-			typedef size_t WindowType;
+			using WindowType = size_t;
 
 			/*!
 			@brief ウィンドウIDの保存

@@ -54,7 +54,7 @@ namespace GUI::MainWindow {
 						GUI::gui.closeWindow(GUI::SubWindow::LayerWindow());
 					}
 					else{
-						GUI::gui.createWindow(GUI::SubWindow::LayerWindow());
+						GUI::gui.createWindow(GUI::SubWindow::LayerWindow(MapMakeData::MainData.groundData.selectKey));
 					}
 				}
 				if (ImGui::MenuItem(u8"[未実装]地形ツール", "Alt+5", TerToolflag)) {

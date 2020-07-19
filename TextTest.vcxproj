@@ -252,6 +252,7 @@
     <ClCompile Include="src\GUI\Sub\Ground\GroundSetting.cpp" />
     <ClCompile Include="src\GUI\Sub\Layer\LayerBox.cpp" />
     <ClCompile Include="src\GUI\Sub\Layer\LayerSetting.cpp" />
+    <ClCompile Include="src\GUI\Sub\Mask\Mask.cpp" />
     <ClCompile Include="src\GUI\Sub\TerrainTool.cpp" />
     <ClCompile Include="src\GUI\Sub\TerrainPentable.cpp" />
     <ClCompile Include="src\GUI\System\StartWindow.cpp" />
@@ -329,6 +330,7 @@
     <ClInclude Include="include\GUI\Sub\Individual\Ground\GroundSetting.h" />
     <ClInclude Include="include\GUI\Sub\Individual\Layer\LayerBox.h" />
     <ClInclude Include="include\GUI\Sub\Individual\Layer\LayerSetting.h" />
+    <ClInclude Include="include\GUI\Sub\Individual\Mask\Mask.h" />
     <ClInclude Include="include\GUI\Sub\Individual\TerrainTool.h" />
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h" />
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h" />

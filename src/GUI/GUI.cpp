@@ -16,7 +16,7 @@ namespace GUI {
 		// new
 		this->createWindow(GUI::System::StartWindow());
 		this->createWindow(GUI::SubWindow::GroundWindow());
-		this->createWindow(GUI::SubWindow::LayerWindow());
+		this->createWindow(GUI::SubWindow::LayerWindow(MapMakeData::MainData.groundData.selectKey));
 		
 		// 下記の書き方で、別ウィンドウとして複数開けます。
 		//this->createWindow(GUI::SubWindow::LayerWindow(),100);

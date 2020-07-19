@@ -20,7 +20,7 @@ namespace GUI::General_Window {
 
 			bool hit = false;
 			std::visit([&](auto& x) {
-				x.draw(s.nodeName);
+				x.draw(s.nodeName + std::to_string(s.nodeID));
 
 				// openFlag がoffになっていれば、ウィンドウを消しておく。
 				if (!x.openFlag) {

@@ -77,15 +77,22 @@ namespace GUI {
 			LayerWindow() : WindowBase(){
 				// とりあえず、初期化だけはしておく。
 				this->image = MapMakeData::MainData.nullImage();
+				this->groundKey = "";
+			}
+			LayerWindow(string groundKey) : WindowBase() {
+				// とりあえず、初期化だけはしておく。
+				this->image = MapMakeData::MainData.nullImage();
+				this->groundKey = groundKey;
 			}
 			~LayerWindow() {};
 
 			void draw(string mID) override;
 
-			/*! @brief 使用用途予定未定の画像。とりあえず、使う予定だけはあるので…、許してちょ！
+			string groundKey;
+
+			/*! @brief	使用用途予定未定の画像。とりあえず、使う予定だけはあるので…、許してちょ！
 			*/
 			gl::Texture2dRef image;
-
 		};
 
 	}

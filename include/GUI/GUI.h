@@ -79,31 +79,61 @@ namespace GUI {
 		void update();
 
 		template<class t>
-		void createWindow(t mode) {
-			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name(), 0, typeid(mode).hash_code());
-			console() << typeid(mode).hash_code() << endl;
-			this->Windows.add(id, mode);
+		bool createWindow(t mode) {
+			return this->createWindow(mode, "",0);
 		}
 
 		template<class t>
-		void createWindow(t mode,size_t id) {
-			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name() + std::to_string(s), 0, typeid(mode).hash_code());
-			console() << typeid(mode).hash_code() << endl;
-			this->Windows.add(id, mode);
+		bool createWindow(t mode,size_t id) {
+			return this->createWindow(mode, "", id);
 		}
 
+		template<class t>
+		bool createWindow(t mode, string name,size_t id) {
+			if (searchWindow(mode, name, id)) return false;
+
+			string nameID = typeid(mode).name();
+			nameID = nameID + name;
+			auto sID = GUI::General_Window::Sub::WindowNumber(nameID, id, typeid(mode).hash_code());
+			//console() << typeid(mode).hash_code() << endl;
+			this->Windows.add(sID, mode);
+
+			return true;
+		}
 		
 		template<class t>
-		void closeWindow(t mode) {
-			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name(), 0,
-				typeid(mode).hash_code());
-			this->Windows.remove(id);
+		bool closeWindow(t mode) {
+			return this->closeWindow(mode, "", 0);
 		}
 		template<class t>
-		void closeWindow(t mode, size_t id) {
-			auto id = GUI::General_Window::Sub::WindowNumber(typeid(mode).name() + std::to_string(s), 0,
-				typeid(mode).hash_code());
-			this->Windows.remove(id);
+		bool closeWindow(t mode, size_t id) {
+			return this->closeWindow(mode, "",id);
+		}
+		template<class t>
+		bool closeWindow(t mode, string name, size_t id) {
+			if (!searchWindow(mode, name, id)) return false;
+
+			string nameID = typeid(mode).name();
+			nameID = nameID + name;
+			auto sID = GUI::General_Window::Sub::WindowNumber(nameID, id, typeid(mode).hash_code());
+			this->Windows.remove(sID);
+			return true;
+		}
+
+		/*! @note true=‚ ‚Á‚½ false=‚È‚©‚Á‚½ */
+		template<class t>
+		bool searchWindow(t& mode, string& name, size_t& id) {
+			string nameID = typeid(mode).name();
+			nameID = nameID + name;
+			auto sID = GUI::General_Window::Sub::WindowNumber(nameID, id, typeid(mode).hash_code());
+
+			try {
+				this->Windows.Windows.at(sID);
+				return true;
+			}
+			catch (std::out_of_range&) {
+				return false;
+			}
 		}
 
 		//void createWindow(GUI::General_Window::Sub::WindowType mode);

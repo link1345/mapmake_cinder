@@ -124,6 +124,12 @@
     <Filter Include="Header Files\Data\Ground">
       <UniqueIdentifier>{39c343b5-3eda-49eb-8cd3-2e1756c09248}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GUI\Sub\Individual\Mask">
+      <UniqueIdentifier>{4631d8b7-75e1-42a0-8fb2-f4b8323f2152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI\Sub\Individual\Mask">
+      <UniqueIdentifier>{0408e72a-58a4-4ed9-916e-f908cae5aa4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\src\CinderClipper.cpp">
@@ -317,6 +323,9 @@
     </ClCompile>
     <ClCompile Include="src\GUI\Sub\Ground\GroundSetting.cpp">
       <Filter>Source Files\GUI\Sub\Individual\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Sub\Mask\Mask.cpp">
+      <Filter>Source Files\GUI\Sub\Individual\Mask</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -559,6 +568,9 @@
     </ClInclude>
     <ClInclude Include="include\GUI\Sub\Individual\Ground\GroundSetting.h">
       <Filter>Header Files\GUI\Sub\Individual\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\Sub\Individual\Mask\Mask.h">
+      <Filter>Header Files\GUI\Sub\Individual\Mask</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ namespace GUI::SubWindow {
 
 	/*!	@brief	各レイヤーのマウス操作のための関数
 	*/
-	void LayerBoxFolderDraw(Tree<MLData>& rootTree, Node<MLData>& node, char* id, int n, GUI::SubWindow::Sub::Edit& edit) {
+	void LayerBoxFolderDraw(Tree<MLData>& rootTree, Node<MLData>& node, char* id, int n, GUI::SubWindow::Sub::Edit& edit ) {
 		
 		char nameid[100] = {};
 		sprintf_s(nameid,100, u8"layerbox%s", id);
@@ -97,7 +97,7 @@ namespace GUI::SubWindow {
 		@note	LayerBoxFolderDrawを呼び出してます。
 	*/
 	void LayerBoxDraw(Tree<MLData>& rootTree, Node<MLData>& node,
-		char* id, int n, GUI::SubWindow::Sub::Edit& edit) {
+		char* id, int n, GUI::SubWindow::Sub::Edit& edit, list<NodeNumber>& selectNode) {
 
 		ImGuiWindowFlags window_flags = ImGuiWindowFlags_None;
 
@@ -121,17 +121,15 @@ namespace GUI::SubWindow {
 
 		ImGui::BeginGroup();
 		{
-			// ----------------------
-			// NEW
+
+			auto old_note = node;
 
 			if (!node.data.layerfolder_flag) {
-				// 一般処理
+				// 一般処理				
 
-				//auto bgColor = ImGui::GetStyleColorVec4(ImGuiCol_::ImGuiCol_WindowBg);
-
+				// ウィンドウ枠の色を変える処理
 				auto key = MapMakeData::MainData.terrainData.pens.pen[node.data.penKey].keyColor;
 				auto mbgColor = MapMakeData::MainData.terrainData.tercolor.color[key];
-
 				mbgColor = ImVec4(mbgColor.x , mbgColor.y , mbgColor.z , 0.3f);
 
 				ImGui::PushStyleColor(ImGuiCol_::ImGuiCol_Border , mbgColor);
@@ -156,6 +154,14 @@ namespace GUI::SubWindow {
 				}
 
 				ImGui::EndSelectBox();
+
+
+				// ここまでで、nodeの選択に変化があれば、記録しておく。
+				if (old_note.data.selectflag != node.data.selectflag) {
+					selectNode.push_back(node.ID);
+					console() << selectNode.size() << endl;
+				}
+
 			}
 			else {
 				// フォルダ処理
@@ -191,7 +197,6 @@ namespace GUI::SubWindow {
 				
 			}
 
-
 		}
 		ImGui::EndGroup();
 
@@ -203,7 +208,7 @@ namespace GUI::SubWindow {
 		@note	LayerBoxDrawを呼び出してます。また、自身を再帰で呼び出してます。
 	*/
 	void draw_LayerBox(Tree<MLData>& rootTree, Node<MLData>& tree,
-		int n, GUI::SubWindow::Sub::Edit& edit) {
+		int n, GUI::SubWindow::Sub::Edit& edit, list<NodeNumber>& selectNode) {
 
 		string space = "";
 		for (int i = 0; i < n; i++) {
@@ -218,12 +223,12 @@ namespace GUI::SubWindow {
 
 		//if (n != 0 && tree.pNext.size() == 0) {
 		if (n != 0) {
-			LayerBoxDraw(rootTree, tree, treeid, n, edit);
+			LayerBoxDraw(rootTree, tree, treeid, n, edit, selectNode);
 		}
 
 		if (n == 0) {
 			for (auto& leaf : tree.pNext) {
-				draw_LayerBox(rootTree, leaf, n + 1, edit);
+				draw_LayerBox(rootTree, leaf, n + 1, edit, selectNode);
 			}
 		}
 		else {
@@ -248,7 +253,7 @@ namespace GUI::SubWindow {
 					ImGui::PopStyleColor();
 
 					for (auto& leaf : tree.pNext) {
-						draw_LayerBox(rootTree, leaf, n + 1, edit);
+						draw_LayerBox(rootTree, leaf, n + 1, edit, selectNode);
 					}
 					ImGui::TreePop();
 				}
@@ -259,6 +264,9 @@ namespace GUI::SubWindow {
 			}
 		}
 
+		if (selectNode.size() != 0)
+			console() << "shit" << endl;
+
 	};
 
 	/*!	@brief	レイヤーウィンドウの表示のための関数
@@ -268,7 +276,9 @@ namespace GUI::SubWindow {
 
 		GUI::SubWindow::Sub::Edit edit;
 
-		draw_LayerBox(data, data.pRoot, 0, edit);
+		list<NodeNumber> selectNode;
+
+		draw_LayerBox(data, data.pRoot, 0, edit, selectNode);
 
 		// 全て終わった後に安全に処理する 
 		// ※ LayerBoxDrawの途中で切ると、endを上手く行えずプロセス死ぬ。
@@ -289,7 +299,6 @@ namespace GUI::SubWindow {
 
 			GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(edit.editData.id));
 		}
-
 
 		// 上位階層に移動
 		if (edit.upfileData.flag == true) {
@@ -330,6 +339,7 @@ namespace GUI::SubWindow {
 			else {
 				//console() << u8"親が自身の子供へ移動することはできないよ！" << endl;
 			}
+
 		}
 		else if (edit.moveData.flag == true && data.at(edit.moveData.next).data.layerfolder_flag) {
 
@@ -339,6 +349,34 @@ namespace GUI::SubWindow {
 			data.add(edit.moveData.next, move_tmp);
 		}
 
+		// レイヤーを選択されたら、
+		for (NodeNumber item : selectNode) {
+			auto s = data.at(item).data;
+			if (s.selectflag)
+				GUI::gui.createWindow(GUI::SubWindow::MaskWindow(MapMakeData::MainData.groundData.selectKey, item), item.nodeName, item.nodeID);
+			else
+				GUI::gui.closeWindow(GUI::SubWindow::MaskWindow(), item.nodeName, item.nodeID);
+		}
+
+	}
+
+
+	/*! @brief	レイヤーが選択されたら、マスクウィンドウを表示するための関数
+		@note	レイヤーウィンドウが立ち上がっている間は、選択しているのを監視しています。
+	*/
+	void changeGround_LayerMask(Node<MLData>& node) {
+		MapMakeData::MainData.groundData.gData[MapMakeData::MainData.groundData.selectKey];
+
+		if (!node.data.layerfolder_flag && node.data.selectflag) {
+			auto hit = GUI::gui.searchWindow(GUI::SubWindow::MaskWindow(MapMakeData::MainData.groundData.selectKey, node.ID), node.ID.nodeName, node.ID.nodeID);
+			if(!hit){
+				GUI::gui.createWindow(GUI::SubWindow::MaskWindow(MapMakeData::MainData.groundData.selectKey, node.ID), node.ID.nodeName, node.ID.nodeID);
+			}
+		}
+
+		for (auto& leaf : node.pNext) {
+			changeGround_LayerMask(leaf);
+		}
 	}
 
 
@@ -349,81 +387,85 @@ namespace GUI::SubWindow {
 		//string nID = u8"レイヤー [" + MapMakeData::MainData.groundData.selectKey + "] ##" + mID;
 		string nID = u8"レイヤー##" + mID;
 
-		if (ImGui::Begin(nID.c_str(), &this->openFlag, ImGuiWindowFlags_MenuBar)){
+		if (ImGui::Begin(nID.c_str(), &this->openFlag, ImGuiWindowFlags_MenuBar)) {
 
-			if (MapMakeData::MainData.groundData.select) {
+			if (!MapMakeData::MainData.groundData.select) {
+				return;
+			}
 
-				auto* gLayer = &MapMakeData::MainData.groundData.gData[MapMakeData::MainData.groundData.selectKey];
+			auto* gLayer = &MapMakeData::MainData.groundData.gData[MapMakeData::MainData.groundData.selectKey];
 
-				auto menuSize = MapMakeData::MainData.windowData.MenuSize;
+			auto menuSize = MapMakeData::MainData.windowData.MenuSize;
 
-				if (ImGui::BeginMenuBar()) {
+			if (ImGui::BeginMenuBar()) {
 
-					if (ImGui::BeginMenu(u8"編集")) {
-						if (ImGui::MenuItem(u8"レイヤー追加")) {
+				if (ImGui::BeginMenu(u8"編集")) {
+					if (ImGui::MenuItem(u8"レイヤー追加")) {
 
-							GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
-								gLayer->layerTreeData.rootID, Sub::EditMode::Add
-							));
+						GUI::gui.createWindow(GUI::SubWindow::LayerSettingWindow(
+							gLayer->layerTreeData.rootID, Sub::EditMode::Add
+						));
 
 
+					}
+					ImGui::EndMenu();
+				}
+				if (ImGui::BeginMenu(u8"表示")) {
+					if (ImGui::BeginMenu(u8"メイン表示変更")) {
+						if (ImGui::MenuItem(u8"3Dモード", NULL, true)) {
 						}
+						if (ImGui::MenuItem(u8"3Dレイヤーモード", NULL, false)) {
+						}
+						if (ImGui::MenuItem(u8"2Dモード", NULL, false)) {
+						}
+						if (ImGui::MenuItem(u8"2Dレイヤーモード", NULL, false)) {
+						}
+
 						ImGui::EndMenu();
 					}
-					if (ImGui::BeginMenu(u8"表示")) {
-						if (ImGui::BeginMenu(u8"メイン表示変更")) {
-							if (ImGui::MenuItem(u8"3Dモード", NULL, true)) {
-							}
-							if (ImGui::MenuItem(u8"3Dレイヤーモード", NULL, false)) {
-							}
-							if (ImGui::MenuItem(u8"2Dモード", NULL, false)) {
-							}
-							if (ImGui::MenuItem(u8"2Dレイヤーモード", NULL, false)) {
-							}
-
-							ImGui::EndMenu();
-						}
-						ImGui::EndMenu();
-					}
-
-					// ボタン形式 切り替え簡易版。
-					// 表示切替え
-					ImGui::ImageButton((void*)(intptr_t)this->image->getId(),
-						vec2(menuSize, menuSize)
-						, vec2(0, 1), vec2(1, 0));
-
-					if (ImGui::IsItemHovered())
-					{
-						ImGui::BeginTooltip();
-						ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
-						if (true) {
-							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dモード]");
-						}
-						else if (false) {
-							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dレイヤーモード]");
-						}
-						else if (false) {
-							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dモード]");
-						}
-						else if (false) {
-							ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dレイヤーモード]");
-						}
-						ImGui::PopTextWrapPos();
-						ImGui::EndTooltip();
-					}
-
-					ImGui::EndMenuBar();
+					ImGui::EndMenu();
 				}
 
-				LayerBox(gLayer->layerTreeData, MapMakeData::MainData.nullImage());
+				// ボタン形式 切り替え簡易版。
+				// 表示切替え
+				ImGui::ImageButton((void*)(intptr_t)this->image->getId(),
+					vec2(menuSize, menuSize)
+					, vec2(0, 1), vec2(1, 0));
+
+				if (ImGui::IsItemHovered())
+				{
+					ImGui::BeginTooltip();
+					ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
+					if (true) {
+						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dモード]");
+					}
+					else if (false) {
+						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：3Dレイヤーモード]");
+					}
+					else if (false) {
+						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dモード]");
+					}
+					else if (false) {
+						ImGui::TextUnformatted(u8"メイン表示変更\n[現在：2Dレイヤーモード]");
+					}
+					ImGui::PopTextWrapPos();
+					ImGui::EndTooltip();
+				}
+
+				ImGui::EndMenuBar();
 			}
+
+			LayerBox(gLayer->layerTreeData, MapMakeData::MainData.nullImage());
 		}
 		ImGui::End();
 
-		// FPS確認
-		//ImGui::Text("FPS %f", getAverageFps());
+		// 大地が変更されたら、
+		if (MapMakeData::MainData.groundData.select && this->groundKey != MapMakeData::MainData.groundData.selectKey) {
+			auto* gLayer = &MapMakeData::MainData.groundData.gData[MapMakeData::MainData.groundData.selectKey];
+			changeGround_LayerMask(gLayer->layerTreeData.pRoot);
 
-		
+			this->groundKey = MapMakeData::MainData.groundData.selectKey;
+		}		
 	}
 
 }
