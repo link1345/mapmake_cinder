@@ -16,6 +16,9 @@ namespace MapMakeData {
 		//this->layerData.layerTreeData.clear();
 		
 		this->windowData = MapMakeData::Window::WindowData();
+
+		this->terrainData = MapMakeData::Terrain::TerrainData();
+
 	}
 
 	void iconReset(map<Icon, gl::Texture2dRef>& icon , gl::Texture2dRef& nullimage) {

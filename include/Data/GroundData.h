@@ -10,6 +10,7 @@ namespace MapMakeData {
 				this->select = false;
 				this->selectKey = "";
 				this->canvasSize = 50;
+				this->gData.clear();
 			};
 			~GroundData() {};
 

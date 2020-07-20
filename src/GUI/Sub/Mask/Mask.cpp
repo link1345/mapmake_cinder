@@ -19,6 +19,8 @@ namespace GUI::SubWindow {
 		string gID = u8"[" + data.name;
 		gID = gID +  u8"]マスクウィンドウ##" + mID;
 		if (ImGui::Begin(gID.c_str(),&this->openFlag)) {
+
+
 			ImGui::Text(mID.c_str());
 
 

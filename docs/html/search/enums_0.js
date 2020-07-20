@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['icon',['Icon',['../namespace_map_make_data.html#add9e2de39ed59c6fd905955aa862f15b',1,'MapMakeData']]],
-  ['imguiboxselectableflags',['ImGuiBoxSelectableFlags',['../namespace_im_gui.html#a73b6d7378755a219e516abd4bc8199a1',1,'ImGui']]]
+  ['editmode',['EditMode',['../namespace_g_u_i_1_1_sub_window_1_1_sub.html#a8ef2eddd3b5bd4a917b2327a5f300f7a',1,'GUI::SubWindow::Sub']]]
 ];

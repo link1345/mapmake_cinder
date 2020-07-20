@@ -327,6 +327,9 @@
     <ClCompile Include="src\GUI\Sub\Mask\Mask.cpp">
       <Filter>Source Files\GUI\Sub\Individual\Mask</Filter>
     </ClCompile>
+    <ClCompile Include="src\GUI\System\StartSetupWindow.cpp">
+      <Filter>Source Files\GUI\System\Individual</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp">
@@ -571,6 +574,9 @@
     </ClInclude>
     <ClInclude Include="include\GUI\Sub\Individual\Mask\Mask.h">
       <Filter>Header Files\GUI\Sub\Individual\Mask</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI\System\Individual\StartSetupWindow.h">
+      <Filter>Header Files\GUI\System\Individual</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

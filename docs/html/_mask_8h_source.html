@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MapMakeProject: C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/Mask/Mask.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MapMakeProject
+   &#160;<span id="projectnumber">0.01</span>
+   </div>
+   <div id="projectbrief">世界地図作成ソフト</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f938830485ea5fc932d9051b851477f4.html">GUI</a></li><li class="navelem"><a class="el" href="dir_6d07254aefd5f9454c8c937cda5a0fad.html">Sub</a></li><li class="navelem"><a class="el" href="dir_3e76bcb9268f5cfa5276ffdb22c2198b.html">Individual</a></li><li class="navelem"><a class="el" href="dir_5632406a31586a1eb52511dd80351ae7.html">Mask</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Mask.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_mask_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cinder/app/App.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;cinder/app/RendererGl.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cinder/gl/gl.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cinder/Log.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// my</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_all_data_8h.html">Data/AllData.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_box_widgets_8h.html">GUI/Widgets/BoxWidgets.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_window_base_8h.html">GUI/Widgets/WindowBase.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceci.html">ci</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceci_1_1app.html">ci::app</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceci_1_1log.html">ci::log</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_g_u_i.html">GUI</a> {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">namespace </span>SubWindow {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">namespace </span>Sub {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html">   30</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html">MaskWindow</a> : <span class="keyword">public</span> <a class="code" href="class_g_u_i_1_1_window_base.html">GUI::WindowBase</a> {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">public</span>:</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a55e7666c8eec16a0e73bd2cba0dcdd1b">   32</a></span>&#160;            <a class="code" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a55e7666c8eec16a0e73bd2cba0dcdd1b">MaskWindow</a>() : <a class="code" href="class_g_u_i_1_1_window_base.html">WindowBase</a>() {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                itemID = <a class="code" href="struct_next_std_1_1_node_number.html">NodeNumber</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a8760e37f9377b68b9423d1c98a8bfaa6">   35</a></span>&#160;            <a class="code" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a8760e37f9377b68b9423d1c98a8bfaa6">MaskWindow</a>(<span class="keywordtype">string</span> groundKey, <a class="code" href="struct_next_std_1_1_node_number.html">NodeNumber</a> ID) : <a class="code" href="class_g_u_i_1_1_window_base.html">WindowBase</a>() {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                this-&gt;groundKey = groundKey;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                this-&gt;itemID = ID;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a3fff24e63bb9b4da1e5740a09e867252">   39</a></span>&#160;            <a class="code" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a3fff24e63bb9b4da1e5740a09e867252">~MaskWindow</a>() {};</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordtype">void</span> draw(<span class="keywordtype">string</span> mID) <span class="keyword">override</span>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#add4a32aaa238acd50ccd83d7529b60f8">   43</a></span>&#160;            <span class="keywordtype">string</span> <a class="code" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#add4a32aaa238acd50ccd83d7529b60f8">groundKey</a>;</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#aa389e38d423370260d71d8adb8b30778">   44</a></span>&#160;            <a class="code" href="struct_next_std_1_1_node_number.html">NodeNumber</a> <a class="code" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#aa389e38d423370260d71d8adb8b30778">itemID</a>;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        };</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div><div class="ttc" id="namespaceci_html"><div class="ttname"><a href="namespaceci.html">ci</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="namespaceci_1_1app_html"><div class="ttname"><a href="namespaceci_1_1app.html">app</a></div></div>
+<div class="ttc" id="namespace_g_u_i_html"><div class="ttname"><a href="namespace_g_u_i.html">GUI</a></div><div class="ttdef"><b>Definition:</b> GUI.h:34</div></div>
+<div class="ttc" id="class_g_u_i_1_1_sub_window_1_1_mask_window_html"><div class="ttname"><a href="class_g_u_i_1_1_sub_window_1_1_mask_window.html">GUI::SubWindow::MaskWindow</a></div><div class="ttdef"><b>Definition:</b> Mask.h:30</div></div>
+<div class="ttc" id="class_g_u_i_1_1_sub_window_1_1_mask_window_html_a8760e37f9377b68b9423d1c98a8bfaa6"><div class="ttname"><a href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a8760e37f9377b68b9423d1c98a8bfaa6">GUI::SubWindow::MaskWindow::MaskWindow</a></div><div class="ttdeci">MaskWindow(string groundKey, NodeNumber ID)</div><div class="ttdef"><b>Definition:</b> Mask.h:35</div></div>
+<div class="ttc" id="struct_next_std_1_1_node_number_html"><div class="ttname"><a href="struct_next_std_1_1_node_number.html">NextStd::NodeNumber</a></div><div class="ttdoc">Tree構造のノード名・IDを保存するクラス </div><div class="ttdef"><b>Definition:</b> Tree.h:19</div></div>
+<div class="ttc" id="class_g_u_i_1_1_sub_window_1_1_mask_window_html_add4a32aaa238acd50ccd83d7529b60f8"><div class="ttname"><a href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#add4a32aaa238acd50ccd83d7529b60f8">GUI::SubWindow::MaskWindow::groundKey</a></div><div class="ttdeci">string groundKey</div><div class="ttdef"><b>Definition:</b> Mask.h:43</div></div>
+<div class="ttc" id="_all_data_8h_html"><div class="ttname"><a href="_all_data_8h.html">AllData.h</a></div><div class="ttdoc">最上位に存在するデータ管理用の処理 </div></div>
+<div class="ttc" id="_box_widgets_8h_html"><div class="ttname"><a href="_box_widgets_8h.html">BoxWidgets.h</a></div></div>
+<div class="ttc" id="_window_base_8h_html"><div class="ttname"><a href="_window_base_8h.html">WindowBase.h</a></div></div>
+<div class="ttc" id="class_g_u_i_1_1_sub_window_1_1_mask_window_html_aa389e38d423370260d71d8adb8b30778"><div class="ttname"><a href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#aa389e38d423370260d71d8adb8b30778">GUI::SubWindow::MaskWindow::itemID</a></div><div class="ttdeci">NodeNumber itemID</div><div class="ttdef"><b>Definition:</b> Mask.h:44</div></div>
+<div class="ttc" id="class_g_u_i_1_1_sub_window_1_1_mask_window_html_a3fff24e63bb9b4da1e5740a09e867252"><div class="ttname"><a href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a3fff24e63bb9b4da1e5740a09e867252">GUI::SubWindow::MaskWindow::~MaskWindow</a></div><div class="ttdeci">~MaskWindow()</div><div class="ttdef"><b>Definition:</b> Mask.h:39</div></div>
+<div class="ttc" id="class_g_u_i_1_1_sub_window_1_1_mask_window_html_a55e7666c8eec16a0e73bd2cba0dcdd1b"><div class="ttname"><a href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a55e7666c8eec16a0e73bd2cba0dcdd1b">GUI::SubWindow::MaskWindow::MaskWindow</a></div><div class="ttdeci">MaskWindow()</div><div class="ttdef"><b>Definition:</b> Mask.h:32</div></div>
+<div class="ttc" id="class_g_u_i_1_1_window_base_html"><div class="ttname"><a href="class_g_u_i_1_1_window_base.html">GUI::WindowBase</a></div><div class="ttdoc">GUI Window関係の基底クラス </div><div class="ttdef"><b>Definition:</b> WindowBase.h:11</div></div>
+<div class="ttc" id="namespaceci_1_1log_html"><div class="ttname"><a href="namespaceci_1_1log.html">log</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

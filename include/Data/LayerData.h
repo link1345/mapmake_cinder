@@ -31,6 +31,21 @@ namespace MapMakeData {
 
 	namespace Sub {
 
+		class LayerMaskData {
+		public :
+			LayerMaskData() {};
+			~LayerMaskData() {};
+
+			/*! @brief	マスクイメージ図 2D
+			*/
+			gl::Texture2dRef maskImage;
+
+			/*! @brief	マスクを構成するベクター情報
+			*/
+			vector<vector<vec2>> mask;
+		};
+
+
 		/*! @brief	レイヤー情報の詳細情報を保持するためのクラス
 			@sa classLayerData(同ファイル)が、直に関係している。
 		*/
@@ -78,7 +93,7 @@ namespace MapMakeData {
 			/*! @brief	レイヤーイメージ図 2D
 			*/
 			gl::Texture2dRef image2d;
-			
+
 			/*! @brief	レイヤーイメージ図 3D
 			*/
 			gl::Texture2dRef image3d;
@@ -86,6 +101,10 @@ namespace MapMakeData {
 			/*! @brief	使用しているペンの種類
 			*/
 			TerrainPen::Sub::Key penKey;
+
+			/*! @brief	
+			*/
+			LayerMaskData mask;
 
 
 			/*! @brief	選択中であるか true=選択中

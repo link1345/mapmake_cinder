@@ -1,0 +1,17 @@
+<map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/Ground/GroundSetting.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/Ground/GroundSetting.h">
+<area shape="rect" id="node6" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="779,124,885,151"/>
+<area shape="rect" id="node27" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1321,124,1503,151"/>
+<area shape="rect" id="node30" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1393,423,1580,449"/>
+<area shape="rect" id="node9" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1121,348,1247,375"/>
+<area shape="rect" id="node13" href="$include_2_data_2_ground_data_8h.html" title="Data/GroundData.h" alt="" coords="451,199,584,225"/>
+<area shape="rect" id="node19" href="$_terrain_data_8h.html" title="Data/TerrainData.h" alt="" coords="589,348,720,375"/>
+<area shape="rect" id="node24" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="660,199,767,225"/>
+<area shape="rect" id="node25" href="$_file_data_8h.html" title="FileData.h" alt="" coords="791,199,873,225"/>
+<area shape="rect" id="node26" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="897,199,981,225"/>
+<area shape="rect" id="node14" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="456,273,579,300"/>
+<area shape="rect" id="node15" href="$_resources_8h.html" title="Resources.h" alt="" coords="470,348,565,375"/>
+<area shape="rect" id="node17" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="775,348,950,375"/>
+<area shape="rect" id="node20" href="$_terrain_pen_data_8h.html" title="Data/TerrainPenData.h" alt="" coords="578,423,731,449"/>
+<area shape="rect" id="node21" href="$_terrain_color_data_8h.html" title="Data/TerrainColorData.h" alt="" coords="567,497,727,524"/>
+<area shape="rect" id="node23" href="$_color_palette_8h.html" title="Data/Basis/ColorPalette.h" alt="" coords="547,572,719,599"/>
+</map>

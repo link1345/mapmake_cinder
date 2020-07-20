@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file',['File',['../namespace_file.html',1,'']]]
+  ['colorpalette',['ColorPalette',['../namespace_color_palette.html',1,'']]]
 ];

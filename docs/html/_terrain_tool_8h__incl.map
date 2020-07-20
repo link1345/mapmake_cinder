@@ -1,3 +1,17 @@
 <map id="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/TerrainTool.h" name="C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/TerrainTool.h">
-<area shape="rect" id="node7" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="478,109,664,136"/>
+<area shape="rect" id="node7" href="$_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="66,109,249,136"/>
+<area shape="rect" id="node10" href="$_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="962,109,1068,136"/>
+<area shape="rect" id="node30" href="$_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1500,408,1687,435"/>
+<area shape="rect" id="node13" href="$_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1208,333,1334,360"/>
+<area shape="rect" id="node16" href="$include_2_data_2_ground_data_8h.html" title="Data/GroundData.h" alt="" coords="740,184,874,211"/>
+<area shape="rect" id="node22" href="$_terrain_data_8h.html" title="Data/TerrainData.h" alt="" coords="1035,333,1166,360"/>
+<area shape="rect" id="node27" href="$_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="1103,184,1210,211"/>
+<area shape="rect" id="node28" href="$_file_data_8h.html" title="FileData.h" alt="" coords="1234,184,1316,211"/>
+<area shape="rect" id="node29" href="$_icon_data_8h.html" title="IconData.h" alt="" coords="1340,184,1424,211"/>
+<area shape="rect" id="node17" href="$_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="744,259,867,285"/>
+<area shape="rect" id="node19" href="$_resources_8h.html" title="Resources.h" alt="" coords="441,333,536,360"/>
+<area shape="rect" id="node21" href="$_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="560,333,734,360"/>
+<area shape="rect" id="node23" href="$_terrain_pen_data_8h.html" title="Data/TerrainPenData.h" alt="" coords="1029,408,1182,435"/>
+<area shape="rect" id="node24" href="$_terrain_color_data_8h.html" title="Data/TerrainColorData.h" alt="" coords="1064,483,1224,509"/>
+<area shape="rect" id="node26" href="$_color_palette_8h.html" title="Data/Basis/ColorPalette.h" alt="" coords="992,557,1164,584"/>
 </map>

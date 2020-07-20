@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test',['test',['../namespace_im_gui.html#a73b6d7378755a219e516abd4bc8199a1a534f2e5035486a647ad6de408e0121f2',1,'ImGui']]]
+  ['edit',['Edit',['../namespace_g_u_i_1_1_sub_window_1_1_sub.html#a8ef2eddd3b5bd4a917b2327a5f300f7aa7dce122004969d56ae2e0245cb754d35',1,'GUI::SubWindow::Sub']]]
 ];

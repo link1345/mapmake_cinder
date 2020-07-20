@@ -1,5 +1,9 @@
 <map id="GUI::WindowBase" name="GUI::WindowBase">
-<area shape="rect" id="node2" href="$class_g_u_i_1_1_sub_window_1_1_layer_window.html" title="GUI::SubWindow::LayerWindow" alt="" coords="181,5,388,32"/>
-<area shape="rect" id="node3" href="$class_g_u_i_1_1_sub_window_1_1_terrain_tool_window.html" title="GUI::SubWindow::TerrainTool\lWindow" alt="" coords="189,57,381,98"/>
-<area shape="rect" id="node4" href="$class_g_u_i_1_1_system_1_1_start_window.html" title="GUI::System::StartWindow" alt="" coords="195,123,374,149"/>
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_sub_window_1_1_ground_setting_window.html" title="GUI::SubWindow::GroundSetting\lWindow" alt="" coords="184,5,396,47"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_sub_window_1_1_ground_window.html" title="GUI::SubWindow::GroundWindow" alt="" coords="181,71,399,98"/>
+<area shape="rect" id="node4" href="$class_g_u_i_1_1_sub_window_1_1_layer_setting_window.html" title="GUI::SubWindow::LayerSetting\lWindow" alt="" coords="189,123,391,164"/>
+<area shape="rect" id="node5" href="$class_g_u_i_1_1_sub_window_1_1_layer_window.html" title="GUI::SubWindow::LayerWindow" alt="" coords="187,189,393,215"/>
+<area shape="rect" id="node6" href="$class_g_u_i_1_1_sub_window_1_1_mask_window.html" title="GUI::SubWindow::MaskWindow" alt="" coords="187,239,393,266"/>
+<area shape="rect" id="node7" href="$class_g_u_i_1_1_sub_window_1_1_terrain_tool_window.html" title="GUI::SubWindow::TerrainTool\lWindow" alt="" coords="194,291,386,332"/>
+<area shape="rect" id="node8" href="$class_g_u_i_1_1_system_1_1_start_window.html" title="GUI::System::StartWindow" alt="" coords="201,357,379,383"/>
 </map>

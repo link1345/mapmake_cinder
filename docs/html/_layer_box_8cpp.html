@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MapMakeProject: C:/Users/link/source/mapmake/vc2019/src/GUI/Sub/LayerBox.cpp ファイル</title>
+<title>MapMakeProject: C:/Users/link/source/mapmake/vc2019/src/GUI/Sub/Layer/LayerBox.cpp ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4e4e2e75df7fa6971448b424c011c8b5.html">GUI</a></li><li class="navelem"><a class="el" href="dir_fa030366557b0f00286239cd30754f96.html">Sub</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4e4e2e75df7fa6971448b424c011c8b5.html">GUI</a></li><li class="navelem"><a class="el" href="dir_fa030366557b0f00286239cd30754f96.html">Sub</a></li><li class="navelem"><a class="el" href="dir_056724a981657dbcf419817bd37be47c.html">Layer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,24 +75,40 @@ $(function() {
 <div class="title">LayerBox.cpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_layer_box_8h_source.html">GUI/Sub/Individual/LayerBox.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_layer_box_8h_source.html">GUI/Sub/Individual/Layer/LayerBox.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_g_u_i_8h_source.html">GUI/GUI.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 LayerBox.cpp の依存先関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="_layer_box_8cpp__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2src_2_g_u_i_2_sub_2_layer_box_8cpp" alt=""/></div>
-<map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2src_2_g_u_i_2_sub_2_layer_box_8cpp" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2src_2_g_u_i_2_sub_2_layer_box_8cpp">
-<area shape="rect" id="node2" href="_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="506,109,633,151"/>
-<area shape="rect" id="node7" href="_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="752,206,859,233"/>
-<area shape="rect" id="node22" href="_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="1291,206,1474,233"/>
-<area shape="rect" id="node25" href="_no_text_tree_node_widgets_8h.html" title="TreeNodeの操作バーがないバージョンを登録してある関数です。 " alt="" coords="1521,199,1717,240"/>
-<area shape="rect" id="node26" href="_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1147,363,1333,389"/>
-<area shape="rect" id="node10" href="_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="995,363,1122,389"/>
-<area shape="rect" id="node14" href="_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="578,288,670,315"/>
-<area shape="rect" id="node19" href="_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="989,288,1096,315"/>
-<area shape="rect" id="node20" href="_file_data_8h.html" title="FileData.h" alt="" coords="1121,288,1202,315"/>
-<area shape="rect" id="node21" href="_icon_data_8h.html" title="IconData.h" alt="" coords="470,288,554,315"/>
-<area shape="rect" id="node15" href="_resources_8h.html" title="Resources.h" alt="" coords="574,363,669,389"/>
-<area shape="rect" id="node17" href="_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="745,363,919,389"/>
+<div class="center"><img src="_layer_box_8cpp__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2src_2_g_u_i_2_sub_2_layer_2_layer_box_8cpp" alt=""/></div>
+<map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2src_2_g_u_i_2_sub_2_layer_2_layer_box_8cpp" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2src_2_g_u_i_2_sub_2_layer_2_layer_box_8cpp">
+<area shape="rect" id="node2" href="_layer_box_8h.html" title="レイヤーウィンドウ(ImGui)に関する処理軍 " alt="" coords="1797,259,1925,300"/>
+<area shape="rect" id="node33" href="_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="1517,109,1598,136"/>
+<area shape="rect" id="node7" href="_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="1323,355,1429,382"/>
+<area shape="rect" id="node28" href="_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="2509,355,2691,382"/>
+<area shape="rect" id="node31" href="_no_text_tree_node_widgets_8h.html" title="TreeNodeの操作バーがないバージョンを登録してある関数です。 " alt="" coords="1925,348,2121,389"/>
+<area shape="rect" id="node32" href="_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="2196,355,2383,382"/>
+<area shape="rect" id="node10" href="_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1361,587,1487,613"/>
+<area shape="rect" id="node14" href="include_2_data_2_ground_data_8h.html" title="Data/GroundData.h" alt="" coords="1005,437,1139,464"/>
+<area shape="rect" id="node20" href="_terrain_data_8h.html" title="Data/TerrainData.h" alt="" coords="1665,587,1796,613"/>
+<area shape="rect" id="node25" href="_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="1428,437,1535,464"/>
+<area shape="rect" id="node26" href="_file_data_8h.html" title="FileData.h" alt="" coords="1214,437,1295,464"/>
+<area shape="rect" id="node27" href="_icon_data_8h.html" title="IconData.h" alt="" coords="1319,437,1403,464"/>
+<area shape="rect" id="node15" href="_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="1363,512,1485,539"/>
+<area shape="rect" id="node16" href="_resources_8h.html" title="Resources.h" alt="" coords="1521,587,1615,613"/>
+<area shape="rect" id="node18" href="_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="1059,587,1234,613"/>
+<area shape="rect" id="node21" href="_terrain_pen_data_8h.html" title="Data/TerrainPenData.h" alt="" coords="1689,661,1842,688"/>
+<area shape="rect" id="node22" href="_terrain_color_data_8h.html" title="Data/TerrainColorData.h" alt="" coords="1735,736,1895,763"/>
+<area shape="rect" id="node24" href="_color_palette_8h.html" title="Data/Basis/ColorPalette.h" alt="" coords="1435,811,1607,837"/>
+<area shape="rect" id="node34" href="_system_data_8h.html" title="Data/SystemData.h" alt="" coords="85,355,221,382"/>
+<area shape="rect" id="node35" href="_window_8h.html" title="GUI/Window.h" alt="" coords="2106,184,2211,211"/>
+<area shape="rect" id="node38" href="_start_window_8h.html" title="GUI/System/Individual\l/StartWindow.h" alt="" coords="1345,259,1495,300"/>
+<area shape="rect" id="node40" href="_terrain_tool_8h.html" title="地形操作ツール(ImGUI)に関する処理群 " alt="" coords="1519,259,1646,300"/>
+<area shape="rect" id="node41" href="_layer_setting_8h.html" title="GUI/Sub/Individual\l/Layer/LayerSetting.h" alt="" coords="2085,259,2232,300"/>
+<area shape="rect" id="node42" href="_ground_8h.html" title="GUI/Sub/Individual\l/Ground/Ground.h" alt="" coords="2257,259,2383,300"/>
+<area shape="rect" id="node43" href="_ground_setting_8h.html" title="GUI/Sub/Individual\l/Ground/GroundSetting.h" alt="" coords="2407,259,2574,300"/>
+<area shape="rect" id="node44" href="_mask_8h.html" title="GUI/Sub/Individual\l/Mask/Mask.h" alt="" coords="2598,259,2725,300"/>
+<area shape="rect" id="node39" href="_help_marker_8h.html" title="GUI/Widgets/HelpMarker.h" alt="" coords="145,512,322,539"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -108,18 +124,21 @@ LayerBox.cpp の依存先関係図:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a522a4ae25c82ff6903906f8579c9d664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a522a4ae25c82ff6903906f8579c9d664">GUI::SubWindow::LayerBoxFolderDraw</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;rootTree, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;node, char *id, int n, <a class="el" href="class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html">GUI::SubWindow::Sub::Edit</a> &amp;edit)</td></tr>
+<tr class="memitem:a522a4ae25c82ff6903906f8579c9d664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a522a4ae25c82ff6903906f8579c9d664">GUI::SubWindow::LayerBoxFolderDraw</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;rootTree, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;node, char *id, int n, <a class="el" href="class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html">GUI::SubWindow::Sub::Edit</a> &amp;edit)</td></tr>
 <tr class="memdesc:a522a4ae25c82ff6903906f8579c9d664"><td class="mdescLeft">&#160;</td><td class="mdescRight">各レイヤーのマウス操作のための関数  <a href="namespace_g_u_i_1_1_sub_window.html#a522a4ae25c82ff6903906f8579c9d664">[詳解]</a><br /></td></tr>
 <tr class="separator:a522a4ae25c82ff6903906f8579c9d664"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86639e289bf79a25b8d89e653f304057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a86639e289bf79a25b8d89e653f304057">GUI::SubWindow::LayerBoxDraw</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;rootTree, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;node, char *id, int n, <a class="el" href="class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html">GUI::SubWindow::Sub::Edit</a> &amp;edit)</td></tr>
-<tr class="memdesc:a86639e289bf79a25b8d89e653f304057"><td class="mdescLeft">&#160;</td><td class="mdescRight">各レイヤーの表示のための関数  <a href="namespace_g_u_i_1_1_sub_window.html#a86639e289bf79a25b8d89e653f304057">[詳解]</a><br /></td></tr>
-<tr class="separator:a86639e289bf79a25b8d89e653f304057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedcd564a093a807540175d7b50bdbdb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#aedcd564a093a807540175d7b50bdbdb8">GUI::SubWindow::draw_LayerBox</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;rootTree, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;tree, int n, <a class="el" href="class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html">GUI::SubWindow::Sub::Edit</a> &amp;edit)</td></tr>
-<tr class="memdesc:aedcd564a093a807540175d7b50bdbdb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤーの表示のための関数  <a href="namespace_g_u_i_1_1_sub_window.html#aedcd564a093a807540175d7b50bdbdb8">[詳解]</a><br /></td></tr>
-<tr class="separator:aedcd564a093a807540175d7b50bdbdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d9918c04210a10e489636e49005cfbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a2d9918c04210a10e489636e49005cfbb">GUI::SubWindow::LayerBox</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;data, gl::Texture2dRef <a class="el" href="class_map_make_data_1_1_all_data.html#a488b5b97ed170cdad5029d2953633f95">NullImage</a>)</td></tr>
+<tr class="memitem:ac08aae969bfdc86892d7f5d53f15287c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#ac08aae969bfdc86892d7f5d53f15287c">GUI::SubWindow::LayerBoxDraw</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;rootTree, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;node, char *id, int n, <a class="el" href="class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html">GUI::SubWindow::Sub::Edit</a> &amp;edit, list&lt; <a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> &gt; &amp;selectNode)</td></tr>
+<tr class="memdesc:ac08aae969bfdc86892d7f5d53f15287c"><td class="mdescLeft">&#160;</td><td class="mdescRight">各レイヤーの表示のための関数  <a href="namespace_g_u_i_1_1_sub_window.html#ac08aae969bfdc86892d7f5d53f15287c">[詳解]</a><br /></td></tr>
+<tr class="separator:ac08aae969bfdc86892d7f5d53f15287c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53866f67075aa27cc32af37914cea71e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a53866f67075aa27cc32af37914cea71e">GUI::SubWindow::draw_LayerBox</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;rootTree, <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;tree, int n, <a class="el" href="class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html">GUI::SubWindow::Sub::Edit</a> &amp;edit, list&lt; <a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> &gt; &amp;selectNode)</td></tr>
+<tr class="memdesc:a53866f67075aa27cc32af37914cea71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤーの表示のための関数  <a href="namespace_g_u_i_1_1_sub_window.html#a53866f67075aa27cc32af37914cea71e">[詳解]</a><br /></td></tr>
+<tr class="separator:a53866f67075aa27cc32af37914cea71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9918c04210a10e489636e49005cfbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a2d9918c04210a10e489636e49005cfbb">GUI::SubWindow::LayerBox</a> (<a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;data, gl::Texture2dRef <a class="el" href="class_map_make_data_1_1_all_data.html#a488b5b97ed170cdad5029d2953633f95">NullImage</a>)</td></tr>
 <tr class="memdesc:a2d9918c04210a10e489636e49005cfbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤーウィンドウの表示のための関数  <a href="namespace_g_u_i_1_1_sub_window.html#a2d9918c04210a10e489636e49005cfbb">[詳解]</a><br /></td></tr>
 <tr class="separator:a2d9918c04210a10e489636e49005cfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d8da295ffb9142c84c117cc2acffd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_g_u_i_1_1_sub_window.html#a27d8da295ffb9142c84c117cc2acffd3">GUI::SubWindow::changeGround_LayerMask</a> (<a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a> &gt; &amp;node)</td></tr>
+<tr class="memdesc:a27d8da295ffb9142c84c117cc2acffd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤーが選択されたら、マスクウィンドウを表示するための関数  <a href="namespace_g_u_i_1_1_sub_window.html#a27d8da295ffb9142c84c117cc2acffd3">[詳解]</a><br /></td></tr>
+<tr class="separator:a27d8da295ffb9142c84c117cc2acffd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">型定義詳解</h2>
 <a id="afd340346d3e459c471c269e06119e00d"></a>
@@ -129,7 +148,7 @@ LayerBox.cpp の依存先関係図:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef class <a class="el" href="class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html">MapMakeData::Layer::Sub::LayerBoxData</a> <a class="el" href="_layer_box_8cpp.html#afd340346d3e459c471c269e06119e00d">MLData</a></td>
+          <td class="memname">typedef class <a class="el" href="class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html">MapMakeData::Layer::Sub::LayerBoxData</a> <a class="el" href="_layer_setting_8h.html#afd340346d3e459c471c269e06119e00d">MLData</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

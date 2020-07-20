@@ -94,6 +94,10 @@ NextStd::Tree&lt; DataType &gt; 連携図</div>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a0d7a3ba5d3c85078fdf2afe6ae98f4f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a0d7a3ba5d3c85078fdf2afe6ae98f4f4">Tree</a> ()</td></tr>
 <tr class="separator:a0d7a3ba5d3c85078fdf2afe6ae98f4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab496c1a992ea683db3b31e19714c3d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#aab496c1a992ea683db3b31e19714c3d4">~Tree</a> ()</td></tr>
+<tr class="separator:aab496c1a992ea683db3b31e19714c3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fb0b352dd8315a74143a35cd21917e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; DataType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a8fb0b352dd8315a74143a35cd21917e8">operator=</a> (const <a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; DataType &gt; &amp;a)</td></tr>
+<tr class="separator:a8fb0b352dd8315a74143a35cd21917e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c46953d85b43eec3c650d6e01ad2c1"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="struct_next_std_1_1_node.html">Node</a>&lt; DataType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_next_std_1_1_tree.html#a82c46953d85b43eec3c650d6e01ad2c1">search</a> (<a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> name)</td></tr>
 <tr class="memdesc:a82c46953d85b43eec3c650d6e01ad2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノード検索(ポインターなし)  <a href="#a82c46953d85b43eec3c650d6e01ad2c1">[詳解]</a><br /></td></tr>
 <tr class="separator:a82c46953d85b43eec3c650d6e01ad2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +175,33 @@ template&lt;class DataType&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="struct_next_std_1_1_tree.html">NextStd::Tree</a>&lt; DataType &gt;::<a class="el" href="struct_next_std_1_1_tree.html">Tree</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab496c1a992ea683db3b31e19714c3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab496c1a992ea683db3b31e19714c3d4">&#9670;&nbsp;</a></span>~Tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_next_std_1_1_tree.html">NextStd::Tree</a>&lt; DataType &gt;::~<a class="el" href="struct_next_std_1_1_tree.html">Tree</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -541,6 +572,34 @@ template&lt;class DataType&gt; </div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>ノード名の生成に成功したら、true </dd></dl>
 <dl class="section note"><dt>覚え書き</dt><dd>従来の奴に被らないように、新しいノード名を作成します。なお、ノードの登録は出来ません。addでやってください。 </dd></dl>
+
+</div>
+</div>
+<a id="a8fb0b352dd8315a74143a35cd21917e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb0b352dd8315a74143a35cd21917e8">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt;DataType&gt;&amp; <a class="el" href="struct_next_std_1_1_tree.html">NextStd::Tree</a>&lt; DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_next_std_1_1_tree.html">Tree</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -1,16 +1,19 @@
 ﻿#include "GUI/System/Individual/StartWindow.h"
 
+#include "GUI/GUI.h"
+
 namespace  GUI::System {
 	void StartWindow::draw(string mID) {
 
+
+		string gID = "Start##" + mID;
+
 		if (startFlag) {
-			ImGui::OpenPopup("Start");
+			ImGui::OpenPopup(gID.c_str());
 			startFlag = false;
 		}
 
-		bool setup = false;
-
-		if (ImGui::BeginPopupModal("Start", NULL, ImGuiWindowFlags_AlwaysAutoResize))
+		if (ImGui::BeginPopupModal(gID.c_str(), NULL, ImGuiWindowFlags_AlwaysAutoResize))
 		{
 			ImGui::Text(u8"どの状態から始めますか");
 
@@ -24,7 +27,10 @@ namespace  GUI::System {
 			{
 				ImGui::CloseCurrentPopup();
 				MapMakeData::MainData.reset();
-				setup = true;
+
+				GUI::gui.createWindow(GUI::System::StartSetupWindow());
+
+				this->openFlag = false;
 			}
 			ImGui::EndGroup();
 			ImGui::PopID();
@@ -52,6 +58,7 @@ namespace  GUI::System {
 			{
 				ImGui::CloseCurrentPopup();
 				MapMakeData::MainData.setSampleData(0);
+				this->openFlag = false;
 			}
 			ImGui::PopID();
 
@@ -59,59 +66,6 @@ namespace  GUI::System {
 
 			ImGui::EndPopup();
 		}
-
-
-		if (setup) {
-			ImGui::OpenPopup("Setup");
-		}
-
-		if (ImGui::BeginPopupModal("Setup", NULL, ImGuiWindowFlags_AlwaysAutoResize))
-		{
-			static gl::Texture2dRef imagebox = image_f(MapMakeData::MainData.groundData.canvasSize);
-			//static gl::FboRef imagebox = image_f(boxNum);
-
-			char label1[50] = u8"";
-
-			sprintf_s(label1, 50, u8"x:%d  y:%d", 100 - MapMakeData::MainData.groundData.canvasSize, MapMakeData::MainData.groundData.canvasSize);
-
-			static bool tree1_open = true;
-			if (tree1_open == true) {
-				ImGui::SetNextItemOpen(tree1_open);
-				tree1_open = false;
-			}
-			if (ImGui::TreeNodeEx(u8"ワールドマップのサイズ比率")) {
-				// ここで、SliderのID(ラベル)が何も書かれていない場合、前のアイテムとID衝突を起こします。
-				ImGui::PushID(10);
-				if (ImGui::SliderInt(u8"", &MapMakeData::MainData.groundData.canvasSize, 1, 99, label1)) {
-					imagebox = image_f(MapMakeData::MainData.groundData.canvasSize);
-				}
-
-
-				ImGui::PopID();
-
-				ImGui::SameLine();
-				ImGui::HelpMarker(u8"■ワールドマップのサイズ比率\nどのぐらいのマップの解像度にするかは、\n地形作成後の出力の際に決定。\n下の画像は、サイズ比率のイメージ。");
-
-
-				// イメージ図を用意しようかと思ったけど、保留中。
-				ImGui::Image(imagebox, imagebox->getSize());
-
-
-				ImGui::TreePop();
-			}
-
-			if (ImGui::Button(u8"決定")) {
-				ImGui::CloseCurrentPopup();
-
-				// startWindowを終了させる。
-				this->openFlag = false;
-			}
-
-
-			ImGui::EndPopup();
-		}
-
-		//ImGui::SliderInt(u8"test", &this->boxNum, 1, 99);
 
 	}
 }

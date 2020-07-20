@@ -11,6 +11,8 @@
 #include <cinder/CinderImGui.h>
 
 #include "GUI/System/Individual/StartWindow.h"
+#include "GUI/System/Individual/StartSetupWindow.h"
+
 #include "GUI/Sub/Individual/TerrainTool.h"
 #include "GUI/Sub/Individual/Layer/LayerBox.h"
 #include "GUI/Sub/Individual/Layer/LayerSetting.h"
@@ -19,6 +21,7 @@
 #include "GUI/Sub/Individual/Ground/GroundSetting.h"
 
 #include "GUI/Sub/Individual/Mask/Mask.h"
+
 
 
 using namespace ci;
@@ -31,6 +34,7 @@ using VData = std::variant<
 	GUI::SubWindow::TerrainToolWindow ,
 	GUI::SubWindow::LayerWindow ,
 	GUI::System::StartWindow ,
+	GUI::System::StartSetupWindow ,
 	GUI::SubWindow::LayerSettingWindow ,
 	GUI::SubWindow::GroundWindow ,
 	GUI::SubWindow::GroundSettingWindow , 

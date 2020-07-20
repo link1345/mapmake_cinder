@@ -1,0 +1,4 @@
+<map id="MapMakeData::Terrain::TerrainData" name="MapMakeData::Terrain::TerrainData">
+<area shape="rect" id="node2" href="$class_map_make_data_1_1_terrain_color.html" title="MapMakeData::TerrainColor" alt="" coords="5,13,188,39"/>
+<area shape="rect" id="node3" href="$class_map_make_data_1_1_terrain_pen_1_1_terrain_pen_data.html" title="MapMakeData::TerrainPen\l::TerrainPenData" alt="" coords="213,5,389,47"/>
+</map>

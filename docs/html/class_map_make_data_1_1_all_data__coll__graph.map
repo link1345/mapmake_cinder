@@ -1,9 +1,8 @@
 <map id="MapMakeData::AllData" name="MapMakeData::AllData">
-<area shape="rect" id="node2" href="$class_map_make_data_1_1_window_1_1_window_data.html" title="MapMakeData::Window\l::WindowData" alt="" coords="856,5,1016,47"/>
-<area shape="rect" id="node3" href="$class_map_make_data_1_1_layer_1_1_layer_data.html" title="レイヤー情報を保持するためのクラス " alt="" coords="863,71,1009,112"/>
-<area shape="rect" id="node4" href="$struct_next_std_1_1_tree.html" title="NextStd::Tree\&lt; MapMakeData\l::Layer::Sub::LayerBoxData \&gt;" alt="" coords="524,71,723,112"/>
-<area shape="rect" id="node5" href="$struct_next_std_1_1_node.html" title="NextStd::Node\&lt; MapMakeData\l::Layer::Sub::LayerBoxData \&gt;" alt="" coords="235,105,437,147"/>
-<area shape="rect" id="node6" href="$struct_next_std_1_1_node_number.html" title="Tree構造のノード名・IDを保存するクラス " alt="" coords="5,54,157,81"/>
-<area shape="rect" id="node7" href="$class_map_make_data_1_1_layer_1_1_sub_1_1_layer_box_data.html" title="レイヤー情報の詳細情報を保持するためのクラス " alt="" coords="8,116,155,157"/>
-<area shape="rect" id="node8" href="$class_map_make_data_1_1_file_1_1_file_data.html" title="MapMakeData::File::\lFileData" alt="" coords="865,136,1007,177"/>
+<area shape="rect" id="node2" href="$class_map_make_data_1_1_window_1_1_window_data.html" title="MapMakeData::Window\l::WindowData" alt="" coords="284,5,444,47"/>
+<area shape="rect" id="node3" href="$class_map_make_data_1_1_ground_1_1_ground_data.html" title="MapMakeData::Ground\l::GroundData" alt="" coords="286,71,442,112"/>
+<area shape="rect" id="node4" href="$class_map_make_data_1_1_terrain_1_1_terrain_data.html" title="MapMakeData::Terrain\l::TerrainData" alt="" coords="287,136,441,177"/>
+<area shape="rect" id="node5" href="$class_map_make_data_1_1_terrain_color.html" title="MapMakeData::TerrainColor" alt="" coords="5,114,188,141"/>
+<area shape="rect" id="node6" href="$class_map_make_data_1_1_terrain_pen_1_1_terrain_pen_data.html" title="MapMakeData::TerrainPen\l::TerrainPenData" alt="" coords="9,165,185,207"/>
+<area shape="rect" id="node7" href="$class_map_make_data_1_1_file_1_1_file_data.html" title="MapMakeData::File::\lFileData" alt="" coords="293,201,435,243"/>
 </map>

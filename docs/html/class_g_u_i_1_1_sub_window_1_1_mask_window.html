@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MapMakeProject: GUI::SubWindow::MaskWindow クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MapMakeProject
+   &#160;<span id="projectnumber">0.01</span>
+   </div>
+   <div id="projectbrief">世界地図作成ソフト</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_g_u_i.html">GUI</a></li><li class="navelem"><a class="el" href="namespace_g_u_i_1_1_sub_window.html">SubWindow</a></li><li class="navelem"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html">MaskWindow</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="class_g_u_i_1_1_sub_window_1_1_mask_window-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">GUI::SubWindow::MaskWindow クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_mask_8h_source.html">Mask.h</a>&gt;</code></p>
+<div class="dynheader">
+GUI::SubWindow::MaskWindow の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_1_1_sub_window_1_1_mask_window__inherit__graph.png" border="0" usemap="#_g_u_i_1_1_sub_window_1_1_mask_window_inherit__map" alt="Inheritance graph"/></div>
+<map name="_g_u_i_1_1_sub_window_1_1_mask_window_inherit__map" id="_g_u_i_1_1_sub_window_1_1_mask_window_inherit__map">
+<area shape="rect" id="node2" href="class_g_u_i_1_1_window_base.html" title="GUI Window関係の基底クラス " alt="" coords="45,5,173,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+GUI::SubWindow::MaskWindow 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_1_1_sub_window_1_1_mask_window__coll__graph.png" border="0" usemap="#_g_u_i_1_1_sub_window_1_1_mask_window_coll__map" alt="Collaboration graph"/></div>
+<map name="_g_u_i_1_1_sub_window_1_1_mask_window_coll__map" id="_g_u_i_1_1_sub_window_1_1_mask_window_coll__map">
+<area shape="rect" id="node2" href="class_g_u_i_1_1_window_base.html" title="GUI Window関係の基底クラス " alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node3" href="struct_next_std_1_1_node_number.html" title="Tree構造のノード名・IDを保存するクラス " alt="" coords="157,5,309,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a55e7666c8eec16a0e73bd2cba0dcdd1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a55e7666c8eec16a0e73bd2cba0dcdd1b">MaskWindow</a> ()</td></tr>
+<tr class="separator:a55e7666c8eec16a0e73bd2cba0dcdd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8760e37f9377b68b9423d1c98a8bfaa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a8760e37f9377b68b9423d1c98a8bfaa6">MaskWindow</a> (string <a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#add4a32aaa238acd50ccd83d7529b60f8">groundKey</a>, <a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> ID)</td></tr>
+<tr class="separator:a8760e37f9377b68b9423d1c98a8bfaa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fff24e63bb9b4da1e5740a09e867252"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a3fff24e63bb9b4da1e5740a09e867252">~MaskWindow</a> ()</td></tr>
+<tr class="separator:a3fff24e63bb9b4da1e5740a09e867252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6950da52985fe5e4c39b4f0019ef82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#a3e6950da52985fe5e4c39b4f0019ef82">draw</a> (string mID) override</td></tr>
+<tr class="separator:a3e6950da52985fe5e4c39b4f0019ef82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_g_u_i_1_1_window_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_g_u_i_1_1_window_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_g_u_i_1_1_window_base.html">GUI::WindowBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a02df8f830c83837214092803bccc9864 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_window_base.html#a02df8f830c83837214092803bccc9864">WindowBase</a> ()</td></tr>
+<tr class="separator:a02df8f830c83837214092803bccc9864 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab74354bc96b64864486d31f7198cfcd9 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_window_base.html#ab74354bc96b64864486d31f7198cfcd9">~WindowBase</a> ()</td></tr>
+<tr class="separator:ab74354bc96b64864486d31f7198cfcd9 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636403bf1e349722bdc8cda417548b58 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_window_base.html#a636403bf1e349722bdc8cda417548b58">draw</a> (std::string mID)</td></tr>
+<tr class="memdesc:a636403bf1e349722bdc8cda417548b58 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画関数  <a href="class_g_u_i_1_1_window_base.html#a636403bf1e349722bdc8cda417548b58">[詳解]</a><br /></td></tr>
+<tr class="separator:a636403bf1e349722bdc8cda417548b58 inherit pub_methods_class_g_u_i_1_1_window_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:add4a32aaa238acd50ccd83d7529b60f8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#add4a32aaa238acd50ccd83d7529b60f8">groundKey</a></td></tr>
+<tr class="separator:add4a32aaa238acd50ccd83d7529b60f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa389e38d423370260d71d8adb8b30778"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_sub_window_1_1_mask_window.html#aa389e38d423370260d71d8adb8b30778">itemID</a></td></tr>
+<tr class="separator:aa389e38d423370260d71d8adb8b30778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_g_u_i_1_1_window_base"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_g_u_i_1_1_window_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_g_u_i_1_1_window_base.html">GUI::WindowBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:a0324ea4d54c70c9e34ca09350b0b511c inherit pub_attribs_class_g_u_i_1_1_window_base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_1_1_window_base.html#a0324ea4d54c70c9e34ca09350b0b511c">openFlag</a></td></tr>
+<tr class="memdesc:a0324ea4d54c70c9e34ca09350b0b511c inherit pub_attribs_class_g_u_i_1_1_window_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの閉じるボタンが押されているか？  <a href="class_g_u_i_1_1_window_base.html#a0324ea4d54c70c9e34ca09350b0b511c">[詳解]</a><br /></td></tr>
+<tr class="separator:a0324ea4d54c70c9e34ca09350b0b511c inherit pub_attribs_class_g_u_i_1_1_window_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a55e7666c8eec16a0e73bd2cba0dcdd1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e7666c8eec16a0e73bd2cba0dcdd1b">&#9670;&nbsp;</a></span>MaskWindow() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GUI::SubWindow::MaskWindow::MaskWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8760e37f9377b68b9423d1c98a8bfaa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8760e37f9377b68b9423d1c98a8bfaa6">&#9670;&nbsp;</a></span>MaskWindow() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GUI::SubWindow::MaskWindow::MaskWindow </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>groundKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a>&#160;</td>
+          <td class="paramname"><em>ID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fff24e63bb9b4da1e5740a09e867252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fff24e63bb9b4da1e5740a09e867252">&#9670;&nbsp;</a></span>~MaskWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GUI::SubWindow::MaskWindow::~MaskWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3e6950da52985fe5e4c39b4f0019ef82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6950da52985fe5e4c39b4f0019ef82">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI::SubWindow::MaskWindow::draw </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>mID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="add4a32aaa238acd50ccd83d7529b60f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4a32aaa238acd50ccd83d7529b60f8">&#9670;&nbsp;</a></span>groundKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GUI::SubWindow::MaskWindow::groundKey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa389e38d423370260d71d8adb8b30778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa389e38d423370260d71d8adb8b30778">&#9670;&nbsp;</a></span>itemID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_next_std_1_1_node_number.html">NodeNumber</a> GUI::SubWindow::MaskWindow::itemID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/link/source/mapmake/vc2019/include/GUI/Sub/Individual/Mask/<a class="el" href="_mask_8h_source.html">Mask.h</a></li>
+<li>C:/Users/link/source/mapmake/vc2019/src/GUI/Sub/Mask/<a class="el" href="_mask_8cpp.html">Mask.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

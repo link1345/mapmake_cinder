@@ -1,0 +1,4 @@
+<map id="GUI::SubWindow::MaskWindow" name="GUI::SubWindow::MaskWindow">
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_window_base.html" title="GUI Window関係の基底クラス " alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node3" href="$struct_next_std_1_1_node_number.html" title="Tree構造のノード名・IDを保存するクラス " alt="" coords="157,5,309,32"/>
+</map>

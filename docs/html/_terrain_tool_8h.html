@@ -82,13 +82,29 @@ $(function() {
 <code>#include &lt;cinder/app/RendererGl.h&gt;</code><br />
 <code>#include &lt;cinder/gl/gl.h&gt;</code><br />
 <code>#include &lt;cinder/CinderImGui.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_box_widgets_8h_source.html">GUI/Widgets/BoxWidgets.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_all_data_8h_source.html">Data/AllData.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_window_base_8h_source.html">GUI/Widgets/WindowBase.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 TerrainTool.h の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="_terrain_tool_8h__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_terrain_tool_8h" alt=""/></div>
 <map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_terrain_tool_8h" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_terrain_tool_8h">
-<area shape="rect" id="node7" href="_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="478,109,664,136"/>
+<area shape="rect" id="node7" href="_box_widgets_8h.html" title="GUI/Widgets/BoxWidgets.h" alt="" coords="66,109,249,136"/>
+<area shape="rect" id="node10" href="_all_data_8h.html" title="最上位に存在するデータ管理用の処理 " alt="" coords="962,109,1068,136"/>
+<area shape="rect" id="node30" href="_window_base_8h.html" title="GUI/Widgets/WindowBase.h" alt="" coords="1500,408,1687,435"/>
+<area shape="rect" id="node13" href="_tree_8h.html" title="木構造のデータ作る際に使用するもの " alt="" coords="1208,333,1334,360"/>
+<area shape="rect" id="node16" href="include_2_data_2_ground_data_8h.html" title="Data/GroundData.h" alt="" coords="740,184,874,211"/>
+<area shape="rect" id="node22" href="_terrain_data_8h.html" title="Data/TerrainData.h" alt="" coords="1035,333,1166,360"/>
+<area shape="rect" id="node27" href="_window_data_8h.html" title="ウィンドウ処理で用いられる全般的なデータ保管 " alt="" coords="1103,184,1210,211"/>
+<area shape="rect" id="node28" href="_file_data_8h.html" title="FileData.h" alt="" coords="1234,184,1316,211"/>
+<area shape="rect" id="node29" href="_icon_data_8h.html" title="IconData.h" alt="" coords="1340,184,1424,211"/>
+<area shape="rect" id="node17" href="_layer_data_8h.html" title="レイヤー画面で使用されるデータ保管 " alt="" coords="744,259,867,285"/>
+<area shape="rect" id="node19" href="_resources_8h.html" title="Resources.h" alt="" coords="441,333,536,360"/>
+<area shape="rect" id="node21" href="_image_tool_8h.html" title="Data/ToolBox/ImageTool.h" alt="" coords="560,333,734,360"/>
+<area shape="rect" id="node23" href="_terrain_pen_data_8h.html" title="Data/TerrainPenData.h" alt="" coords="1029,408,1182,435"/>
+<area shape="rect" id="node24" href="_terrain_color_data_8h.html" title="Data/TerrainColorData.h" alt="" coords="1064,483,1224,509"/>
+<area shape="rect" id="node26" href="_color_palette_8h.html" title="Data/Basis/ColorPalette.h" alt="" coords="992,557,1164,584"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -96,13 +112,15 @@ TerrainTool.h の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="_terrain_tool_8h__dep__incl.png" border="0" usemap="#_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_terrain_tool_8hdep" alt=""/></div>
 <map name="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_terrain_tool_8hdep" id="_c_1_2_users_2link_2source_2mapmake_2vc2019_2include_2_g_u_i_2_sub_2_individual_2_terrain_tool_8hdep">
-<area shape="rect" id="node2" href="_window_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/Window.h" alt="" coords="319,109,491,165"/>
-<area shape="rect" id="node9" href="_terrain_tool_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/TerrainTool.cpp" alt="" coords="515,109,689,165"/>
-<area shape="rect" id="node3" href="_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="220,213,392,269"/>
-<area shape="rect" id="node8" href="_window_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Window.cpp" alt="" coords="416,213,591,269"/>
+<area shape="rect" id="node2" href="_window_8h.html" title="C:/Users/link/source\l/mapmake/vc2019/include\l/GUI/Window.h" alt="" coords="517,109,689,165"/>
+<area shape="rect" id="node11" href="_terrain_tool_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/TerrainTool.cpp" alt="" coords="713,109,888,165"/>
+<area shape="rect" id="node3" href="_g_u_i_8h.html" title="ImGuiを使ったGUI処理の最上位に当たる処理。 " alt="" coords="419,213,591,269"/>
+<area shape="rect" id="node10" href="_window_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Window.cpp" alt="" coords="615,213,789,269"/>
 <area shape="rect" id="node4" href="main_8h.html" title="一番上位に位置するヘッダー " alt="" coords="23,317,195,373"/>
 <area shape="rect" id="node6" href="_g_u_i_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/GUI.cpp" alt="" coords="219,317,393,373"/>
 <area shape="rect" id="node7" href="_main_menu_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/MainMenu.cpp" alt="" coords="417,317,592,373"/>
+<area shape="rect" id="node8" href="_ground_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/Ground/Ground.cpp" alt="" coords="616,317,791,373"/>
+<area shape="rect" id="node9" href="_layer_box_8cpp.html" title="C:/Users/link/source\l/mapmake/vc2019/src/GUI\l/Sub/Layer/LayerBox.cpp" alt="" coords="815,317,989,373"/>
 <area shape="rect" id="node5" href="main_8cpp.html" title="全ての処理の根源のファイル " alt="" coords="5,421,212,463"/>
 </map>
 </div>

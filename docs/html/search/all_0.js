@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['add',['add',['../struct_next_std_1_1_tree.html#a20a446ccb18a701688d06254d8ca0f6f',1,'NextStd::Tree']]],
+  ['add',['add',['../struct_next_std_1_1_tree.html#a20a446ccb18a701688d06254d8ca0f6f',1,'NextStd::Tree::add()'],['../namespace_g_u_i_1_1_sub_window_1_1_sub.html#a8ef2eddd3b5bd4a917b2327a5f300f7aaec211f7c20af43e742bf2570c3cb84f9',1,'GUI::SubWindow::Sub::Add()']]],
   ['add_5fs',['add_s',['../struct_next_std_1_1_tree.html#ab5f04af9acc5ab31a4719d26370da2bc',1,'NextStd::Tree']]],
   ['adddata',['addData',['../class_g_u_i_1_1_sub_window_1_1_sub_1_1_edit.html#a384112927ddfc17f7f448ca43bbaecd1',1,'GUI::SubWindow::Sub::Edit']]],
   ['alldata',['AllData',['../class_map_make_data_1_1_all_data.html',1,'MapMakeData::AllData'],['../class_map_make_data_1_1_all_data.html#a2c134820ae599633e97a1f59ef42e916',1,'MapMakeData::AllData::AllData()']]],
