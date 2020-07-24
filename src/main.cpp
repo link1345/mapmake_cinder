@@ -53,6 +53,15 @@ void BasicApp::setup()
 			GUI::gui.draw();
 		}
 	);
+
+	/*
+	getWindow()->getSignalMouseDrag().connect(
+		[this](MouseEvent event) {
+			// 描画
+			GUI::gui.mouseDrag(event);
+		}
+	);
+	*/
 }
 
 void BasicApp::InitImGui() {

@@ -127,13 +127,19 @@ namespace GUI {
 			nameID = nameID + name;
 			auto sID = GUI::General_Window::Sub::WindowNumber(nameID, id, typeid(mode).hash_code());
 
+			if (this->Windows.Windows.count(sID) != 0) {
+				return true;
+			}
+			else return false;
+
+			/*
 			try {
 				this->Windows.Windows.at(sID);
 				return true;
 			}
 			catch (std::out_of_range&) {
 				return false;
-			}
+			}*/
 		}
 
 		//void createWindow(GUI::General_Window::Sub::WindowType mode);

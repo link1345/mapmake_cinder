@@ -67,6 +67,14 @@ namespace MapMakeData {
 		this->init();
 		
 		iconReset(this->icon, this->NullImage);
+
+		//app::loadResource(RES_License)->getFilePath();
+
+		auto f = app::loadResource(RES_License);
+		this->license = (const char *)f->getBuffer()->getData();
+
+		//console() << this->license << endl;
+
 	}
 
 	void AllData::setSampleData(int mode) {

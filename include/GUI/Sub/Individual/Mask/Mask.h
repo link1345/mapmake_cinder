@@ -31,10 +31,25 @@ namespace GUI {
 		public:
 			MaskWindow() : WindowBase() {
 				itemID = NodeNumber();
+				this->groundKey = "";
+
+				this->listMouse.clear();
+
+				this->image = Surface(500, 500, false);
+				this->texture = gl::Texture::create(image);
+
+				this->oldWindowSize = ImVec2();
+
 			}
 			MaskWindow(string groundKey, NodeNumber ID) : WindowBase() {
 				this->groundKey = groundKey;
 				this->itemID = ID;
+				this->listMouse.clear();
+
+				this->image = Surface(500,500,false);
+				this->texture = gl::Texture::create(image);
+
+				this->oldWindowSize = ImVec2();
 			}
 			~MaskWindow() {};
 
@@ -42,6 +57,62 @@ namespace GUI {
 
 			string groundKey;
 			NodeNumber itemID;
+
+			ImVec2 oldWindowSize;
+
+
+			Surface image ;
+			gl::Texture2dRef texture;
+
+			// alldata‚ÉˆÚ“®—\’è
+			list<ivec2> listMouse;
+
+			function<Surface(ivec2, list<ivec2>&, function<void(Surface&, ivec2)>)> image_run =
+				[](ivec2 mointorSize , list<ivec2>& listMouse,
+					function<void(Surface&, ivec2)> surface_f) 
+			{
+				Surface image = Surface(mointorSize.x,mointorSize.y,false);
+
+
+				cinder::Surface::Iter iter = image.getIter();
+
+				while (iter.line()) {
+					while (iter.pixel()) {
+						iter.r() = 0;
+						iter.g() = 0;
+						iter.b() = 0;
+					}
+				}
+
+				for (auto pos : listMouse) {
+					surface_f(image, pos);
+				}
+
+				return image;
+			};
+
+			function<void(Surface& , ivec2)> image_f =
+				[](Surface &image, ivec2 nowMouse) {
+
+				cinder::Surface::Iter iter = image.getIter();
+
+				while (iter.line()) {
+					while (iter.pixel()) {
+
+						if (iter.getPos().x == nowMouse.x &&
+							iter.getPos().y == nowMouse.y )
+						{
+							iter.r() = 255;
+							iter.g() = 255;
+							iter.b() = 255;
+						}
+
+					}
+				}
+				
+				return ;
+			};
+
 		};
 
 	}

@@ -26,6 +26,12 @@ namespace GUI {
 			}
 		};
 
+		/*! @brief マウスカーソルをドラッグした時の関数
+		*/
+		virtual void mouseDrag(std::string mID, MouseEvent event) {
+		};
+
+
 		/*! @brief ウィンドウの閉じるボタンが押されているか？
 		*/
 		bool openFlag;

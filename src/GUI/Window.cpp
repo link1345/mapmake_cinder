@@ -37,6 +37,20 @@ namespace GUI::General_Window {
 		}
 	}
 
+	void  General::mouseDrag(MouseEvent event) {
+		for (auto& [key, value] : this->Windows) {
+
+			const GUI::General_Window::Sub::WindowNumber s = key;
+
+			bool hit = false;
+			std::visit([&](auto& x) {
+				x.mouseDrag(s.nodeName + std::to_string(s.nodeID),event);
+
+			}, value);
+		}
+	}
+
+
 	void NowPopSearch(std::map<Sub::WindowNumber, VData > Windows, std::map<Sub::WindowType, int>& NowPop) {
 		NowPop.clear();
 		for (const auto& [key, value] : Windows) {

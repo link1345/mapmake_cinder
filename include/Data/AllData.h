@@ -76,6 +76,8 @@ namespace MapMakeData {
 
 		map<Icon, gl::Texture2dRef> icon;
 
+		string license;
+
 	private:
 		/*! @brief ヌルイメージ
 			@note このデータのゲッター

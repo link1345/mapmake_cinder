@@ -159,7 +159,7 @@ namespace GUI::SubWindow {
 				// ここまでで、nodeの選択に変化があれば、記録しておく。
 				if (old_note.data.selectflag != node.data.selectflag) {
 					selectNode.push_back(node.ID);
-					console() << selectNode.size() << endl;
+					//console() << selectNode.size() << endl;
 				}
 
 			}
@@ -264,8 +264,6 @@ namespace GUI::SubWindow {
 			}
 		}
 
-		if (selectNode.size() != 0)
-			console() << "shit" << endl;
 
 	};
 

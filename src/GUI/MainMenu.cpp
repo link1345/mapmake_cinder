@@ -88,6 +88,11 @@ namespace GUI::MainWindow {
 			if (ImGui::BeginMenu(u8"ƒwƒ‹ƒv")) {
 				if (ImGui::MenuItem(u8"[–¢ŽÀ‘•]ƒwƒ‹ƒv‚Ì•\Ž¦", "Ctrl+F1")) {}
 
+				if (ImGui::MenuItem(u8"license", "Ctrl+F2")) {
+					GUI::gui.createWindow(GUI::System::LicenseWindow());
+				}
+
+
 				ImGui::EndMenu();
 			}
 			ImGui::EndMainMenuBar();

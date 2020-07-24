@@ -10,6 +10,7 @@
 
 #include <cinder/CinderImGui.h>
 
+#include "GUI/System/Individual/LicenseWindow.h"
 #include "GUI/System/Individual/StartWindow.h"
 #include "GUI/System/Individual/StartSetupWindow.h"
 
@@ -38,7 +39,8 @@ using VData = std::variant<
 	GUI::SubWindow::LayerSettingWindow ,
 	GUI::SubWindow::GroundWindow ,
 	GUI::SubWindow::GroundSettingWindow , 
-	GUI::SubWindow::MaskWindow
+	GUI::SubWindow::MaskWindow ,
+	GUI::System::LicenseWindow
 >;
 // -----------------------------------------------------------------
 
@@ -122,9 +124,13 @@ namespace GUI {
 				this->LimitPop[typeid(GUI::SubWindow::TerrainToolWindow).hash_code()] = 1;
 			}
 
-			/*!	@brief	ウィンドウ描画関数
+			/*!	@brief	ウィンドウ上の描画関数
 			*/
 			void draw();
+
+			/*!	@brief	ウィンドウ上のマウスドラッグ関数
+			*/
+			void mouseDrag(MouseEvent event);
 
 			/*!	@brief	ウィンドウを追加
 			*/

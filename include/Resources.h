@@ -10,6 +10,8 @@
 #define RES_ICON_Mountain	CINDER_RESOURCE( ../resources/, Mountain.png,			107, IMAGE )
 #define RES_ICON_Brush	CINDER_RESOURCE( ../resources/, Brush.png,					108, IMAGE )
 
+#define RES_License	CINDER_RESOURCE( ../resources/, License.txt,					108, TEXT )
+
 
 
 

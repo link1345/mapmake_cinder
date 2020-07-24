@@ -183,4 +183,21 @@ namespace ImGui {
 		if (!ItemAdd(bb, id));
 	}
 
+	void ItemDrag(const char* name) {
+		ItemDrag( name, ImGui::GetCurrentWindow()->WorkRect );
+
+	}
+	
+	void ItemDrag(const char* name, ImRect rect) {
+		auto window = ImGui::GetCurrentWindow();
+
+		auto id = ImGui::GetID(name);
+
+		const ImRect frame_bb = rect;
+
+		ImGui::ItemAdd(frame_bb, id);
+		bool hovered = ImGui::ItemHoverable(frame_bb, id);
+	}
+
+
 }

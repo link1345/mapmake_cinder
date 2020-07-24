@@ -19,4 +19,8 @@ namespace ImGui {
 	void EndSelectBox();
 
 	void SelectAddItem(const char* name);
+
+	void ItemDrag(const char* name);
+
+	void ItemDrag(const char* name, ImRect rect);
 }

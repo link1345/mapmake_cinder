@@ -54,8 +54,11 @@ namespace GUI {
 
 				gl::setMatricesWindow((int)size.x, (int)size.y);
 
+				// }Œ`‚ð’u‚­ˆÊ’u‚ð’²®
 				gl::translate(vec2((size.x / 2) - (t->getSize().x / 2)
 					, (size.y / 2) - (t->getSize().y / 2)));
+				
+				// •`‰æ
 				gl::draw(t);
 
 				auto texture = mFbo->getTexture2d(GL_COLOR_ATTACHMENT0);
