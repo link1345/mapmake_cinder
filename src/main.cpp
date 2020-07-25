@@ -85,6 +85,8 @@ void BasicApp::InitImGui() {
 
 void BasicApp::update() {
 	this->updateQuit();
+
+	GUI::gui.update();
 }
 
 void BasicApp::draw()

@@ -35,6 +35,9 @@ namespace GUI {
 
 				this->listMouse.clear();
 
+
+				this->mFbo = gl::Fbo::create(500, 500);
+
 				this->image = Surface(500, 500, false);
 				this->texture = gl::Texture::create(image);
 
@@ -60,20 +63,18 @@ namespace GUI {
 
 			ImVec2 oldWindowSize;
 
-
+			gl::FboRef mFbo;
 			Surface image ;
 			gl::Texture2dRef texture;
 
 			// alldataに移動予定
 			list<ivec2> listMouse;
 
-			function<Surface(ivec2, list<ivec2>&, function<void(Surface&, ivec2)>)> image_run =
-				[](ivec2 mointorSize , list<ivec2>& listMouse,
-					function<void(Surface&, ivec2)> surface_f) 
+			// マウスの軌跡を渡すと、そのデータを使って再描画してくれる。
+			gl::FboRef image_run (ivec2 mointorSize , list<ivec2>& listMouse, Surface& image, function<void(Surface&, ivec2)> surface_f) 
 			{
+				/*
 				Surface image = Surface(mointorSize.x,mointorSize.y,false);
-
-
 				cinder::Surface::Iter iter = image.getIter();
 
 				while (iter.line()) {
@@ -86,16 +87,21 @@ namespace GUI {
 
 				for (auto pos : listMouse) {
 					surface_f(image, pos);
-				}
+				}*/
 
-				return image;
+
+
+
+
+
+
+				return mFbo;
 			};
 
-			function<void(Surface& , ivec2)> image_f =
-				[](Surface &image, ivec2 nowMouse) {
-
+			function<void(Surface& , gl::FboRef, ivec2)> image_f = [](Surface &image, gl::FboRef& mFbo, ivec2 nowMouse) {
+							
+				/*
 				cinder::Surface::Iter iter = image.getIter();
-
 				while (iter.line()) {
 					while (iter.pixel()) {
 
@@ -109,6 +115,13 @@ namespace GUI {
 
 					}
 				}
+				*/
+
+				//ポリゴン貼り付け
+
+
+
+
 				
 				return ;
 			};

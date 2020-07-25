@@ -128,6 +128,11 @@ namespace GUI {
 			*/
 			void draw();
 
+
+			/*!	@brief	ウィンドウ上の描画関数
+			*/
+			void update();
+
 			/*!	@brief	ウィンドウ上のマウスドラッグ関数
 			*/
 			void mouseDrag(MouseEvent event);

@@ -28,6 +28,11 @@ namespace GUI {
 
 		/*! @brief マウスカーソルをドラッグした時の関数
 		*/
+		virtual void update(std::string mID) {
+		};
+
+		/*! @brief マウスカーソルをドラッグした時の関数
+		*/
 		virtual void mouseDrag(std::string mID, MouseEvent event) {
 		};
 

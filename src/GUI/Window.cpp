@@ -44,6 +44,19 @@ namespace GUI::General_Window {
 
 			bool hit = false;
 			std::visit([&](auto& x) {
+				x.update(s.nodeName + std::to_string(s.nodeID));
+
+				}, value);
+		}
+	}
+
+	void  General::mouseDrag(MouseEvent event) {
+		for (auto& [key, value] : this->Windows) {
+
+			const GUI::General_Window::Sub::WindowNumber s = key;
+
+			bool hit = false;
+			std::visit([&](auto& x) {
 				x.mouseDrag(s.nodeName + std::to_string(s.nodeID),event);
 
 			}, value);

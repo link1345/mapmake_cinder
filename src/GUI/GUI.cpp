@@ -31,6 +31,10 @@ namespace GUI {
 		this->Windows.draw();
 	}
 
+	void MainGUI::update() {
+		this->Windows.update();
+	}
+
 	void MainGUI::mouseDrag(MouseEvent event) {
 		this->Windows.mouseDrag(event);
 	}

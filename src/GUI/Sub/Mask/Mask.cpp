@@ -6,8 +6,8 @@ namespace GUI::SubWindow {
 
 	void MaskWindow::draw(string mID) {
 		
-		if(MapMakeData::MainData.groundData.select == false ||
-			groundKey != MapMakeData::MainData.groundData.selectKey	){
+		if (MapMakeData::MainData.groundData.select == false ||
+			groundKey != MapMakeData::MainData.groundData.selectKey) {
 			this->openFlag = false;
 			return;
 		}
@@ -47,22 +47,37 @@ namespace GUI::SubWindow {
 
 				ImGui::ItemDrag(iamgeTitle.c_str());
 
+				// マウスボタンが離された瞬間
+				if (ImGui::IsMouseReleased(ImGuiMouseButton_::ImGuiMouseButton_Left)) {
+					// 以前書いたポリゴンも含めて結合処理する
 
-				if (ImGui::IsMouseDragging(ImGuiMouseButton_::ImGuiMouseButton_Left) && ImGui::IsItemHovered()) {
+
+				}
+				// ボタンが最初に押された瞬間 [ 特になし ]
+				//else if (ImGui::IsMouseClicked(ImGuiMouseButton_::ImGuiMouseButton_Left)) {
+					// 
+				//}
+				// マウスボタンを押している時
+				else if (ImGui::IsMouseDragging(ImGuiMouseButton_::ImGuiMouseButton_Left) && ImGui::IsItemHovered()) {
 
 					pos = ivec2(
 						ImGui::GetMousePos().x - ImGui::GetItemRectMin().x,
 						ImGui::GetMousePos().y - ImGui::GetItemRectMin().y
 					);
 
+					// スプライトで頂点補完
+					// ******
+
+					// 頂点追加
 					this->listMouse.push_back(pos);
+					
+					// ポリゴン描画
 					this->image_f(this->image, pos);
 
 				}
 
 				ImGui::EndChild();
 			}
-			//ImGui::Text("pos x:%d y:%d", pos.x, pos.y);
 
 		}
 

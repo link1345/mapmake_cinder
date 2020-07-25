@@ -35,7 +35,7 @@ namespace GUI {
 
 	namespace MainWindow{
 
-		// メインメニューについて
+		// @brief メインメニュー
 		class MainMenuBar {
 		public:
 			void draw();
@@ -45,7 +45,7 @@ namespace GUI {
 			gl::Texture2dRef image;
 		};
 
-		// 最背面の描画について
+		/*! @brief 最背面 */
 		class BackGroundWindow {
 		public:
 			void draw();
@@ -78,16 +78,34 @@ namespace GUI {
 		void resize();
 		void update();
 
+		/*!
+			@brief　ウィンドウ作成
+			@param[in]	mode	入れる変数
+			@note	関数のみのバージョン
+		*/
 		template<class t>
 		bool createWindow(t mode) {
 			return this->createWindow(mode, "",0);
 		}
 
+		/*!
+			@brief　ウィンドウ作成
+			@param[in]	mode	入れる変数
+			@param[in]	id		ウィンドウID
+			@note	関数+IDのバージョン
+		*/
 		template<class t>
 		bool createWindow(t mode,size_t id) {
 			return this->createWindow(mode, "", id);
 		}
 
+		/*!	
+			@brief　ウィンドウ作成
+			@param[in]	mode	入れる変数
+			@param[in]	id		ウィンドウID
+			@param[in]	name	ウィンドウ名前
+			@note	関数+ID+名前のバージョン
+		*/
 		template<class t>
 		bool createWindow(t mode, string name,size_t id) {
 			if (searchWindow(mode, name, id)) return false;
@@ -101,14 +119,30 @@ namespace GUI {
 			return true;
 		}
 		
+		/*!	@brief　ウィンドウ閉じる関数
+			@note	関数のみのバージョン
+		*/
 		template<class t>
 		bool closeWindow(t mode) {
 			return this->closeWindow(mode, "", 0);
 		}
+
+		/*!	@brief　ウィンドウ閉じる関数
+			@param[in]	mode	入れる変数
+			@param[in]	id		ウィンドウID
+			@note	関数+IDのバージョン
+		*/
 		template<class t>
 		bool closeWindow(t mode, size_t id) {
 			return this->closeWindow(mode, "",id);
 		}
+		
+		/*!	@brief　ウィンドウ閉じる関数
+			@param[in]	mode	入れる変数
+			@param[in]	id		ウィンドウID
+			@param[in]	name	ウィンドウ名前
+			@note	関数+ID+名前のバージョン
+		*/
 		template<class t>
 		bool closeWindow(t mode, string name, size_t id) {
 			if (!searchWindow(mode, name, id)) return false;
@@ -120,7 +154,12 @@ namespace GUI {
 			return true;
 		}
 
-		/*! @note true=あった false=なかった */
+		/*!	@brief　ウィンドウを探す関数
+			@param[in]	mode	入れる変数
+			@param[in]	id		ウィンドウID
+			@param[in]	name	ウィンドウ名前
+			@return true=あった false=なかった
+		*/
 		template<class t>
 		bool searchWindow(t& mode, string& name, size_t& id) {
 			string nameID = typeid(mode).name();
@@ -131,34 +170,22 @@ namespace GUI {
 				return true;
 			}
 			else return false;
-
-			/*
-			try {
-				this->Windows.Windows.at(sID);
-				return true;
-			}
-			catch (std::out_of_range&) {
-				return false;
-			}*/
 		}
 
-		//void createWindow(GUI::General_Window::Sub::WindowType mode);
-		//void closeWindow(GUI::General_Window::Sub::WindowType mode);
-
-		/*! メインメニューバーについて */
+		/*! @brief	メインメニューバーについて */
 		MainWindow::MainMenuBar mainMenuBar;
 
-		/*! 背景表示について */
+		/*! @brief	背景表示について */
 		MainWindow::BackGroundWindow backWindow;
 
-		/*! System周りのウィンドウについて */
+		/*! @brief	System周りのウィンドウについて */
 		General_Window::General Windows;
 
 	};
 
 
 	// グローバル変数。
-	/*! GUI全体を統括するグローバル変数 */
+	/*! @brief	GUI全体を統括するグローバル変数 */
 	EXT MainGUI gui;
 
 }
