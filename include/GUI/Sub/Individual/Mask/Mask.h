@@ -36,27 +36,31 @@ namespace GUI {
 				this->listMouse.clear();
 
 
-				this->mFbo = gl::Fbo::create(500, 500);
+				this->oldWindowSize = ImVec2(500, 500);
 
-				this->image = Surface(500, 500, false);
-				this->texture = gl::Texture::create(image);
+				this->image = Surface(this->oldWindowSize.x, this->oldWindowSize.y, false);
+				this->resize_run(this->oldWindowSize, this->mFbo);
 
-				this->oldWindowSize = ImVec2();
-
+				ImGui::SetNextWindowSize(this->oldWindowSize);
 			}
+
 			MaskWindow(string groundKey, NodeNumber ID) : WindowBase() {
 				this->groundKey = groundKey;
 				this->itemID = ID;
 				this->listMouse.clear();
 
-				this->image = Surface(500,500,false);
-				this->texture = gl::Texture::create(image);
 
-				this->oldWindowSize = ImVec2();
+				this->oldWindowSize = ImVec2(500, 500);
+
+				this->image = Surface(this->oldWindowSize.x, this->oldWindowSize.y, false);
+				this->resize_run(this->oldWindowSize, this->mFbo);
+
+				ImGui::SetNextWindowSize(this->oldWindowSize);
 			}
 			~MaskWindow() {};
 
 			void draw(string mID) override;
+			void update(string mID) override;
 
 			string groundKey;
 			NodeNumber itemID;
@@ -64,63 +68,37 @@ namespace GUI {
 			ImVec2 oldWindowSize;
 
 			gl::FboRef mFbo;
-			Surface image ;
-			gl::Texture2dRef texture;
 
+			Surface image ;
+			
 			// alldataに移動予定
-			list<ivec2> listMouse;
+			list<vec2> listMouse;
 
 			// マウスの軌跡を渡すと、そのデータを使って再描画してくれる。
-			gl::FboRef image_run (ivec2 mointorSize , list<ivec2>& listMouse, Surface& image, function<void(Surface&, ivec2)> surface_f) 
+			void resize_run (ivec2 moniterSize, gl::FboRef& mFbo)
 			{
-				/*
-				Surface image = Surface(mointorSize.x,mointorSize.y,false);
-				cinder::Surface::Iter iter = image.getIter();
+				vec2 size = vec2(moniterSize.x, moniterSize.y);
+				
+				auto format = gl::Fbo::Format().attachment(GL_COLOR_ATTACHMENT0, gl::Texture2d::create((int)size.x, (int)size.y));
+				mFbo = gl::Fbo::create((int)size.x, (int)size.y, format);
 
-				while (iter.line()) {
-					while (iter.pixel()) {
-						iter.r() = 0;
-						iter.g() = 0;
-						iter.b() = 0;
-					}
-				}
-
-				for (auto pos : listMouse) {
-					surface_f(image, pos);
-				}*/
-
-
-
-
-
-
-
-				return mFbo;
+				return;
 			};
 
-			function<void(Surface& , gl::FboRef, ivec2)> image_f = [](Surface &image, gl::FboRef& mFbo, ivec2 nowMouse) {
-							
-				/*
-				cinder::Surface::Iter iter = image.getIter();
-				while (iter.line()) {
-					while (iter.pixel()) {
+			void image_f (ivec2 moniterSize, gl::FboRef& mFbo, list<vec2> nowMouse)
+			{
+				gl::ScopedFramebuffer fboScope(mFbo);
+				gl::clear();
+				gl::ScopedViewport viewportScope(vec2(0), mFbo->getSize());
+				gl::ScopedMatrices matScope;
 
-						if (iter.getPos().x == nowMouse.x &&
-							iter.getPos().y == nowMouse.y )
-						{
-							iter.r() = 255;
-							iter.g() = 255;
-							iter.b() = 255;
-						}
+				gl::setMatricesWindow((int)moniterSize.x, (int)moniterSize.y);
+				//console() << "fbo:" << mFbo->getSize().x << " " << mFbo->getSize().y << "  moniter:" << (int)moniterSize.x << " " << (int)moniterSize.y << endl;
 
-					}
+				for (auto& pos : nowMouse) {
+					gl::color(Color(1, 1, 1)); // red
+					gl::drawSolidCircle(pos,10);
 				}
-				*/
-
-				//ポリゴン貼り付け
-
-
-
 
 				
 				return ;

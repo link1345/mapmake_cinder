@@ -27,23 +27,25 @@ namespace GUI::SubWindow {
 				ImGui::GetWindowSize().y
 				- (ImGui::GetFontSize() + ImGui::GetCurrentContext()->Style.FramePadding.y * 2)
 				- (ImGui::GetCurrentContext()->Style.WindowPadding.y * 2));
+
 			if (monitorSize != this->oldWindowSize) {
 				this->oldWindowSize = monitorSize;
-				this->image = this->image_run(this->oldWindowSize, this->listMouse, this->image_f);
+				this->resize_run(this->oldWindowSize, this->mFbo);
+				this->image_f(this->oldWindowSize, this->mFbo, this->listMouse);
 			}
 
-			auto pos = ivec2();
+			auto pos = vec2();
 
 			bool s = false;
 			bool sh_s = false;
 
 			string iamgeTitle = u8"monitor" + mID;
-			if (ImGui::BeginChild(iamgeTitle.c_str(), ImVec2((int)this->texture->getSize().x, (int)this->texture->getSize().y))) {
+			if (ImGui::BeginChild(iamgeTitle.c_str(), ImVec2((int)this->oldWindowSize.x, (int)this->oldWindowSize.y))) {
 
 				// 描画した後に画像(texture)変更すると死ぬので、ここで変換しておく。
-				this->texture = gl::Texture2d::create(this->image);
+				auto texture = this->mFbo->getTexture2d(GL_COLOR_ATTACHMENT0);
 
-				ImGui::Image(this->texture, this->image.getSize(), vec2(0, 1), vec2(1, 0));
+				ImGui::Image(texture, this->mFbo->getSize(), vec2(0, 1), vec2(1, 0));
 
 				ImGui::ItemDrag(iamgeTitle.c_str());
 
@@ -51,29 +53,22 @@ namespace GUI::SubWindow {
 				if (ImGui::IsMouseReleased(ImGuiMouseButton_::ImGuiMouseButton_Left)) {
 					// 以前書いたポリゴンも含めて結合処理する
 
-
 				}
-				// ボタンが最初に押された瞬間 [ 特になし ]
-				//else if (ImGui::IsMouseClicked(ImGuiMouseButton_::ImGuiMouseButton_Left)) {
-					// 
-				//}
-				// マウスボタンを押している時
-				else if (ImGui::IsMouseDragging(ImGuiMouseButton_::ImGuiMouseButton_Left) && ImGui::IsItemHovered()) {
+				// マウスボタンを押している時 & ボタンが最初に押された瞬間 
+				else if (ImGui::IsMouseDragging(ImGuiMouseButton_::ImGuiMouseButton_Left) && ImGui::IsItemHovered() || 
+					ImGui::IsMouseClicked(ImGuiMouseButton_::ImGuiMouseButton_Left)	) {
 
-					pos = ivec2(
+					pos = vec2(
 						ImGui::GetMousePos().x - ImGui::GetItemRectMin().x,
 						ImGui::GetMousePos().y - ImGui::GetItemRectMin().y
 					);
 
-					// スプライトで頂点補完
+					// スプライトで頂点補間
 					// ******
 
 					// 頂点追加
 					this->listMouse.push_back(pos);
 					
-					// ポリゴン描画
-					this->image_f(this->image, pos);
-
 				}
 
 				ImGui::EndChild();
@@ -83,5 +78,10 @@ namespace GUI::SubWindow {
 
 		ImGui::End();
 	}	
+
+	void MaskWindow::update(string mID) {
+		this->image_f(this->oldWindowSize, this->mFbo, this->listMouse);
+
+	}
 
 }

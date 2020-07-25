@@ -37,7 +37,7 @@ namespace GUI::General_Window {
 		}
 	}
 
-	void  General::mouseDrag(MouseEvent event) {
+	void  General::update() {
 		for (auto& [key, value] : this->Windows) {
 
 			const GUI::General_Window::Sub::WindowNumber s = key;
