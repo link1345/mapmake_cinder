@@ -1,20 +1,20 @@
 #include "GUI/Widgets/BoxWidgets.h"
 
 
-ImVec2& operator+(ImVec2& os, ImVec2& obj)
+ImVec2 operator+(ImVec2& os, ImVec2& obj)
 {
 	return ImVec2(os.x + obj.x, os.y + obj.y);
 }
-ImVec2& operator-(ImVec2& os, ImVec2& obj)
+ImVec2 operator-(ImVec2& os, ImVec2& obj)
 {
 	return ImVec2(os.x - obj.x, os.y - obj.y);
 }
 
-const ImVec2& operator+(const ImVec2& os, const ImVec2& obj)
+const ImVec2 operator+(const ImVec2& os, const ImVec2& obj)
 {
 	return ImVec2(os.x + obj.x, os.y + obj.y);
 }
-const ImVec2& operator-(const ImVec2& os, const ImVec2& obj)
+const ImVec2 operator-(const ImVec2& os, const ImVec2& obj)
 {
 	return ImVec2(os.x - obj.x, os.y - obj.y);
 }

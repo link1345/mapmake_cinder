@@ -21,6 +21,20 @@
 
 #include "Data/TerrainData.h"
 
+
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point_xy.hpp>
+#include <boost/geometry/geometries/polygon.hpp>
+#include <boost/geometry/geometries/box.hpp>
+#include <boost/assign/list_of.hpp>
+
+namespace bg = boost::geometry;
+typedef bg::model::d2::point_xy<float> point;
+typedef bg::model::polygon<point> polygon;
+typedef bg::model::multi_polygon<polygon> multiPolygon;
+//typedef std::vector<polygon> multiPolygon;
+
+
 using namespace ci;
 using namespace ci::app;
 using namespace ci::log;
@@ -33,7 +47,9 @@ namespace MapMakeData {
 
 		class LayerMaskData {
 		public :
-			LayerMaskData() {};
+			LayerMaskData() {
+				this->maskPoly.clear();
+			};
 			~LayerMaskData() {};
 
 			/*! @brief	マスクイメージ図 2D
@@ -42,7 +58,7 @@ namespace MapMakeData {
 
 			/*! @brief	マスクを構成するベクター情報
 			*/
-			vector<vector<vec2>> mask;
+			multiPolygon maskPoly;
 		};
 
 

@@ -34,11 +34,12 @@ namespace GUI {
 				this->groundKey = "";
 
 				this->listMouse.clear();
-
+				this->listMesh.clear();
+				this->mPoly.clear();
 
 				this->oldWindowSize = ImVec2(500, 500);
 
-				this->image = Surface(this->oldWindowSize.x, this->oldWindowSize.y, false);
+				this->image = Surface((int)this->oldWindowSize.x, (int)this->oldWindowSize.y, false);
 				this->resize_run(this->oldWindowSize, this->mFbo);
 
 				ImGui::SetNextWindowSize(this->oldWindowSize);
@@ -47,12 +48,14 @@ namespace GUI {
 			MaskWindow(string groundKey, NodeNumber ID) : WindowBase() {
 				this->groundKey = groundKey;
 				this->itemID = ID;
-				this->listMouse.clear();
 
+				this->listMouse.clear();
+				this->listMesh.clear();
+				this->mPoly.clear();
 
 				this->oldWindowSize = ImVec2(500, 500);
 
-				this->image = Surface(this->oldWindowSize.x, this->oldWindowSize.y, false);
+				this->image = Surface((int)this->oldWindowSize.x, (int)this->oldWindowSize.y, false);
 				this->resize_run(this->oldWindowSize, this->mFbo);
 
 				ImGui::SetNextWindowSize(this->oldWindowSize);
@@ -72,9 +75,18 @@ namespace GUI {
 			Surface image ;
 			
 			// alldataに移動予定
-			list<vec2> listMouse;
+			vector<vec2> listMouse;
 
-			// マウスの軌跡を渡すと、そのデータを使って再描画してくれる。
+			vector<gl::VboMeshRef> listMesh;
+
+			vector<PolyLine2f> mPoly;
+			vector<PolyLine2f> mHolePoly;
+			Path2d mPath;//test
+
+			//int degree = 6;
+
+			void Convert_multiPoly();
+
 			void resize_run (ivec2 moniterSize, gl::FboRef& mFbo)
 			{
 				vec2 size = vec2(moniterSize.x, moniterSize.y);
@@ -85,24 +97,33 @@ namespace GUI {
 				return;
 			};
 
-			void image_f (ivec2 moniterSize, gl::FboRef& mFbo, list<vec2> nowMouse)
-			{
-				gl::ScopedFramebuffer fboScope(mFbo);
-				gl::clear();
-				gl::ScopedViewport viewportScope(vec2(0), mFbo->getSize());
-				gl::ScopedMatrices matScope;
 
-				gl::setMatricesWindow((int)moniterSize.x, (int)moniterSize.y);
-				//console() << "fbo:" << mFbo->getSize().x << " " << mFbo->getSize().y << "  moniter:" << (int)moniterSize.x << " " << (int)moniterSize.y << endl;
+			// マウスの軌跡を渡すと、そのデータを使ってデータとして出してくれる。
+			void image_f(ivec2 moniterSize, gl::FboRef& mFbo, vector<vec2> nowMouse);
 
-				for (auto& pos : nowMouse) {
-					gl::color(Color(1, 1, 1)); // red
-					gl::drawSolidCircle(pos,10);
-				}
+			template <class T>
+			gl::VboMeshRef MeshAdd(vec2 pos, T shape) {
 
+				vector<gl::VboMesh::Layout> bufferLayout = {
+				gl::VboMesh::Layout().usage(GL_DYNAMIC_DRAW).attrib(geom::Attrib::POSITION, 2),
+				gl::VboMesh::Layout().usage(GL_STATIC_DRAW).attrib(geom::Attrib::TEX_COORD_0, 2)
+				};
+
+				auto mVboMesh = gl::VboMesh::create(shape, bufferLayout);
 				
-				return ;
-			};
+				auto mappedPosAttrib = mVboMesh->mapAttrib2f(geom::Attrib::POSITION, false);
+				
+				for (int i = 0; i < mVboMesh->getNumVertices(); i++) {
+					vec2& mPos = *mappedPosAttrib;
+					mappedPosAttrib->x = mPos.x + pos.x;
+					mappedPosAttrib->y = mPos.y + pos.y;
+					++mappedPosAttrib;
+				}
+				
+				mappedPosAttrib.unmap();
+				
+				return mVboMesh;
+			}
 
 		};
 

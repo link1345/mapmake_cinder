@@ -135,7 +135,7 @@ namespace GUI::SubWindow {
 				ImGui::PushStyleColor(ImGuiCol_::ImGuiCol_Border , mbgColor);
 				ImGui::PushStyleVar(ImGuiStyleVar_::ImGuiStyleVar_ChildBorderSize, 4);
 
-				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {;
+				if (ImGui::BeginSelectBox(nameid, node.data.selectflag, node.data.shift_selectflag, ImVec2(0, size), true, window_flags)) {
 					ImGui::PopStyleColor();
 					ImGui::PopStyleVar();
 
@@ -386,17 +386,18 @@ namespace GUI::SubWindow {
 		string nID = u8"レイヤー##" + mID;
 
 		if (ImGui::Begin(nID.c_str(), &this->openFlag, ImGuiWindowFlags_MenuBar)) {
-
+			
 			if (!MapMakeData::MainData.groundData.select) {
+				ImGui::End();
 				return;
 			}
 
 			auto* gLayer = &MapMakeData::MainData.groundData.gData[MapMakeData::MainData.groundData.selectKey];
 
 			auto menuSize = MapMakeData::MainData.windowData.MenuSize;
-
+			
 			if (ImGui::BeginMenuBar()) {
-
+				
 				if (ImGui::BeginMenu(u8"編集")) {
 					if (ImGui::MenuItem(u8"レイヤー追加")) {
 
@@ -452,8 +453,10 @@ namespace GUI::SubWindow {
 
 				ImGui::EndMenuBar();
 			}
-
+			
 			LayerBox(gLayer->layerTreeData, MapMakeData::MainData.nullImage());
+		
+			
 		}
 		ImGui::End();
 
