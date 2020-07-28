@@ -50,7 +50,7 @@ void BasicApp::setup()
 	getWindow()->getSignalDraw().connect(
 		[this] {
 			// 描画
-			GUI::gui.draw();
+			//GUI::gui.draw();
 		}
 	);
 
@@ -93,6 +93,9 @@ void BasicApp::draw()
 {
 	gl::clear(Color(0.2f, 0.2f, 0.2f));
 	gl::enableAlphaBlending();
+
+	GUI::gui.draw();
+
 }
 
 

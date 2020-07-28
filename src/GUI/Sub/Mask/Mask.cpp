@@ -25,6 +25,7 @@ typedef bg::model::box<point> box;
 #include <cinder/GeomIo.h> 
 
 namespace GUI::SubWindow {
+	
 
 	void MaskWindow::draw(string mID) {
 		
@@ -45,10 +46,14 @@ namespace GUI::SubWindow {
 		if (ImGui::Begin(gID.c_str(),&this->openFlag)) {
 
 			// ウィンドウサイズが変更されたら再描画
-			auto monitorSize = ImVec2(ImGui::GetWindowSize().x, 
+			auto monitorSize = ImVec2(
+				ImGui::GetWindowSize().x
+				 // (※ X軸には、タイトルバーがないので、考慮に入れません。)
+				- (ImGui::GetCurrentContext()->Style.WindowPadding.x * 2), // ウィンドウ内サイズ
 				ImGui::GetWindowSize().y
-				- (ImGui::GetFontSize() + ImGui::GetCurrentContext()->Style.FramePadding.y * 2)
-				- (ImGui::GetCurrentContext()->Style.WindowPadding.y * 2));
+				- (ImGui::GetFontSize() + ImGui::GetCurrentContext()->Style.FramePadding.y * 2) // タイトルバーサイズ
+				- (ImGui::GetCurrentContext()->Style.WindowPadding.y * 2) // ウィンドウ内サイズ
+			);
 
 			if (monitorSize != this->oldWindowSize) {
 				this->oldWindowSize = monitorSize;
@@ -79,41 +84,20 @@ namespace GUI::SubWindow {
 						// 以前書いたポリゴンも含めて結合処理する
 
 						// 変換
-						
 						vector<polygon> aPoly;
-						for (auto aShape : this->listMesh) {
-							list<point> posList;
-							auto mappedPosAttrib = aShape->mapAttrib2f(geom::Attrib::POSITION, false);
-
-							vec2 pos1 = vec2();
-							for (int i = 0; i < aShape->getNumVertices(); i++) {
-								if (i != 0) {
-									vec2& pos = *mappedPosAttrib;
-
-									posList.push_back(point(pos.x, pos.y));
-								}
-								++mappedPosAttrib;
-							}
-							mappedPosAttrib.unmap();
-
-							polygon poly;
-							posList.reverse();
-							for (auto pos : posList) {
-								poly.outer().push_back(pos);
-							}						
-							//console() << boost::geometry::dsv(poly) << endl;
-
-							aPoly.push_back(poly);
-						}
+						this->Convert_Fbo(aPoly);
 
 						// 結合処理
 						for (auto p : aPoly) {
 							multiPolygon temp;
 
-							bg::union_(data.mask.maskPoly, p, temp);
-							
+							bg::union_(data.mask.maskPoly, p, temp);							
 							data.mask.maskPoly = temp;
 						}
+
+						multiPolygon sTemp;
+						bg::simplify(data.mask.maskPoly, sTemp, 0.5);
+						data.mask.maskPoly = sTemp;
 
 						// 描画できるように更新 mPoly
 						this->Convert_multiPoly();
@@ -129,66 +113,63 @@ namespace GUI::SubWindow {
 				else if (ImGui::IsMouseDragging(ImGuiMouseButton_::ImGuiMouseButton_Left) && ImGui::IsItemHovered() || 
 					ImGui::IsMouseClicked(ImGuiMouseButton_::ImGuiMouseButton_Left)	) {
 
-
-					auto shape = geom::Circle().radius(20).subdivisions(20);
-					//auto shape = geom::WireCircle().radius(20).subdivisions(10);
-
+					auto shape = geom::Circle().radius(penThick).subdivisions(20);
 
 					pos = vec2(
 						ImGui::GetMousePos().x - ImGui::GetItemRectMin().x,
 						ImGui::GetMousePos().y - ImGui::GetItemRectMin().y
 					);
 
+
+					pos = ui.toLocal(pos);
+
 					// 頂点追加
 					if (listMouse.size() == 0) {
-						this->listMouse.push_back(pos);
-						this->listMesh.push_back(this->MeshAdd(pos, shape));
+						this->pointAdd(pos, shape);
 					}
 					else if (listMouse.at(listMouse.size() - 1) != pos) {
-
-
-						// 線形補間した上で頂点追加
-						if (listMouse.size() == 0) {
-							this->listMouse.push_back(pos);
-							this->listMesh.push_back(this->MeshAdd(pos, shape));
-						}
-						else {
-							
-							auto pos2 = listMouse.at(listMouse.size()-1);
-
-							// 2は2次元であるという意味。
-							ublas::vector<float> v(2);
-							v[0] = pos.x - pos2.x;
-							v[1] = pos.y - pos2.y;
-
-							int dot = 50;
-							// ノルムで2次元上の直線を引く。
-							auto ler = dot / ublas::norm_2(v);
-
-							// 1.0f以下なら、頂点をましましにする。
-							bool hit = false;
-							for (auto sler = ler; sler <= 1.0f; sler = sler + ler) {
-								auto p = lerp(pos2, pos, sler);
-								this->listMouse.push_back( p );
-								this->listMesh.push_back(this->MeshAdd( p , shape));
-
-								hit = true;
-							}
-							if (!hit) {
-								this->listMouse.push_back(pos);
-								this->listMesh.push_back(this->MeshAdd(pos, shape));
-							}
-						}
+						this->linearInterpolation(pos, shape);						
 					}
 					
+				}
+				
+				// 画面移動処理
+				else if ( ImGui::IsItemHovered() ) {
+
+					pos = vec2(
+						ImGui::GetMousePos().x - ImGui::GetItemRectMin().x,
+						ImGui::GetMousePos().y - ImGui::GetItemRectMin().y
+					);
+
+					if (ImGui::IsMouseClicked(ImGuiMouseButton_::ImGuiMouseButton_Right)) {
+						ui.mouseDown(pos);
+					}
+					else if ( ImGui::IsMouseDragging(ImGuiMouseButton_::ImGuiMouseButton_Right) ) {
+						ui.mouseDrag(pos);
+					}
+					else if ( ImGui::GetIO().MouseWheel != 0) {
+						ui.mouseWheel(pos, ImGui::GetIO().MouseWheel);
+					}
+
 				}
 
 			}
 			ImGui::EndChild();
 
 		}
-
 		ImGui::End();
+
+		// 終了コマンドが叩かれていたら、
+		if (!this->openFlag) {
+			// レイヤーウィンドウの表示を変更しておく。
+			data.selectflag = false;
+
+		}
+
+
+
+
+		ImGui::SliderFloat("pen", &this->penThick, 5, 50);
 
 	}	
 
@@ -197,64 +178,72 @@ namespace GUI::SubWindow {
 
 	}
 
-	void MaskWindow::image_f(ivec2 moniterSize, gl::FboRef& mFbo, vector<vec2> nowMouse)
+	void MaskWindow::image_f(ivec2 Size, gl::FboRef& mFbo, vector<vec2> nowMouse)
 	{
-		// データ取得
-
 		gl::ScopedFramebuffer fboScope(mFbo);
 		gl::clear();
-		gl::ScopedViewport viewportScope(vec2(0), mFbo->getSize());
-		gl::ScopedMatrices matScope;
 
-		gl::setMatricesWindow((int)moniterSize.x, (int)moniterSize.y);
 
-		//for (auto& pos : nowMouse) {
-		for (auto& mesh : this->listMesh) {
-			gl::pushModelMatrix();
 
-			//gl::translate(pos);
+		{
+			gl::ScopedViewport viewportScope(vec2(0, 0), mFbo->getSize());
+			gl::ScopedMatrices matScope;
 
-			gl::color(Color(1, 1, 1)); // red
-			//gl::drawStrokedCircle(pos,10);
-			gl::draw(mesh);
+			gl::setMatricesWindow((int)Size.x, (int)Size.y);
 
-			gl::popModelMatrix();
-		}
+			gl::setModelMatrix(this->ui.getModelMatrix());
 
-		for (auto poly : this->mHolePoly) {
-			gl::pushModelMatrix();
+			// マウス入力時の図形描画
+			for (auto& mesh : this->listMesh) {
+				gl::pushModelMatrix();
 
-			gl::color(Color(1, 1, 0)); // red
-			gl::drawSolid(poly);
-			//console() << "hole" << endl;
-			gl::popModelMatrix();
-		}
-		
-		for (auto poly : this->mPoly) {
-			gl::pushModelMatrix();
-
-			gl::color(Color(0, 1, 1)); // red
-			gl::drawSolid(poly);
-
-			gl::popModelMatrix();
-		}
-
-		/* // spline 
-		auto sDegree = degree;
-		if (nowMouse.size() >= 2 && (1 <= sDegree) && (sDegree <= nowMouse.size() - 1)) {
-			auto sp = BSpline2f(nowMouse, sDegree, true, true);
-			
-			//console() << sp.getLength(0, 1) << endl;
-			//console() << sp.getSpeed(0) << endl;
-
-			auto path = Path2d(sp);
-
-			for (auto pos : path.getPoints()) {
 				gl::color(Color(1, 1, 1));
-				gl::drawSolidCircle(pos, 10);
+				gl::draw(mesh);
+
+				gl::popModelMatrix();
+			}
+		}
+
+		// -------------------
+		
+		{
+			gl::ScopedViewport viewportScope(vec2(0, 0), mFbo->getSize());
+
+			gl::ScopedMatrices matScope;
+
+			gl::setMatricesWindow((int)mFbo->getSize().x, (int)mFbo->getSize().y);
+
+			gl::setModelMatrix(this->ui.getModelMatrix());
+
+			// ----
+			// 入力済みのデータの描画
+
+			gl::enableWireframe(); // ワイヤー表示
+
+			// 穴の図形描画
+			for (auto poly : this->mHolePoly) {
+				//gl::pushModelMatrix();
+
+				gl::color(Color(1, 1, 0)); // red
+
+
+				gl::drawSolid(poly);
+				//gl::popModelMatrix();
 			}
 
-		}*/
+			// 本体の図形描画
+			for (auto poly : this->mPoly) {
+				//gl::pushModelMatrix();
+
+				gl::color(Color(0, 1, 1)); // red
+				gl::drawSolid(poly);
+
+				//gl::popModelMatrix();
+			}
+			gl::disableWireframe(); // ワイヤー表示
+
+			// ----
+		}
 
 		return;
 	}
@@ -267,9 +256,7 @@ namespace GUI::SubWindow {
 				MapMakeData::MainData.groundData.selectKey
 			].layerTreeData.at(itemID).data;
 		
-		//console() << "convert data:" << data.mask.maskPoly.size() << endl;
-		
-		this->mPath.clear();
+		this->mPoly.clear();
 		this->mHolePoly.clear();
 		for (auto p :  data.mask.maskPoly) {
 
@@ -288,7 +275,34 @@ namespace GUI::SubWindow {
 			}
 
 		}
-
 	}
+
+	void MaskWindow::Convert_Fbo(vector<polygon>& aPoly) {
+		for (auto aShape : this->listMesh) {
+			list<point> posList;
+			auto mappedPosAttrib = aShape->mapAttrib2f(geom::Attrib::POSITION, false);
+
+			vec2 pos1 = vec2();
+			for (uint32_t i = 0; i < aShape->getNumVertices(); i++) {
+				if (i != 0) {
+					vec2& pos = *mappedPosAttrib;
+
+					posList.push_back(point(pos.x, pos.y));
+				}
+				++mappedPosAttrib;
+			}
+			mappedPosAttrib.unmap();
+
+			polygon poly;
+			posList.reverse();
+			for (auto pos : posList) {
+				poly.outer().push_back(pos);
+			}
+			//console() << boost::geometry::dsv(poly) << endl;
+
+			aPoly.push_back(poly);
+		}
+	}
+
 
 }

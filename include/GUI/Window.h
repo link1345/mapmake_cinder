@@ -44,6 +44,12 @@ using VData = std::variant<
 >;
 // -----------------------------------------------------------------
 
+/*
+VData& VData::operator=(const VData&) {
+	return *this;
+}*/
+
+
 namespace GUI {
 	namespace General_Window {
 

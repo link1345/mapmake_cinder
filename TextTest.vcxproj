@@ -340,6 +340,7 @@
     <ClInclude Include="include\GUI\System\Individual\StartSetupWindow.h" />
     <ClInclude Include="include\GUI\System\Individual\StartWindow.h" />
     <ClInclude Include="include\GUI\Widgets\BoxWidgets.h" />
+    <ClInclude Include="include\GUI\Widgets\CanvasUi_ImGui.h" />
     <ClInclude Include="include\GUI\Widgets\HelpMarker.h" />
     <ClInclude Include="include\GUI\Widgets\NoTextTreeNodeWidgets.h" />
     <ClInclude Include="include\GUI\Widgets\WindowBase.h" />

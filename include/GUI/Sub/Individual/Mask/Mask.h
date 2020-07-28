@@ -6,12 +6,15 @@
 #include <cinder/gl/gl.h>
 #include <cinder/Log.h>
 
+#include <cinder/CameraUi.h>
+
 // my
 #include "Data/AllData.h"
 #include "GUI/Widgets/BoxWidgets.h"
 
 #include "GUI/Widgets/WindowBase.h"
 
+#include "GUI/Widgets/CanvasUi_ImGui.h"
 
 using namespace std;
 using namespace ci;
@@ -43,6 +46,7 @@ namespace GUI {
 				this->resize_run(this->oldWindowSize, this->mFbo);
 
 				ImGui::SetNextWindowSize(this->oldWindowSize);
+
 			}
 
 			MaskWindow(string groundKey, NodeNumber ID) : WindowBase() {
@@ -59,6 +63,9 @@ namespace GUI {
 				this->resize_run(this->oldWindowSize, this->mFbo);
 
 				ImGui::SetNextWindowSize(this->oldWindowSize);
+
+				this->Convert_multiPoly();
+
 			}
 			~MaskWindow() {};
 
@@ -74,25 +81,40 @@ namespace GUI {
 
 			Surface image ;
 			
-			// alldataに移動予定
+
+			// ポリゴン
 			vector<vec2> listMouse;
 
 			vector<gl::VboMeshRef> listMesh;
 
 			vector<PolyLine2f> mPoly;
 			vector<PolyLine2f> mHolePoly;
-			Path2d mPath;//test
 
-			//int degree = 6;
+			// 仮の筆の大きさ
+			float penThick = 20;
+
+			// mouse zoom
+			tools::CanvasUi_ImGui ui = tools::CanvasUi_ImGui();
+
+
+
+			void Convert_Fbo(vector<polygon>& aPoly);
 
 			void Convert_multiPoly();
 
-			void resize_run (ivec2 moniterSize, gl::FboRef& mFbo)
+			void resize_run (ivec2 Size, gl::FboRef& mFbo)
 			{
-				vec2 size = vec2(moniterSize.x, moniterSize.y);
-				
-				auto format = gl::Fbo::Format().attachment(GL_COLOR_ATTACHMENT0, gl::Texture2d::create((int)size.x, (int)size.y));
-				mFbo = gl::Fbo::create((int)size.x, (int)size.y, format);
+				this->resize_run(Size,vec2(),mFbo);
+
+				return;
+			};
+
+			void resize_run(ivec2 Size , ivec2 minSize, gl::FboRef& mFbo)
+			{
+				vec2 tSize = vec2(Size.x - minSize.x, Size.y - minSize.y);
+
+				auto format = gl::Fbo::Format().attachment(GL_COLOR_ATTACHMENT0, gl::Texture2d::create((int)tSize.x, (int)tSize.y));
+				mFbo = gl::Fbo::create((int)tSize.x, (int)tSize.y, format);
 
 				return;
 			};
@@ -113,7 +135,7 @@ namespace GUI {
 				
 				auto mappedPosAttrib = mVboMesh->mapAttrib2f(geom::Attrib::POSITION, false);
 				
-				for (int i = 0; i < mVboMesh->getNumVertices(); i++) {
+				for (uint32_t i = 0; i < mVboMesh->getNumVertices(); i++) {
 					vec2& mPos = *mappedPosAttrib;
 					mappedPosAttrib->x = mPos.x + pos.x;
 					mappedPosAttrib->y = mPos.y + pos.y;
@@ -124,6 +146,55 @@ namespace GUI {
 				
 				return mVboMesh;
 			}
+
+
+			template <class T>
+			void pointAdd(vec2 pos, T shape) {
+
+				float pen = 0;
+
+				// 範囲外処理を抜いて置く。
+				if (pen <= pos.x &&
+					pen <= pos.y &&
+					ImGui::GetItemRectSize().x - pen >= pos.x &&
+					ImGui::GetItemRectSize().y - pen >= pos.y) {
+
+					this->listMouse.push_back(pos);
+					this->listMesh.push_back(this->MeshAdd(pos, shape));
+				}
+
+			}
+
+
+			template <class T>
+			void linearInterpolation(vec2 pos, T shape) {
+				// 線形補間した上で頂点追加
+				auto pos2 = listMouse.at(listMouse.size() - 1);
+
+				// 2は2次元であるという意味。
+				ublas::vector<float> v(2);
+				v[0] = pos.x - pos2.x;
+				v[1] = pos.y - pos2.y;
+
+				int dot = 5;
+				// ノルムで2次元上の直線を引く。
+				auto ler = dot / ublas::norm_2(v);
+
+				// 1.0f以下なら、頂点をましましにする。
+				bool hit = false;
+				for (auto sler = ler; sler <= 1.0f; sler = sler + ler) {
+					auto p = lerp(pos2, pos, sler);
+
+					this->pointAdd(p, shape);
+
+					hit = true;
+				}
+				if (!hit) {
+					this->pointAdd(pos, shape);					
+				}
+
+			}
+
 
 		};
 

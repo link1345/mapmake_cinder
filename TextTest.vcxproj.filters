@@ -584,6 +584,9 @@
     <ClInclude Include="include\GUI\System\Individual\LicenseWindow.h">
       <Filter>Header Files\GUI\System\Individual</Filter>
     </ClInclude>
+    <ClInclude Include="include\GUI\Widgets\CanvasUi_ImGui.h">
+      <Filter>Header Files\GUI\Widgets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.vert">
