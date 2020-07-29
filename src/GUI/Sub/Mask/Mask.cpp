@@ -29,6 +29,13 @@ namespace GUI::SubWindow {
 
 	void MaskWindow::draw(string mID) {
 		
+		// スタート処理の時の初期化処理。
+		// (コンストラクタだと別のウィンドウに触れてしまう場合の対策です。念頭に入れて書き換えてね！)
+		if (startFlag) {
+			ImGui::SetNextWindowSize(this->oldWindowSize);
+			this->startFlag = false;
+		}
+
 		if (MapMakeData::MainData.groundData.select == false ||
 			groundKey != MapMakeData::MainData.groundData.selectKey) {
 			this->openFlag = false;
@@ -54,9 +61,17 @@ namespace GUI::SubWindow {
 				- (ImGui::GetFontSize() + ImGui::GetCurrentContext()->Style.FramePadding.y * 2) // タイトルバーサイズ
 				- (ImGui::GetCurrentContext()->Style.WindowPadding.y * 2) // ウィンドウ内サイズ
 			);
+			if (monitorSize.x <= 0) monitorSize.x = this->defaultSize.x;
+			if (monitorSize.y <= 0) monitorSize.y = this->defaultSize.y;
 
 			if (monitorSize != this->oldWindowSize) {
+				
+				ui.setMonitor(vec2(
+					monitorSize.x / 2 - this->defaultSize.x / 2,
+					monitorSize.y / 2 - this->defaultSize.y / 2));
+
 				this->oldWindowSize = monitorSize;
+
 				this->resize_run(this->oldWindowSize, this->mFbo);
 				this->image_f(this->oldWindowSize, this->mFbo, this->listMouse);
 			}
@@ -148,7 +163,15 @@ namespace GUI::SubWindow {
 						ui.mouseDrag(pos);
 					}
 					else if ( ImGui::GetIO().MouseWheel != 0) {
-						ui.mouseWheel(pos, ImGui::GetIO().MouseWheel);
+						if (ui.getCalcScale(ImGui::GetIO().MouseWheel) >= 1) {
+							console() << "wheel" << endl;
+							
+							ui.mouseWheel(pos, ImGui::GetIO().MouseWheel);
+						}
+						else if(ui.getCalcScale(ImGui::GetIO().MouseWheel) < 1) {
+							ui.mouseWheelScale(pos, 1.0);
+						}
+						
 					}
 
 				}
@@ -166,10 +189,10 @@ namespace GUI::SubWindow {
 
 		}
 
-
-
-
-		ImGui::SliderFloat("pen", &this->penThick, 5, 50);
+		ImGui::Text("pos %f , %f", ui.getPosition().x , ui.getPosition().y);
+		ImGui::Text("anc %f , %f", ui.getAnchor().x, ui.getAnchor().y);
+		ImGui::Text("scale %f",ui.getScale());
+		ImGui::SliderFloat("pen", &this->penThick, 5, 80);
 
 	}	
 
@@ -181,8 +204,9 @@ namespace GUI::SubWindow {
 	void MaskWindow::image_f(ivec2 Size, gl::FboRef& mFbo, vector<vec2> nowMouse)
 	{
 		gl::ScopedFramebuffer fboScope(mFbo);
-		gl::clear();
 
+		auto color = Color(ImGui::GetStyleColorVec4(ImGuiCol_::ImGuiCol_WindowBg));
+		gl::clear(color);
 
 
 		{
@@ -213,20 +237,20 @@ namespace GUI::SubWindow {
 
 			gl::setMatricesWindow((int)mFbo->getSize().x, (int)mFbo->getSize().y);
 
+
 			gl::setModelMatrix(this->ui.getModelMatrix());
 
 			// ----
 			// 入力済みのデータの描画
 
-			gl::enableWireframe(); // ワイヤー表示
+			
+			//gl::enableWireframe(); // ワイヤー表示
 
 			// 穴の図形描画
 			for (auto poly : this->mHolePoly) {
 				//gl::pushModelMatrix();
 
 				gl::color(Color(1, 1, 0)); // red
-
-
 				gl::drawSolid(poly);
 				//gl::popModelMatrix();
 			}
@@ -240,9 +264,13 @@ namespace GUI::SubWindow {
 
 				//gl::popModelMatrix();
 			}
-			gl::disableWireframe(); // ワイヤー表示
+			//gl::disableWireframe(); // ワイヤー表示
 
 			// ----
+			{
+				gl::color(Color(0, 0, 0)); // red
+				gl::drawSolidRect(ci::Rectf(vec2(0, 0), this->defaultSize));
+			}
 		}
 
 		return;

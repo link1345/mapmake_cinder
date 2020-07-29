@@ -17,6 +17,7 @@ namespace tools {
 			mAnchor = vec2();
 			mPosition = vec2();
 			mScale = 1;
+			mMonitorScale = 0;
 			mMouseWheelMultiplier = 0.1f;
 		}
 		~CanvasUi_ImGui() {  }
@@ -45,13 +46,14 @@ namespace tools {
 		//! Returns the current position and scale as a transform matrix.
 		const ci::mat4& getModelMatrix() const
 		{
-			if (mIsDirty) { // ‚¢‚ç‚È‚¢‚©‚à
+			if (mIsDirty) {
 				// Update model matrix.
 				mModelMatrix = glm::translate(ci::vec3(mPosition, 0));
-				mModelMatrix *= glm::scale(ci::vec3(mScale));
+				//mModelMatrix *= glm::scale(ci::vec3(mScale));
+				mModelMatrix *= glm::scale(ci::vec3(mScale + mMonitorScale));
 				mModelMatrix *= glm::translate(ci::vec3(-mAnchor, 0));
 				mIsInvDirty = true;
-				mIsDirty = false; // ‚¢‚ç‚È‚¢‚©‚à
+				mIsDirty = false;
 			}
 
 			return mModelMatrix;
@@ -104,11 +106,50 @@ namespace tools {
 			mIsDirty = true;
 		}
 
+		void mouseWheelScale(const ci::vec2& mousePos, float scale)
+		{
+			if (!mEnabled)
+				return;
+
+			reposition(mousePos);
+
+			mMouse = mousePos;
+			mScale = scale;
+			mIsDirty = true;
+		}
+
 		//! Sets the multiplier on mouse wheel zooming. Larger values zoom faster. Negative values invert the direction. Default is \c 0.1.
 		void setMouseWheelMultiplier(float multiplier) { mMouseWheelMultiplier = multiplier; }
 		//! Returns the multiplier on mouse wheel zooming. Default is \c 0.1.
 		float getMouseWheelMultiplier() const { return mMouseWheelMultiplier; }
 		
+		void setMonitor(const ci::vec2& Pos) {
+			if (!mEnabled)
+				return;
+
+			mPosition = Pos;
+			mAnchor = vec2();
+			
+			mIsDirty = true;
+		}
+
+		float getScale() {
+			return this->mScale;
+		}
+
+		float getCalcScale (float increment)
+		{
+			return mScale * (1.0f + mMouseWheelMultiplier * increment);
+		}
+
+		vec2 getPosition() {
+			return this->mPosition;
+		}
+		vec2 getAnchor() {
+			return this->mAnchor;
+		}
+
+
 	private:
 		
 		void reposition(const ci::vec2& mouse)
@@ -124,6 +165,7 @@ namespace tools {
 	private:
 		
 		float		mScale;
+		float		mMonitorScale;
 		float		mMouseWheelMultiplier;
 		ci::vec2	mMouse, mClick;
 		ci::vec2	mAnchor, mPosition, mOriginal;

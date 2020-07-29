@@ -40,12 +40,13 @@ namespace GUI {
 				this->listMesh.clear();
 				this->mPoly.clear();
 
-				this->oldWindowSize = ImVec2(500, 500);
-
+				this->defaultSize = ImVec2(1000.0f * MapMakeData::MainData.groundData.canvasSize, 1000.0f * (1 - MapMakeData::MainData.groundData.canvasSize));
+				this->oldWindowSize = defaultSize;
+				
 				this->image = Surface((int)this->oldWindowSize.x, (int)this->oldWindowSize.y, false);
 				this->resize_run(this->oldWindowSize, this->mFbo);
 
-				ImGui::SetNextWindowSize(this->oldWindowSize);
+				this->startFlag = true;
 
 			}
 
@@ -57,14 +58,21 @@ namespace GUI {
 				this->listMesh.clear();
 				this->mPoly.clear();
 
-				this->oldWindowSize = ImVec2(500, 500);
+				//this->defaultSize = ImVec2(1000.0f * ((float)MapMakeData::MainData.groundData.canvasSize / 100.0f),
+				//	1000.0f * ( 1.0f - (float)MapMakeData::MainData.groundData.canvasSize / 100.0f));
+				this->defaultSize = ImVec2(1000.0f * ((float)MapMakeData::MainData.groundData.canvasSize / 100.0f),
+					1000.0f * ( 1.0f - (float)MapMakeData::MainData.groundData.canvasSize / 100.0f));
+
+				
+				this->oldWindowSize = defaultSize;
 
 				this->image = Surface((int)this->oldWindowSize.x, (int)this->oldWindowSize.y, false);
 				this->resize_run(this->oldWindowSize, this->mFbo);
-
-				ImGui::SetNextWindowSize(this->oldWindowSize);
+								
 
 				this->Convert_multiPoly();
+
+				this->startFlag = true;
 
 			}
 			~MaskWindow() {};
@@ -72,16 +80,19 @@ namespace GUI {
 			void draw(string mID) override;
 			void update(string mID) override;
 
+			bool startFlag;
+
+
 			string groundKey;
 			NodeNumber itemID;
 
+			ImVec2 defaultSize;
 			ImVec2 oldWindowSize;
 
 			gl::FboRef mFbo;
 
 			Surface image ;
-			
-
+		
 			// ポリゴン
 			vector<vec2> listMouse;
 
@@ -154,14 +165,19 @@ namespace GUI {
 				float pen = 0;
 
 				// 範囲外処理を抜いて置く。
-				if (pen <= pos.x &&
-					pen <= pos.y &&
-					ImGui::GetItemRectSize().x - pen >= pos.x &&
-					ImGui::GetItemRectSize().y - pen >= pos.y) {
+				//if (pen <= pos.x &&
+				//	pen <= pos.y &&
+				//	ImGui::GetItemRectSize().x - pen >= pos.x &&
+				//	ImGui::GetItemRectSize().y - pen >= pos.y) {
 
-					this->listMouse.push_back(pos);
-					this->listMesh.push_back(this->MeshAdd(pos, shape));
-				}
+					if (ImGui::IsItemHovered()) {
+
+						this->listMouse.push_back(pos);
+						this->listMesh.push_back(this->MeshAdd(pos, shape));
+
+					}
+
+				//}
 
 			}
 
