@@ -6,10 +6,10 @@
 
 #pragma once
 
-#include <cinder/app/App.h>
-#include <cinder/app/RendererGl.h>
-#include <cinder/gl/gl.h>
-#include <cinder/Log.h>
+#include "cinder/app/App.h"
+#include "cinder/app/RendererGl.h"
+#include "cinder/gl/gl.h"
+#include "cinder/Log.h"
 
 // ----------------------------------------
 // * 以下のヘッダーは将来使わなくなります * 
@@ -28,8 +28,6 @@
 #include <boost/geometry/geometries/box.hpp>
 #include <boost/assign/list_of.hpp>
 
-#include "Data/SampleDrawData.h"
-
 namespace bg = boost::geometry;
 typedef bg::model::d2::point_xy<float> point;
 typedef bg::model::polygon<point> polygon;
@@ -47,8 +45,6 @@ namespace MapMakeData {
 
 	namespace Sub {
 
-		/*! @brief	マスクを構成するデータ
-		*/
 		class LayerMaskData {
 		public :
 			LayerMaskData() {
@@ -57,40 +53,13 @@ namespace MapMakeData {
 			~LayerMaskData() {};
 
 			/*! @brief	マスクイメージ図 2D
-				@note	ほれ、モノクロの区切り線のやつ。
 			*/
 			gl::Texture2dRef maskImage;
 
 			/*! @brief	マスクを構成するベクター情報
 			*/
 			multiPolygon maskPoly;
-
-			/*! @brief	世界地図に置いた時の位置情報
-			*/
-			vec2 wordmapPoint;
 		};
-
-		/*! @brief	ノイズに関する情報
-		*/
-		class NoiseRemark {
-		public :
-			NoiseRemark() {
-
-			};
-			~NoiseRemark() {};
-
-			/*! @brief	ノイズの適用範囲
-				@note	ノイズがどのタイミングから効果を出すのか？
-			*/
-			float ScopeApplication;
-
-			/*! @brief	マスクに用いられる
-				@note	ノイズがどのタイミングから効果を出すのか？
-			*/
-
-
-		};
-			
 
 
 		/*! @brief	レイヤー情報の詳細情報を保持するためのクラス
@@ -112,8 +81,6 @@ namespace MapMakeData {
 				this->layerfolder_flag = false;
 
 				this->explanation = u8"";
-
-				this->sample = MapMakeData::DrawImage::SampleDrawData();
 			}
 
 			LayerBoxData(std::string name, gl::Texture2dRef image2d, gl::Texture2dRef image3d,
@@ -131,8 +98,6 @@ namespace MapMakeData {
 				this->layerfolder_flag = layerfolder_flag;
 
 				this->explanation = explanation;
-
-				this->sample = MapMakeData::DrawImage::SampleDrawData();
 			}
 
 			~LayerBoxData() {};
@@ -153,13 +118,10 @@ namespace MapMakeData {
 			*/
 			TerrainPen::Sub::Key penKey;
 
-			/*! @brief	ノイズマスクデータ
+			/*! @brief	
 			*/
 			LayerMaskData mask;
 
-			/*! @brief	レイヤー別のサンプルイメージデータ
-			*/
-			MapMakeData::DrawImage::SampleDrawData sample;
 
 			/*! @brief	選択中であるか true=選択中
 			*/
@@ -173,12 +135,12 @@ namespace MapMakeData {
 			*/
 			bool layerfolder_flag;
 
-			/*! @brief	説明文
+			/*! @brief	説明文 true=yes
 			*/
 			std::string explanation;
 
 		};
-		
+
 		// ツリーで処理するときに必要なオペレータ
 		inline bool operator==(const Node<LayerBoxData>& lhs, const Node<LayerBoxData>& rhs) {
 			if (lhs.ID == rhs.ID) {
@@ -215,13 +177,9 @@ namespace MapMakeData {
 			void setSampleData(int mode);
 
 
-			/*! @brief	レイヤーデータ(木構造形式)
+			/*! @brief	木構造データ
 			*/
 			Tree<Sub::LayerBoxData> layerTreeData;
-
-			/*! @brief	大陸別のサンプルイメージデータ
-			*/
-			MapMakeData::DrawImage::SampleDrawData sample;
 
 
 			/*! @brief 説明文 */
