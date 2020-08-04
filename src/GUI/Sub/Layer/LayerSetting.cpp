@@ -130,7 +130,6 @@ namespace GUI::SubWindow {
 					this->openFlag = false;
 				}
 
-
 				ImGui::EndPopup();
 			}
 		}
