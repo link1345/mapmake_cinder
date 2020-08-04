@@ -316,12 +316,14 @@
     <ClInclude Include="..\..\..\..\..\cinder\Cinder\blocks\Clipper\include\clipper.hpp" />
     <ClInclude Include="include\Data\AllData.h" />
     <ClInclude Include="include\Data\Basis\ColorPalette.h" />
+    <ClInclude Include="include\Data\Basis\noise.h" />
     <ClInclude Include="include\Data\Basis\opengl_Screen.h" />
     <ClInclude Include="include\Data\Basis\Tree.h" />
     <ClInclude Include="include\Data\FileData.h" />
     <ClInclude Include="include\Data\GroundData.h" />
     <ClInclude Include="include\Data\LayerData.h" />
     <ClInclude Include="include\Data\MapImageData.h" />
+    <ClInclude Include="include\Data\SampleDrawData.h" />
     <ClInclude Include="include\Data\TerrainColorData.h" />
     <ClInclude Include="include\Data\TerrainData.h" />
     <ClInclude Include="include\Data\SystemData.h" />

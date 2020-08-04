@@ -2,6 +2,9 @@
 
 #include "Data/LayerData.h"
 
+#include <opencv2/core/cuda.hpp>
+
+
 namespace MapMakeData {
 	namespace Ground {
 		class GroundData {
@@ -23,9 +26,16 @@ namespace MapMakeData {
 
 			map<string, Layer::LayerData> gData;
 
+			/*	@brief	大陸が選択されているか？
+			*/
 			bool select;
+
+			/*	@brief	どの大陸が選択されているのか？
+			*/
 			string selectKey;
 
+			/*	@brief	世界のキャンバスサイズ
+			*/
 			int canvasSize;
 		};
 

@@ -69,7 +69,7 @@ namespace MapMakeData {
 				*/
 				int gaussianFilter;
 
-				/*!	@brief	ベジェ曲線の値
+				/*!	@brief	高低差ベジェ曲線の値
 				*/
 				std::list<cinder::vec2> bezierCurve;
 

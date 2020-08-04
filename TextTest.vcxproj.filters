@@ -587,6 +587,12 @@
     <ClInclude Include="include\GUI\Widgets\CanvasUi_ImGui.h">
       <Filter>Header Files\GUI\Widgets</Filter>
     </ClInclude>
+    <ClInclude Include="include\Data\Basis\noise.h">
+      <Filter>Header Files\Data\Basis</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Data\SampleDrawData.h">
+      <Filter>Header Files\Data\Layer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shader.vert">

@@ -189,9 +189,7 @@ namespace GUI::SubWindow {
 
 		}
 
-		ImGui::Text("pos %f , %f", ui.getPosition().x , ui.getPosition().y);
-		ImGui::Text("anc %f , %f", ui.getAnchor().x, ui.getAnchor().y);
-		ImGui::Text("scale %f",ui.getScale());
+		//ImGui::Text("scale %f",ui.getScale());
 		ImGui::SliderFloat("pen", &this->penThick, 5, 80);
 
 	}	
@@ -201,7 +199,7 @@ namespace GUI::SubWindow {
 
 	}
 
-	void MaskWindow::image_f(ivec2 Size, gl::FboRef& mFbo, vector<vec2> nowMouse)
+	void MaskWindow::image_f(ivec2 Size, gl::FboRef& mFbo, vector<vec2> nowMouse )
 	{
 		gl::ScopedFramebuffer fboScope(mFbo);
 

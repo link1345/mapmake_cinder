@@ -25,7 +25,7 @@ namespace GUI::SubWindow {
 
 				if (!this->sendData.layerfolder_flag) {
 					ImGui::InputText(u8"地形名", &this->sendData.name);
-
+					
 					const char* combo_label = this->sendData.penKey.name.c_str();
 					if (ImGui::BeginCombo(u8"ブラシの種類", combo_label, 0)) {
 
@@ -77,7 +77,7 @@ namespace GUI::SubWindow {
 
 						ImGui::EndCombo();
 					}
-
+					
 					ImGui::Text(u8"説明文");
 					ImGui::InputTextMultiline(u8"##説明文", &this->sendData.explanation, ImVec2(-FLT_MIN, ImGui::GetTextLineHeight() * 3), ImGuiInputTextFlags_AllowTabInput);
 

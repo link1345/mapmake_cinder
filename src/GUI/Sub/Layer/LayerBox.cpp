@@ -140,7 +140,7 @@ namespace GUI::SubWindow {
 					ImGui::PopStyleVar();
 
 					ImGui::TextWrapped(u8"%s Pen:%s", node.data.name.c_str() , node.data.penKey.name.c_str());
-
+					
 
 					ImGui::Image(node.data.image2d, vec2(80, 80), vec2(0, 1), vec2(1, 0));
 					ImGui::SameLine();
