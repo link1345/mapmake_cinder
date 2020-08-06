@@ -3,6 +3,7 @@
 #include <cmath>
 #include <thread>
 #include <list>
+#include <variant>
 
 #include <cinder/Rand.h> 
 #include <cinder/gl/gl.h>
@@ -180,6 +181,8 @@ private:
 	}
 };
 
+/*! ブロックノイズ
+*/
 class BlockNoise : public WhiteNoise{
 public:
 
@@ -192,6 +195,8 @@ public:
 	}
 };
 
+/*! バリューノイズ
+*/
 class ValueNoise : public WhiteNoise {
 public:
 	vec2 iBlockSize = vec2(0.03,0.03);
@@ -236,6 +241,8 @@ public:
 	}
 };
 
+/*! パーリンノイズ
+*/
 class PerlinNoise : public ValueNoise {
 public:
 	float ss = 2.0;
@@ -275,6 +282,8 @@ public:
 	}
 };
 
+/*!　セルラーノイズ
+*/
 class CellularNoise : public PerlinNoise {
 
 	float make(vec2 xy) override {
@@ -302,3 +311,12 @@ class CellularNoise : public PerlinNoise {
 	}
 };
 
+/*!	ノイズ一覧
+*/
+using NoiseData = std::variant<
+	WhiteNoise,
+	BlockNoise,
+	ValueNoise,
+	PerlinNoise,
+	CellularNoise
+>;
