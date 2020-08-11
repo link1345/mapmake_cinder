@@ -8,6 +8,10 @@
 でないと、予期せぬ動作をすることがあります。
 
 
+## Issues
+
+http://153.126.148.179:8080/link/mapmake_cinder/issues?state=open&sort=comments&direction=desc
+
 ## 報告
 
 2020/07/03　マイルストーンが大幅に変更になりました。
