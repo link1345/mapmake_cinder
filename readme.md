@@ -1,20 +1,10 @@
-# 現在開発停止中！　noteProject次第で時期が変わります
+# 現在開発停止中！
 
 
-
-# ドキュメントについて
-
-[ここにあるで！](http://153.126.148.179:8080/link/mapmake_cinder/pages/html/index.html)
-
-## リリースの場合の注意点
+## 注意点
 
 必ず、クリーンしてから、ビルドしてください。
 でないと、予期せぬ動作をすることがあります。
-
-
-## Issues
-
-http://153.126.148.179:8080/link/mapmake_cinder/issues?state=open&sort=updated&direction=desc
 
 ## 報告
 
